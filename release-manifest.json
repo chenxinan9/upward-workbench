@@ -47,8 +47,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7593,
-      "sha256": "92506b1922021e78702e1f48a5a5d23af9a1c2b3244de22f1304ab53a8be1dd7"
+      "bytes": 4972,
+      "sha256": "8aa3f11216c1b05071735609138106abfd062dff2d15be28be2c147d58fc25f1"
     },
     {
       "path": "ROADMAP.md",
@@ -911,6 +911,11 @@
       "sha256": "4629a85ed40090d59e94bb5e098db877d09b4d799942fc4bbf9f486223e50e37"
     },
     {
+      "path": "docs/advisors.md",
+      "bytes": 7868,
+      "sha256": "1b2be78331a9cb9a7b7af13ac952cf5aced0ca05df3ac7c199a57c0b7398dcd5"
+    },
+    {
       "path": "docs/audit-findings.md",
       "bytes": 5708,
       "sha256": "417bddf1e9d9e09dab6e03640f10df2734179246c25e410282b1816e364f4e69"
@@ -932,8 +937,8 @@
     },
     {
       "path": "docs/getting-started.md",
-      "bytes": 7245,
-      "sha256": "38c350b05913a40b098efa24c9a42b20c611f2386b177033e3dcdc97e56953a0"
+      "bytes": 9070,
+      "sha256": "8189b1c479b893c3b40d0e8532cefbff1a32f03da50a9e6cca61482282f1cec6"
     },
     {
       "path": "docs/integration.md",
@@ -954,6 +959,11 @@
       "path": "docs/product.md",
       "bytes": 9872,
       "sha256": "38e6e1af25af94b16864bed267c705e24ed525ce36307d90c8f27d71a9dee5ba"
+    },
+    {
+      "path": "docs/reference.md",
+      "bytes": 7612,
+      "sha256": "b0001dbe138633e64d53b6e10285a26c041b6a079e66f501907b230b69d875d6"
     },
     {
       "path": "docs/research.md",
@@ -1016,6 +1026,11 @@
       "sha256": "0c39c824931012ee51bfcda894721eac1ed24f958fee554e72ff1ec9b49bdb4a"
     },
     {
+      "path": "install.sh",
+      "bytes": 9384,
+      "sha256": "52e74401568b30eaeb52e054e802d44089c9ee54a19bfa51e72ddc0bc374eff2"
+    },
+    {
       "path": "methods.json",
       "bytes": 1702,
       "sha256": "08548903b60efb09f55b89e78a1e2e76c2e36d2ebde4e9ed588f15fc7ea0a6c5"
@@ -1071,14 +1086,19 @@
       "sha256": "6e803bf4d2a6ec4343394925399310028bdfe5b21a246e80ce7cf81cc5fe7832"
     },
     {
+      "path": "tests/test_quickstart.py",
+      "bytes": 3709,
+      "sha256": "a8a75474403870158f92a29c80a9b8edab1ff1a8590e97aa5dbb3d08f26b37d5"
+    },
+    {
       "path": "tools/backup.py",
       "bytes": 2158,
       "sha256": "70a29494003f18993a0a9ea88e79ff5bc96a9dbb5b0e3948bfbd7966d247028a"
     },
     {
       "path": "tools/build_release.py",
-      "bytes": 4103,
-      "sha256": "1524a0bb186f02c73968300c9d3c5a75bdd4dbda209f82c430ed44aefea0b2f3"
+      "bytes": 4209,
+      "sha256": "f9441ce66191ec4368d380234226b2c1f6c70ef39e1b5d48e70babef338f4f45"
     },
     {
       "path": "tools/check_public.py",
