@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "insurance-agent-policy-explanation",
+  "title": "保险条款解读",
+  "upstream": {
+    "repo": "aliyun/qwen-dianjin",
+    "url": "https://github.com/aliyun/qwen-dianjin",
+    "commit": "9a0d0b871e8b84068d687b3260561b41b0609393",
+    "skill_source_url": "https://raw.githubusercontent.com/aliyun/qwen-dianjin/9a0d0b871e8b84068d687b3260561b41b0609393/DianJin-SKILLS/insurance-agent/policy-explanation/SKILL.md",
+    "skill_sha256": "62e14f9cdb5a1d0e3c3b4f1fa1b22a616c5d9bb00b7a430a6c9b9eee0d9d0d2f",
+    "license_source_url": "https://raw.githubusercontent.com/aliyun/qwen-dianjin/9a0d0b871e8b84068d687b3260561b41b0609393/LICENSE",
+    "license_sha256": "3da232504cfd60f6bdbc094f204ea3bcaeb754eafca22ef8805d0392171e89c2"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "94cfab9bc343e89fcad487c2216bf9da28108505955ff493160a63862286073c",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "94a78b6865067e7ef5ddd934113d144d14c4782647ce9584618a7b1d48fa3e49",
+      "bytes": 2165
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3da232504cfd60f6bdbc094f204ea3bcaeb754eafca22ef8805d0392171e89c2",
+      "bytes": 1091
+    }
+  ]
+}

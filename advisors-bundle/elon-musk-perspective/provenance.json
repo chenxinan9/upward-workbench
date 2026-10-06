@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "elon-musk-perspective",
+  "title": "马斯克",
+  "upstream": {
+    "repo": "alchaincyf/elon-musk-skill",
+    "url": "https://github.com/alchaincyf/elon-musk-skill",
+    "commit": "b5dad76f9da33c433abd80feb794625b2309e867",
+    "skill_source_url": "https://raw.githubusercontent.com/alchaincyf/elon-musk-skill/b5dad76f9da33c433abd80feb794625b2309e867/SKILL.md",
+    "skill_sha256": "fb907ef8dbed5b5de137980ac8399754b7e0ade96b8adb464723a4cae40a7414",
+    "license_source_url": "https://raw.githubusercontent.com/alchaincyf/elon-musk-skill/b5dad76f9da33c433abd80feb794625b2309e867/LICENSE",
+    "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "e9dabfaca7560b48cffd5cc11c076d912f9b3b090f47c0fd0e4e8373d526c2b3",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "9c250fe5ef7a0725caafd17bdcd4f27d1d93e1aa071b890dc80cd8c87ab2e8e6",
+      "bytes": 2181
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
+      "bytes": 1072
+    }
+  ]
+}

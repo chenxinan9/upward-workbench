@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "stress-management",
+  "title": "压力管理",
+  "upstream": {
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "skill_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/skills/stress-management/SKILL.md",
+    "skill_sha256": "0d869108dbaa1ae867128699db8c4afc96d0e7c61ebde8fac9d3ce551e240cfb",
+    "license_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/LICENSE",
+    "license_sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "0bebdef35d9750684d0326cc0c69dc606cd6551aba81f7b89dc7ee08195abe60",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "7405df4b2620e4b9cceb168701e05e4369b9866c2e3335a2d3faa51ba748ef12",
+      "bytes": 2062
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292",
+      "bytes": 1074
+    }
+  ]
+}

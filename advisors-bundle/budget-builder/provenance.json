@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "budget-builder",
+  "title": "收支与预算",
+  "upstream": {
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "skill_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/skills/budget-builder/SKILL.md",
+    "skill_sha256": "4bf6dbbf43f786c248c4846c345cd62653e87d800695a9888b618bc0dcf8866c",
+    "license_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/LICENSE",
+    "license_sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "d919fdaf7757a7d7f89f67872909e45dcb7e838ed8c9750e31a0bc0e5baf4a82",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "d834812c50b96553396683f957ec84ecbe33ad33a81220ab18122e87630097dc",
+      "bytes": 2067
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292",
+      "bytes": 1074
+    }
+  ]
+}

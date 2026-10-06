@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "personal-trainer",
+  "title": "健身训练与饮食习惯",
+  "upstream": {
+    "repo": "Builtbyaran/Personal-trainer-skill",
+    "url": "https://github.com/Builtbyaran/Personal-trainer-skill",
+    "commit": "c124827dd0e855926548d8a32e2a7b39d9a928ba",
+    "skill_source_url": "https://raw.githubusercontent.com/Builtbyaran/Personal-trainer-skill/c124827dd0e855926548d8a32e2a7b39d9a928ba/personal-trainer/SKILL.md",
+    "skill_sha256": "ec82c4c6fccbff30fb0e51db6bdc25a614c2ec4af14ecc2649a9fccb6b50a1de",
+    "license_source_url": "https://raw.githubusercontent.com/Builtbyaran/Personal-trainer-skill/c124827dd0e855926548d8a32e2a7b39d9a928ba/LICENSE",
+    "license_sha256": "3cc14293ed0c6778dd3a77b0114e24a764fb4a2f2feced3d3e101556169f8cf2"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "af6a577c0b2962f22c412b1a4a9622101e2130bf0d0602cab30551688dc887f5",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "9e3ae634f2b3a16dd8b780876469a5c554a29d4735bd8553ecf8871988f852ab",
+      "bytes": 2171
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3cc14293ed0c6778dd3a77b0114e24a764fb4a2f2feced3d3e101556169f8cf2",
+      "bytes": 1084
+    }
+  ]
+}

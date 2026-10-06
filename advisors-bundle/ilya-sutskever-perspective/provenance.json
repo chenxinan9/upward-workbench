@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "ilya-sutskever-perspective",
+  "title": "Ilya",
+  "upstream": {
+    "repo": "alchaincyf/ilya-sutskever-skill",
+    "url": "https://github.com/alchaincyf/ilya-sutskever-skill",
+    "commit": "4829975a3091ffcb41de9ebc6b7bb2ce370ca079",
+    "skill_source_url": "https://raw.githubusercontent.com/alchaincyf/ilya-sutskever-skill/4829975a3091ffcb41de9ebc6b7bb2ce370ca079/SKILL.md",
+    "skill_sha256": "40f11c363f81d5dd76da46fd362e0e6e05c2abe8194befb7cd91576b9b5d7f38",
+    "license_source_url": "https://raw.githubusercontent.com/alchaincyf/ilya-sutskever-skill/4829975a3091ffcb41de9ebc6b7bb2ce370ca079/LICENSE",
+    "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "145c7802d4d83ed653a85e00f134a65e1f56955844cccb0814164426494129e3",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "7b7d4b55b52956f23491db3ed9b1398860582698d6970a68a5e118b6cf4b6535",
+      "bytes": 2066
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
+      "bytes": 1072
+    }
+  ]
+}

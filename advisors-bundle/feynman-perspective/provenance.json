@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "feynman-perspective",
+  "title": "费曼",
+  "upstream": {
+    "repo": "alchaincyf/feynman-skill",
+    "url": "https://github.com/alchaincyf/feynman-skill",
+    "commit": "3ec26652e3b25c464a3188aeb2365445ce4f3d1d",
+    "skill_source_url": "https://raw.githubusercontent.com/alchaincyf/feynman-skill/3ec26652e3b25c464a3188aeb2365445ce4f3d1d/SKILL.md",
+    "skill_sha256": "160a299e73b476b44afec30a3f5a6a2231733429945ac2e35e0c702dcc269702",
+    "license_source_url": "https://raw.githubusercontent.com/alchaincyf/feynman-skill/3ec26652e3b25c464a3188aeb2365445ce4f3d1d/LICENSE",
+    "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "92e363272f181337dbb8761bf11e9b001e77fce15aa021dd8b61d41c4d998b6e",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "cac8a03c759bb408ad2459ec7672720824754588026a32bf990f54b1bdb67402",
+      "bytes": 2029
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
+      "bytes": 1072
+    }
+  ]
+}

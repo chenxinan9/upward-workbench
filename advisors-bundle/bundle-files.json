@@ -1,0 +1,796 @@
+{
+  "generated_at": "2026-10-06",
+  "scope": "All bundle files except this self-referential manifest",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2997,
+      "sha256": "da4cdc0406fa027b1f68453d2e87f5f99d34893f31fbc81a8e9cbf83c5c9e7db"
+    },
+    {
+      "path": "adler-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "adler-perspective/SKILL.md",
+      "bytes": 2035,
+      "sha256": "00a1021b764e27f4b4a7ba8a055a1d25b6f03435e2db1c275dd85f499feea9f1"
+    },
+    {
+      "path": "adler-perspective/provenance.json",
+      "bytes": 2086,
+      "sha256": "3bea505ae42f2aec1b4903b4c02acc9db1c4536c08ac381957672ee318086809"
+    },
+    {
+      "path": "andrej-karpathy-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "andrej-karpathy-perspective/SKILL.md",
+      "bytes": 2116,
+      "sha256": "3897a09546c92ba3a8932b2d8779763e0277c8368add242f52c7d8ea12f42410"
+    },
+    {
+      "path": "andrej-karpathy-perspective/provenance.json",
+      "bytes": 2103,
+      "sha256": "7ecf941fb75ffe5bdc073ce67f58fff9774cc5a2004a98e760e37b2337ed96da"
+    },
+    {
+      "path": "aristotle-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "aristotle-perspective/SKILL.md",
+      "bytes": 2061,
+      "sha256": "c86bea9036339463655229f0238b083f4025bbcf3bd487f6689a1682f432bb14"
+    },
+    {
+      "path": "aristotle-perspective/provenance.json",
+      "bytes": 2112,
+      "sha256": "c4ed95025c3f9e9bf9533a9ac9ea1aaba09e599f0bea85a367c361eb98211036"
+    },
+    {
+      "path": "aurelius-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "aurelius-perspective/SKILL.md",
+      "bytes": 2020,
+      "sha256": "588ab30e856ea5766cb93e930c6d7e18d5d44774442748afc8c87b2d0ca42617"
+    },
+    {
+      "path": "aurelius-perspective/provenance.json",
+      "bytes": 2107,
+      "sha256": "6821631f9ba7561560c79ebe5671363b85d335e159af49e16a1c89f84711d625"
+    },
+    {
+      "path": "beauvoir-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "beauvoir-perspective/SKILL.md",
+      "bytes": 2062,
+      "sha256": "b5b8a9182e7c07495a5108544decedef1f3632fb8e598cb8327dc30abaa69b87"
+    },
+    {
+      "path": "beauvoir-perspective/provenance.json",
+      "bytes": 2101,
+      "sha256": "fd332de3bab1bb0659c5d0e2791dc7efae5addb170ed2fc6aa04b6967bdb5110"
+    },
+    {
+      "path": "big-purchase-decision/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "big-purchase-decision/SKILL.md",
+      "bytes": 2111,
+      "sha256": "a97e61d30dfcbfb88797e3c13de68c96cd370abbcbb13c2beb5e81a49e9080a7"
+    },
+    {
+      "path": "big-purchase-decision/provenance.json",
+      "bytes": 2113,
+      "sha256": "418414c5f827507d0f68ac26a13e0a10789d07e2c7ef829849bf57225472f80a"
+    },
+    {
+      "path": "budget-builder/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "budget-builder/SKILL.md",
+      "bytes": 2067,
+      "sha256": "d834812c50b96553396683f957ec84ecbe33ad33a81220ab18122e87630097dc"
+    },
+    {
+      "path": "budget-builder/provenance.json",
+      "bytes": 2087,
+      "sha256": "efdab2accee09e8991218e166bc212808a74458f69612d175df6e7a4863b07ec"
+    },
+    {
+      "path": "buffett-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "buffett-perspective/SKILL.md",
+      "bytes": 2102,
+      "sha256": "eda61889ad27cdfcffe83b82b90cf0528838158e1a7128f3056eeae803c57571"
+    },
+    {
+      "path": "buffett-perspective/provenance.json",
+      "bytes": 2096,
+      "sha256": "fe91d3cb62068232671cc6f60ef1c89b11abe7875ccb71b3f919e50e4892e03c"
+    },
+    {
+      "path": "clear-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "clear-perspective/SKILL.md",
+      "bytes": 2058,
+      "sha256": "f14e7919af03cecbb5ed0e3837e68c56af4feeea5b131cd823d952df60f05c65"
+    },
+    {
+      "path": "clear-perspective/provenance.json",
+      "bytes": 2088,
+      "sha256": "1abc61f44f2bc230ea020b9972e5bbf6870658f7c3c9228aff0f0f4e13e3beb6"
+    },
+    {
+      "path": "conflict-resolution/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "conflict-resolution/SKILL.md",
+      "bytes": 2049,
+      "sha256": "1b0619b180c96c05f308ee272305478862a0262e5e5515292f6ad57651250a05"
+    },
+    {
+      "path": "conflict-resolution/provenance.json",
+      "bytes": 2094,
+      "sha256": "ff2969045122c9549ba9f4d208cb84e4508fbda0d574ce5142379f79e0e56cb8"
+    },
+    {
+      "path": "dan-koe-skill/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "dan-koe-skill/SKILL.md",
+      "bytes": 2045,
+      "sha256": "b318289aafea1b00edbddf013c8b7326212bd9ce115d33a69f77c826555b80e1"
+    },
+    {
+      "path": "dan-koe-skill/provenance.json",
+      "bytes": 2084,
+      "sha256": "bae24a26e7431078473e8b2d890aa3fa83a7b2007134998d8774ec3b9fca3942"
+    },
+    {
+      "path": "debt-payoff-planner/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "debt-payoff-planner/SKILL.md",
+      "bytes": 2091,
+      "sha256": "7a88613e5efe8934afc7b52f337288ad0e52afeb63a385a7094d23b90324c53a"
+    },
+    {
+      "path": "debt-payoff-planner/provenance.json",
+      "bytes": 2103,
+      "sha256": "38a0a012b8fec66a06cba442a4d14ca8979be53280cc2801db06ca79678c4d86"
+    },
+    {
+      "path": "drucker-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "drucker-perspective/SKILL.md",
+      "bytes": 2027,
+      "sha256": "60330074ad11ea4e09471d1963bd2e79c1674960ccdede461f1f5b2cde409a29"
+    },
+    {
+      "path": "drucker-perspective/provenance.json",
+      "bytes": 2096,
+      "sha256": "14f517e56cbfa76b423315498f03d16fb996d3072519f45dc21176e15a8145af"
+    },
+    {
+      "path": "elon-musk-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "elon-musk-perspective/SKILL.md",
+      "bytes": 2181,
+      "sha256": "9c250fe5ef7a0725caafd17bdcd4f27d1d93e1aa071b890dc80cd8c87ab2e8e6"
+    },
+    {
+      "path": "elon-musk-perspective/provenance.json",
+      "bytes": 2102,
+      "sha256": "b4f673f25426e7f196d36134695842ce1440e384d39d76b958d4a1745d4d329e"
+    },
+    {
+      "path": "emergency-fund-planner/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "emergency-fund-planner/SKILL.md",
+      "bytes": 2082,
+      "sha256": "226e1f8751e0d79cd7ee46cb605d6dea2bc183ac86d07d3d04ebffb2d7adf4e5"
+    },
+    {
+      "path": "emergency-fund-planner/provenance.json",
+      "bytes": 2103,
+      "sha256": "6cbe5b0f1cebb75eaccae7062ef3d9d3f7e4bc794658353a166dd5eec758181f"
+    },
+    {
+      "path": "english-learning-coach/LICENSE",
+      "bytes": 1045,
+      "sha256": "c390ddc5d96735f392c97d9da852a8612814340a2c49e8817c74756f324dd06c"
+    },
+    {
+      "path": "english-learning-coach/SKILL.md",
+      "bytes": 2155,
+      "sha256": "f5c017f4d96be4ded684004ad8690ef7d52420708cd718221b62e28f8293cc2e"
+    },
+    {
+      "path": "english-learning-coach/provenance.json",
+      "bytes": 2173,
+      "sha256": "57fffd661bee7f4086f78298dbc855095b42c4e192c4582c5ed7f397e8fa7089"
+    },
+    {
+      "path": "excluded.json",
+      "bytes": 977,
+      "sha256": "776d5a8a763c47f78c3346f5034f5b96c6b8693fedf6439fdb03aa2c64747ea4"
+    },
+    {
+      "path": "fengtang-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "fengtang-perspective/SKILL.md",
+      "bytes": 2032,
+      "sha256": "19607ca5149c6a29ca373665b864ea76b8a94854d6ef8d35b1897c7c47529071"
+    },
+    {
+      "path": "fengtang-perspective/provenance.json",
+      "bytes": 2098,
+      "sha256": "fc4621e3b32d87176b17f8da0ed0e6543fb87bee11157a54b68826d67eb47f1c"
+    },
+    {
+      "path": "feynman-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "feynman-perspective/SKILL.md",
+      "bytes": 2029,
+      "sha256": "cac8a03c759bb408ad2459ec7672720824754588026a32bf990f54b1bdb67402"
+    },
+    {
+      "path": "feynman-perspective/provenance.json",
+      "bytes": 2089,
+      "sha256": "e805b1f728e18db61d00c10039f02b882c7f6aab13b89efc89aa2c16ce307bc3"
+    },
+    {
+      "path": "frankl-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "frankl-perspective/SKILL.md",
+      "bytes": 2025,
+      "sha256": "fd35fa73e65153e1b45dd9ca59ba3850a7e898bc54b4d85ec5c1772beeb5c60f"
+    },
+    {
+      "path": "frankl-perspective/provenance.json",
+      "bytes": 2094,
+      "sha256": "bb5c9a3d954960296fa6321f5e3cfae8ae68fd3c1684139395b14a302a710ea4"
+    },
+    {
+      "path": "grove-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "grove-perspective/SKILL.md",
+      "bytes": 2041,
+      "sha256": "d999a84bbc4e2a85e3967afe52747418bf77f89d3966abe9cfb05be785f6be94"
+    },
+    {
+      "path": "grove-perspective/provenance.json",
+      "bytes": 2086,
+      "sha256": "3178d547dc55f3171919949ce40fb0f0662a73c2931c3c0eb6cc810b0d1c59e0"
+    },
+    {
+      "path": "ilya-sutskever-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "ilya-sutskever-perspective/SKILL.md",
+      "bytes": 2066,
+      "sha256": "7b7d4b55b52956f23491db3ed9b1398860582698d6970a68a5e118b6cf4b6535"
+    },
+    {
+      "path": "ilya-sutskever-perspective/provenance.json",
+      "bytes": 2122,
+      "sha256": "34a3c1b9d80a10759e1329501113517486d76944ecae2d2637805bc14cac61d5"
+    },
+    {
+      "path": "informed-patient/LICENSE",
+      "bytes": 18656,
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    {
+      "path": "informed-patient/SKILL.md",
+      "bytes": 2379,
+      "sha256": "6ffb17299709a921ecb79ee6af72257b20fceb1190bc955e8528299b75077a0e"
+    },
+    {
+      "path": "informed-patient/provenance.json",
+      "bytes": 2222,
+      "sha256": "87848a59e4e98b5b33d5f2843914aec7712694dcc248301562ab7d29356f08c5"
+    },
+    {
+      "path": "install.py",
+      "bytes": 3484,
+      "sha256": "646bf16d13bc53637ea8d54719827ad4e50df00f1b93c8ed10a33e22690b7b83"
+    },
+    {
+      "path": "insurance-agent-policy-explanation/LICENSE",
+      "bytes": 1091,
+      "sha256": "3da232504cfd60f6bdbc094f204ea3bcaeb754eafca22ef8805d0392171e89c2"
+    },
+    {
+      "path": "insurance-agent-policy-explanation/SKILL.md",
+      "bytes": 2165,
+      "sha256": "94a78b6865067e7ef5ddd934113d144d14c4782647ce9584618a7b1d48fa3e49"
+    },
+    {
+      "path": "insurance-agent-policy-explanation/provenance.json",
+      "bytes": 2146,
+      "sha256": "eacea0926b38ced687694165a557b60475c7b7e2494a0b9972f51a31008fe231"
+    },
+    {
+      "path": "interview-master/LICENSE",
+      "bytes": 1086,
+      "sha256": "0e15af77d9f36add9f315222edf7e4053d53ac0771504c5a04b404cefcf62e63"
+    },
+    {
+      "path": "interview-master/SKILL.md",
+      "bytes": 2108,
+      "sha256": "7d9a3bf8d1b7279e9c29c033a7855eb13dc408dcee1d8bc00770859bdc310975"
+    },
+    {
+      "path": "interview-master/provenance.json",
+      "bytes": 2118,
+      "sha256": "98e2ba49ea0bada10bf662ccdcd32a741681d8e83727a1881ae6c0bc79f0e5ac"
+    },
+    {
+      "path": "kant-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "kant-perspective/SKILL.md",
+      "bytes": 2057,
+      "sha256": "62f15fcc5989b4e0acf8fdc441e4b46cf1a61092f77981b05d91f587daa631c8"
+    },
+    {
+      "path": "kant-perspective/provenance.json",
+      "bytes": 2078,
+      "sha256": "2fc5f19bb8004b78eb6db641dbb096e96a4a06cad2745236a8af4040bde05e09"
+    },
+    {
+      "path": "laozi-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "laozi-perspective/SKILL.md",
+      "bytes": 2014,
+      "sha256": "27a744c22c81b87c96cbe13f42869744a295302603abf026c40372bd57fe29f7"
+    },
+    {
+      "path": "laozi-perspective/provenance.json",
+      "bytes": 2083,
+      "sha256": "d902a6ef95b96d5089440116de8c4131421c87abbede2d0e888a9b4fa058c599"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 15532,
+      "sha256": "f27bae495b465e79e9c17ba9db3aee4a930b305f84965777d09e884ddcf59dc2"
+    },
+    {
+      "path": "mao-zedong-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "mao-zedong-perspective/SKILL.md",
+      "bytes": 2111,
+      "sha256": "e59c3ca6c0637a3f80edc94e2a68d4a7b46d96074b6051f618e8e899cfff28e0"
+    },
+    {
+      "path": "mao-zedong-perspective/provenance.json",
+      "bytes": 2090,
+      "sha256": "c252f52e3c22074aa7fc3c4565d996d5ca3de3133c317f23b4e80a55d8459489"
+    },
+    {
+      "path": "methods.json",
+      "bytes": 30680,
+      "sha256": "f2ef328cb85613e88a0877d2378b9fdea9ed2f5e57a5e6f43cf231e4c2e713d1"
+    },
+    {
+      "path": "montaigne-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "montaigne-perspective/SKILL.md",
+      "bytes": 1977,
+      "sha256": "2d545c38f0b7482e5edcdfd9f5f72db79cf2da7372fe506c46accbca93470996"
+    },
+    {
+      "path": "montaigne-perspective/provenance.json",
+      "bytes": 2103,
+      "sha256": "184f3a321bc4a8524d8aa3b03bc37a33bca15e9050a8d4707d287a65e31b8d4f"
+    },
+    {
+      "path": "mrbeast-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "mrbeast-perspective/SKILL.md",
+      "bytes": 2102,
+      "sha256": "02f73e3a1f38c44d2873338da80ab1732be0ed7aa2b55228d58ea1128ba9e744"
+    },
+    {
+      "path": "mrbeast-perspective/provenance.json",
+      "bytes": 2090,
+      "sha256": "2dda8989692cd1a67dae53abb0fbdeeecf1e4ead0a81a6c1dac4b21134998a34"
+    },
+    {
+      "path": "munger-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "munger-perspective/SKILL.md",
+      "bytes": 2021,
+      "sha256": "01c11f7f42de30dca03b3e878a80a76bd1a495d85b4c919de0ca58edc74e2337"
+    },
+    {
+      "path": "munger-perspective/provenance.json",
+      "bytes": 2084,
+      "sha256": "c3d21e601cdb3c7a94323069d096b8280e04baefbc0ac9da3d0d3fb391e62270"
+    },
+    {
+      "path": "naval-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "naval-perspective/SKILL.md",
+      "bytes": 2118,
+      "sha256": "956b0e733b692dbb8dc75be07e52b60ccbbe31fd6d9f9079527a5139d87d690a"
+    },
+    {
+      "path": "naval-perspective/provenance.json",
+      "bytes": 2082,
+      "sha256": "82f4d31f960e6a4dd06a029e7093636b709eaabb5717e06ca1db2702f75fafe5"
+    },
+    {
+      "path": "nietzsche-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "nietzsche-perspective/SKILL.md",
+      "bytes": 2055,
+      "sha256": "42ca37196bb6eb39f1caaac415d879ccb701556f399c563da0eea55a2726c103"
+    },
+    {
+      "path": "nietzsche-perspective/provenance.json",
+      "bytes": 2103,
+      "sha256": "01955c022dd1ea60bc274dc3822fccb163f2459a664046afeb834261dce28452"
+    },
+    {
+      "path": "opc-growth/LICENSE",
+      "bytes": 9072,
+      "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
+    },
+    {
+      "path": "opc-growth/SKILL.md",
+      "bytes": 2084,
+      "sha256": "b0985e9eb8969fcb62eba276aa77b30f589f2927f48a494cf7ca62dc24b6a9ac"
+    },
+    {
+      "path": "opc-growth/provenance.json",
+      "bytes": 2107,
+      "sha256": "ce28963e5fcc57dac6384976ef796c77126f7f58df04824c79dc688a5afca640"
+    },
+    {
+      "path": "opc-strategy/LICENSE",
+      "bytes": 9072,
+      "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
+    },
+    {
+      "path": "opc-strategy/SKILL.md",
+      "bytes": 2116,
+      "sha256": "24f215f100dbbed64333f2991ce92d480a052e39cf153f9e1a58a680f4d24a6c"
+    },
+    {
+      "path": "opc-strategy/provenance.json",
+      "bytes": 2111,
+      "sha256": "6c6d5cb098b5e1a1a9e7676a2efefd7ac1e4a4dd7241e6c435ffd1ed2c3d4e5c"
+    },
+    {
+      "path": "paul-graham-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "paul-graham-perspective/SKILL.md",
+      "bytes": 2054,
+      "sha256": "def98b0b2ccb58f2973f6add709fbfdb2be788d0fc794ef0e8bc2a83402ed863"
+    },
+    {
+      "path": "paul-graham-perspective/provenance.json",
+      "bytes": 2114,
+      "sha256": "cde60b5f7fe1957d1a64950dac14a98ef9d1b99afdca460f5c432128fd89e2e7"
+    },
+    {
+      "path": "personal-ai-learning/LICENSE",
+      "bytes": 1096,
+      "sha256": "6ae494275f005683b896ca506a2cc66a11d57d9ba80beb4873d4aefe9f0535a7"
+    },
+    {
+      "path": "personal-ai-learning/SKILL.md",
+      "bytes": 2069,
+      "sha256": "10798d78fdfe2d6f2da6c454f56e07354cf653897160f58972ba1189b6ff78b8"
+    },
+    {
+      "path": "personal-ai-learning/provenance.json",
+      "bytes": 2144,
+      "sha256": "9a53723ce7f8da65c1bca995eb7d5caaace102107d3df539ead0add81e8d6694"
+    },
+    {
+      "path": "personal-trainer/LICENSE",
+      "bytes": 1084,
+      "sha256": "3cc14293ed0c6778dd3a77b0114e24a764fb4a2f2feced3d3e101556169f8cf2"
+    },
+    {
+      "path": "personal-trainer/SKILL.md",
+      "bytes": 2171,
+      "sha256": "9e3ae634f2b3a16dd8b780876469a5c554a29d4735bd8553ecf8871988f852ab"
+    },
+    {
+      "path": "personal-trainer/provenance.json",
+      "bytes": 2164,
+      "sha256": "be5491ff784b04cfb954d407d664c4fb2c21d16c4a991106f8f3cd8e6aed8090"
+    },
+    {
+      "path": "salary-negotiation/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "salary-negotiation/SKILL.md",
+      "bytes": 2072,
+      "sha256": "5bc7fa1b7a6be574f9f70af0ae6e9c0bdec5df02bbefd61d5978da0150244e5c"
+    },
+    {
+      "path": "salary-negotiation/provenance.json",
+      "bytes": 2092,
+      "sha256": "81f406b429c7b883ad44989bf85990cb24163b45bece062516b342f5ba94222c"
+    },
+    {
+      "path": "sleep-optimizer/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "sleep-optimizer/SKILL.md",
+      "bytes": 2072,
+      "sha256": "a541daf087f2cbb014a57b504516b5681de6d7c4b3e52f421a6adcc5881891f1"
+    },
+    {
+      "path": "sleep-optimizer/provenance.json",
+      "bytes": 2086,
+      "sha256": "c20c2bde81a68b1d8ad0a83ecd7906e75790b4a8e453838f1fdec8e1b2d36d77"
+    },
+    {
+      "path": "socrates-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "socrates-perspective/SKILL.md",
+      "bytes": 2038,
+      "sha256": "c8357f792aea6f12f88eb186d0fc48eeec5a725a8c959811034031240b6b7e33"
+    },
+    {
+      "path": "socrates-perspective/provenance.json",
+      "bytes": 2104,
+      "sha256": "d7a15668e18e7c6aa446bd9501ef972631290260908de59b0a8c517002447f5c"
+    },
+    {
+      "path": "steve-jobs-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "steve-jobs-perspective/SKILL.md",
+      "bytes": 2065,
+      "sha256": "40cb3dfd3a86a29535b04966855e79dbe51765fb9f97b04473ecc47419fa63bb"
+    },
+    {
+      "path": "steve-jobs-perspective/provenance.json",
+      "bytes": 2107,
+      "sha256": "0c8ec9e0b6da81d1f353638da97d672113404521e3e0841196531285761fcc4f"
+    },
+    {
+      "path": "stress-management/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "stress-management/SKILL.md",
+      "bytes": 2062,
+      "sha256": "7405df4b2620e4b9cceb168701e05e4369b9866c2e3335a2d3faa51ba748ef12"
+    },
+    {
+      "path": "stress-management/provenance.json",
+      "bytes": 2090,
+      "sha256": "bad6718b0cac827cf47ef2886383cf4a5e6a89ed0a4cb0faddef1582f20c74af"
+    },
+    {
+      "path": "taleb-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "taleb-perspective/SKILL.md",
+      "bytes": 2064,
+      "sha256": "cee5bcefb063bc944f7acbe0eab8eb630ac50838290930a089e1bfc7d7e2b7e2"
+    },
+    {
+      "path": "taleb-perspective/provenance.json",
+      "bytes": 2082,
+      "sha256": "eed7a41c12844194a5119cb445c466d0144caf0f4fa17e6e96d71ccb4aa588d1"
+    },
+    {
+      "path": "think-woop/LICENSE",
+      "bytes": 10712,
+      "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+    },
+    {
+      "path": "think-woop/SKILL.md",
+      "bytes": 2090,
+      "sha256": "4d3b2d75dd6665da8333fb6a02544097bd1222f89d3e12f35eeca0914bcec20b"
+    },
+    {
+      "path": "think-woop/provenance.json",
+      "bytes": 2199,
+      "sha256": "6d36e8a4bfed3ba2e309a39bdab74e77f09bb83c1a7b2bfcd464b3b3d0244948"
+    },
+    {
+      "path": "wangyangming-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "wangyangming-perspective/SKILL.md",
+      "bytes": 2040,
+      "sha256": "63bdd000281164c4a4a4f565a514f8b4648eb9070151d5787e421e2d688aee36"
+    },
+    {
+      "path": "wangyangming-perspective/provenance.json",
+      "bytes": 2121,
+      "sha256": "46c9470a51140d622690df7245e03142923a4e342360b36ab4ade40bc0557a76"
+    },
+    {
+      "path": "wittgenstein-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "wittgenstein-perspective/SKILL.md",
+      "bytes": 2043,
+      "sha256": "354325746d99d4e10632f770523a8f408473b7eea1351d18c99e88ac7f620aa3"
+    },
+    {
+      "path": "wittgenstein-perspective/provenance.json",
+      "bytes": 2127,
+      "sha256": "a99222b990b314421a0d7ee25af76518e08e026cb942dd73f893eca34c14bb6c"
+    },
+    {
+      "path": "workplace-communication/LICENSE",
+      "bytes": 1066,
+      "sha256": "fd4b7c7aefc12396a45d5e6badb33a21d4e17d2329e78f8afcdbb84d6620630b"
+    },
+    {
+      "path": "workplace-communication/SKILL.md",
+      "bytes": 2066,
+      "sha256": "68b0fbdfd6119854342f7e432c16e6fc7c2981a3d96b4b44ea9e58da8bb1550c"
+    },
+    {
+      "path": "workplace-communication/provenance.json",
+      "bytes": 2147,
+      "sha256": "215bf1d711a0b819ab483e5e20ea044050a71123fbc975638952e3027000f322"
+    },
+    {
+      "path": "zengguofan-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "zengguofan-perspective/SKILL.md",
+      "bytes": 2027,
+      "sha256": "1b374f5d2b6c5c4e1a2cd6a5b8d457c9b73a1c6a609680316231905b505464c7"
+    },
+    {
+      "path": "zengguofan-perspective/provenance.json",
+      "bytes": 2111,
+      "sha256": "ef61b5cfeed9d6df70b1651a5d6d5466213965b18a9fd4c04fc4bd66e1c5ae11"
+    },
+    {
+      "path": "zhang-yiming-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "zhang-yiming-perspective/SKILL.md",
+      "bytes": 2078,
+      "sha256": "09575c449aa27f3845f880669f6895b423aaa67a8dfd08698452540b2b9edf53"
+    },
+    {
+      "path": "zhang-yiming-perspective/provenance.json",
+      "bytes": 2117,
+      "sha256": "9e2cad7c55851f5e6d408d362d774e3c40c71156b73623e976f31c1222692254"
+    },
+    {
+      "path": "zhangxuefeng-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "zhangxuefeng-perspective/SKILL.md",
+      "bytes": 2129,
+      "sha256": "0636ed11ccf4749fcf17ae897e0a2800186333b4c6cd97995eaf0a7276e50261"
+    },
+    {
+      "path": "zhangxuefeng-perspective/provenance.json",
+      "bytes": 2117,
+      "sha256": "e7abeb3fcd276dcf67cdb1bcdad2ea18266cb496f3dab8329ae3f8f970122ce3"
+    },
+    {
+      "path": "zhuangzi-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "zhuangzi-perspective/SKILL.md",
+      "bytes": 2035,
+      "sha256": "265bd4b1e607079fc01eaaa1080516da1c1ca28768ddc2c42915bcc832958c84"
+    },
+    {
+      "path": "zhuangzi-perspective/provenance.json",
+      "bytes": 2098,
+      "sha256": "3f67aeee43bca495686c288e9b4aecfdf2b37a77a65638021aa0c5193a3dea9f"
+    }
+  ]
+}

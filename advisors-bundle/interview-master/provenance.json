@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "interview-master",
+  "title": "面试与Offer",
+  "upstream": {
+    "repo": "chen3tu/interview-master-skill",
+    "url": "https://github.com/chen3tu/interview-master-skill",
+    "commit": "de3a72cd9493f09d3c33079587e37130b62cbd2b",
+    "skill_source_url": "https://raw.githubusercontent.com/chen3tu/interview-master-skill/de3a72cd9493f09d3c33079587e37130b62cbd2b/SKILL.md",
+    "skill_sha256": "48a63b32e162963bd6b46e67909b51120502120bf58992e1d07aa71f85b1f5fb",
+    "license_source_url": "https://raw.githubusercontent.com/chen3tu/interview-master-skill/de3a72cd9493f09d3c33079587e37130b62cbd2b/LICENSE",
+    "license_sha256": "0e15af77d9f36add9f315222edf7e4053d53ac0771504c5a04b404cefcf62e63"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "cfaf6ceaabbd16209a6e968c8ff2060380c71241e211d31f3059580c1b2b274b",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "7d9a3bf8d1b7279e9c29c033a7855eb13dc408dcee1d8bc00770859bdc310975",
+      "bytes": 2108
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0e15af77d9f36add9f315222edf7e4053d53ac0771504c5a04b404cefcf62e63",
+      "bytes": 1086
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "kant-perspective",
+  "title": "康德",
+  "upstream": {
+    "repo": "nuwa-skills/kant-skill",
+    "url": "https://github.com/nuwa-skills/kant-skill",
+    "commit": "d72e2da4cff7083cb3fe6d5d0e27ecf213b9dfe3",
+    "skill_source_url": "https://raw.githubusercontent.com/nuwa-skills/kant-skill/d72e2da4cff7083cb3fe6d5d0e27ecf213b9dfe3/SKILL.md",
+    "skill_sha256": "d7cb1014773963b3dd58e08ccdb1f7540c2ea1c5eda0088f8cdc55423ff40a49",
+    "license_source_url": "https://raw.githubusercontent.com/nuwa-skills/kant-skill/d72e2da4cff7083cb3fe6d5d0e27ecf213b9dfe3/LICENSE",
+    "license_sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "4ba0e8e2db003add27416655f21ab9214d6e4b24294b456632a9854cc6536585",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "62f15fcc5989b4e0acf8fdc441e4b46cf1a61092f77981b05d91f587daa631c8",
+      "bytes": 2057
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae",
+      "bytes": 1063
+    }
+  ]
+}

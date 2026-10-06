@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "debt-payoff-planner",
+  "title": "债务与还款规划",
+  "upstream": {
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "skill_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/skills/debt-payoff-planner/SKILL.md",
+    "skill_sha256": "7049cc1db63734365c0407396ebb2c362c58b8dcef53c1a57d0493cc51e7c0d1",
+    "license_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/LICENSE",
+    "license_sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "edeb45685c2ea0a5d0cbf601dba0edf2106cfbbccf9b6d4c051d5bc2fd3daadf",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "7a88613e5efe8934afc7b52f337288ad0e52afeb63a385a7094d23b90324c53a",
+      "bytes": 2091
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292",
+      "bytes": 1074
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "career-coach",
+    "title": "职业蓝图",
+    "license": "NOASSERTION",
+    "url": "https://github.com/ryanxkh/career-coach-skill",
+    "reason": "No explicit redistribution license established."
+  },
+  {
+    "name": "dbs-learning",
+    "title": "系统学习",
+    "license": "CC-BY-NC-4.0",
+    "url": "https://github.com/dontbesilent2025/dbskill",
+    "reason": "Noncommercial restriction; not placed in a broadly reusable commercial/open-source bundle."
+  },
+  {
+    "name": "marx-perspective",
+    "title": "马克思",
+    "license": "NOASSERTION",
+    "url": "https://github.com/Slzx1/marx-perspective",
+    "reason": "No explicit redistribution license established."
+  },
+  {
+    "name": "relationship-science-coach",
+    "title": "亲密关系与沟通",
+    "license": "Internal-use-only",
+    "url": "https://github.com/tristanmanchester/agent-skills",
+    "reason": "Internal-use terms do not establish public redistribution permission."
+  }
+]

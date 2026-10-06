@@ -1,0 +1,679 @@
+[
+  {
+    "id": "career-backcast",
+    "title": "从工作要求反推学习路径",
+    "advisor_slugs": [
+      "zhangxuefeng-perspective"
+    ],
+    "steps": [
+      "先从目标岗位倒查常见入职要求和真实招聘样本，不凭热门专业名称下结论。",
+      "比较课程、训练机会、毕业去向与总成本，区分学校宣传和有日期的数据。",
+      "把家庭约束、兴趣、能力证据和保底路径一起比较；资料不足时安排低成本访谈或课程体验。"
+    ],
+    "outputs": [
+      "候选路径比较表、关键缺口、一个核实动作"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/zhangxuefeng-skill/tree/3501b1e679cf595a6af800619af757aba46d7574"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "skill-leverage",
+    "title": "能力组合与可复制交付",
+    "advisor_slugs": [
+      "naval-perspective",
+      "dan-koe-skill"
+    ],
+    "steps": [
+      "从真实作品或经历确认能解决的问题与技能组合。",
+      "比较个人时间投入、复制成本、维护成本和可持续的日程。",
+      "用一份内容、产品或服务样本检验目标读者或客户的真实反馈。"
+    ],
+    "outputs": [
+      "能力证据",
+      "交付样本与反馈标准"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/naval-skill/tree/0de29b12a7c47088c9e1c0b144d6eb0ed1a04b49",
+      "https://github.com/Solarrr007/dan-koe-skill/tree/a647dbdc7a8bcca11e135e2aee97eac90a18a8fe"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "requirement-pruning",
+    "title": "必要性核对与减法试验",
+    "advisor_slugs": [
+      "elon-musk-perspective",
+      "laozi-perspective"
+    ],
+    "steps": [
+      "列出必要责任、客观限制和可质疑的习惯性动作。",
+      "比较删除、减少干预或简化过程的收益与遗漏风险。",
+      "先做可撤销的小改动，根据后果再决定加速或自动化。"
+    ],
+    "outputs": [
+      "必要与可删清单",
+      "减法试验和停止条件"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/elon-musk-skill/tree/b5dad76f9da33c433abd80feb794625b2309e867",
+      "https://github.com/nuwa-skills/laozi-skill/tree/ac27fca32a651eeec122d0da7e946f00238a924e"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "journey-review",
+    "title": "从用户任务检查完整体验",
+    "advisor_slugs": [
+      "steve-jobs-perspective",
+      "fengtang-perspective"
+    ],
+    "steps": [
+      "明确成果被谁使用以及怎样才算达到质量要求。",
+      "沿使用者从开始到完成、失败恢复的过程逐段查看。",
+      "选最大障碍做原型或小交付，以实际使用检查是否改善。"
+    ],
+    "outputs": [
+      "任务与质量标准",
+      "体验缺陷和验收动作"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/steve-jobs-skill/tree/8ae40e10013d5218f85bc0e0241fd804f3b5c5e9",
+      "https://github.com/nuwa-skills/fengtang-skill/tree/6dc23e004cdf22c9d94bb0ffc2d8852febd4c8e0"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "inversion",
+    "title": "倒推失败与寻找反证",
+    "advisor_slugs": [
+      "munger-perspective"
+    ],
+    "steps": [
+      "先倒推最可能导致失败的条件，排除不可承受损失。",
+      "从激励、机会成本和基础概率中选最相关的模型；不用堆术语代替解释。",
+      "找最强反证，区分不知道、可以核实与可承担的不确定性。"
+    ],
+    "outputs": [
+      "失败清单、利益结构、条件化选择"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/munger-skill/tree/12d582ce4a97bcfff1cac032ecef436406feb1c2"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "bounded-validation",
+    "title": "损失受限的假设验证",
+    "advisor_slugs": [
+      "taleb-perspective",
+      "paul-graham-perspective",
+      "ilya-sutskever-perspective",
+      "mao-zedong-perspective",
+      "opc-strategy"
+    ],
+    "steps": [
+      "写一个会影响决定、且能被事实推翻的假设。",
+      "列支持与反对证据，选能区分解释的低成本实验；付费意向与实际支付分别记录。",
+      "限定损失、时限与停止条件，对照结果修改判断，不由一次成功外推全部场景。"
+    ],
+    "outputs": [
+      "假设与证据表",
+      "实验方案",
+      "继续或停止依据"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/taleb-skill/tree/69d58a003318df4c252bb3e8c0c2b1b2df0e994a",
+      "https://github.com/alchaincyf/paul-graham-skill/tree/e6ed220cd417e8bfc100dddd38a41a62fa692a71",
+      "https://github.com/alchaincyf/ilya-sutskever-skill/tree/4829975a3091ffcb41de9ebc6b7bb2ce370ca079",
+      "https://github.com/leezythu/maoxuan-skill/tree/4376a65020b1fd96af65052ccd30accaddedc3f1",
+      "https://github.com/jiangye1314/opc-skill/tree/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：Apache-2.0, MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "teachback-retry",
+    "title": "解释或练习后的反馈重试",
+    "advisor_slugs": [
+      "feynman-perspective",
+      "english-learning-coach",
+      "personal-ai-learning"
+    ],
+    "steps": [
+      "给出一个概念、表达或小任务，让学习者先解释或尝试。",
+      "找最影响理解或完成任务的缺口，提供针对例子与反馈。",
+      "换一个场景或句子立即重试，再核对能否迁移。"
+    ],
+    "outputs": [
+      "初次表现与主要缺口",
+      "改进后的重试结果"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/feynman-skill/tree/3ec26652e3b25c464a3188aeb2365445ce4f3d1d",
+      "https://github.com/zhouwei713/english-learning-coach-skill/tree/fe84b34287fa4385d4ab69cb064b57208d2b4058",
+      "https://github.com/yuewenyumenle/personal-ai-learning/tree/9e6420c8e11f2f9025e8c6f748e471e069dbc2bd"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "minimal-build-evaluation",
+    "title": "最小实现与分项能力评估",
+    "advisor_slugs": [
+      "andrej-karpathy-perspective"
+    ],
+    "steps": [
+      "把任务缩到能从输入跑到输出的最小实现，说明各模块在做什么。",
+      "从真实样本建立小评估集，分别记录成功、失败和不知道，避免用单个演示代表能力。",
+      "对错误设计可复现案例；决定哪一步由人核对、何时回退和如何逐步自动化。"
+    ],
+    "outputs": [
+      "最小项目、评估样例、人工接管点"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/karpathy-skill/tree/0b10e859105b0f1cf116cc235b0fee0abdb929e8"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "business-quality-range",
+    "title": "商业质量与区间估值",
+    "advisor_slugs": [
+      "buffett-perspective"
+    ],
+    "steps": [
+      "先解释收入、成本、资本需求与竞争优势，讲不清的部分留空待查。",
+      "用区间而非单点估值列关键假设，检查现金流、债务及不利情景。",
+      "把价格与价值判断分开，考虑集中度、流动性和自身知识边界。"
+    ],
+    "outputs": [
+      "商业质量清单、估值假设区间、待核实风险"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/buffett-skill/tree/7f3f017343c359c4fe5c4d450c67df5c560dc890"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "feedback-analysis",
+    "title": "预期与实际结果对照",
+    "advisor_slugs": [
+      "drucker-perspective",
+      "zengguofan-perspective",
+      "wangyangming-perspective",
+      "montaigne-perspective"
+    ],
+    "steps": [
+      "行动前记录预期、关键假设及怎样算改善。",
+      "到合适复查时间，用真实结果对照预期，区分结果与个人解释。",
+      "找可改变的环节，保留未知，决定继续、调整、求助或停止。"
+    ],
+    "outputs": [
+      "预期结果对照",
+      "调整原因与下一步"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/drucker-skill/tree/8a24897e79835f78431cde9ca4c43ec02907627a",
+      "https://github.com/nuwa-skills/zengguofan-skill/tree/d5473016af878493b56fa7e5ea7c99de8b9de7da",
+      "https://github.com/nuwa-skills/wangyangming-skill/tree/773f32f1040c477727a666a79a045692b9e53e75",
+      "https://github.com/nuwa-skills/montaigne-skill/tree/bacac66fa850d1d5d7d13a13761dfec77fa0cec3"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "bottleneck-context",
+    "title": "识别瓶颈并补足协作上下文",
+    "advisor_slugs": [
+      "grove-perspective",
+      "zhang-yiming-perspective"
+    ],
+    "steps": [
+      "从实际产出和流程定位限制进展的环节。",
+      "核对信息、资源、激励和任务经验，不急着归咎于个人态度。",
+      "补足共同目标和所需上下文，安排一个有反馈的协作改动。"
+    ],
+    "outputs": [
+      "瓶颈假设与证据",
+      "协作改动和复查信号"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/grove-skill/tree/9ad0a6819cdd04bb7788e4abd685c934ffca2d9c",
+      "https://github.com/alchaincyf/zhang-yiming-skill/tree/db80fcc0a8ea892ef294439a9a4805cf96419a03"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "control-scope",
+    "title": "可控范围与压力应对",
+    "advisor_slugs": [
+      "aurelius-perspective",
+      "stress-management"
+    ],
+    "steps": [
+      "分清触发事件、身体或情绪反应与自动判断。",
+      "区分可直接改变、可影响和需要接受或求助的部分。",
+      "先做舒适的暂停，再选择实际减负或有价值的回应，记录后续效果。"
+    ],
+    "outputs": [
+      "可控范围图",
+      "一个应对动作和支持选项"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/aurelius-skill/tree/f93147c94415ade6c288e0c1a686b5408dbd54a8",
+      "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "meaning-options",
+    "title": "从贡献、体验与态度探索意义",
+    "advisor_slugs": [
+      "frankl-perspective"
+    ],
+    "steps": [
+      "承认痛苦与约束，不急着赋予遭遇积极意义。",
+      "从创造或贡献、体验或关系、无法改变处境中的态度三个角度找用户自己认可的方向。",
+      "选一个当下能承担的小行动，并允许暂停或求助。"
+    ],
+    "outputs": [
+      "价值线索、支持资源、可行下一步"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/frankl-skill/tree/f3b360bc5f55f01c52c22bf8defadf89d6da1d4f"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "responsibility-boundary",
+    "title": "区分责任并提出合作请求",
+    "advisor_slugs": [
+      "adler-perspective"
+    ],
+    "steps": [
+      "区分可核对的行为和对他人动机的猜测。",
+      "明确哪些是自己的选择、哪些需要协商、哪些由别人决定，同时保留共同责任。",
+      "用可完成的贡献或合作练习替代争取认可，复盘实际反馈。"
+    ],
+    "outputs": [
+      "责任边界、合作请求、一次小练习"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/adler-skill/tree/53db90db67d6dbbc64fb3a3ec72f607807a51794"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "habit-cue-recovery",
+    "title": "线索、最小动作与中断恢复",
+    "advisor_slugs": [
+      "clear-perspective"
+    ],
+    "steps": [
+      "将目标缩成能开始的最小动作，绑定已有日常线索。",
+      "调整环境，让准备步骤少一些、干扰远一些；设计可见反馈而非只靠意志。",
+      "记录实际重复与动作质量，中断后恢复小版本，再按反馈增加难度。"
+    ],
+    "outputs": [
+      "触发动作反馈卡、环境调整、恢复方案"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/clear-skill/tree/2198fc510d898169cc12e48e5bdd2c716ce562cc"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "interview-evidence",
+    "title": "岗位能力与真实经历证据",
+    "advisor_slugs": [
+      "interview-master"
+    ],
+    "steps": [
+      "把岗位能力要求与经历证据逐项对应，缺口用练习或诚实说明处理。",
+      "选一个真实事件，讲清情境、责任、本人动作、结果与反思，区分团队成果和个人贡献。",
+      "按岗位问一个具体问题，等待回答，再给事实与表达反馈并重试。"
+    ],
+    "outputs": [
+      "能力证据表、一段可讲经历、下一轮练习"
+    ],
+    "source_urls": [
+      "https://github.com/chen3tu/interview-master-skill/tree/de3a72cd9493f09d3c33079587e37130b62cbd2b"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "interests-request",
+    "title": "从立场转为利益与可拒绝请求",
+    "advisor_slugs": [
+      "conflict-resolution",
+      "workplace-communication"
+    ],
+    "steps": [
+      "用可核对事件描述冲突，缺席方的动机只作为待确认假设。",
+      "把双方立场转成需要与约束，明确自己的责任边界。",
+      "准备观察、影响、请求及对方可拒绝的替代方案，安排复查；危险情境优先安全。"
+    ],
+    "outputs": [
+      "利益与约束表",
+      "沟通草稿及后续选项"
+    ],
+    "source_urls": [
+      "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09",
+      "https://github.com/wanghoween-design/gaoqingshang-skill/tree/cc79ac9bd206cb447b2b6390c9d869cd004dcd88"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "cashflow-buffer",
+    "title": "按日期核算现金流与中断缺口",
+    "advisor_slugs": [
+      "budget-builder",
+      "emergency-fund-planner"
+    ],
+    "steps": [
+      "列出到手现金、支出日期、必要义务及现有可动用余额。",
+      "逐期计算缺口，并增加不同收入中断与突发支出情景。",
+      "比较可持续的调整和现金缓冲积累方案，区分可预见年付费用与应急支出。"
+    ],
+    "outputs": [
+      "日期现金表",
+      "中断情景缺口",
+      "积累与动用规则"
+    ],
+    "source_urls": [
+      "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09",
+      "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "compensation-package",
+    "title": "按总报酬与替代选择准备谈判",
+    "advisor_slugs": [
+      "salary-negotiation"
+    ],
+    "steps": [
+      "按相近岗位与日期核对市场范围，区分固定、浮动、股权和福利。",
+      "根据真实替代选择确定可接受条件与目标，不编造竞争Offer。",
+      "草拟依据和让步顺序；如果工资受限，比较其他确有价值的条件并确认书面文本。"
+    ],
+    "outputs": [
+      "总报酬比较、谈判草稿、需书面核实项"
+    ],
+    "source_urls": [
+      "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "concept-counterexample",
+    "title": "具体用法与反例澄清",
+    "advisor_slugs": [
+      "socrates-perspective",
+      "wittgenstein-perspective"
+    ],
+    "steps": [
+      "把含混词语放回实际用法，要求一个具体例子而非抽象口号。",
+      "查明结论依赖的标准和前提，用反例或语境变化检验。",
+      "重写成可判断、可采取行动的问题，给条件化建议，不无限追问。"
+    ],
+    "outputs": [
+      "概念及语境区别",
+      "关键前提与改写问题"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/socrates-skill/tree/7fcc9ade859af7fc23a72031e510daba9156c5e6",
+      "https://github.com/nuwa-skills/wittgenstein-skill/tree/7c77610e214cff3e90b49e2ecd21bc244a9f0e82"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "contextual-virtue",
+    "title": "情境中的适度行动",
+    "advisor_slugs": [
+      "aristotle-perspective"
+    ],
+    "steps": [
+      "说明决定是为了什么，区分即时快乐、长期活动和关系条件。",
+      "识别相关行为的不足与过度，在此人此境中寻找合适行动，不取机械平均。",
+      "把选择转成可练习的习惯，复查它是否支持所重视的生活。"
+    ],
+    "outputs": [
+      "目的与取舍、情境化行动、习惯复查"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/aristotle-skill/tree/2adf130171cef24a144b399dd29e8e93a07abc0a"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "consistent-respect",
+    "title": "规则一致性与尊重检查",
+    "advisor_slugs": [
+      "kant-perspective"
+    ],
+    "steps": [
+      "把理由写成如果处在相同情境就采用的规则，检查能否一致对待所有人。",
+      "检查是否把别人仅当工具，是否尊重知情、拒绝和同意。",
+      "同时说明伤害、义务冲突及现实保护选项，给出有条件的建议。"
+    ],
+    "outputs": [
+      "行为规则、尊重检查、伦理冲突说明"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/kant-skill/tree/d72e2da4cff7083cb3fe6d5d0e27ecf213b9dfe3"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "value-reassessment",
+    "title": "审视成功标准及其代价",
+    "advisor_slugs": [
+      "nietzsche-perspective",
+      "zhuangzi-perspective"
+    ],
+    "steps": [
+      "列出正在采用的评价标准、来源和代价。",
+      "寻找其他处境下合理的尺度，区分本人认同与外界压力。",
+      "以可承受的小体验检验新方向，不用一种绝对成功观替代另一种。"
+    ],
+    "outputs": [
+      "评价标准及代价",
+      "可尝试的替代方向"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/nietzsche-skill/tree/18fc393fae875e922ff7b3ffdeb103471de576dc",
+      "https://github.com/nuwa-skills/zhuangzi-skill/tree/2acd5532cacb9167b7da5e2f3cbebc6dc07706cb"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "situated-choice",
+    "title": "分析处境并扩大实际选择",
+    "advisor_slugs": [
+      "beauvoir-perspective"
+    ],
+    "steps": [
+      "区分本人愿望、被期待角色和可改变的限制，不预设性别经验。",
+      "检查谁有决定权、退出权和资源，是否存在相互承认。",
+      "提出扩大实际选择空间的步骤，说明个人行动与结构限制各自作用。"
+    ],
+    "outputs": [
+      "处境地图、选择空间、支持与资源动作"
+    ],
+    "source_urls": [
+      "https://github.com/nuwa-skills/beauvoir-skill/tree/1d349b738e2def57ac1ee86d3c0d78ee62e14ee4"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "growth-pipeline",
+    "title": "从获客到验收逐段查漏",
+    "advisor_slugs": [
+      "opc-growth"
+    ],
+    "steps": [
+      "选择能到达目标客户的一个主渠道，写清有效线索标准。",
+      "把咨询、需求诊断、报价、启动、验收逐段检查，找掉落原因。",
+      "交付后核对承诺和结果，再征询反馈或复购需求，分别计算收入与成本。"
+    ],
+    "outputs": [
+      "客户流程、报价要点、验收与跟进安排"
+    ],
+    "source_urls": [
+      "https://github.com/jiangye1314/opc-skill/tree/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：Apache-2.0。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "training-progression",
+    "title": "按表现与恢复调整训练",
+    "advisor_slugs": [
+      "personal-trainer"
+    ],
+    "steps": [
+      "确认可安全进行的动作和起始难度，按可持续频率设计训练而非最大训练量。",
+      "给每项动作组次区间、强度感受和替代方案，先保证动作可控与恢复。",
+      "依据连续表现逐步加量；疼痛、异常不适或明显恢复不足时停止相关动作并调整。"
+    ],
+    "outputs": [
+      "训练安排、进阶条件、恢复与停止信号"
+    ],
+    "source_urls": [
+      "https://github.com/Builtbyaran/Personal-trainer-skill/tree/c124827dd0e855926548d8a32e2a7b39d9a928ba"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "woop-if-then",
+    "title": "愿望、障碍与如果—那么计划",
+    "advisor_slugs": [
+      "think-woop"
+    ],
+    "steps": [
+      "写清愿望及实现后最有价值的结果。",
+      "识别主要内在障碍，同时另列外部资源限制，不把外部障碍归咎于意志。",
+      "把触发情景和小行动写成如果—那么计划；若目标不可行则调整或退出。"
+    ],
+    "outputs": [
+      "愿望、结果、障碍、如果—那么计划卡"
+    ],
+    "source_urls": [
+      "https://github.com/product-on-purpose/thinking-framework-skills/tree/b8c6cb9eb9a5dd57e980c402f84c93350e86cf9f"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：Apache-2.0。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "debt-sequencing",
+    "title": "按有效成本与现金约束比较还款",
+    "advisor_slugs": [
+      "debt-payoff-planner"
+    ],
+    "steps": [
+      "先识别逾期、抵押物和基本生活风险，核对合同义务。",
+      "在可承担现金下比较高有效成本优先与小余额优先，展示费用和执行差异。",
+      "条件足够才做期初余额加利息费用减还款的逐期表，置换时比较总成本而非只看月供。"
+    ],
+    "outputs": [
+      "债务表、两种顺序比较、待向机构核实项"
+    ],
+    "source_urls": [
+      "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "ownership-cost",
+    "title": "总拥有成本与付款现金分开比较",
+    "advisor_slugs": [
+      "big-purchase-decision"
+    ],
+    "steps": [
+      "比较继续使用、维修、借租、二手与购买等可行选项。",
+      "同一时间窗算购买价加融资及运行维护费用减残值，不能再重复加入全额折旧。",
+      "另算首付和逐期付款的现金压力，检查收入下降或维修情景，核对实际报价条款。"
+    ],
+    "outputs": [
+      "总成本比较、现金路径、购买或等待的条件"
+    ],
+    "source_urls": [
+      "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "medical-timeline",
+    "title": "有出处的就诊摘要与问题准备",
+    "advisor_slugs": [
+      "informed-patient"
+    ],
+    "steps": [
+      "分清本人描述、测量、医生记录和推测，保留日期、单位与原参考范围。",
+      "整理症状变化、处理反应和最影响生活的问题，只补会改变准备工作的缺口。",
+      "形成检查目的、可能利弊、替代方案与随访条件的问题清单；医学解释核对当前可靠来源。"
+    ],
+    "outputs": [
+      "一页就诊摘要、待问医生的问题、缺失资料"
+    ],
+    "source_urls": [
+      "https://github.com/DrCatHicks/informed-patient/tree/3b8583a065a0c37374e84b12877c02b808bd06b8"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：CC-BY-4.0。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。 原作者 Dr. Cat Hicks；CC-BY-4.0：https://creativecommons.org/licenses/by/4.0/ 。"
+  },
+  {
+    "id": "policy-conditions",
+    "title": "按真实条款核对保障条件",
+    "advisor_slugs": [
+      "insurance-agent-policy-explanation"
+    ],
+    "steps": [
+      "按原文逐项核对保障事件、金额计算、等待期、免赔、比例与限额。",
+      "同等突出免责、告知和通知义务，区分合同文字、用户事实与解释疑问。",
+      "核对续保期间、条件、费率和退保现金价值，缺少条款时列需书面确认的问题。"
+    ],
+    "outputs": [
+      "条款定位表、条件与限制、书面核实问题"
+    ],
+    "source_urls": [
+      "https://github.com/aliyun/qwen-dianjin/tree/9a0d0b871e8b84068d687b3260561b41b0609393"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "sleep-routine-trial",
+    "title": "作息基线与单变量调整",
+    "advisor_slugs": [
+      "sleep-optimizer"
+    ],
+    "steps": [
+      "先看工作日与休息日的变化，选择可持续的起床与睡眠机会安排。",
+      "从光照、咖啡因时点、环境和睡前活动中选最相关一项调整。",
+      "比较调整前后的入睡、醒来和白天状态，避免同时改变所有因素。"
+    ],
+    "outputs": [
+      "作息试验、简短记录、复查条件"
+    ],
+    "source_urls": [
+      "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "audience-promise",
+    "title": "观众承诺与分段内容验证",
+    "advisor_slugs": [
+      "mrbeast-perspective"
+    ],
+    "steps": [
+      "用一句话说明观众点开后应得到什么，检查标题封面与内容是否一致。",
+      "逐段看新信息、理解障碍和流失证据，提出可验证的删改而非只加刺激。",
+      "选一个成本可控的版本实验，比较同一口径指标及制作代价。"
+    ],
+    "outputs": [
+      "观众承诺、分段修改、实验方案"
+    ],
+    "source_urls": [
+      "https://github.com/alchaincyf/mrbeast-skill/tree/f63f0c5d4a2040ebf3540ec336a67a8bff12fd94"
+    ],
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  }
+]

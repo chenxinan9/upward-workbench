@@ -1,0 +1,1124 @@
+{
+  "version": "0.2.1",
+  "scope": "source candidate; not authorization to publish",
+  "metrics": {
+    "advisor_source_entries": 55,
+    "source_categories": 51,
+    "registered_workflows": 8,
+    "sourced_reminders": 7,
+    "bundled_adapted_skills": 51,
+    "registered_deduplicated_methods": 33,
+    "methods_scope": "reviewed retained subset; not all methods in all original texts",
+    "bundled_third_party_full_skills": 0,
+    "bundle_license_distribution": {
+      "MIT": 47,
+      "Apache-2.0": 3,
+      "CC-BY-4.0": 1
+    },
+    "local_installed_count": "requires local connection; not measured by public package",
+    "knowledge_documents": "requires local connection; not measured by public package",
+    "outcomes": "not measured"
+  },
+  "files": [
+    {
+      "path": ".github/workflows/check.yml",
+      "bytes": 644,
+      "sha256": "ff5158030f351b3e47158004072fc18ed410085e85fca5c79f70cee92913f1d9"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 123,
+      "sha256": "5d2ab7df9d5efccd377867724f7fe7458b925c6b2e9f977c7eaa85b54b715bd3"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 2998,
+      "sha256": "8d64e27654c41937014f2a8dd5233c5dfc55837168678baed8acb2fb61b5af02"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1081,
+      "sha256": "13fb91ad7887d2019c28f435fbcbd4ad6754de24d681b1de894e62b32c17555f"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 746,
+      "sha256": "ab6691d21b0a154a4d05497c7a776bbc53489c7e89fa00566c06a18d00fe3df5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7593,
+      "sha256": "92506b1922021e78702e1f48a5a5d23af9a1c2b3244de22f1304ab53a8be1dd7"
+    },
+    {
+      "path": "ROADMAP.md",
+      "bytes": 2526,
+      "sha256": "7d56be5eacdfd409cfb6470ecdc6d7bfe43488ba4fe3d5ff0f0fe34881ebfbc5"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 3104,
+      "sha256": "8f6b3b55fc82e9ce59ecd0238bbb6cb838c363ae65304fcef861bc27576e95c0"
+    },
+    {
+      "path": "advisors-bundle/README.md",
+      "bytes": 2997,
+      "sha256": "da4cdc0406fa027b1f68453d2e87f5f99d34893f31fbc81a8e9cbf83c5c9e7db"
+    },
+    {
+      "path": "advisors-bundle/adler-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/adler-perspective/SKILL.md",
+      "bytes": 2035,
+      "sha256": "00a1021b764e27f4b4a7ba8a055a1d25b6f03435e2db1c275dd85f499feea9f1"
+    },
+    {
+      "path": "advisors-bundle/adler-perspective/provenance.json",
+      "bytes": 2086,
+      "sha256": "3bea505ae42f2aec1b4903b4c02acc9db1c4536c08ac381957672ee318086809"
+    },
+    {
+      "path": "advisors-bundle/andrej-karpathy-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/andrej-karpathy-perspective/SKILL.md",
+      "bytes": 2116,
+      "sha256": "3897a09546c92ba3a8932b2d8779763e0277c8368add242f52c7d8ea12f42410"
+    },
+    {
+      "path": "advisors-bundle/andrej-karpathy-perspective/provenance.json",
+      "bytes": 2103,
+      "sha256": "7ecf941fb75ffe5bdc073ce67f58fff9774cc5a2004a98e760e37b2337ed96da"
+    },
+    {
+      "path": "advisors-bundle/aristotle-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/aristotle-perspective/SKILL.md",
+      "bytes": 2061,
+      "sha256": "c86bea9036339463655229f0238b083f4025bbcf3bd487f6689a1682f432bb14"
+    },
+    {
+      "path": "advisors-bundle/aristotle-perspective/provenance.json",
+      "bytes": 2112,
+      "sha256": "c4ed95025c3f9e9bf9533a9ac9ea1aaba09e599f0bea85a367c361eb98211036"
+    },
+    {
+      "path": "advisors-bundle/aurelius-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/aurelius-perspective/SKILL.md",
+      "bytes": 2020,
+      "sha256": "588ab30e856ea5766cb93e930c6d7e18d5d44774442748afc8c87b2d0ca42617"
+    },
+    {
+      "path": "advisors-bundle/aurelius-perspective/provenance.json",
+      "bytes": 2107,
+      "sha256": "6821631f9ba7561560c79ebe5671363b85d335e159af49e16a1c89f84711d625"
+    },
+    {
+      "path": "advisors-bundle/beauvoir-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/beauvoir-perspective/SKILL.md",
+      "bytes": 2062,
+      "sha256": "b5b8a9182e7c07495a5108544decedef1f3632fb8e598cb8327dc30abaa69b87"
+    },
+    {
+      "path": "advisors-bundle/beauvoir-perspective/provenance.json",
+      "bytes": 2101,
+      "sha256": "fd332de3bab1bb0659c5d0e2791dc7efae5addb170ed2fc6aa04b6967bdb5110"
+    },
+    {
+      "path": "advisors-bundle/big-purchase-decision/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "advisors-bundle/big-purchase-decision/SKILL.md",
+      "bytes": 2111,
+      "sha256": "a97e61d30dfcbfb88797e3c13de68c96cd370abbcbb13c2beb5e81a49e9080a7"
+    },
+    {
+      "path": "advisors-bundle/big-purchase-decision/provenance.json",
+      "bytes": 2113,
+      "sha256": "418414c5f827507d0f68ac26a13e0a10789d07e2c7ef829849bf57225472f80a"
+    },
+    {
+      "path": "advisors-bundle/budget-builder/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "advisors-bundle/budget-builder/SKILL.md",
+      "bytes": 2067,
+      "sha256": "d834812c50b96553396683f957ec84ecbe33ad33a81220ab18122e87630097dc"
+    },
+    {
+      "path": "advisors-bundle/budget-builder/provenance.json",
+      "bytes": 2087,
+      "sha256": "efdab2accee09e8991218e166bc212808a74458f69612d175df6e7a4863b07ec"
+    },
+    {
+      "path": "advisors-bundle/buffett-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/buffett-perspective/SKILL.md",
+      "bytes": 2102,
+      "sha256": "eda61889ad27cdfcffe83b82b90cf0528838158e1a7128f3056eeae803c57571"
+    },
+    {
+      "path": "advisors-bundle/buffett-perspective/provenance.json",
+      "bytes": 2096,
+      "sha256": "fe91d3cb62068232671cc6f60ef1c89b11abe7875ccb71b3f919e50e4892e03c"
+    },
+    {
+      "path": "advisors-bundle/bundle-files.json",
+      "bytes": 26161,
+      "sha256": "8b8025e15386cc6901829305581707d45e94177219b6a327d1a5710ecde8e8a6"
+    },
+    {
+      "path": "advisors-bundle/clear-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/clear-perspective/SKILL.md",
+      "bytes": 2058,
+      "sha256": "f14e7919af03cecbb5ed0e3837e68c56af4feeea5b131cd823d952df60f05c65"
+    },
+    {
+      "path": "advisors-bundle/clear-perspective/provenance.json",
+      "bytes": 2088,
+      "sha256": "1abc61f44f2bc230ea020b9972e5bbf6870658f7c3c9228aff0f0f4e13e3beb6"
+    },
+    {
+      "path": "advisors-bundle/conflict-resolution/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "advisors-bundle/conflict-resolution/SKILL.md",
+      "bytes": 2049,
+      "sha256": "1b0619b180c96c05f308ee272305478862a0262e5e5515292f6ad57651250a05"
+    },
+    {
+      "path": "advisors-bundle/conflict-resolution/provenance.json",
+      "bytes": 2094,
+      "sha256": "ff2969045122c9549ba9f4d208cb84e4508fbda0d574ce5142379f79e0e56cb8"
+    },
+    {
+      "path": "advisors-bundle/dan-koe-skill/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/dan-koe-skill/SKILL.md",
+      "bytes": 2045,
+      "sha256": "b318289aafea1b00edbddf013c8b7326212bd9ce115d33a69f77c826555b80e1"
+    },
+    {
+      "path": "advisors-bundle/dan-koe-skill/provenance.json",
+      "bytes": 2084,
+      "sha256": "bae24a26e7431078473e8b2d890aa3fa83a7b2007134998d8774ec3b9fca3942"
+    },
+    {
+      "path": "advisors-bundle/debt-payoff-planner/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "advisors-bundle/debt-payoff-planner/SKILL.md",
+      "bytes": 2091,
+      "sha256": "7a88613e5efe8934afc7b52f337288ad0e52afeb63a385a7094d23b90324c53a"
+    },
+    {
+      "path": "advisors-bundle/debt-payoff-planner/provenance.json",
+      "bytes": 2103,
+      "sha256": "38a0a012b8fec66a06cba442a4d14ca8979be53280cc2801db06ca79678c4d86"
+    },
+    {
+      "path": "advisors-bundle/drucker-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/drucker-perspective/SKILL.md",
+      "bytes": 2027,
+      "sha256": "60330074ad11ea4e09471d1963bd2e79c1674960ccdede461f1f5b2cde409a29"
+    },
+    {
+      "path": "advisors-bundle/drucker-perspective/provenance.json",
+      "bytes": 2096,
+      "sha256": "14f517e56cbfa76b423315498f03d16fb996d3072519f45dc21176e15a8145af"
+    },
+    {
+      "path": "advisors-bundle/elon-musk-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/elon-musk-perspective/SKILL.md",
+      "bytes": 2181,
+      "sha256": "9c250fe5ef7a0725caafd17bdcd4f27d1d93e1aa071b890dc80cd8c87ab2e8e6"
+    },
+    {
+      "path": "advisors-bundle/elon-musk-perspective/provenance.json",
+      "bytes": 2102,
+      "sha256": "b4f673f25426e7f196d36134695842ce1440e384d39d76b958d4a1745d4d329e"
+    },
+    {
+      "path": "advisors-bundle/emergency-fund-planner/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "advisors-bundle/emergency-fund-planner/SKILL.md",
+      "bytes": 2082,
+      "sha256": "226e1f8751e0d79cd7ee46cb605d6dea2bc183ac86d07d3d04ebffb2d7adf4e5"
+    },
+    {
+      "path": "advisors-bundle/emergency-fund-planner/provenance.json",
+      "bytes": 2103,
+      "sha256": "6cbe5b0f1cebb75eaccae7062ef3d9d3f7e4bc794658353a166dd5eec758181f"
+    },
+    {
+      "path": "advisors-bundle/english-learning-coach/LICENSE",
+      "bytes": 1045,
+      "sha256": "c390ddc5d96735f392c97d9da852a8612814340a2c49e8817c74756f324dd06c"
+    },
+    {
+      "path": "advisors-bundle/english-learning-coach/SKILL.md",
+      "bytes": 2155,
+      "sha256": "f5c017f4d96be4ded684004ad8690ef7d52420708cd718221b62e28f8293cc2e"
+    },
+    {
+      "path": "advisors-bundle/english-learning-coach/provenance.json",
+      "bytes": 2173,
+      "sha256": "57fffd661bee7f4086f78298dbc855095b42c4e192c4582c5ed7f397e8fa7089"
+    },
+    {
+      "path": "advisors-bundle/excluded.json",
+      "bytes": 977,
+      "sha256": "776d5a8a763c47f78c3346f5034f5b96c6b8693fedf6439fdb03aa2c64747ea4"
+    },
+    {
+      "path": "advisors-bundle/fengtang-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/fengtang-perspective/SKILL.md",
+      "bytes": 2032,
+      "sha256": "19607ca5149c6a29ca373665b864ea76b8a94854d6ef8d35b1897c7c47529071"
+    },
+    {
+      "path": "advisors-bundle/fengtang-perspective/provenance.json",
+      "bytes": 2098,
+      "sha256": "fc4621e3b32d87176b17f8da0ed0e6543fb87bee11157a54b68826d67eb47f1c"
+    },
+    {
+      "path": "advisors-bundle/feynman-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/feynman-perspective/SKILL.md",
+      "bytes": 2029,
+      "sha256": "cac8a03c759bb408ad2459ec7672720824754588026a32bf990f54b1bdb67402"
+    },
+    {
+      "path": "advisors-bundle/feynman-perspective/provenance.json",
+      "bytes": 2089,
+      "sha256": "e805b1f728e18db61d00c10039f02b882c7f6aab13b89efc89aa2c16ce307bc3"
+    },
+    {
+      "path": "advisors-bundle/frankl-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/frankl-perspective/SKILL.md",
+      "bytes": 2025,
+      "sha256": "fd35fa73e65153e1b45dd9ca59ba3850a7e898bc54b4d85ec5c1772beeb5c60f"
+    },
+    {
+      "path": "advisors-bundle/frankl-perspective/provenance.json",
+      "bytes": 2094,
+      "sha256": "bb5c9a3d954960296fa6321f5e3cfae8ae68fd3c1684139395b14a302a710ea4"
+    },
+    {
+      "path": "advisors-bundle/grove-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/grove-perspective/SKILL.md",
+      "bytes": 2041,
+      "sha256": "d999a84bbc4e2a85e3967afe52747418bf77f89d3966abe9cfb05be785f6be94"
+    },
+    {
+      "path": "advisors-bundle/grove-perspective/provenance.json",
+      "bytes": 2086,
+      "sha256": "3178d547dc55f3171919949ce40fb0f0662a73c2931c3c0eb6cc810b0d1c59e0"
+    },
+    {
+      "path": "advisors-bundle/ilya-sutskever-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/ilya-sutskever-perspective/SKILL.md",
+      "bytes": 2066,
+      "sha256": "7b7d4b55b52956f23491db3ed9b1398860582698d6970a68a5e118b6cf4b6535"
+    },
+    {
+      "path": "advisors-bundle/ilya-sutskever-perspective/provenance.json",
+      "bytes": 2122,
+      "sha256": "34a3c1b9d80a10759e1329501113517486d76944ecae2d2637805bc14cac61d5"
+    },
+    {
+      "path": "advisors-bundle/informed-patient/LICENSE",
+      "bytes": 18656,
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    {
+      "path": "advisors-bundle/informed-patient/SKILL.md",
+      "bytes": 2379,
+      "sha256": "6ffb17299709a921ecb79ee6af72257b20fceb1190bc955e8528299b75077a0e"
+    },
+    {
+      "path": "advisors-bundle/informed-patient/provenance.json",
+      "bytes": 2222,
+      "sha256": "87848a59e4e98b5b33d5f2843914aec7712694dcc248301562ab7d29356f08c5"
+    },
+    {
+      "path": "advisors-bundle/install.py",
+      "bytes": 3484,
+      "sha256": "646bf16d13bc53637ea8d54719827ad4e50df00f1b93c8ed10a33e22690b7b83"
+    },
+    {
+      "path": "advisors-bundle/insurance-agent-policy-explanation/LICENSE",
+      "bytes": 1091,
+      "sha256": "3da232504cfd60f6bdbc094f204ea3bcaeb754eafca22ef8805d0392171e89c2"
+    },
+    {
+      "path": "advisors-bundle/insurance-agent-policy-explanation/SKILL.md",
+      "bytes": 2165,
+      "sha256": "94a78b6865067e7ef5ddd934113d144d14c4782647ce9584618a7b1d48fa3e49"
+    },
+    {
+      "path": "advisors-bundle/insurance-agent-policy-explanation/provenance.json",
+      "bytes": 2146,
+      "sha256": "eacea0926b38ced687694165a557b60475c7b7e2494a0b9972f51a31008fe231"
+    },
+    {
+      "path": "advisors-bundle/interview-master/LICENSE",
+      "bytes": 1086,
+      "sha256": "0e15af77d9f36add9f315222edf7e4053d53ac0771504c5a04b404cefcf62e63"
+    },
+    {
+      "path": "advisors-bundle/interview-master/SKILL.md",
+      "bytes": 2108,
+      "sha256": "7d9a3bf8d1b7279e9c29c033a7855eb13dc408dcee1d8bc00770859bdc310975"
+    },
+    {
+      "path": "advisors-bundle/interview-master/provenance.json",
+      "bytes": 2118,
+      "sha256": "98e2ba49ea0bada10bf662ccdcd32a741681d8e83727a1881ae6c0bc79f0e5ac"
+    },
+    {
+      "path": "advisors-bundle/kant-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/kant-perspective/SKILL.md",
+      "bytes": 2057,
+      "sha256": "62f15fcc5989b4e0acf8fdc441e4b46cf1a61092f77981b05d91f587daa631c8"
+    },
+    {
+      "path": "advisors-bundle/kant-perspective/provenance.json",
+      "bytes": 2078,
+      "sha256": "2fc5f19bb8004b78eb6db641dbb096e96a4a06cad2745236a8af4040bde05e09"
+    },
+    {
+      "path": "advisors-bundle/laozi-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/laozi-perspective/SKILL.md",
+      "bytes": 2014,
+      "sha256": "27a744c22c81b87c96cbe13f42869744a295302603abf026c40372bd57fe29f7"
+    },
+    {
+      "path": "advisors-bundle/laozi-perspective/provenance.json",
+      "bytes": 2083,
+      "sha256": "d902a6ef95b96d5089440116de8c4131421c87abbede2d0e888a9b4fa058c599"
+    },
+    {
+      "path": "advisors-bundle/manifest.json",
+      "bytes": 15532,
+      "sha256": "f27bae495b465e79e9c17ba9db3aee4a930b305f84965777d09e884ddcf59dc2"
+    },
+    {
+      "path": "advisors-bundle/mao-zedong-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/mao-zedong-perspective/SKILL.md",
+      "bytes": 2111,
+      "sha256": "e59c3ca6c0637a3f80edc94e2a68d4a7b46d96074b6051f618e8e899cfff28e0"
+    },
+    {
+      "path": "advisors-bundle/mao-zedong-perspective/provenance.json",
+      "bytes": 2090,
+      "sha256": "c252f52e3c22074aa7fc3c4565d996d5ca3de3133c317f23b4e80a55d8459489"
+    },
+    {
+      "path": "advisors-bundle/methods.json",
+      "bytes": 30680,
+      "sha256": "f2ef328cb85613e88a0877d2378b9fdea9ed2f5e57a5e6f43cf231e4c2e713d1"
+    },
+    {
+      "path": "advisors-bundle/montaigne-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/montaigne-perspective/SKILL.md",
+      "bytes": 1977,
+      "sha256": "2d545c38f0b7482e5edcdfd9f5f72db79cf2da7372fe506c46accbca93470996"
+    },
+    {
+      "path": "advisors-bundle/montaigne-perspective/provenance.json",
+      "bytes": 2103,
+      "sha256": "184f3a321bc4a8524d8aa3b03bc37a33bca15e9050a8d4707d287a65e31b8d4f"
+    },
+    {
+      "path": "advisors-bundle/mrbeast-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/mrbeast-perspective/SKILL.md",
+      "bytes": 2102,
+      "sha256": "02f73e3a1f38c44d2873338da80ab1732be0ed7aa2b55228d58ea1128ba9e744"
+    },
+    {
+      "path": "advisors-bundle/mrbeast-perspective/provenance.json",
+      "bytes": 2090,
+      "sha256": "2dda8989692cd1a67dae53abb0fbdeeecf1e4ead0a81a6c1dac4b21134998a34"
+    },
+    {
+      "path": "advisors-bundle/munger-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/munger-perspective/SKILL.md",
+      "bytes": 2021,
+      "sha256": "01c11f7f42de30dca03b3e878a80a76bd1a495d85b4c919de0ca58edc74e2337"
+    },
+    {
+      "path": "advisors-bundle/munger-perspective/provenance.json",
+      "bytes": 2084,
+      "sha256": "c3d21e601cdb3c7a94323069d096b8280e04baefbc0ac9da3d0d3fb391e62270"
+    },
+    {
+      "path": "advisors-bundle/naval-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/naval-perspective/SKILL.md",
+      "bytes": 2118,
+      "sha256": "956b0e733b692dbb8dc75be07e52b60ccbbe31fd6d9f9079527a5139d87d690a"
+    },
+    {
+      "path": "advisors-bundle/naval-perspective/provenance.json",
+      "bytes": 2082,
+      "sha256": "82f4d31f960e6a4dd06a029e7093636b709eaabb5717e06ca1db2702f75fafe5"
+    },
+    {
+      "path": "advisors-bundle/nietzsche-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/nietzsche-perspective/SKILL.md",
+      "bytes": 2055,
+      "sha256": "42ca37196bb6eb39f1caaac415d879ccb701556f399c563da0eea55a2726c103"
+    },
+    {
+      "path": "advisors-bundle/nietzsche-perspective/provenance.json",
+      "bytes": 2103,
+      "sha256": "01955c022dd1ea60bc274dc3822fccb163f2459a664046afeb834261dce28452"
+    },
+    {
+      "path": "advisors-bundle/opc-growth/LICENSE",
+      "bytes": 9072,
+      "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
+    },
+    {
+      "path": "advisors-bundle/opc-growth/SKILL.md",
+      "bytes": 2084,
+      "sha256": "b0985e9eb8969fcb62eba276aa77b30f589f2927f48a494cf7ca62dc24b6a9ac"
+    },
+    {
+      "path": "advisors-bundle/opc-growth/provenance.json",
+      "bytes": 2107,
+      "sha256": "ce28963e5fcc57dac6384976ef796c77126f7f58df04824c79dc688a5afca640"
+    },
+    {
+      "path": "advisors-bundle/opc-strategy/LICENSE",
+      "bytes": 9072,
+      "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
+    },
+    {
+      "path": "advisors-bundle/opc-strategy/SKILL.md",
+      "bytes": 2116,
+      "sha256": "24f215f100dbbed64333f2991ce92d480a052e39cf153f9e1a58a680f4d24a6c"
+    },
+    {
+      "path": "advisors-bundle/opc-strategy/provenance.json",
+      "bytes": 2111,
+      "sha256": "6c6d5cb098b5e1a1a9e7676a2efefd7ac1e4a4dd7241e6c435ffd1ed2c3d4e5c"
+    },
+    {
+      "path": "advisors-bundle/paul-graham-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/paul-graham-perspective/SKILL.md",
+      "bytes": 2054,
+      "sha256": "def98b0b2ccb58f2973f6add709fbfdb2be788d0fc794ef0e8bc2a83402ed863"
+    },
+    {
+      "path": "advisors-bundle/paul-graham-perspective/provenance.json",
+      "bytes": 2114,
+      "sha256": "cde60b5f7fe1957d1a64950dac14a98ef9d1b99afdca460f5c432128fd89e2e7"
+    },
+    {
+      "path": "advisors-bundle/personal-ai-learning/LICENSE",
+      "bytes": 1096,
+      "sha256": "6ae494275f005683b896ca506a2cc66a11d57d9ba80beb4873d4aefe9f0535a7"
+    },
+    {
+      "path": "advisors-bundle/personal-ai-learning/SKILL.md",
+      "bytes": 2069,
+      "sha256": "10798d78fdfe2d6f2da6c454f56e07354cf653897160f58972ba1189b6ff78b8"
+    },
+    {
+      "path": "advisors-bundle/personal-ai-learning/provenance.json",
+      "bytes": 2144,
+      "sha256": "9a53723ce7f8da65c1bca995eb7d5caaace102107d3df539ead0add81e8d6694"
+    },
+    {
+      "path": "advisors-bundle/personal-trainer/LICENSE",
+      "bytes": 1084,
+      "sha256": "3cc14293ed0c6778dd3a77b0114e24a764fb4a2f2feced3d3e101556169f8cf2"
+    },
+    {
+      "path": "advisors-bundle/personal-trainer/SKILL.md",
+      "bytes": 2171,
+      "sha256": "9e3ae634f2b3a16dd8b780876469a5c554a29d4735bd8553ecf8871988f852ab"
+    },
+    {
+      "path": "advisors-bundle/personal-trainer/provenance.json",
+      "bytes": 2164,
+      "sha256": "be5491ff784b04cfb954d407d664c4fb2c21d16c4a991106f8f3cd8e6aed8090"
+    },
+    {
+      "path": "advisors-bundle/salary-negotiation/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "advisors-bundle/salary-negotiation/SKILL.md",
+      "bytes": 2072,
+      "sha256": "5bc7fa1b7a6be574f9f70af0ae6e9c0bdec5df02bbefd61d5978da0150244e5c"
+    },
+    {
+      "path": "advisors-bundle/salary-negotiation/provenance.json",
+      "bytes": 2092,
+      "sha256": "81f406b429c7b883ad44989bf85990cb24163b45bece062516b342f5ba94222c"
+    },
+    {
+      "path": "advisors-bundle/sleep-optimizer/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "advisors-bundle/sleep-optimizer/SKILL.md",
+      "bytes": 2072,
+      "sha256": "a541daf087f2cbb014a57b504516b5681de6d7c4b3e52f421a6adcc5881891f1"
+    },
+    {
+      "path": "advisors-bundle/sleep-optimizer/provenance.json",
+      "bytes": 2086,
+      "sha256": "c20c2bde81a68b1d8ad0a83ecd7906e75790b4a8e453838f1fdec8e1b2d36d77"
+    },
+    {
+      "path": "advisors-bundle/socrates-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/socrates-perspective/SKILL.md",
+      "bytes": 2038,
+      "sha256": "c8357f792aea6f12f88eb186d0fc48eeec5a725a8c959811034031240b6b7e33"
+    },
+    {
+      "path": "advisors-bundle/socrates-perspective/provenance.json",
+      "bytes": 2104,
+      "sha256": "d7a15668e18e7c6aa446bd9501ef972631290260908de59b0a8c517002447f5c"
+    },
+    {
+      "path": "advisors-bundle/steve-jobs-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/steve-jobs-perspective/SKILL.md",
+      "bytes": 2065,
+      "sha256": "40cb3dfd3a86a29535b04966855e79dbe51765fb9f97b04473ecc47419fa63bb"
+    },
+    {
+      "path": "advisors-bundle/steve-jobs-perspective/provenance.json",
+      "bytes": 2107,
+      "sha256": "0c8ec9e0b6da81d1f353638da97d672113404521e3e0841196531285761fcc4f"
+    },
+    {
+      "path": "advisors-bundle/stress-management/LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "advisors-bundle/stress-management/SKILL.md",
+      "bytes": 2062,
+      "sha256": "7405df4b2620e4b9cceb168701e05e4369b9866c2e3335a2d3faa51ba748ef12"
+    },
+    {
+      "path": "advisors-bundle/stress-management/provenance.json",
+      "bytes": 2090,
+      "sha256": "bad6718b0cac827cf47ef2886383cf4a5e6a89ed0a4cb0faddef1582f20c74af"
+    },
+    {
+      "path": "advisors-bundle/taleb-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/taleb-perspective/SKILL.md",
+      "bytes": 2064,
+      "sha256": "cee5bcefb063bc944f7acbe0eab8eb630ac50838290930a089e1bfc7d7e2b7e2"
+    },
+    {
+      "path": "advisors-bundle/taleb-perspective/provenance.json",
+      "bytes": 2082,
+      "sha256": "eed7a41c12844194a5119cb445c466d0144caf0f4fa17e6e96d71ccb4aa588d1"
+    },
+    {
+      "path": "advisors-bundle/think-woop/LICENSE",
+      "bytes": 10712,
+      "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+    },
+    {
+      "path": "advisors-bundle/think-woop/SKILL.md",
+      "bytes": 2090,
+      "sha256": "4d3b2d75dd6665da8333fb6a02544097bd1222f89d3e12f35eeca0914bcec20b"
+    },
+    {
+      "path": "advisors-bundle/think-woop/provenance.json",
+      "bytes": 2199,
+      "sha256": "6d36e8a4bfed3ba2e309a39bdab74e77f09bb83c1a7b2bfcd464b3b3d0244948"
+    },
+    {
+      "path": "advisors-bundle/wangyangming-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/wangyangming-perspective/SKILL.md",
+      "bytes": 2040,
+      "sha256": "63bdd000281164c4a4a4f565a514f8b4648eb9070151d5787e421e2d688aee36"
+    },
+    {
+      "path": "advisors-bundle/wangyangming-perspective/provenance.json",
+      "bytes": 2121,
+      "sha256": "46c9470a51140d622690df7245e03142923a4e342360b36ab4ade40bc0557a76"
+    },
+    {
+      "path": "advisors-bundle/wittgenstein-perspective/LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "advisors-bundle/wittgenstein-perspective/SKILL.md",
+      "bytes": 2043,
+      "sha256": "354325746d99d4e10632f770523a8f408473b7eea1351d18c99e88ac7f620aa3"
+    },
+    {
+      "path": "advisors-bundle/wittgenstein-perspective/provenance.json",
+      "bytes": 2127,
+      "sha256": "a99222b990b314421a0d7ee25af76518e08e026cb942dd73f893eca34c14bb6c"
+    },
+    {
+      "path": "advisors-bundle/workplace-communication/LICENSE",
+      "bytes": 1066,
+      "sha256": "fd4b7c7aefc12396a45d5e6badb33a21d4e17d2329e78f8afcdbb84d6620630b"
+    },
+    {
+      "path": "advisors-bundle/workplace-communication/SKILL.md",
+      "bytes": 2066,
+      "sha256": "68b0fbdfd6119854342f7e432c16e6fc7c2981a3d96b4b44ea9e58da8bb1550c"
+    },
+    {
+      "path": "advisors-bundle/workplace-communication/provenance.json",
+      "bytes": 2147,
+      "sha256": "215bf1d711a0b819ab483e5e20ea044050a71123fbc975638952e3027000f322"
+    },
+    {
+      "path": "advisors-bundle/zengguofan-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/zengguofan-perspective/SKILL.md",
+      "bytes": 2027,
+      "sha256": "1b374f5d2b6c5c4e1a2cd6a5b8d457c9b73a1c6a609680316231905b505464c7"
+    },
+    {
+      "path": "advisors-bundle/zengguofan-perspective/provenance.json",
+      "bytes": 2111,
+      "sha256": "ef61b5cfeed9d6df70b1651a5d6d5466213965b18a9fd4c04fc4bd66e1c5ae11"
+    },
+    {
+      "path": "advisors-bundle/zhang-yiming-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/zhang-yiming-perspective/SKILL.md",
+      "bytes": 2078,
+      "sha256": "09575c449aa27f3845f880669f6895b423aaa67a8dfd08698452540b2b9edf53"
+    },
+    {
+      "path": "advisors-bundle/zhang-yiming-perspective/provenance.json",
+      "bytes": 2117,
+      "sha256": "9e2cad7c55851f5e6d408d362d774e3c40c71156b73623e976f31c1222692254"
+    },
+    {
+      "path": "advisors-bundle/zhangxuefeng-perspective/LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "advisors-bundle/zhangxuefeng-perspective/SKILL.md",
+      "bytes": 2129,
+      "sha256": "0636ed11ccf4749fcf17ae897e0a2800186333b4c6cd97995eaf0a7276e50261"
+    },
+    {
+      "path": "advisors-bundle/zhangxuefeng-perspective/provenance.json",
+      "bytes": 2117,
+      "sha256": "e7abeb3fcd276dcf67cdb1bcdad2ea18266cb496f3dab8329ae3f8f970122ce3"
+    },
+    {
+      "path": "advisors-bundle/zhuangzi-perspective/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "advisors-bundle/zhuangzi-perspective/SKILL.md",
+      "bytes": 2035,
+      "sha256": "265bd4b1e607079fc01eaaa1080516da1c1ca28768ddc2c42915bcc832958c84"
+    },
+    {
+      "path": "advisors-bundle/zhuangzi-perspective/provenance.json",
+      "bytes": 2098,
+      "sha256": "3f67aeee43bca495686c288e9b4aecfdf2b37a77a65638021aa0c5193a3dea9f"
+    },
+    {
+      "path": "app.py",
+      "bytes": 32230,
+      "sha256": "b852db4d41a12ad8ab69f3943f86444ec1cc80a423d5dbfcd80ca5718be5f79a"
+    },
+    {
+      "path": "desktop/GrowthDesk.swift",
+      "bytes": 5180,
+      "sha256": "31d0a3fe22def69373e8e9ad35deaa4bb43a228d8d629e85f1bddae2eff944c4"
+    },
+    {
+      "path": "desktop/README.md",
+      "bytes": 1692,
+      "sha256": "32f08ade08b783e626c1c6690625a6c72771ef204b3fab9bbbe72d99e93bc589"
+    },
+    {
+      "path": "desktop/assets/README.md",
+      "bytes": 541,
+      "sha256": "e1da95b0602322209cd5bcfeefc04a219d2b68316b5fe84b57c8c4868ad05326"
+    },
+    {
+      "path": "desktop/assets/upward-icon.png",
+      "bytes": 1145154,
+      "sha256": "f757d1da5040e95b466e43ff9e97729abadf9449e7c30a1e830a585c920d06b2"
+    },
+    {
+      "path": "desktop/icon.swift",
+      "bytes": 766,
+      "sha256": "c80b0519d67bf58d07150adc13770a877c9287ddf7ba17ebf4b12a3fea363334"
+    },
+    {
+      "path": "desktop/install.py",
+      "bytes": 3503,
+      "sha256": "dc9f4b7204895b0e583dfb4c39926216b1e325cf532c90855685020efa7a4763"
+    },
+    {
+      "path": "desktop/start_service.py",
+      "bytes": 1318,
+      "sha256": "07aedea8a25c49b2c9fd66812caa2adcaaa1b9774c95725f894f287213b2da03"
+    },
+    {
+      "path": "docs/acceptance-criteria.md",
+      "bytes": 6369,
+      "sha256": "7d42d4d58485faa21fbd4eae6e2c1dafc8546a6f7eda95a758bc1992e60f7cd2"
+    },
+    {
+      "path": "docs/acceptance-report.md",
+      "bytes": 4845,
+      "sha256": "e277b87aafba809970db1c0baea4f2a0fe0ec21c14e286e31408ac8dc59bb929"
+    },
+    {
+      "path": "docs/advisor-bundle-audit.md",
+      "bytes": 13268,
+      "sha256": "4629a85ed40090d59e94bb5e098db877d09b4d799942fc4bbf9f486223e50e37"
+    },
+    {
+      "path": "docs/audit-findings.md",
+      "bytes": 5708,
+      "sha256": "417bddf1e9d9e09dab6e03640f10df2734179246c25e410282b1816e364f4e69"
+    },
+    {
+      "path": "docs/audit-plan.md",
+      "bytes": 5558,
+      "sha256": "d5d1b63472261b742700ede07f33217ab5aa767d4da88075d6dda98ee3ae828b"
+    },
+    {
+      "path": "docs/daily-use.md",
+      "bytes": 4762,
+      "sha256": "c96dc18805a37bc8e02382ba391aef9ad77199dbf1f9c3bc74353b46eb48c0c5"
+    },
+    {
+      "path": "docs/distribution-policy.md",
+      "bytes": 6634,
+      "sha256": "e9f4dff6226f6af7c0271185b31319906ba5d4c1ae872bdb19d05ba8200bc1a7"
+    },
+    {
+      "path": "docs/getting-started.md",
+      "bytes": 7245,
+      "sha256": "38c350b05913a40b098efa24c9a42b20c611f2386b177033e3dcdc97e56953a0"
+    },
+    {
+      "path": "docs/integration.md",
+      "bytes": 2389,
+      "sha256": "ce0b81f7c54a04273f15f76413abc1c94e4738b4a2513802823cdd73e4b98b3e"
+    },
+    {
+      "path": "docs/page-responsibilities.md",
+      "bytes": 1559,
+      "sha256": "b542a413a4380765ac423048c31ecf204f4d3901b83d2f20024c7b49126a7372"
+    },
+    {
+      "path": "docs/process.md",
+      "bytes": 2678,
+      "sha256": "f848d66687b113a36decf2095ec5cff2acea86c3b8d33567768cb9dc4d9640d0"
+    },
+    {
+      "path": "docs/product.md",
+      "bytes": 9872,
+      "sha256": "38e6e1af25af94b16864bed267c705e24ed525ce36307d90c8f27d71a9dee5ba"
+    },
+    {
+      "path": "docs/research.md",
+      "bytes": 6719,
+      "sha256": "a9ddfaea84bd614ff650f43fa518ebb343aa8cc8ceff1dc9250c8de140a1a4e8"
+    },
+    {
+      "path": "docs/v2-independent-acceptance.md",
+      "bytes": 5813,
+      "sha256": "964bf9d6a8b3271fedbb0d0e64555b6081528f9ddd0bc8f07ec18b0475f1fd6b"
+    },
+    {
+      "path": "docs/v2-validation.md",
+      "bytes": 4250,
+      "sha256": "db577333c9d1e18502734336d28b41f772d194c5c94eed4c336f2b03665f1fff"
+    },
+    {
+      "path": "docs/v2-workflow.md",
+      "bytes": 5393,
+      "sha256": "98f8256a7a748dd1bcf46cecec9d8ee1edfb0cff4b4363bdb0e2b55909fcb3df"
+    },
+    {
+      "path": "docs/validation.md",
+      "bytes": 2853,
+      "sha256": "331d66ddf51a401f3411609b5038e1783dd67f3ff805fffd828368b56dccc007"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 2329,
+      "sha256": "e38f1d6b3d77da295a86bcacd656af0a241fad9289eafa3380d8718756a2ee79"
+    },
+    {
+      "path": "examples/growth-plan.sample.json",
+      "bytes": 13036,
+      "sha256": "debf0c4a375f03c11dd552eecc74c89880248f9b501b493200886d3af12e15d3"
+    },
+    {
+      "path": "examples/init_demo.py",
+      "bytes": 2581,
+      "sha256": "481ad0693e5d75d11ec89d5dc3a2d4e6b9784b70f74309e5ec30074d35d4577d"
+    },
+    {
+      "path": "examples/sources/method.md",
+      "bytes": 782,
+      "sha256": "ee97c9e943140d1415f7162c5b29309e469ebb4e0cd8456601908cd3acd8d58f"
+    },
+    {
+      "path": "examples/sources/profile.md",
+      "bytes": 652,
+      "sha256": "7df464f2d5d114dda663c7d8f15be93964dddf4f8ec142f941f21cfceb920a74"
+    },
+    {
+      "path": "examples/sources/project.md",
+      "bytes": 858,
+      "sha256": "34343af12335947c05cdee948d1cdf18c87280c0a2022525eb4369b06050c190"
+    },
+    {
+      "path": "growth.py",
+      "bytes": 17716,
+      "sha256": "0c39c824931012ee51bfcda894721eac1ed24f958fee554e72ff1ec9b49bdb4a"
+    },
+    {
+      "path": "methods.json",
+      "bytes": 1702,
+      "sha256": "08548903b60efb09f55b89e78a1e2e76c2e36d2ebde4e9ed588f15fc7ea0a6c5"
+    },
+    {
+      "path": "public-advisors.json",
+      "bytes": 23603,
+      "sha256": "901e8bc041510a8fbea89e21e491325339018368131eed8c408836a1a56dcde2"
+    },
+    {
+      "path": "quotes.json",
+      "bytes": 5728,
+      "sha256": "b688d745ce73795c7dec8d2922dd1fd73d3f36fdcdd89d2d03d2cfb22e8cb239"
+    },
+    {
+      "path": "skills/upward-advisor/SKILL.md",
+      "bytes": 3259,
+      "sha256": "614adab74898ee61b2428d7956ef68451ed4f571bf8e15bd337025ad359453d6"
+    },
+    {
+      "path": "skills/upward-advisor/scripts/advisor.py",
+      "bytes": 11291,
+      "sha256": "f1239304938f2346d477edf27eca1ad71780946434016f440e40a124ee94757a"
+    },
+    {
+      "path": "start.command",
+      "bytes": 61,
+      "sha256": "5d51bbe2df4e706c9d371df39156fb2de2f8a345cc85bb50928901143bceb2ce"
+    },
+    {
+      "path": "tests/test_advisor.py",
+      "bytes": 4587,
+      "sha256": "b40d2fc85e1b2b9186e67c1a73a44e2124fc96278e556e4eab33e828fadfaac3"
+    },
+    {
+      "path": "tests/test_core.py",
+      "bytes": 5274,
+      "sha256": "120aa9bc715e86643901b1dd4eed986d793d49e8e011ac065afc6384110ad693"
+    },
+    {
+      "path": "tests/test_frontend_steps.cjs",
+      "bytes": 2321,
+      "sha256": "83ca92f1bb5accf66c1583e669953197d8631b962632b84319a05faa2f284f40"
+    },
+    {
+      "path": "tests/test_growth.py",
+      "bytes": 7963,
+      "sha256": "78527bf3b926dd92900be000fc57d886abedde9f1cb010ebc1edc02d8370d8fb"
+    },
+    {
+      "path": "tests/test_knowledge_setup.py",
+      "bytes": 1927,
+      "sha256": "6e803bf4d2a6ec4343394925399310028bdfe5b21a246e80ce7cf81cc5fe7832"
+    },
+    {
+      "path": "tools/backup.py",
+      "bytes": 2158,
+      "sha256": "70a29494003f18993a0a9ea88e79ff5bc96a9dbb5b0e3948bfbd7966d247028a"
+    },
+    {
+      "path": "tools/build_release.py",
+      "bytes": 4103,
+      "sha256": "1524a0bb186f02c73968300c9d3c5a75bdd4dbda209f82c430ed44aefea0b2f3"
+    },
+    {
+      "path": "tools/check_public.py",
+      "bytes": 3854,
+      "sha256": "dfe32684355439aac2b218f1b36dabd3bfadd8c45c99064c98f3f88690e71d3b"
+    },
+    {
+      "path": "tools/connect_local.py",
+      "bytes": 2513,
+      "sha256": "3058bacd719da89f3610cb02a28c1fc03e5d072778a95f6ef25ac8f45ca51ead"
+    },
+    {
+      "path": "tools/metrics.py",
+      "bytes": 1269,
+      "sha256": "9f92a9e98ec8b9b0b6fef0f668b343946ba6bed49223ae6b97e8a096e8a749eb"
+    },
+    {
+      "path": "tools/plan_index.py",
+      "bytes": 2342,
+      "sha256": "7de9565cfefff1595305de3373933b857b6ea31342715703ad15bab6ec54cbe7"
+    },
+    {
+      "path": "tools/setup_knowledge.py",
+      "bytes": 3506,
+      "sha256": "9c282f437a4d2a36edd001e6cffc716eb633c2aa80ebe208392b1ff83dbe0a34"
+    },
+    {
+      "path": "web/app.js",
+      "bytes": 79823,
+      "sha256": "4858e319a4cfbf8e6375080e027b884402c1bfda539c8015b0185c8a1746f407"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 1975,
+      "sha256": "f8725cd17e0e9bc9772723d527242a63c4d75940dd0a15ba428edae1e933d8db"
+    },
+    {
+      "path": "web/style.css",
+      "bytes": 40275,
+      "sha256": "8c442239ae55e525406d629d80ef2b53e2cd7f41dc9af9afbcbb068c21e9ceb4"
+    }
+  ]
+}

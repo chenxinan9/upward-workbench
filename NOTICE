@@ -1,0 +1,7 @@
+本项目 MIT 许可仅覆盖贡献者有权授权的原创代码、原创文档和流程。
+public-advisors.json 记录第三方来源及许可状态，不包含其完整 Skill 正文。
+quotes.json 含附出处的简短引用、自译或明确意译；原作者及作品权利不变。
+分发前按 docs/distribution-policy.md 核对，不得把未知、内部使用或非商业限制材料改标 MIT。
+不包含私人档案、真实对话、模型凭据、私人知识库或项目发起者的宣传视频素材。
+
+advisors-bundle 中51份缩编Skill按各目录LICENSE分别分发：47 MIT、3 Apache-2.0、1 CC-BY-4.0。保留原作者署名和修改记录，本项目根MIT不覆盖这些不同许可。见 docs/advisor-bundle-audit.md。

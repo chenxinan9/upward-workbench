@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "think-woop",
+  "title": "WOOP目标与行动",
+  "upstream": {
+    "repo": "product-on-purpose/thinking-framework-skills",
+    "url": "https://github.com/product-on-purpose/thinking-framework-skills",
+    "commit": "b8c6cb9eb9a5dd57e980c402f84c93350e86cf9f",
+    "skill_source_url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/b8c6cb9eb9a5dd57e980c402f84c93350e86cf9f/skills/think-woop/SKILL.md",
+    "skill_sha256": "dc5d4e6039b5da2f9cd02797b27c29c183fc8758b3ee3b172f1500e06a31b983",
+    "license_source_url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/b8c6cb9eb9a5dd57e980c402f84c93350e86cf9f/LICENSE",
+    "license_sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+  },
+  "license": "Apache-2.0",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "b5dfaa78127dd767793f1f11b27dae36726ec5a0261ac57a8acae01760688480",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "4d3b2d75dd6665da8333fb6a02544097bd1222f89d3e12f35eeca0914bcec20b",
+      "bytes": 2090
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85",
+      "bytes": 10712
+    }
+  ]
+}

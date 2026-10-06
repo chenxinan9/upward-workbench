@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "big-purchase-decision",
+  "title": "大额消费与购买取舍",
+  "upstream": {
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "skill_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/skills/big-purchase-decision/SKILL.md",
+    "skill_sha256": "341032be0bbba1f93b497014756a4e95ba6e93f3807630e1d6ee2c15ddf83054",
+    "license_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/LICENSE",
+    "license_sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "5a66a83a05640585b1fe6059fb2ca777789abc1864b6258a28a76133d8dfcd2d",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "a97e61d30dfcbfb88797e3c13de68c96cd370abbcbb13c2beb5e81a49e9080a7",
+      "bytes": 2111
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292",
+      "bytes": 1074
+    }
+  ]
+}

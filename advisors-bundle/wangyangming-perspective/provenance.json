@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "wangyangming-perspective",
+  "title": "王阳明",
+  "upstream": {
+    "repo": "nuwa-skills/wangyangming-skill",
+    "url": "https://github.com/nuwa-skills/wangyangming-skill",
+    "commit": "773f32f1040c477727a666a79a045692b9e53e75",
+    "skill_source_url": "https://raw.githubusercontent.com/nuwa-skills/wangyangming-skill/773f32f1040c477727a666a79a045692b9e53e75/SKILL.md",
+    "skill_sha256": "b6de970ffc979a339cd19900fe4e4d44505b1b8c58fd31ec7729f7faf710423a",
+    "license_source_url": "https://raw.githubusercontent.com/nuwa-skills/wangyangming-skill/773f32f1040c477727a666a79a045692b9e53e75/LICENSE",
+    "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "45274133de06d14aa1c71ed29857f084b21f18470885e9c96c5cf80f177f932f",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "63bdd000281164c4a4a4f565a514f8b4648eb9070151d5787e421e2d688aee36",
+      "bytes": 2040
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+      "bytes": 1056
+    }
+  ]
+}

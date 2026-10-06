@@ -1,0 +1,396 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "purpose": "完全虚构的公共复用示例；使用前替换为自己的资料，不代表项目作者",
+  "privacy": "sample_only",
+  "source_register": [
+    {
+      "id": "DEMO-PROFILE",
+      "title": "合成学习者方向 · 虚构示例",
+      "root": "private",
+      "path": "sources/profile.md",
+      "relative_path": "sources/profile.md",
+      "date": "2025-01-01",
+      "evidence_type": "synthetic_example_not_real_user",
+      "read_scope": "用于演示来源回读；全部为虚构通用数据",
+      "sha256": "7df464f2d5d114dda663c7d8f15be93964dddf4f8ec142f941f21cfceb920a74"
+    },
+    {
+      "id": "DEMO-PROJECT",
+      "title": "合成练习项目草案 · 虚构示例",
+      "root": "private",
+      "path": "sources/project.md",
+      "relative_path": "sources/project.md",
+      "date": "2025-01-02",
+      "evidence_type": "synthetic_example_not_real_user",
+      "read_scope": "用于演示来源回读；全部为虚构通用数据",
+      "sha256": "34343af12335947c05cdee948d1cdf18c87280c0a2022525eb4369b06050c190"
+    },
+    {
+      "id": "DEMO-METHOD",
+      "title": "通用练习反馈循环 · 虚构示例",
+      "root": "private",
+      "path": "sources/method.md",
+      "relative_path": "sources/method.md",
+      "date": "2025-01-02",
+      "evidence_type": "synthetic_example_not_real_user",
+      "read_scope": "用于演示来源回读；全部为虚构通用数据",
+      "sha256": "ee97c9e943140d1415f7162c5b29309e469ebb4e0cd8456601908cd3acd8d58f"
+    }
+  ],
+  "overview": {
+    "title": "观察身边，再把它说清楚 · 合成示例",
+    "lead": "摄影与英语练习的通用演示。所有方向和方案均可替换。",
+    "decision_boundary": "只是示例，未采用的建议不进入已确认目标。",
+    "current_status_note": "没有真实用户档案、作品或已完成记录。"
+  },
+  "current_focus_draft": {
+    "title": "选择一个小练习",
+    "status": "proposal",
+    "primary_domain": "photography",
+    "suggested_action_ids": [
+      "photo-observe",
+      "english-draft"
+    ],
+    "reason": "两项均为未采用、未排期的示例候选"
+  },
+  "domains": [
+    {
+      "id": "photography",
+      "title": "摄影：练习观察与取舍",
+      "summary": "用已有设备练习观察光线，保留比较过程。",
+      "priority_reason": "合成学习者希望看清照片选择背后的理由。",
+      "status": "proposal",
+      "known_facts": [
+        {
+          "text": "虚构学习者想用已有设备练习摄影；现有水平未知。",
+          "date": "2025-01-02",
+          "evidence_type": "合成示例中的设定",
+          "source_id": "DEMO-PROFILE",
+          "locator": "示例正文",
+          "status": "虚构，不代表真实用户"
+        }
+      ],
+      "unknowns": [
+        "使用者自己的设备与想练的问题"
+      ],
+      "constraints": [
+        "使用自己有权使用的素材；示例不要求购置设备"
+      ],
+      "plan_draft": {
+        "title": "整理一份有选择理由的练习选片集",
+        "why": "通过对照照片学习观察，而不只累积文件。",
+        "approach": [
+          "选择一个可重复观察的室内静物",
+          "只改变一个光线或构图变量",
+          "保留选片理由与仍不确定的问题"
+        ],
+        "review_trigger": "有一组能比较的尝试后",
+        "success_definition": "有可回看的练习和选择理由；没有固定照片数量或完成期限。",
+        "first_question": "最近哪一种光线或构图让你想不明白？"
+      },
+      "actions": [
+        {
+          "id": "photo-observe",
+          "title": "写下一个具体观察问题",
+          "steps": [
+            "选择一个室内静物",
+            "描述想比较的光线差异"
+          ],
+          "completion_evidence": [
+            "一段问题说明"
+          ],
+          "status": "proposed",
+          "due": null,
+          "advisor_slugs": [
+            "feynman-perspective"
+          ],
+          "adoption_required": true
+        },
+        {
+          "id": "photo-compare",
+          "title": "比较一次改变前后的尝试",
+          "steps": [
+            "保留前后两次尝试",
+            "写明只改变了什么"
+          ],
+          "completion_evidence": [
+            "比较说明与素材位置"
+          ],
+          "status": "proposed",
+          "due": null,
+          "advisor_slugs": [
+            "clear-perspective"
+          ],
+          "adoption_required": true
+        }
+      ],
+      "advisor_slugs": [
+        "feynman-perspective",
+        "clear-perspective"
+      ],
+      "source_ids": [
+        "DEMO-PROFILE",
+        "DEMO-PROJECT"
+      ],
+      "keywords": [
+        "摄影",
+        "照片",
+        "观察",
+        "光线",
+        "构图"
+      ]
+    },
+    {
+      "id": "english",
+      "title": "英语：把观察说清楚",
+      "summary": "通过初稿、反馈和重写练习简单表达。",
+      "priority_reason": "合成学习者想用简短英语说明自己的照片。",
+      "status": "proposal",
+      "known_facts": [
+        {
+          "text": "虚构学习者希望写简短英文说明；当前英语水平未知。",
+          "date": "2025-01-02",
+          "evidence_type": "合成示例中的设定",
+          "source_id": "DEMO-PROFILE",
+          "locator": "示例正文",
+          "status": "虚构，不代表真实用户"
+        }
+      ],
+      "unknowns": [
+        "使用者希望优先练习的表达场景"
+      ],
+      "constraints": [
+        "不替使用者设定考试目标或学习时长"
+      ],
+      "plan_draft": {
+        "title": "保留一次英文说明的修改过程",
+        "why": "比较原句、反馈和重写，理解改变理由。",
+        "approach": [
+          "先自己写简短说明",
+          "只纠正影响理解或本次想练的问题",
+          "独立重写并解释修改理由"
+        ],
+        "review_trigger": "完成一次重写并能解释理由后",
+        "success_definition": "保存初稿、反馈和重写；不从字数推断语言等级。",
+        "first_question": "这次想练描述物体，还是说明你为什么选择这张照片？"
+      },
+      "actions": [
+        {
+          "id": "english-draft",
+          "title": "先写一段自己的英文说明",
+          "steps": [
+            "选择自己有权使用的照片",
+            "用已有词汇写下大意"
+          ],
+          "completion_evidence": [
+            "自己的初稿"
+          ],
+          "status": "proposed",
+          "due": null,
+          "advisor_slugs": [
+            "english-learning-coach"
+          ],
+          "adoption_required": true
+        },
+        {
+          "id": "english-retry",
+          "title": "按反馈重写并解释原因",
+          "steps": [
+            "保留具体反馈",
+            "独立重写并标注理由"
+          ],
+          "completion_evidence": [
+            "初稿—反馈—重写对照"
+          ],
+          "status": "proposed",
+          "due": null,
+          "advisor_slugs": [
+            "english-learning-coach",
+            "feynman-perspective"
+          ],
+          "adoption_required": true
+        }
+      ],
+      "advisor_slugs": [
+        "english-learning-coach",
+        "feynman-perspective"
+      ],
+      "source_ids": [
+        "DEMO-PROFILE",
+        "DEMO-PROJECT",
+        "DEMO-METHOD"
+      ],
+      "keywords": [
+        "英语",
+        "英文",
+        "说明",
+        "表达"
+      ]
+    }
+  ],
+  "life_panorama": {
+    "title": "看见细节，也学会表达 · 合成示例",
+    "subtitle": "这是一位虚构学习者的方向图，用来演示愿望、练习项目与行动如何分开。",
+    "north_star": {
+      "quote": "我想更细致地观察身边的光线，也想用简单英语说明自己的照片。",
+      "source_id": "DEMO-PROFILE",
+      "date": "2025-01-01 · 虚构示例日期",
+      "interpretation": "这里展示方向与理由，不是要求每天同时完成两个练习。",
+      "status": "合成示例中的愿望，不属于真实用户"
+    },
+    "pillars": [
+      {
+        "id": "observe",
+        "title": "观察",
+        "desired_life": "留意日常环境中的细节。",
+        "meaning": "从已有设备和身边场景开始，学习比较与解释自己的选择。",
+        "status": "虚构示例方向",
+        "source_ids": [
+          "DEMO-PROFILE"
+        ],
+        "domain_ids": [
+          "photography"
+        ]
+      },
+      {
+        "id": "express",
+        "title": "表达",
+        "desired_life": "用简短清楚的文字说明看到了什么。",
+        "meaning": "用英文照片说明练习表达，而不是给自己预设语言等级。",
+        "status": "虚构示例方向",
+        "source_ids": [
+          "DEMO-PROFILE"
+        ],
+        "domain_ids": [
+          "english"
+        ]
+      },
+      {
+        "id": "reflect",
+        "title": "理解自己的学习过程",
+        "desired_life": "看见一次修改为什么有效。",
+        "meaning": "保留尝试与反馈，不把做了多少次等同于能力。",
+        "status": "通用整理建议，尚未采用",
+        "source_ids": [
+          "DEMO-METHOD"
+        ],
+        "domain_ids": [
+          "photography",
+          "english"
+        ]
+      }
+    ],
+    "route": [
+      {
+        "title": "先选一个想弄清的小问题",
+        "horizon": "起点",
+        "description": "从光线观察或英文描述中取舍一项，不自动同时启动。",
+        "status": "示例建议，未采用",
+        "evidence_needed": "问题说明；当前能力还未知。",
+        "source_ids": [
+          "DEMO-PROJECT"
+        ]
+      },
+      {
+        "title": "留下可以比较的尝试",
+        "horizon": "练习阶段",
+        "description": "保留初稿、反馈与一次修改。",
+        "status": "按实际尝试调整",
+        "evidence_needed": "能回读的修改过程，不预填已完成成果。",
+        "source_ids": [
+          "DEMO-PROJECT",
+          "DEMO-METHOD"
+        ]
+      },
+      {
+        "title": "逐渐形成自己的表达方式",
+        "horizon": "后续方向",
+        "description": "从实际练习总结可复用的方法，再决定是否继续。",
+        "status": "开放方向，不是新的期限",
+        "evidence_needed": "自己的总结与仍不确定的问题。",
+        "source_ids": [
+          "DEMO-PROFILE",
+          "DEMO-METHOD"
+        ]
+      }
+    ],
+    "mastery": {
+      "title": "练习与反馈循环",
+      "quote": "把一次尝试、一次反馈和一次修改放在一起看。",
+      "source_id": "DEMO-METHOD",
+      "date": "2025-01-02 · 通用流程示例",
+      "steps": [
+        {
+          "title": "选一个问题",
+          "description": "缩小这次想练的范围。"
+        },
+        {
+          "title": "保留初稿",
+          "description": "留下自己的第一次尝试。"
+        },
+        {
+          "title": "获取反馈",
+          "description": "核对具体修改理由。"
+        },
+        {
+          "title": "改动后重试",
+          "description": "先改一个变量再比较。"
+        },
+        {
+          "title": "解释变化",
+          "description": "总结有用的做法与未解决的问题。"
+        }
+      ],
+      "boundary": "这是通用学习流程示例，不是名人原话，也不承诺学习效果。AI 助理只处理预览中选定的文字资料。"
+    },
+    "boundaries": [
+      {
+        "title": "已有设备也可以开始",
+        "description": "示例不要求购买器材、课程或订阅。",
+        "source_ids": [
+          "DEMO-PROFILE"
+        ]
+      },
+      {
+        "title": "素材归属要清楚",
+        "description": "示例没有提供真实照片。后续使用自己的素材或获准使用的素材。",
+        "source_ids": [
+          "DEMO-PROJECT"
+        ]
+      }
+    ],
+    "history": [
+      {
+        "date": "2025-01-01 · 合成",
+        "title": "记录学习兴趣",
+        "description": "虚构学习者提出观察与表达的方向。",
+        "status": "虚构设定",
+        "source_ids": [
+          "DEMO-PROFILE"
+        ]
+      },
+      {
+        "date": "2025-01-02 · 合成",
+        "title": "写下候选练习",
+        "description": "加入项目草案，尚未采用，没有完成记录。",
+        "status": "通用方案示例",
+        "source_ids": [
+          "DEMO-PROJECT"
+        ]
+      }
+    ],
+    "history_note": "这些日期只用于演示来源与阶段的区别，不是任何人的实际经历。",
+    "source_ids": [
+      "DEMO-PROFILE",
+      "DEMO-PROJECT",
+      "DEMO-METHOD"
+    ]
+  },
+  "statistics": {
+    "domains": 2,
+    "proposed_actions": 4,
+    "local_sources": 3,
+    "adopted_goals_created": 0
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "zengguofan-perspective",
+  "title": "曾国藩",
+  "upstream": {
+    "repo": "nuwa-skills/zengguofan-skill",
+    "url": "https://github.com/nuwa-skills/zengguofan-skill",
+    "commit": "d5473016af878493b56fa7e5ea7c99de8b9de7da",
+    "skill_source_url": "https://raw.githubusercontent.com/nuwa-skills/zengguofan-skill/d5473016af878493b56fa7e5ea7c99de8b9de7da/SKILL.md",
+    "skill_sha256": "ee899532fa4f123f540048341d85e898fe7812ffbea19ff85516d1e388743c82",
+    "license_source_url": "https://raw.githubusercontent.com/nuwa-skills/zengguofan-skill/d5473016af878493b56fa7e5ea7c99de8b9de7da/LICENSE",
+    "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "811a858c6352028bceb4c53841e4fe3a6f534455558db53ec7c9605a93971e8c",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "1b374f5d2b6c5c4e1a2cd6a5b8d457c9b73a1c6a609680316231905b505464c7",
+      "bytes": 2027
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+      "bytes": 1056
+    }
+  ]
+}

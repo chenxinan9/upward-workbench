@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "personal-ai-learning",
+  "title": "个人AI学习伙伴",
+  "upstream": {
+    "repo": "yuewenyumenle/personal-ai-learning",
+    "url": "https://github.com/yuewenyumenle/personal-ai-learning",
+    "commit": "9e6420c8e11f2f9025e8c6f748e471e069dbc2bd",
+    "skill_source_url": "https://raw.githubusercontent.com/yuewenyumenle/personal-ai-learning/9e6420c8e11f2f9025e8c6f748e471e069dbc2bd/SKILL.md",
+    "skill_sha256": "61e16b121d0d36a5ed92bc183bcf159011f11ec829b32114221ecd019ef19cf0",
+    "license_source_url": "https://raw.githubusercontent.com/yuewenyumenle/personal-ai-learning/9e6420c8e11f2f9025e8c6f748e471e069dbc2bd/LICENSE",
+    "license_sha256": "6ae494275f005683b896ca506a2cc66a11d57d9ba80beb4873d4aefe9f0535a7"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "e600364c22d327e9bf5fe059d7780e061b4e3db4912439e05c866974e157d76d",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "10798d78fdfe2d6f2da6c454f56e07354cf653897160f58972ba1189b6ff78b8",
+      "bytes": 2069
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "6ae494275f005683b896ca506a2cc66a11d57d9ba80beb4873d4aefe9f0535a7",
+      "bytes": 1096
+    }
+  ]
+}

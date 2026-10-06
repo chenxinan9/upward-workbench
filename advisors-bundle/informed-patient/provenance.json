@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "informed-patient",
+  "title": "就医准备与医学信息",
+  "upstream": {
+    "repo": "DrCatHicks/informed-patient",
+    "url": "https://github.com/DrCatHicks/informed-patient",
+    "commit": "3b8583a065a0c37374e84b12877c02b808bd06b8",
+    "skill_source_url": "https://raw.githubusercontent.com/DrCatHicks/informed-patient/3b8583a065a0c37374e84b12877c02b808bd06b8/informed-patient/skills/informed-patient/SKILL.md",
+    "skill_sha256": "048c30cbeeb8275467a2e4f85963553e1be88c2c6dc48b8bf6a6e297cce832a0",
+    "license_source_url": "https://raw.githubusercontent.com/DrCatHicks/informed-patient/3b8583a065a0c37374e84b12877c02b808bd06b8/LICENSE.txt",
+    "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+  },
+  "license": "CC-BY-4.0",
+  "attribution": "Dr. Cat Hicks, informed-patient; source at pinned repository URL. Compact adaptation by Growth Desk contributors, 2026-10-06. CC-BY-4.0, https://creativecommons.org/licenses/by/4.0/ ; changes listed below; no endorsement.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "fa0f282912ea86f883753ad09082324d56faa5cddcd3df89f42489e425fa9fe6",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "6ffb17299709a921ecb79ee6af72257b20fceb1190bc955e8528299b75077a0e",
+      "bytes": 2379
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "bytes": 18656
+    }
+  ]
+}
