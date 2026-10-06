@@ -1,0 +1,552 @@
+[
+  {
+    "slug": "zhangxuefeng-perspective",
+    "title": "张雪峰",
+    "category": "求学与职业",
+    "repo": "alchaincyf/zhangxuefeng-skill",
+    "url": "https://github.com/alchaincyf/zhangxuefeng-skill",
+    "commit": "3501b1e679cf595a6af800619af757aba46d7574",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "naval-perspective",
+    "title": "纳瓦尔",
+    "category": "财富与人生",
+    "repo": "alchaincyf/naval-skill",
+    "url": "https://github.com/alchaincyf/naval-skill",
+    "commit": "0de29b12a7c47088c9e1c0b144d6eb0ed1a04b49",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "elon-musk-perspective",
+    "title": "马斯克",
+    "category": "创业与工程",
+    "repo": "alchaincyf/elon-musk-skill",
+    "url": "https://github.com/alchaincyf/elon-musk-skill",
+    "commit": "b5dad76f9da33c433abd80feb794625b2309e867",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "steve-jobs-perspective",
+    "title": "乔布斯",
+    "category": "产品与表达",
+    "repo": "alchaincyf/steve-jobs-skill",
+    "url": "https://github.com/alchaincyf/steve-jobs-skill",
+    "commit": "8ae40e10013d5218f85bc0e0241fd804f3b5c5e9",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "munger-perspective",
+    "title": "芒格",
+    "category": "决策与风险",
+    "repo": "alchaincyf/munger-skill",
+    "url": "https://github.com/alchaincyf/munger-skill",
+    "commit": "12d582ce4a97bcfff1cac032ecef436406feb1c2",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "taleb-perspective",
+    "title": "塔勒布",
+    "category": "风险与不确定性",
+    "repo": "alchaincyf/taleb-skill",
+    "url": "https://github.com/alchaincyf/taleb-skill",
+    "commit": "69d58a003318df4c252bb3e8c0c2b1b2df0e994a",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "feynman-perspective",
+    "title": "费曼",
+    "category": "学习与理解",
+    "repo": "alchaincyf/feynman-skill",
+    "url": "https://github.com/alchaincyf/feynman-skill",
+    "commit": "3ec26652e3b25c464a3188aeb2365445ce4f3d1d",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "andrej-karpathy-perspective",
+    "title": "Karpathy",
+    "category": "AI学习与工程",
+    "repo": "alchaincyf/karpathy-skill",
+    "url": "https://github.com/alchaincyf/karpathy-skill",
+    "commit": "0b10e859105b0f1cf116cc235b0fee0abdb929e8",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "ilya-sutskever-perspective",
+    "title": "Ilya",
+    "category": "AI研究视角",
+    "repo": "alchaincyf/ilya-sutskever-skill",
+    "url": "https://github.com/alchaincyf/ilya-sutskever-skill",
+    "commit": "4829975a3091ffcb41de9ebc6b7bb2ce370ca079",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "paul-graham-perspective",
+    "title": "Paul Graham",
+    "category": "创业",
+    "repo": "alchaincyf/paul-graham-skill",
+    "url": "https://github.com/alchaincyf/paul-graham-skill",
+    "commit": "e6ed220cd417e8bfc100dddd38a41a62fa692a71",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "zhang-yiming-perspective",
+    "title": "张一鸣",
+    "category": "组织与成长",
+    "repo": "alchaincyf/zhang-yiming-skill",
+    "url": "https://github.com/alchaincyf/zhang-yiming-skill",
+    "commit": "db80fcc0a8ea892ef294439a9a4805cf96419a03",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "buffett-perspective",
+    "title": "巴菲特",
+    "category": "投资与人生",
+    "repo": "nuwa-skills/buffett-skill",
+    "url": "https://github.com/nuwa-skills/buffett-skill",
+    "commit": "7f3f017343c359c4fe5c4d450c67df5c560dc890",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "drucker-perspective",
+    "title": "德鲁克",
+    "category": "职场与管理",
+    "repo": "nuwa-skills/drucker-skill",
+    "url": "https://github.com/nuwa-skills/drucker-skill",
+    "commit": "8a24897e79835f78431cde9ca4c43ec02907627a",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "grove-perspective",
+    "title": "格鲁夫",
+    "category": "管理与执行",
+    "repo": "nuwa-skills/grove-skill",
+    "url": "https://github.com/nuwa-skills/grove-skill",
+    "commit": "9ad0a6819cdd04bb7788e4abd685c934ffca2d9c",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "fengtang-perspective",
+    "title": "冯唐",
+    "category": "职场与成事",
+    "repo": "nuwa-skills/fengtang-skill",
+    "url": "https://github.com/nuwa-skills/fengtang-skill",
+    "commit": "6dc23e004cdf22c9d94bb0ffc2d8852febd4c8e0",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "zengguofan-perspective",
+    "title": "曾国藩",
+    "category": "历史与自我管理",
+    "repo": "nuwa-skills/zengguofan-skill",
+    "url": "https://github.com/nuwa-skills/zengguofan-skill",
+    "commit": "d5473016af878493b56fa7e5ea7c99de8b9de7da",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "wangyangming-perspective",
+    "title": "王阳明",
+    "category": "历史与知行",
+    "repo": "nuwa-skills/wangyangming-skill",
+    "url": "https://github.com/nuwa-skills/wangyangming-skill",
+    "commit": "773f32f1040c477727a666a79a045692b9e53e75",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "aurelius-perspective",
+    "title": "马可奥勒留",
+    "category": "情绪与哲学",
+    "repo": "nuwa-skills/aurelius-skill",
+    "url": "https://github.com/nuwa-skills/aurelius-skill",
+    "commit": "f93147c94415ade6c288e0c1a686b5408dbd54a8",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "frankl-perspective",
+    "title": "弗兰克尔",
+    "category": "意义与心理视角",
+    "repo": "nuwa-skills/frankl-skill",
+    "url": "https://github.com/nuwa-skills/frankl-skill",
+    "commit": "f3b360bc5f55f01c52c22bf8defadf89d6da1d4f",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "adler-perspective",
+    "title": "阿德勒",
+    "category": "关系与心理视角",
+    "repo": "nuwa-skills/adler-skill",
+    "url": "https://github.com/nuwa-skills/adler-skill",
+    "commit": "53db90db67d6dbbc64fb3a3ec72f607807a51794",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "clear-perspective",
+    "title": "James Clear",
+    "category": "习惯与行动",
+    "repo": "nuwa-skills/clear-skill",
+    "url": "https://github.com/nuwa-skills/clear-skill",
+    "commit": "2198fc510d898169cc12e48e5bdd2c716ce562cc",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "career-coach",
+    "title": "职业蓝图",
+    "category": "职业定位",
+    "repo": "ryanxkh/career-coach-skill",
+    "url": "https://github.com/ryanxkh/career-coach-skill",
+    "commit": "1f5798b8a50c8e79eee6e286a371752de15d0572",
+    "license": "NOASSERTION",
+    "distribution": "source_link_only; no redistribution permission established"
+  },
+  {
+    "slug": "personal-ai-learning",
+    "title": "个人AI学习伙伴",
+    "category": "AI学习",
+    "repo": "yuewenyumenle/personal-ai-learning",
+    "url": "https://github.com/yuewenyumenle/personal-ai-learning",
+    "commit": "9e6420c8e11f2f9025e8c6f748e471e069dbc2bd",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "dbs-learning",
+    "title": "系统学习",
+    "category": "学习方法",
+    "repo": "dontbesilent2025/dbskill",
+    "url": "https://github.com/dontbesilent2025/dbskill",
+    "commit": "a0e6fa356c58eca1a6e804c319ea7aac3db4a9af",
+    "license": "CC-BY-NC-4.0",
+    "distribution": "source_link_only; noncommercial restriction excluded from reusable open-source bundle"
+  },
+  {
+    "slug": "interview-master",
+    "title": "面试与Offer",
+    "category": "面试与谈薪",
+    "repo": "chen3tu/interview-master-skill",
+    "url": "https://github.com/chen3tu/interview-master-skill",
+    "commit": "de3a72cd9493f09d3c33079587e37130b62cbd2b",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "workplace-communication",
+    "title": "职场沟通",
+    "category": "向上管理与协作",
+    "repo": "wanghoween-design/gaoqingshang-skill",
+    "url": "https://github.com/wanghoween-design/gaoqingshang-skill",
+    "commit": "cc79ac9bd206cb447b2b6390c9d869cd004dcd88",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "sleep-optimizer",
+    "title": "睡眠习惯",
+    "category": "健康生活",
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "stress-management",
+    "title": "压力管理",
+    "category": "健康生活",
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "conflict-resolution",
+    "title": "冲突沟通",
+    "category": "关系与职场",
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "emergency-fund-planner",
+    "title": "应急储备金",
+    "category": "个人财务",
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "salary-negotiation",
+    "title": "薪酬谈判",
+    "category": "职场与求职",
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "mao-zedong-perspective",
+    "title": "毛选方法",
+    "category": "实践与战略",
+    "repo": "leezythu/maoxuan-skill",
+    "url": "https://github.com/leezythu/maoxuan-skill",
+    "commit": "4376a65020b1fd96af65052ccd30accaddedc3f1",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "marx-perspective",
+    "title": "马克思",
+    "category": "劳动与社会结构",
+    "repo": "Slzx1/marx-perspective",
+    "url": "https://github.com/Slzx1/marx-perspective",
+    "commit": "2421b00a727e013fdcd4fc6f55a7763146700c18",
+    "license": "NOASSERTION",
+    "distribution": "source_link_only; no redistribution permission established"
+  },
+  {
+    "slug": "mrbeast-perspective",
+    "title": "MrBeast",
+    "category": "创作验证",
+    "repo": "alchaincyf/mrbeast-skill",
+    "url": "https://github.com/alchaincyf/mrbeast-skill",
+    "commit": "f63f0c5d4a2040ebf3540ec336a67a8bff12fd94",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "dan-koe-skill",
+    "title": "Dan Koe",
+    "category": "创作与生活设计",
+    "repo": "Solarrr007/dan-koe-skill",
+    "url": "https://github.com/Solarrr007/dan-koe-skill",
+    "commit": "a647dbdc7a8bcca11e135e2aee97eac90a18a8fe",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "socrates-perspective",
+    "title": "苏格拉底",
+    "category": "信念与问题澄清",
+    "repo": "nuwa-skills/socrates-skill",
+    "url": "https://github.com/nuwa-skills/socrates-skill",
+    "commit": "7fcc9ade859af7fc23a72031e510daba9156c5e6",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "aristotle-perspective",
+    "title": "亚里士多德",
+    "category": "实践智慧与习惯",
+    "repo": "nuwa-skills/aristotle-skill",
+    "url": "https://github.com/nuwa-skills/aristotle-skill",
+    "commit": "2adf130171cef24a144b399dd29e8e93a07abc0a",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "kant-perspective",
+    "title": "康德",
+    "category": "伦理与个人边界",
+    "repo": "nuwa-skills/kant-skill",
+    "url": "https://github.com/nuwa-skills/kant-skill",
+    "commit": "d72e2da4cff7083cb3fe6d5d0e27ecf213b9dfe3",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "nietzsche-perspective",
+    "title": "尼采",
+    "category": "价值反思与自我成长",
+    "repo": "nuwa-skills/nietzsche-skill",
+    "url": "https://github.com/nuwa-skills/nietzsche-skill",
+    "commit": "18fc393fae875e922ff7b3ffdeb103471de576dc",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "wittgenstein-perspective",
+    "title": "维特根斯坦",
+    "category": "概念与表达澄清",
+    "repo": "nuwa-skills/wittgenstein-skill",
+    "url": "https://github.com/nuwa-skills/wittgenstein-skill",
+    "commit": "7c77610e214cff3e90b49e2ecd21bc244a9f0e82",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "montaigne-perspective",
+    "title": "蒙田",
+    "category": "自我理解与不确定性",
+    "repo": "nuwa-skills/montaigne-skill",
+    "url": "https://github.com/nuwa-skills/montaigne-skill",
+    "commit": "bacac66fa850d1d5d7d13a13761dfec77fa0cec3",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "laozi-perspective",
+    "title": "老子",
+    "category": "减法与节奏",
+    "repo": "nuwa-skills/laozi-skill",
+    "url": "https://github.com/nuwa-skills/laozi-skill",
+    "commit": "ac27fca32a651eeec122d0da7e946f00238a924e",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "zhuangzi-perspective",
+    "title": "庄子",
+    "category": "视角转换与自由",
+    "repo": "nuwa-skills/zhuangzi-skill",
+    "url": "https://github.com/nuwa-skills/zhuangzi-skill",
+    "commit": "2acd5532cacb9167b7da5e2f3cbebc6dc07706cb",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "beauvoir-perspective",
+    "title": "波伏娃",
+    "category": "自主性与关系角色",
+    "repo": "nuwa-skills/beauvoir-skill",
+    "url": "https://github.com/nuwa-skills/beauvoir-skill",
+    "commit": "1d349b738e2def57ac1ee86d3c0d78ee62e14ee4",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "opc-strategy",
+    "title": "一人公司方向与验证",
+    "category": "一人公司",
+    "repo": "jiangye1314/opc-skill",
+    "url": "https://github.com/jiangye1314/opc-skill",
+    "commit": "74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89",
+    "license": "Apache-2.0",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "opc-growth",
+    "title": "一人公司获客与交付",
+    "category": "一人公司",
+    "repo": "jiangye1314/opc-skill",
+    "url": "https://github.com/jiangye1314/opc-skill",
+    "commit": "74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89",
+    "license": "Apache-2.0",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "personal-trainer",
+    "title": "健身训练与饮食习惯",
+    "category": "健身与恢复",
+    "repo": "Builtbyaran/Personal-trainer-skill",
+    "url": "https://github.com/Builtbyaran/Personal-trainer-skill",
+    "commit": "c124827dd0e855926548d8a32e2a7b39d9a928ba",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "think-woop",
+    "title": "WOOP目标与行动",
+    "category": "目标与行动",
+    "repo": "product-on-purpose/thinking-framework-skills",
+    "url": "https://github.com/product-on-purpose/thinking-framework-skills",
+    "commit": "b8c6cb9eb9a5dd57e980c402f84c93350e86cf9f",
+    "license": "Apache-2.0",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "english-learning-coach",
+    "title": "英语学习与实用表达",
+    "category": "英语与学习",
+    "repo": "zhouwei713/english-learning-coach-skill",
+    "url": "https://github.com/zhouwei713/english-learning-coach-skill",
+    "commit": "fe84b34287fa4385d4ab69cb064b57208d2b4058",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "relationship-science-coach",
+    "title": "亲密关系与沟通",
+    "category": "关系与家庭",
+    "repo": "tristanmanchester/agent-skills",
+    "url": "https://github.com/tristanmanchester/agent-skills",
+    "commit": "3323bc919a80087282efb3d52dc744f7095e748f",
+    "license": "Internal-use-only",
+    "distribution": "source_link_only; internal use terms do not establish public redistribution permission"
+  },
+  {
+    "slug": "budget-builder",
+    "title": "收支与预算",
+    "category": "个人财务",
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "debt-payoff-planner",
+    "title": "债务与还款规划",
+    "category": "个人财务",
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "big-purchase-decision",
+    "title": "大额消费与购买取舍",
+    "category": "消费与住房",
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "informed-patient",
+    "title": "就医准备与医学信息",
+    "category": "健康与就医",
+    "repo": "DrCatHicks/informed-patient",
+    "url": "https://github.com/DrCatHicks/informed-patient",
+    "commit": "3b8583a065a0c37374e84b12877c02b808bd06b8",
+    "license": "CC-BY-4.0",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "insurance-agent-policy-explanation",
+    "title": "保险条款解读",
+    "category": "保险与风险",
+    "repo": "aliyun/qwen-dianjin",
+    "url": "https://github.com/aliyun/qwen-dianjin",
+    "commit": "9a0d0b871e8b84068d687b3260561b41b0609393",
+    "license": "MIT",
+    "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  }
+]

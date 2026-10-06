@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "english-learning-coach",
+  "title": "英语学习与实用表达",
+  "upstream": {
+    "repo": "zhouwei713/english-learning-coach-skill",
+    "url": "https://github.com/zhouwei713/english-learning-coach-skill",
+    "commit": "fe84b34287fa4385d4ab69cb064b57208d2b4058",
+    "skill_source_url": "https://raw.githubusercontent.com/zhouwei713/english-learning-coach-skill/fe84b34287fa4385d4ab69cb064b57208d2b4058/SKILL.md",
+    "skill_sha256": "a8dbe941ade0bd05767e6df04540e10ac2f3558c4500fce8c41f28c13645b9e4",
+    "license_source_url": "https://raw.githubusercontent.com/zhouwei713/english-learning-coach-skill/fe84b34287fa4385d4ab69cb064b57208d2b4058/LICENSE",
+    "license_sha256": "c390ddc5d96735f392c97d9da852a8612814340a2c49e8817c74756f324dd06c"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "c484e39e19a06e1f5eb965e8929d2a70b1bfb97e47af247068bac1c5f47bd4ef",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "f5c017f4d96be4ded684004ad8690ef7d52420708cd718221b62e28f8293cc2e",
+      "bytes": 2155
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c390ddc5d96735f392c97d9da852a8612814340a2c49e8817c74756f324dd06c",
+      "bytes": 1045
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "mao-zedong-perspective",
+  "title": "毛选方法",
+  "upstream": {
+    "repo": "leezythu/maoxuan-skill",
+    "url": "https://github.com/leezythu/maoxuan-skill",
+    "commit": "4376a65020b1fd96af65052ccd30accaddedc3f1",
+    "skill_source_url": "https://raw.githubusercontent.com/leezythu/maoxuan-skill/4376a65020b1fd96af65052ccd30accaddedc3f1/SKILL.md",
+    "skill_sha256": "c068903bd5f2fa83f633713e54fbba9954a16a4aa8b3ebe8df361e63198d16b9",
+    "license_source_url": "https://raw.githubusercontent.com/leezythu/maoxuan-skill/4376a65020b1fd96af65052ccd30accaddedc3f1/LICENSE",
+    "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "b085f9455a56857f20ebac7484ffb5e4d76f7132b319db54afdc021c9868e062",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "e59c3ca6c0637a3f80edc94e2a68d4a7b46d96074b6051f618e8e899cfff28e0",
+      "bytes": 2111
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+      "bytes": 1056
+    }
+  ]
+}

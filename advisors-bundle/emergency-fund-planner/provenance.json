@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "emergency-fund-planner",
+  "title": "应急储备金",
+  "upstream": {
+    "repo": "SkillMedev/skills",
+    "url": "https://github.com/SkillMedev/skills",
+    "commit": "6b3044d569595b481a3677da8f68af7aa239dc09",
+    "skill_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/skills/emergency-fund-planner/SKILL.md",
+    "skill_sha256": "e2c9bd2e38fe2b23cef3e65c1b34f7c5d55e16e62b8faae9c45b36924cef3650",
+    "license_source_url": "https://raw.githubusercontent.com/SkillMedev/skills/6b3044d569595b481a3677da8f68af7aa239dc09/LICENSE",
+    "license_sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "eb55c06950d468cd9e8f84f31d731c2c5d65450e0e52d06469246ae33fc4008b",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "226e1f8751e0d79cd7ee46cb605d6dea2bc183ac86d07d3d04ebffb2d7adf4e5",
+      "bytes": 2082
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292",
+      "bytes": 1074
+    }
+  ]
+}

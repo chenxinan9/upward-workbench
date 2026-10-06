@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "taleb-perspective",
+  "title": "塔勒布",
+  "upstream": {
+    "repo": "alchaincyf/taleb-skill",
+    "url": "https://github.com/alchaincyf/taleb-skill",
+    "commit": "69d58a003318df4c252bb3e8c0c2b1b2df0e994a",
+    "skill_source_url": "https://raw.githubusercontent.com/alchaincyf/taleb-skill/69d58a003318df4c252bb3e8c0c2b1b2df0e994a/SKILL.md",
+    "skill_sha256": "2eddf4ea357a8f9c5291c797440b13df63fcb5d091165d6a0ed511041d8c53d4",
+    "license_source_url": "https://raw.githubusercontent.com/alchaincyf/taleb-skill/69d58a003318df4c252bb3e8c0c2b1b2df0e994a/LICENSE",
+    "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "810c584c176fb5696550b3abf21c35058e193e6a0c69b16ef43aca99f4d45cff",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "cee5bcefb063bc944f7acbe0eab8eb630ac50838290930a089e1bfc7d7e2b7e2",
+      "bytes": 2064
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
+      "bytes": 1072
+    }
+  ]
+}

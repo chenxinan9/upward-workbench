@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "montaigne-perspective",
+  "title": "蒙田",
+  "upstream": {
+    "repo": "nuwa-skills/montaigne-skill",
+    "url": "https://github.com/nuwa-skills/montaigne-skill",
+    "commit": "bacac66fa850d1d5d7d13a13761dfec77fa0cec3",
+    "skill_source_url": "https://raw.githubusercontent.com/nuwa-skills/montaigne-skill/bacac66fa850d1d5d7d13a13761dfec77fa0cec3/SKILL.md",
+    "skill_sha256": "d5457af507b76f9582ba165c2efe576551961383d37bcad686ea3cab834dfb6a",
+    "license_source_url": "https://raw.githubusercontent.com/nuwa-skills/montaigne-skill/bacac66fa850d1d5d7d13a13761dfec77fa0cec3/LICENSE",
+    "license_sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "cf0a7cf1a80b0d0ef9b804e693662d9c24bcc5f32df83ded8c02c663a0e63604",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "2d545c38f0b7482e5edcdfd9f5f72db79cf2da7372fe506c46accbca93470996",
+      "bytes": 1977
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae",
+      "bytes": 1063
+    }
+  ]
+}

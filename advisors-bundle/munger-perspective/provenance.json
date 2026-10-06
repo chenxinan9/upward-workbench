@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "munger-perspective",
+  "title": "芒格",
+  "upstream": {
+    "repo": "alchaincyf/munger-skill",
+    "url": "https://github.com/alchaincyf/munger-skill",
+    "commit": "12d582ce4a97bcfff1cac032ecef436406feb1c2",
+    "skill_source_url": "https://raw.githubusercontent.com/alchaincyf/munger-skill/12d582ce4a97bcfff1cac032ecef436406feb1c2/SKILL.md",
+    "skill_sha256": "b9ff8a0e91bd64a51f5ab4b4fab3daad0ae99574193dbfcf37003f14e21f97b1",
+    "license_source_url": "https://raw.githubusercontent.com/alchaincyf/munger-skill/12d582ce4a97bcfff1cac032ecef436406feb1c2/LICENSE",
+    "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "e90f979d6825181ef233223274c8308ff051555ac2f29061f9a473788f872cc0",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "01c11f7f42de30dca03b3e878a80a76bd1a495d85b4c919de0ca58edc74e2337",
+      "bytes": 2021
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
+      "bytes": 1072
+    }
+  ]
+}

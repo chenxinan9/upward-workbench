@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "aristotle-perspective",
+  "title": "亚里士多德",
+  "upstream": {
+    "repo": "nuwa-skills/aristotle-skill",
+    "url": "https://github.com/nuwa-skills/aristotle-skill",
+    "commit": "2adf130171cef24a144b399dd29e8e93a07abc0a",
+    "skill_source_url": "https://raw.githubusercontent.com/nuwa-skills/aristotle-skill/2adf130171cef24a144b399dd29e8e93a07abc0a/SKILL.md",
+    "skill_sha256": "d360aaa7438d80d975cd0d3a925955f4a1c31bb28368702817841b7d1527f992",
+    "license_source_url": "https://raw.githubusercontent.com/nuwa-skills/aristotle-skill/2adf130171cef24a144b399dd29e8e93a07abc0a/LICENSE",
+    "license_sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "14bf26b6a323b2d74de9fc7fd62a372c55fd0058698f0934cfc86483e95d73f8",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "c86bea9036339463655229f0238b083f4025bbcf3bd487f6689a1682f432bb14",
+      "bytes": 2061
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae",
+      "bytes": 1063
+    }
+  ]
+}

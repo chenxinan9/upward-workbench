@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "fengtang-perspective",
+  "title": "冯唐",
+  "upstream": {
+    "repo": "nuwa-skills/fengtang-skill",
+    "url": "https://github.com/nuwa-skills/fengtang-skill",
+    "commit": "6dc23e004cdf22c9d94bb0ffc2d8852febd4c8e0",
+    "skill_source_url": "https://raw.githubusercontent.com/nuwa-skills/fengtang-skill/6dc23e004cdf22c9d94bb0ffc2d8852febd4c8e0/SKILL.md",
+    "skill_sha256": "5c9683a5e881dc26a5ce0c426c817d740d3bc5a6344b8fe75a5f61f925190281",
+    "license_source_url": "https://raw.githubusercontent.com/nuwa-skills/fengtang-skill/6dc23e004cdf22c9d94bb0ffc2d8852febd4c8e0/LICENSE",
+    "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "9f78193fabd2396c86c0c547dc14bb90c6d73b4711b499e2eebca43147849034",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "19607ca5149c6a29ca373665b864ea76b8a94854d6ef8d35b1897c7c47529071",
+      "bytes": 2032
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+      "bytes": 1056
+    }
+  ]
+}

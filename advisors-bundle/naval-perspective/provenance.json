@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "naval-perspective",
+  "title": "纳瓦尔",
+  "upstream": {
+    "repo": "alchaincyf/naval-skill",
+    "url": "https://github.com/alchaincyf/naval-skill",
+    "commit": "0de29b12a7c47088c9e1c0b144d6eb0ed1a04b49",
+    "skill_source_url": "https://raw.githubusercontent.com/alchaincyf/naval-skill/0de29b12a7c47088c9e1c0b144d6eb0ed1a04b49/SKILL.md",
+    "skill_sha256": "92cb605d775e5471207fc5a88ab84f060de5225c5703d2810cca3e9ee5f7a46e",
+    "license_source_url": "https://raw.githubusercontent.com/alchaincyf/naval-skill/0de29b12a7c47088c9e1c0b144d6eb0ed1a04b49/LICENSE",
+    "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "b38f02e03e081f3867c60c133157a4fa727c50153ae1b7ea20eba4710327c4dd",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "956b0e733b692dbb8dc75be07e52b60ccbbe31fd6d9f9079527a5139d87d690a",
+      "bytes": 2118
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
+      "bytes": 1072
+    }
+  ]
+}

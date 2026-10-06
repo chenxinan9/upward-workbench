@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "aurelius-perspective",
+  "title": "马可奥勒留",
+  "upstream": {
+    "repo": "nuwa-skills/aurelius-skill",
+    "url": "https://github.com/nuwa-skills/aurelius-skill",
+    "commit": "f93147c94415ade6c288e0c1a686b5408dbd54a8",
+    "skill_source_url": "https://raw.githubusercontent.com/nuwa-skills/aurelius-skill/f93147c94415ade6c288e0c1a686b5408dbd54a8/SKILL.md",
+    "skill_sha256": "5677cccbc150d09726bbe31e68acecf690da034030cd1888af49b6a835907e2c",
+    "license_source_url": "https://raw.githubusercontent.com/nuwa-skills/aurelius-skill/f93147c94415ade6c288e0c1a686b5408dbd54a8/LICENSE",
+    "license_sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "899bb51236fec723d42a4ccebd974602a68d4f035e51165f21444d99b6c6d617",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "588ab30e856ea5766cb93e930c6d7e18d5d44774442748afc8c87b2d0ca42617",
+      "bytes": 2020
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae",
+      "bytes": 1063
+    }
+  ]
+}

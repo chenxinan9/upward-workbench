@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "opc-strategy",
+  "title": "一人公司方向与验证",
+  "upstream": {
+    "repo": "jiangye1314/opc-skill",
+    "url": "https://github.com/jiangye1314/opc-skill",
+    "commit": "74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89",
+    "skill_source_url": "https://raw.githubusercontent.com/jiangye1314/opc-skill/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89/opc-strategy/SKILL.md",
+    "skill_sha256": "ea795fad4620ea5e9244e58c4519d2154e283ee012f7c9345ef7391fc0a1eeff",
+    "license_source_url": "https://raw.githubusercontent.com/jiangye1314/opc-skill/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89/LICENSE",
+    "license_sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
+  },
+  "license": "Apache-2.0",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "577f895d81906caf3409c61f38deb572f92e3612ff834aa0aaa5e8c653bb210e",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "24f215f100dbbed64333f2991ce92d480a052e39cf153f9e1a58a680f4d24a6c",
+      "bytes": 2116
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c",
+      "bytes": 9072
+    }
+  ]
+}

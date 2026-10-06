@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "wittgenstein-perspective",
+  "title": "维特根斯坦",
+  "upstream": {
+    "repo": "nuwa-skills/wittgenstein-skill",
+    "url": "https://github.com/nuwa-skills/wittgenstein-skill",
+    "commit": "7c77610e214cff3e90b49e2ecd21bc244a9f0e82",
+    "skill_source_url": "https://raw.githubusercontent.com/nuwa-skills/wittgenstein-skill/7c77610e214cff3e90b49e2ecd21bc244a9f0e82/SKILL.md",
+    "skill_sha256": "746a2380247ec594d1f8bf99e8bf765103549c5c67b20cd225aeec6b59c10a0a",
+    "license_source_url": "https://raw.githubusercontent.com/nuwa-skills/wittgenstein-skill/7c77610e214cff3e90b49e2ecd21bc244a9f0e82/LICENSE",
+    "license_sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "a7164f7111e51100c6a25ba1ca35b7f23ab57af59e7cbe13d57415bd7764ede9",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "354325746d99d4e10632f770523a8f408473b7eea1351d18c99e88ac7f620aa3",
+      "bytes": 2043
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae",
+      "bytes": 1063
+    }
+  ]
+}

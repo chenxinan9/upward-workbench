@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-compact-adaptation",
+  "name": "workplace-communication",
+  "title": "职场沟通",
+  "upstream": {
+    "repo": "wanghoween-design/gaoqingshang-skill",
+    "url": "https://github.com/wanghoween-design/gaoqingshang-skill",
+    "commit": "cc79ac9bd206cb447b2b6390c9d869cd004dcd88",
+    "skill_source_url": "https://raw.githubusercontent.com/wanghoween-design/gaoqingshang-skill/cc79ac9bd206cb447b2b6390c9d869cd004dcd88/SKILL.md",
+    "skill_sha256": "a63d67be93ed5849a58485f896661861831a749a2fdb63c071210bc0075237a3",
+    "license_source_url": "https://raw.githubusercontent.com/wanghoween-design/gaoqingshang-skill/cc79ac9bd206cb447b2b6390c9d869cd004dcd88/LICENSE",
+    "license_sha256": "fd4b7c7aefc12396a45d5e6badb33a21d4e17d2329e78f8afcdbb84d6620630b"
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "changes": [
+    "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
+    "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
+    "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+  ],
+  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
+  "reviewed_local_input_sha256": "fc95fd6491d10e9a8f2767483f75442d0abed3bac99abed4834c3b9c42ef09f8",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "68b0fbdfd6119854342f7e432c16e6fc7c2981a3d96b4b44ea9e58da8bb1550c",
+      "bytes": 2066
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "fd4b7c7aefc12396a45d5e6badb33a21d4e17d2329e78f8afcdbb84d6620630b",
+      "bytes": 1066
+    }
+  ]
+}

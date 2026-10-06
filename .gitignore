@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+*.sqlite
+*.sqlite3
+*.db
+settings.json
+runs/
+knowledge/
+data/
+private/
+dist/
+*.zip
+.DS_Store
