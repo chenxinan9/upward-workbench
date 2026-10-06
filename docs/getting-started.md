@@ -1,4 +1,33 @@
-# 开始使用向上工作台
+# 开始使用向上人生顾问团与工作台
+
+## 一条命令开始
+
+macOS / Linux 上安装 Python 3.11+ 后，运行：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/chenxinan9/upward-workbench/main/install.sh | bash
+```
+
+安装器会检查 SQLite 全文检索环境，下载固定的 v0.2.1-rc2 发布包，校验 SHA-256 和文件清单，准备虚构的摄影与英语示例、连接笔记索引并打开本机网页。顾问书房可直接阅读 51 份方法，不需要先登录 AI 账号。
+
+程序默认放在 `~/.local/share/upward-workbench/app-v0.2.1-rc2`，示例数据独立放在同级 `demo-data`。地址使用自动选出的空闲端口，以终端输出为准。安装器不会覆盖已有目录，不会扫描其他私人资料，不会安装全局 Skill 或替你调用模型。[查看安装器源码](../install.sh)。
+
+关闭网页后服务仍在本机运行。终端末尾会打印停止命令与再次启动命令；这两条命令也对应数据目录 `quickstart.json` 内的地址和路径。重复安装时若提示目录已存在，请继续使用原服务，或换一组新目录体验：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/chenxinan9/upward-workbench/main/install.sh | bash -s -- --install-dir "$HOME/UpwardApp" --data-dir "$HOME/UpwardDemo"
+```
+
+没有自动弹出浏览器时，手动打开终端输出的地址。需要 AI 讨论时连接 Codex CLI；需要 macOS 桌面图标时见[桌面安装](../desktop/README.md)。一键体验本身不安装原生桌面应用。
+
+## 手动安装与配置
+
+下载 [RC2 ZIP](https://github.com/chenxinan9/upward-workbench/releases/download/v0.2.1-rc2/upward-workbench-v0.2.1-rc2.zip) 并解压，进入 `growth-desk` 文件夹。也可克隆当前仓库：
+
+```bash
+git clone https://github.com/chenxinan9/upward-workbench.git
+cd upward-workbench
+```
 
 以下命令在项目根目录执行。合成示例只包含摄影、英语与练习反馈流程，不含项目作者资料。运行需要 Python 3.11+；本地笔记入库需要 SQLite FTS5 的 `trigram` tokenizer。
 
