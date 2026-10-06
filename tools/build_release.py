@@ -11,6 +11,7 @@ for e in json.loads((ROOT/'advisors-bundle/manifest.json').read_text())['entries
  for filename in ['SKILL.md','LICENSE','provenance.json']:FILES.append('advisors-bundle/'+e['path']+'/'+filename)
 FILES += ['desktop/assets/upward-icon.png','desktop/assets/README.md','docs/page-responsibilities.md']
 FILES += ['CONTRIBUTING.md','SECURITY.md','ROADMAP.md','docs/daily-use.md','docs/getting-started.md','.github/workflows/check.yml','tools/check_public.py','tools/setup_knowledge.py','tests/test_advisor.py','tests/test_knowledge_setup.py','skills/upward-advisor/SKILL.md','skills/upward-advisor/scripts/advisor.py','examples/README.md','examples/growth-plan.sample.json','examples/init_demo.py','examples/sources/profile.md','examples/sources/project.md','examples/sources/method.md']
+FILES += ['install.sh', 'tests/test_quickstart.py', 'docs/reference.md', 'docs/advisors.md']
 if len(FILES)!=len(set(FILES)):raise SystemExit('白名单条目重复')
 p=argparse.ArgumentParser();p.add_argument('--output',required=True);a=p.parse_args();out=Path(a.output).expanduser().resolve()
 if out==ROOT or ROOT in out.parents:raise SystemExit('候选包输出必须放在源码目录之外')
@@ -34,5 +35,5 @@ content['release-manifest.json']=(json.dumps(manifest,ensure_ascii=False,indent=
 out.parent.mkdir(parents=True,exist_ok=True)
 with zipfile.ZipFile(out,'x',zipfile.ZIP_DEFLATED) as z:
  for rel,data in sorted(content.items()):
-  i=zipfile.ZipInfo('growth-desk/'+rel,date_time=(2026,10,6,0,0,0));i.compress_type=zipfile.ZIP_DEFLATED;i.external_attr=(0o100755 if rel in ['start.command','desktop/install.py','advisors-bundle/install.py'] else 0o100644)<<16;z.writestr(i,data)
+  i=zipfile.ZipInfo('growth-desk/'+rel,date_time=(2026,10,6,0,0,0));i.compress_type=zipfile.ZIP_DEFLATED;i.external_attr=(0o100755 if rel in ['start.command','install.sh','desktop/install.py','advisors-bundle/install.py'] else 0o100644)<<16;z.writestr(i,data)
 print(json.dumps({'archive':str(out),'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'files':len(content),'bytes':out.stat().st_size,'metrics':metrics()},ensure_ascii=False,indent=2))
