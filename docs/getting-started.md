@@ -1,137 +1,99 @@
-# 开始使用向上人生顾问团与工作台
+# 开始使用向上
 
-## 一条命令开始
+向上负责日常阅读、整理和对话；Markdown 文件夹负责保存知识；Obsidian 可打开同一目录。先建立一份自己的笔记空间，再逐步登记已有资料，不需要填完一大套人生表格才能开始。
 
-macOS / Linux 上安装 Python 3.11+ 后，运行：
+## 一条命令体验
 
-```bash
+macOS / Linux，需要 Python 3.11+：
+
+```sh
 curl -fsSL https://raw.githubusercontent.com/chenxinan9/upward-workbench/main/install.sh | bash
 ```
 
-安装器会检查 SQLite 全文检索环境，下载固定的 v0.2.1-rc2 发布包，校验 SHA-256 和文件清单，准备虚构的摄影与英语示例、连接笔记索引并打开本机网页。顾问书房可直接阅读 51 份方法，不需要先登录 AI 账号。
+脚本下载固定版本 ZIP、核验 SHA-256 与文件清单，再建立独立的合成演示。程序和数据目录按版本区分；同版本重复安装会拒绝覆盖已有目录。终端会显示本次地址、目录、停止及再次启动命令，关闭浏览器不会停止服务。
 
-程序默认放在 `~/.local/share/upward-workbench/app-v0.2.1-rc2`，示例数据独立放在同级 `demo-data`。地址使用自动选出的空闲端口，以终端输出为准。安装器不会覆盖已有目录，不会扫描其他私人资料，不会安装全局 Skill 或替你调用模型。[查看安装器源码](../install.sh)。
+这一步不读取现有私人目录、不登录 AI、不调用模型。演示中的摄影与英语材料是虚构内容。可以先[阅读脚本](../install.sh)，或按下方步骤手动运行。
 
-关闭网页后服务仍在本机运行。终端末尾会打印停止命令与再次启动命令；这两条命令也对应数据目录 `quickstart.json` 内的地址和路径。重复安装时若提示目录已存在，请继续使用原服务，或换一组新目录体验：
+## 从源码启动自己的空知识库
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/chenxinan9/upward-workbench/main/install.sh | bash -s -- --install-dir "$HOME/UpwardApp" --data-dir "$HOME/UpwardDemo"
-```
-
-没有自动弹出浏览器时，手动打开终端输出的地址。需要 AI 讨论时连接 Codex CLI；需要 macOS 桌面图标时见[桌面安装](../desktop/README.md)。一键体验本身不安装原生桌面应用。
-
-## 手动安装与配置
-
-下载 [RC2 ZIP](https://github.com/chenxinan9/upward-workbench/releases/download/v0.2.1-rc2/upward-workbench-v0.2.1-rc2.zip) 并解压，进入 `growth-desk` 文件夹。也可克隆当前仓库：
-
-```bash
-git clone https://github.com/chenxinan9/upward-workbench.git
-cd upward-workbench
-```
-
-以下命令在项目根目录执行。合成示例只包含摄影、英语与练习反馈流程，不含项目作者资料。运行需要 Python 3.11+；本地笔记入库需要 SQLite FTS5 的 `trigram` tokenizer。
-
-## 1. 检查运行环境
+需要 Python 3.11+。下载本版本源码后，在项目目录执行，数据目录放在源码之外：
 
 ```sh
-python3 --version
-python3 -c 'import sqlite3; c=sqlite3.connect(":memory:"); c.execute("CREATE VIRTUAL TABLE probe USING fts5(body, tokenize=trigram)"); print("SQLite FTS5 trigram 可用", sqlite3.sqlite_version)'
+python3 tools/setup_knowledge.py --data-dir "$HOME/UpwardData"
+python3 app.py --data-dir "$HOME/UpwardData" --port 60129
 ```
 
-第二条失败时，使用带有相应 SQLite 功能的 Python 环境。可以先运行工作台保存与搜索自己的笔记，但不要把尚未建立的统一索引标成已经接通。
+打开 [工作台](http://127.0.0.1:60129)。左侧应看到“我的笔记”、开始使用笔记与 51 个随包顾问入口。阅读和新建笔记不需要登录模型。重复运行初始化命令不会重写你的笔记；已有设置、集合、排除规则和自定义顾问目录会保留，设置发生变更前留下私人备份。
 
-## 2. 初始化一份可回读的示例
+新知识工作区的检索不依赖 FTS5。只有继续使用旧版台账的“笔记入库”时才需要 `--legacy-index` 和 SQLite FTS5/trigram 支持。
 
-选择**尚不存在**的源码外目录。目录已存在时换一个新名字；初始化器不覆盖旧数据。
+## 接入 Obsidian 或其他资料目录
 
 ```sh
-python3 examples/init_demo.py --data-dir "$HOME/UpwardDemoData"
-python3 tools/setup_knowledge.py --data-dir "$HOME/UpwardDemoData"
-python3 app.py --data-dir "$HOME/UpwardDemoData" --port 60129
+python3 tools/setup_knowledge.py --data-dir "$HOME/UpwardData" --vault "$HOME/Documents/MyVault"
 ```
 
-保持该终端中的服务运行，浏览器打开 <http://127.0.0.1:60129>。结束时在运行服务的终端按 `Ctrl+C`。端口被占用时改成其他空闲端口，并同步浏览器地址。
+`--vault` 可重复。目录必须存在，默认只读；初始化不扫描内容，不自动启用插件，也不执行资料中的脚本。重启工作台后会看到新集合。
 
-打开后先看“人生全景”，点击虚构原话下方的“回读”，应出现标有“合成学习者”的文本。然后去“目标与计划”展开一个摄影或英语候选方案；只有主动采用后才会出现已采用目标。示例不会预填成绩、打勾完成记录或长期达成比例。
+另一个选择是在 Obsidian 中把 `UpwardData/knowledge` 作为 Vault 打开。它就是向上的可写笔记目录，同一 Markdown 文件不需要导入或同步复制。Obsidian 不是运行向上的必装依赖。
 
-没有示例的空工作台也可使用。改用一个自己的数据目录，跳过 `init_demo.py`，直接执行索引配置与启动命令即可。
+私人 `settings.json` 中的集合字段如下。路径要替换为自己机器的真实绝对目录，此例不能直接当作有效配置：
 
-## 3. 认识目录与设置
+```json
+{
+  "vault_roots": [
+    {
+      "id": "reference",
+      "label": "我的参考资料",
+      "path": "/absolute/path/to/vault",
+      "writable": false,
+      "exclude": ["private/*", "archive/runtime/*"]
+    }
+  ]
+}
+```
 
-| 位置 | 内容 |
-| --- | --- |
-| 项目源码 | 网页、Python 程序、顾问缩编、公共示例及文档 |
-| 指定的数据目录 | `settings.json`、`desk.sqlite`、自己的来源与方案、调用回执和笔记 |
-| 数据目录的 `growth-plan.json` | 从示例复制出的全景与领域方案，可替换成自己的内容 |
-| 数据目录的 `sources/` | 合成来源副本；页面回读按 `source_register` 找到对应文件 |
-| 数据目录的 `knowledge/` | 工作台保存的 Markdown 笔记，默认知识集合的来源 |
+修改已有设置时保留原有集合及其他字段。只有主动允许写入的 Markdown 集合才设置 `writable: true`。TXT 是参考原文，始终只读。隐藏目录、`.obsidian`、`.git`、运行日志、认证文件、符号链接及 `exclude` 命中的路径不会进入知识工具。
 
-`settings.json` 的 `growth_plan` 是方案 JSON 的绝对路径；`private_root` 是允许读取方案来源的根目录。来源登记中的 `path` 是相对这个根目录的路径。初始化器会按你的机器生成路径，公共示例里没有真实机器路径。
+搜索会分批覆盖各集合。界面如果提示尚未扫描完整，结果只是当前批次，不等于全库没有相关知识；继续相同搜索可读取后续文件。打开文档不会为了计算反链而扫描整台知识库。反链来自已知索引，正文始终回读磁盘。
 
-设置在启动时读取，改设置需要重启。方案及来源在读取时加载，修改后刷新页面即可。只修改源码不会自动更新已经安装的 macOS 桌面运行副本，重新构建方法见 [桌面说明](../desktop/README.md)。
+## 连接模型
 
-## 4. 替换为自己的方向
+1. 在本机安装并登录 Codex CLI，确认 `codex app-server --help` 可以执行。
+2. 重启向上，让它发现 CLI；桌面环境找不到程序时，可在私人设置的 `codex_cli` 指定其真实可执行文件路径。
+3. 点击右侧“模型与连接设置”，再点击“打开连接设置”，在设置页发起检查；检查后回主界面刷新验证状态。
+4. 右侧模型选择器出现实际验证成功的模型后再发送。没有出现时检查登录与本机路由，不能用“程序存在”代替真实可用。
 
-编辑数据目录中的副本，保留仓库合成示例便于回归。先整理原文，再整理页面字段：
+检查会调用模型，但只发送固定公开提示，不发送当前私人草稿。日常问题按需检索已登记资料，命中的片段会提供给所选远程模型。工作台沿用本机认证；不要从别人的安装包复制认证文件或模型回执。
 
-- `source_register`：每条来源的稳定 `id`、标题、日期、相对路径、证据类型与 SHA-256。
-- `life_panorama`：本人愿景 `north_star`、生活方向 `pillars`、阶段路线 `route`、成长方法 `mastery`、边界 `boundaries` 与历史 `history`。
-- `domains`：当前可考虑的领域；每项含依据 `known_facts`、未知项、候选阶段方案 `plan_draft`、动作 `actions` 和顾问关联 `advisor_slugs`。
-- `current_focus_draft.suggested_action_ids`：没有已采用目标时可提示的少量候选行动，引用 `actions` 中的 ID，不会自动采用。
+日常对话可选择个人成长、今天、人生全景、目标、想法、复盘、学习或本机操作用途，也可选择顾问与资料范围。默认范围是已登记的个人资料与顾问；“当前文档”限定本轮文档和顾问，“仅顾问”不提供个人记录。缩小范围或更换文档边界时，模型线程会隔离先前上下文，界面保留原会话记录。
 
-可以只填写确有依据的部分。本人原话、历史愿望、AI 助理建议和已验证事实分别标明，旧情况发生变化时保留时间与修订原因。改方案不会改写已有目标的采用快照；已采用目标在目标页调整。
+你可以直接要求保存想法、候选目标或阶段复盘，不必先建一个空文档。目标需明确采纳才变为进行中；记录完成时需要具体结果依据。只查看资料不会自动修改目标状态。
 
-检查 JSON：
+会话以本机 Codex 持久线程继续，历史记录保存在你自己的数据目录。它不会自动接管 Codex 桌面的原聊天。停止请求会停止后续本机操作；已经写入的文件需要使用撤销回执恢复。
+
+## 从旧版迁移
+
+先停止服务并备份。旧版目标、想法和学习记录仍保留在原数据库，可选择性复制为 Markdown：
 
 ```sh
-python3 -m json.tool "$HOME/UpwardDemoData/growth-plan.json" > /dev/null
+python3 tools/migrate_workspace.py --data-dir "$HOME/UpwardData" --target-dir "$HOME/UpwardVault" --dry-run
+python3 tools/migrate_workspace.py --data-dir "$HOME/UpwardData" --target-dir "$HOME/UpwardVault"
+python3 tools/setup_knowledge.py --data-dir "$HOME/UpwardData" --vault "$HOME/UpwardVault"
 ```
 
-以下命令只报告来源哈希是否一致，不替你更新判断或覆盖哈希：
-
-```sh
-python3 - "$HOME/UpwardDemoData" <<'PY'
-import hashlib, json, sys
-from pathlib import Path
-root = Path(sys.argv[1]).expanduser().resolve()
-settings = json.loads((root / 'settings.json').read_text())
-plan = json.loads(Path(settings['growth_plan']).read_text())
-source_root = Path(settings['private_root']).resolve()
-for item in plan['source_register']:
-    if item.get('root') != 'private':
-        continue
-    file = (source_root / item['path']).resolve()
-    if source_root not in file.parents:
-        raise SystemExit('来源越界：' + item['id'])
-    actual = hashlib.sha256(file.read_bytes()).hexdigest()
-    print(item['id'], '一致' if actual == item.get('sha256') else '已变化，需要核对', actual)
-PY
-```
-
-只有重新核对原文和相应解释后，才在数据目录的 `source_register` 中更新哈希。回读源码文件并不执行其中的指令。
-
-## 5. 保存、搜索与统一入库
-
-“保存”将想法留在工作台，并写入本地笔记。“保存并入库”还请求已配置的索引器重建并校验此条记录。完成后搜索记录中特有的词，点开回读确认内容；失败时原记录仍可保存，修复配置后重试。
-
-`tools/setup_knowledge.py` 默认配置此数据目录的笔记集合，不扫描别处。示例 `sources/` 的三份材料可直接回读，但没有因为展示在全景里就自动加入全文检索。需要更多集合时，按本地检索配置显式添加，见 [接入接口](integration.md)。
-
-## 6. 连接 AI 助理与桌面入口
-
-AI 对话需要已安装并登录的 Codex CLI。先运行 `codex exec --help`，再重启工作台让它发现程序；也可在私人设置中配置 `codex_cli` 的绝对路径。到“与 Codex 协作”写问题、选资料、查看发送预览，再确认发送。状态显示“程序可用”不等于登录成功或模型已返回。
-
-AI 助理当前处理文字，不直接读取未选资料、照片或整台电脑。每次实际发送遵循预览内容，调用可能产生费用。工具限制、取消边界与数据说明见 [安全说明](../SECURITY.md)。
-
-macOS 用户可按 [桌面安装说明](../desktop/README.md) 构建“向上工作台.app”。浏览器模式不需要 Xcode；构建桌面入口需要 Xcode Command Line Tools。
+迁移不删除原数据，不覆盖同名已修改文件，不把建议改成已采纳，也不导出完整模型请求或私人聊天正文。先看 dry-run 回执，再执行复制；最后登记的迁移 Vault 默认只读。要继续编辑该副本，再明确调整这一个集合的权限。更详细的迁移规则见 [迁移说明](workspace-migration.md)。
 
 ## 常见问题
 
-| 现象 | 先检查什么 |
+| 现象 | 处理方法 |
 | --- | --- |
-| 人生全景提示尚未接入 | 是否用正确的 `--data-dir` 启动；`settings.json` 的 `growth_plan` 是否存在 |
-| 来源无法回读 | `private_root`、相对路径、文件后缀及文件是否存在；可读文本类型为 `.md`、`.txt`、`.json`、`.docx` |
-| 来源变化提醒 | 文件已与登记哈希不同，重新核对，而非忽略提醒 |
-| 保存成功但入库失败 | 索引器配置、FTS5 环境和文件权限；不要重复新建同一条记录 |
-| 能阅读顾问但 AI 对话失败 | 阅读本地方法不需要模型；对话需要登录有效的 CLI 与可用模型配置 |
-| 改了源码，桌面仍是旧界面 | 桌面运行副本还没更新，按桌面安装流程重新构建并核对数据目录 |
-| 日期没有安排 | 未排期行动不会自动算作今天；在行动的“安排与结果”中设置日期 |
+| 左侧没有自己的笔记 | 用同一个 `--data-dir` 执行初始化后重启，检查 `vault_roots` |
+| 顾问入口缺失 | 检查是否解压完整本版本；没有自定义 catalog 时会使用随包 51 份；自定义目录需要自己维护 |
+| 外部文件能读但不能改 | 外部集合默认只读；TXT 始终只读，Markdown 依集合权限 |
+| 保存时提示版本变化 | 保留草稿，重读外部版本后合并；不要覆盖绕过 SHA 校验 |
+| 搜索没有立即找到 | 查看扫描完整性并继续搜索，或限定集合；单篇超过 8 MB/编码异常会提示跳过 |
+| 桌面还是旧界面 | 桌面有独立运行副本，修改源码不会自动升级；按桌面说明使用 `--upgrade` |
+| 无已验证模型 | 阅读仍可用；检查本机 CLI 登录并完成连接测试 |
+
+设置变更需要重启服务；正文变化不需要重启。浏览器模式在终端按 `Ctrl+C` 停止，桌面窗口关闭不代表后台已停止。

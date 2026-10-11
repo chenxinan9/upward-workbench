@@ -3,10 +3,11 @@ import concurrent.futures, http.client, json, sys, tempfile, threading, unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import app
+from desk_fixture import Desk
 
 class CoreTests(unittest.TestCase):
     def setUp(self):
-        self.tmp=tempfile.TemporaryDirectory();self.path=Path(self.tmp.name);self.d=app.Desk(self.path/'data')
+        self.tmp=tempfile.TemporaryDirectory();self.path=Path(self.tmp.name);self.d=Desk(self.path/'data')
     def tearDown(self):self.tmp.cleanup()
     def test_note_idempotency_and_versions(self):
         n=self.d.note({'body':'第一行\n第二行','request_id':'once'})
@@ -41,7 +42,7 @@ class CoreTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.d.note({'body':'不要写到外面'})
         self.assertEqual(list(out.iterdir()),[])
     def test_restart_interrupted(self):
-        j=self.d.store.put('job',{'status':'cancelling'});d=app.Desk(self.d.store.path)
+        j=self.d.store.put('job',{'status':'cancelling'});d=Desk(self.d.store.path)
         self.assertEqual(d.store.get(j['id'])['status'],'interrupted')
     def test_preview_explicit_context(self):
         n=self.d.note({'body':'仅选中的资料'});self.d.note({'body':'未选中私人正文'})
@@ -61,7 +62,11 @@ class CoreTests(unittest.TestCase):
             self.assertEqual(req('GET','/api/state',{'Origin':'https://evil.example'})[0],403)
             self.assertEqual(req('POST','/api/notes',{'Content-Type':'application/json'},'{}')[0],403)
             self.assertEqual(req('GET','/../app.py')[0],404)
-            status,raw=req('GET','/api/state');self.assertEqual(status,200);token=json.loads(raw)['token']
+            original=server.app.state
+            server.app.state=lambda: (_ for _ in ()).throw(AssertionError('bootstrap cannot read full state'))
+            status,raw=req('GET','/api/bootstrap');self.assertEqual(status,200);boot=json.loads(raw);token=boot['token'];self.assertIn('data_id',boot);self.assertNotIn('jobs',boot)
+            self.assertEqual(req('GET','/api/bootstrap',{'Origin':'https://evil.example'})[0],403)
+            server.app.state=original
             self.assertEqual(req('POST','/api/notes',{'Content-Type':'application/json','X-Desk-Token':token},json.dumps({'body':'本机合法'}))[0],200)
         finally:server.shutdown();server.server_close();thread.join()
 if __name__=='__main__':unittest.main()

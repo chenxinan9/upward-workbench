@@ -106,12 +106,14 @@ class GrowthMixin:
         return data.get('methods',[]) if isinstance(data,dict) else data
     def messages(self,sid):
         self.store.get(sid,'session');result=[]
-        for m in reversed(self.store.all('message')):
-            if m['session_id']!=sid:continue
+        with self.store.conn() as c:
+            rows=c.execute("SELECT id,data,rev FROM objects WHERE kind='message' AND json_extract(data,'$.session_id')=? ORDER BY rowid",(sid,)).fetchall()
+        for row in rows:
+            m=dict(json.loads(row['data']),id=row['id'],rev=row['rev'])
             if m.get('role')=='assistant' and m.get('job_id'):
                 try:
                     job=self.store.get(m['job_id'],'job');preview=self.store.get(job['preview_id'],'preview')
-                    m['reply_context']={'preview_id':preview['id'],'context_hash':preview['hash'],'contexts':preview['contexts'],'history_count':preview['history_count'],'history':preview['history']}
+                    m['reply_context']=job.get('answer_context') or {'preview_id':preview['id'],'context_hash':preview['hash'],'contexts':preview['contexts'],'history_count':preview['history_count'],'history':preview['history']}
                 except ValueError:m['context_warning']='该条历史回复的发送快照不可用，不能用当前资料代替。'
             result.append(m)
         return result

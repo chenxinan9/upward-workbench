@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-command browser demo. The only downloaded program is the checksum-pinned RC2.
+# One-command browser demo. The only downloaded program is the checksum-pinned release.
 set -euo pipefail
 if ! command -v python3 >/dev/null 2>&1; then
   echo '需要 Python 3.11+。请先安装 Python，再运行此命令；安装器不会使用 sudo。' >&2
@@ -15,7 +15,6 @@ from pathlib import Path, PurePosixPath
 import re
 import shlex
 import shutil
-import sqlite3
 import stat
 import subprocess
 import sys
@@ -25,9 +24,9 @@ import urllib.request
 import webbrowser
 import zipfile
 
-VERSION = 'v0.2.1-rc2'
-ARCHIVE_URL = 'https://github.com/chenxinan9/upward-workbench/releases/download/v0.2.1-rc2/upward-workbench-v0.2.1-rc2.zip'
-ARCHIVE_SHA256 = 'd7feb1bd16dac189fbd897b0f3b97d56813b94423834e6b969ab93daa5cb9eae'
+VERSION = 'v0.3.0-rc1'
+ARCHIVE_URL = 'https://github.com/chenxinan9/upward-workbench/releases/download/v0.3.0-rc1/upward-workbench-v0.3.0-rc1.zip'
+ARCHIVE_SHA256 = 'f5a71c94f41a5f2e008d7158a37080ee92152e9101c2f07f46bda94f4df4185d'
 MAX_DOWNLOAD = 10 * 1024 * 1024
 
 
@@ -36,13 +35,6 @@ def environment_check():
         raise ValueError('需要 Python 3.11+；本次未安装任何内容。')
     if sys.platform not in ('darwin', 'linux'):
         raise ValueError('一键体验支持 macOS / Linux；其他系统请按 README 手动启动。')
-    db = sqlite3.connect(':memory:')
-    try:
-        db.execute("CREATE VIRTUAL TABLE probe USING fts5(body, tokenize='trigram')")
-    except sqlite3.Error as exc:
-        raise ValueError('当前 Python 的 SQLite 缺少 FTS5 trigram，请换用支持它的 Python 3.11+。') from exc
-    finally:
-        db.close()
 
 
 def new_paths(install, data):
@@ -165,9 +157,9 @@ def start_service(install, data, port, open_browser):
 
 def main(argv=None):
     root = Path.home() / '.local/share/upward-workbench'
-    parser = argparse.ArgumentParser(description='校验并安装 RC2 的浏览器演示，不覆盖已有程序或数据，不安装全局顾问技能。')
+    parser = argparse.ArgumentParser(description='校验并安装固定版本的浏览器演示，不覆盖已有程序或数据，不安装全局顾问技能。')
     parser.add_argument('--install-dir', default=os.environ.get('UPWARD_INSTALL_DIR', str(root / ('app-' + VERSION))))
-    parser.add_argument('--data-dir', default=os.environ.get('UPWARD_DATA_DIR', str(root / 'demo-data')))
+    parser.add_argument('--data-dir', default=os.environ.get('UPWARD_DATA_DIR', str(root / ('demo-data-' + VERSION))))
     parser.add_argument('--port', type=int, default=int(os.environ.get('UPWARD_PORT', '0')), help='0 自动选择空闲端口')
     parser.add_argument('--no-browser', action='store_true', default=os.environ.get('UPWARD_NO_BROWSER') == '1')
     args = parser.parse_args(argv)
@@ -175,7 +167,7 @@ def main(argv=None):
         parser.error('端口范围应为 0..65535')
     environment_check()
     install, data = new_paths(args.install_dir, args.data_dir)
-    print('下载已审计 RC2 并校验 SHA-256；不会修改现有资料。', flush=True)
+    print('下载固定版本并校验 SHA-256；不会修改现有资料。', flush=True)
     with tempfile.TemporaryDirectory(prefix='upward-download-') as temporary:
         staging = Path(temporary)
         archive = staging / 'release.zip'
