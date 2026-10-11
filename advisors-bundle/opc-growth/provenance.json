@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "opc-growth",
   "title": "一人公司获客与交付",
   "upstream": {
@@ -13,25 +13,55 @@
     "license_sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
   },
   "license": "Apache-2.0",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "44d63c5dba84fe734ed4f893da6fd67ef8c22c979a7c9e397a9731145a0c2e05",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2452,
+      "sha256": "5230a5fbb9985d3460d74d21dcdb0b4dae33cc56693a2f1b5f815492ba9e4ddf"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 9072,
+      "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
+    },
+    {
+      "path": "references/pipeline-and-delivery.md",
+      "bytes": 2727,
+      "sha256": "7c6e82242ef58775ea6d6b9d20c16fa151d9e6245075deb0d5442c83b398b06c"
+    },
+    {
+      "path": "references/retention-with-consent.md",
+      "bytes": 2493,
+      "sha256": "56abe53686e7a0947a8831d90877759ec4bc572030f72b8826570ccdb0ac9b45"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "44d63c5dba84fe734ed4f893da6fd67ef8c22c979a7c9e397a9731145a0c2e05",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "b0985e9eb8969fcb62eba276aa77b30f589f2927f48a494cf7ca62dc24b6a9ac",
-      "bytes": 2084
+      "file": "references/pipeline-and-delivery.md",
+      "source_url": "https://github.com/jiangye1314/opc-skill/tree/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89",
+      "license": "Apache-2.0",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     },
     {
-      "path": "LICENSE",
-      "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c",
-      "bytes": 9072
+      "file": "references/retention-with-consent.md",
+      "source_url": "https://github.com/jiangye1314/opc-skill/tree/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89",
+      "license": "Apache-2.0",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

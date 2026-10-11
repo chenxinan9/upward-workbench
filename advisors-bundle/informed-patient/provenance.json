@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "informed-patient",
   "title": "就医准备与医学信息",
   "upstream": {
@@ -13,25 +13,55 @@
     "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
   },
   "license": "CC-BY-4.0",
-  "attribution": "Dr. Cat Hicks, informed-patient; source at pinned repository URL. Compact adaptation by Growth Desk contributors, 2026-10-06. CC-BY-4.0, https://creativecommons.org/licenses/by/4.0/ ; changes listed below; no endorsement.",
+  "attribution": "Dr. Cat Hicks, informed-patient; source at pinned repository URL. Compact adaptation by Growth Desk contributors, 2026-10-11. CC-BY-4.0, https://creativecommons.org/licenses/by/4.0/ ; changes listed below; no endorsement.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "fa0f282912ea86f883753ad09082324d56faa5cddcd3df89f42489e425fa9fe6",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2748,
+      "sha256": "8f3f76c6e3227fc18a2404f3842686542a8492b49523b1dd940f4c245bba32da"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 18656,
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    {
+      "path": "references/research-reading.md",
+      "bytes": 2562,
+      "sha256": "24b749b9c470d5ea811318f0d32330d8afdddf8b975a60bf63375fa159729de8"
+    },
+    {
+      "path": "references/visit-summary.md",
+      "bytes": 2714,
+      "sha256": "2293237b18e25d1b9520ede2a8683f35d7e447f750bf428fa17c0983130cf1e8"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "fa0f282912ea86f883753ad09082324d56faa5cddcd3df89f42489e425fa9fe6",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "6ffb17299709a921ecb79ee6af72257b20fceb1190bc955e8528299b75077a0e",
-      "bytes": 2379
+      "file": "references/research-reading.md",
+      "source_url": "https://github.com/DrCatHicks/informed-patient/tree/3b8583a065a0c37374e84b12877c02b808bd06b8",
+      "license": "CC-BY-4.0",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     },
     {
-      "path": "LICENSE",
-      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
-      "bytes": 18656
+      "file": "references/visit-summary.md",
+      "source_url": "https://github.com/DrCatHicks/informed-patient/tree/3b8583a065a0c37374e84b12877c02b808bd06b8",
+      "license": "CC-BY-4.0",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

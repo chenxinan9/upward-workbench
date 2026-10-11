@@ -33,3 +33,9 @@ description: 外界成功标准、自我价值与成长选择时使用，提供�
 - 固定提交：`18fc393fae875e922ff7b3ffdeb103471de576dc`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 被单一成功标准束缚或只想反抗评价时，读 [价值来源与自我选择试验](references/values-and-experiment.md)。

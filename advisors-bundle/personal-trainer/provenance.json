@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "personal-trainer",
   "title": "健身训练与饮食习惯",
   "upstream": {
@@ -13,25 +13,44 @@
     "license_sha256": "3cc14293ed0c6778dd3a77b0114e24a764fb4a2f2feced3d3e101556169f8cf2"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "af6a577c0b2962f22c412b1a4a9622101e2130bf0d0602cab30551688dc887f5",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2426,
+      "sha256": "2bcb5784cc26ab604e11d0cf768d78f0b190aea6669353e5c992db5ca230193b"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1084,
+      "sha256": "3cc14293ed0c6778dd3a77b0114e24a764fb4a2f2feced3d3e101556169f8cf2"
+    },
+    {
+      "path": "references/training-log-and-adjustment.md",
+      "bytes": 2717,
+      "sha256": "ff641b34515298c49d1c0c50a78c5591e8f071e68116721afe543fecf8336d43"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "af6a577c0b2962f22c412b1a4a9622101e2130bf0d0602cab30551688dc887f5",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "9e3ae634f2b3a16dd8b780876469a5c554a29d4735bd8553ecf8871988f852ab",
-      "bytes": 2171
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "3cc14293ed0c6778dd3a77b0114e24a764fb4a2f2feced3d3e101556169f8cf2",
-      "bytes": 1084
+      "file": "references/training-log-and-adjustment.md",
+      "source_url": "https://github.com/Builtbyaran/Personal-trainer-skill/tree/c124827dd0e855926548d8a32e2a7b39d9a928ba",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

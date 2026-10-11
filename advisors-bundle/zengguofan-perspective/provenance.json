@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "zengguofan-perspective",
   "title": "曾国藩",
   "upstream": {
@@ -13,25 +13,66 @@
     "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "811a858c6352028bceb4c53841e4fe3a6f534455558db53ec7c9605a93971e8c",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2667,
+      "sha256": "1989065c8613a1fe339e490cb05177b0926027408c8dd079fd6d135c079c0347"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "references/practice-case.md",
+      "bytes": 1641,
+      "sha256": "e4496fe150d442b3cea21095a73ba073a67d2dfe2f5951fd099f2516427995ef"
+    },
+    {
+      "path": "references/source-map.md",
+      "bytes": 2161,
+      "sha256": "a6714ccbf19ffcb5f883b5e9327dea022330724837d299515ff2a67d020093c0"
+    },
+    {
+      "path": "references/study-notes.md",
+      "bytes": 2480,
+      "sha256": "142a2a18b60246fa68582b8f5718ef385735ff0dffb27f31ee3630f8a96fa60e"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "811a858c6352028bceb4c53841e4fe3a6f534455558db53ec7c9605a93971e8c",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "1b374f5d2b6c5c4e1a2cd6a5b8d457c9b73a1c6a609680316231905b505464c7",
-      "bytes": 2027
+      "file": "references/practice-case.md",
+      "source_url": "https://github.com/nuwa-skills/zengguofan-skill/tree/d5473016af878493b56fa7e5ea7c99de8b9de7da",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     },
     {
-      "path": "LICENSE",
-      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
-      "bytes": 1056
+      "file": "references/source-map.md",
+      "source_url": "https://github.com/nuwa-skills/zengguofan-skill/tree/d5473016af878493b56fa7e5ea7c99de8b9de7da",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
+    },
+    {
+      "file": "references/study-notes.md",
+      "source_url": "https://github.com/nuwa-skills/zengguofan-skill/tree/d5473016af878493b56fa7e5ea7c99de8b9de7da",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

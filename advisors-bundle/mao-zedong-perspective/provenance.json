@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "mao-zedong-perspective",
   "title": "毛选方法",
   "upstream": {
@@ -13,25 +13,44 @@
     "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "b085f9455a56857f20ebac7484ffb5e4d76f7132b319db54afdc021c9868e062",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2352,
+      "sha256": "43fd2a8b3556321995f5f610323d97fbd2276803cab4ecd3879006935bae6092"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "references/investigation-and-test.md",
+      "bytes": 2616,
+      "sha256": "a65e21195aba51bd9130be34063a7da6d43e42dd5871dd5fd456f360098a36d1"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "b085f9455a56857f20ebac7484ffb5e4d76f7132b319db54afdc021c9868e062",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "e59c3ca6c0637a3f80edc94e2a68d4a7b46d96074b6051f618e8e899cfff28e0",
-      "bytes": 2111
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
-      "bytes": 1056
+      "file": "references/investigation-and-test.md",
+      "source_url": "https://github.com/leezythu/maoxuan-skill/tree/4376a65020b1fd96af65052ccd30accaddedc3f1",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

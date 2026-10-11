@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "steve-jobs-perspective",
   "title": "乔布斯",
   "upstream": {
@@ -13,25 +13,66 @@
     "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "4494312fe357aba52b179da92e6cd62ed23bf8e9c81460607c1f31bbdf8daaf5",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2705,
+      "sha256": "2fc157df62736103d51f47f12f5834428a71eb9b9de3601464c3789547a77323"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "references/practice-case.md",
+      "bytes": 1923,
+      "sha256": "4360e2bc6d78eb93a2a6f3340b28ba952877a5a2a4ae0d6ad57dd70fa46374d3"
+    },
+    {
+      "path": "references/source-map.md",
+      "bytes": 3748,
+      "sha256": "50bfc136a1e299e54918d5046b74c14e5b1958cbc1943a7fe19058a6205d19e4"
+    },
+    {
+      "path": "references/study-notes.md",
+      "bytes": 2703,
+      "sha256": "98a6e2153c334e2b344f2e966350a757768d72e22dc6ee471b149634a9afde4e"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "4494312fe357aba52b179da92e6cd62ed23bf8e9c81460607c1f31bbdf8daaf5",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "40cb3dfd3a86a29535b04966855e79dbe51765fb9f97b04473ecc47419fa63bb",
-      "bytes": 2065
+      "file": "references/practice-case.md",
+      "source_url": "https://github.com/alchaincyf/steve-jobs-skill/tree/8ae40e10013d5218f85bc0e0241fd804f3b5c5e9",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     },
     {
-      "path": "LICENSE",
-      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
-      "bytes": 1072
+      "file": "references/source-map.md",
+      "source_url": "https://github.com/alchaincyf/steve-jobs-skill/tree/8ae40e10013d5218f85bc0e0241fd804f3b5c5e9",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
+    },
+    {
+      "file": "references/study-notes.md",
+      "source_url": "https://github.com/alchaincyf/steve-jobs-skill/tree/8ae40e10013d5218f85bc0e0241fd804f3b5c5e9",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

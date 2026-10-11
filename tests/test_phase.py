@@ -123,10 +123,10 @@ class PhaseTests(unittest.TestCase):
         self.assertEqual(self.d.review_metadata('codex:'+malformed['id']),{})
         self.assertTrue(all('review_period' not in n for n in self.d.phase_snapshot()['reviews']))
     def test_goal_background_is_not_claimed_as_recent_event(self):
-        self.d.store.put('goal',{'title':'1 万粉丝','created_at':'2020-01-01','status':'active'})
+        self.d.store.put('goal',{'title':'完成一组摄影练习','created_at':'2020-01-01','status':'active'})
         self.d.store.put('learning',{'advisor':'旧学习','created_at':'2020-01-01','status':'completed'})
         s=self.d.phase_snapshot()
-        self.assertEqual(s['goals'][0]['title'],'1 万粉丝')
+        self.assertEqual(s['goals'][0]['title'],'完成一组摄影练习')
         self.assertEqual(s['events'],[])
     def test_multiplatform_publication_is_one_work_pending_not_counted(self):
         def publication(i, project, platform, phase='published'):

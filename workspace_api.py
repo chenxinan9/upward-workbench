@@ -9,6 +9,9 @@ import uuid
 from pathlib import Path
 from urllib.parse import quote
 from vault import VaultWorkspace
+from bundle_resources import knowledge_roots
+
+PROGRAM_ROOT = Path(__file__).resolve().parent
 
 
 def stamp():
@@ -46,7 +49,7 @@ def _cover(ranges, start, end):
 
 
 PURPOSES = {'general':'成长顾问', 'daily':'我的今天', 'panorama':'人生全景', 'goals':'目标与计划', 'ideas':'近期想法', 'review':'阶段复盘', 'learn':'顾问学习', 'local':'本机资料'}
-SCOPES = {'personal':'个人知识与顾问', 'document':'当前文档与顾问', 'advisors':'仅顾问资料'}
+SCOPES = {'personal':'个人知识与顾问', 'document':'当前文档与顾问', 'advisors':'顾问与公开资料'}
 
 
 def _goal_body_state(body, status, previous='', completion_authorized=False):
@@ -79,6 +82,7 @@ class WorkspaceMixin:
         advisor_roots = {a['root_id'] for a in advisors}
         all_advisors = {a['root_id'] for a in self._workspace_advisors}
         roots = [r for r in self._workspace_roots if r['id'] in advisor_roots or
+                 r['id'] in self._workspace_public_roots or
                  (policy['scope']=='personal' and r['id'] not in all_advisors)]
         return advisors, roots
 
@@ -107,6 +111,11 @@ class WorkspaceMixin:
     def init_workspace(self):
         settings = dict(self.settings)
         roots = list(settings.get('vault_roots', []))
+        bundled_roots = knowledge_roots(PROGRAM_ROOT)
+        self._workspace_public_roots = {r['id'] for r in bundled_roots}
+        if self._workspace_public_roots.intersection(r['id'] for r in roots):
+            raise ValueError('本地集合 ID 与公开资料库保留 ID 冲突')
+        roots.extend(bundled_roots)
         self._workspace_advisors = []
         for entry in self.advisor_entries():
             path = entry.get('installed_path')

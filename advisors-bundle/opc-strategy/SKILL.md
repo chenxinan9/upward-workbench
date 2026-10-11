@@ -33,3 +33,10 @@ description: 一人公司方向、商业模式与付费验证时使用，提供�
 - 固定提交：`74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89`。
 - 本版保留来源许可 `Apache-2.0`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 有若干业务方向需要比较或低成本验证时，读 [一人公司方向与付费验证](references/customer-problem-validation.md)。
+- 需要选择收费模式或核算小业务是否可持续时，读 [服务模式、价格与个人产能](references/pricing-and-capacity.md)。

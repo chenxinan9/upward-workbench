@@ -79,6 +79,9 @@ def deploy_runtime(source, support, data, *, upgrade=False):
     if not scan['passed']:
         raise ValueError('待安装公开文件未通过隐私与完整性检查：' + json.dumps(scan['findings'], ensure_ascii=False))
     builder.validate_dependencies(paths)
+    reviewed_resources = builder.resource_files()
+    if not set(reviewed_resources) <= set(paths):
+        raise ValueError('资料清单在安装期间发生变化')
     old_settings = data/'settings.json'
     if old_settings.is_symlink(): raise ValueError('拒绝符号链接设置')
     settings_before = old_settings.read_bytes() if old_settings.exists() else None
@@ -91,7 +94,10 @@ def deploy_runtime(source, support, data, *, upgrade=False):
             origin = source/rel
             if origin.is_symlink(): raise ValueError('安装源包含符号链接')
             target = stage/rel; target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(origin, target)
+            if rel in reviewed_resources:
+                target.write_bytes(reviewed_resources[rel])
+            else:
+                shutil.copy2(origin, target)
         # A compile-only check never executes application code or models.
         for relative in ['app.py','workspace_api.py','vault.py','codex_workspace.py']:
             compile((stage/relative).read_text(), relative, 'exec')

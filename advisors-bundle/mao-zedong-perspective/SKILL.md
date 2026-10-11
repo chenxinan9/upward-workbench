@@ -33,3 +33,9 @@ description: 实践检验、调查研究与主要问题识别时使用，提供�
 - 固定提交：`4376a65020b1fd96af65052ccd30accaddedc3f1`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 项目方向不清或行动反复却没有证据时，读 [调查、主要问题与实践检验](references/investigation-and-test.md)。

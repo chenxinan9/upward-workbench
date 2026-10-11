@@ -33,3 +33,10 @@ description: 英语阅读、写作、口语表达与商务练习时使用，提�
 - 固定提交：`fe84b34287fa4385d4ab69cb064b57208d2b4058`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 希望英语练习能积累而非只看讲解时，读 [输入、输出、纠错与独立重试](references/practice-and-retry.md)。
+- 词汇记住释义却无法在表达中使用时，读 [词汇卡与搭配迁移](references/vocabulary-in-context.md)。

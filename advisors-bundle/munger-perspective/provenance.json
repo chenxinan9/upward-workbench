@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "munger-perspective",
   "title": "芒格",
   "upstream": {
@@ -13,25 +13,66 @@
     "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "e90f979d6825181ef233223274c8308ff051555ac2f29061f9a473788f872cc0",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2661,
+      "sha256": "f81e57938d9881f2351746a66b42685a83e68b6db730b43a5ab4dc5a0441a85b"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "references/practice-case.md",
+      "bytes": 1816,
+      "sha256": "4796e26a64e064e393ae11dc85b28f810a1d3e33284d822ee815c4d86716a579"
+    },
+    {
+      "path": "references/source-map.md",
+      "bytes": 2939,
+      "sha256": "33a77facaee39ebee33e5fa6cbe3935c7d4240e9ad0b6b4628358650e0acb318"
+    },
+    {
+      "path": "references/study-notes.md",
+      "bytes": 2650,
+      "sha256": "dd22680108a4a1d74c0016a6144a97ed411cd83cddef8a72e5852ea3808a4792"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "e90f979d6825181ef233223274c8308ff051555ac2f29061f9a473788f872cc0",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "01c11f7f42de30dca03b3e878a80a76bd1a495d85b4c919de0ca58edc74e2337",
-      "bytes": 2021
+      "file": "references/practice-case.md",
+      "source_url": "https://github.com/alchaincyf/munger-skill/tree/12d582ce4a97bcfff1cac032ecef436406feb1c2",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     },
     {
-      "path": "LICENSE",
-      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
-      "bytes": 1072
+      "file": "references/source-map.md",
+      "source_url": "https://github.com/alchaincyf/munger-skill/tree/12d582ce4a97bcfff1cac032ecef436406feb1c2",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
+    },
+    {
+      "file": "references/study-notes.md",
+      "source_url": "https://github.com/alchaincyf/munger-skill/tree/12d582ce4a97bcfff1cac032ecef436406feb1c2",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

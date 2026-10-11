@@ -33,3 +33,9 @@ description: 职场表达、拒绝、反馈与边界沟通时使用，提供具�
 - 固定提交：`cc79ac9bd206cb447b2b6390c9d869cd004dcd88`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 需要汇报、拒绝、澄清或处理协作误会时，读 [事实、请求与责任边界的表达](references/boundaries-and-replies.md)。

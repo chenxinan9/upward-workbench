@@ -1,0 +1,1618 @@
+{
+  "title": "高性价比人生指南",
+  "author": "eternity4719 and HowToLiveBetter contributors",
+  "source_url": "https://github.com/eternity4719/HowToLiveBetter",
+  "commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+  "license": "CC-BY-4.0",
+  "license_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+  "retrieved_for_bundle": "2026-10-11",
+  "files": [
+    {
+      "path": "book/01-不要早死.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/01-%E4%B8%8D%E8%A6%81%E6%97%A9%E6%AD%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "e0d59eacee22b4230f70a6d9a3a0746f569849267e0771ce266988f2e16c0b3b",
+      "distributed_sha256": "cfac711db604b9001ecd86416f4b78607f4d17cdd1970ae982372bc74ad04ecb",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/02-不要慢慢死.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/02-%E4%B8%8D%E8%A6%81%E6%85%A2%E6%85%A2%E6%AD%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "ddecbfe25d70e2474b1323499c8c91295ae64b6c6bcc08f0ec215c98a0b5bace",
+      "distributed_sha256": "597e6bf639c92472d5406a8b0708496d696498dad624b9582437d299de24014a",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/03-不要浪费精力.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/03-%E4%B8%8D%E8%A6%81%E6%B5%AA%E8%B4%B9%E7%B2%BE%E5%8A%9B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4ee57a3070a8e767e933180805beec5f23d9ba8ecd69f0c7aeb6a802bd12705e",
+      "distributed_sha256": "d18393b4c3d503d9b22b5bee6a90ef222ce7de684ffcab3c9085ae65f5ba4ecf",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/04-不要浪费时间.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/04-%E4%B8%8D%E8%A6%81%E6%B5%AA%E8%B4%B9%E6%97%B6%E9%97%B4.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f5c9ff7caf35ead52af847b42824165538a7d6edcb26db0562eab90de42a74bb",
+      "distributed_sha256": "92fb71fe4d802f92d9c9fb975896d1fdecad666dc775df851b160f639b834278",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/05-不要浪费钱.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/05-%E4%B8%8D%E8%A6%81%E6%B5%AA%E8%B4%B9%E9%92%B1.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "ca8b64369ef1da632dcbb2e4f9dd18e93729a35de9be7a0499593bca40f77da6",
+      "distributed_sha256": "f24bf09d79ca7d6bc3d24df167203a3d875b1321095144981ce684a8fb199a61",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/06-反面清单.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/06-%E5%8F%8D%E9%9D%A2%E6%B8%85%E5%8D%95.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "59ca1de12af16ebf284dca88590cfda9495828fe7a9541ea21447510c364c042",
+      "distributed_sha256": "a585813610dc2a3db5d569c1dc928796d887641eefdc9e0fa4ba0bfb174e90f8",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/07-没钱的时候怎么活.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/07-%E6%B2%A1%E9%92%B1%E7%9A%84%E6%97%B6%E5%80%99%E6%80%8E%E4%B9%88%E6%B4%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "6b9b9525846185e59b2519810c749f2e6d8845d47ab13b1b80f64d3f128e7508",
+      "distributed_sha256": "528c833526b0b9f23c5eb0f6e0f434d256de60708b22f4e23fd1dd501b505353",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/08-别把自己搭进去.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/08-%E5%88%AB%E6%8A%8A%E8%87%AA%E5%B7%B1%E6%90%AD%E8%BF%9B%E5%8E%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "e0da8b41a9b10e736fe0f44ce3d02fb61a15be78d0363e4af257f635e301f9f4",
+      "distributed_sha256": "7fe46facda6c73db6380abd497345e8152cdbea951d10434569401c884c7c2ad",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/09-普通人容易踩的法律红线.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/09-%E6%99%AE%E9%80%9A%E4%BA%BA%E5%AE%B9%E6%98%93%E8%B8%A9%E7%9A%84%E6%B3%95%E5%BE%8B%E7%BA%A2%E7%BA%BF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "1d7f53343b9d07a1d60f38c9152ff468fc94e3e3e3d54eaa840c5e52e751a15b",
+      "distributed_sha256": "62c9e70209ca3d8b6020a8f1cdfe9e9418d66db3b77366792a344727de52d537",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/10-恋爱和结婚划不划算.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/10-%E6%81%8B%E7%88%B1%E5%92%8C%E7%BB%93%E5%A9%9A%E5%88%92%E4%B8%8D%E5%88%92%E7%AE%97.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "6c29069f817d0723eb67425023397a7e9ee4d85fb78255f0d1a3639457230371",
+      "distributed_sha256": "3899be406a3f437d3533a7f4076988f758c40c05af405de13b2664882a9b4bbc",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/11-程序员和技术人容易踩的红线.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/11-%E7%A8%8B%E5%BA%8F%E5%91%98%E5%92%8C%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%AE%B9%E6%98%93%E8%B8%A9%E7%9A%84%E7%BA%A2%E7%BA%BF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "c8047ee05c9991f7fe06310f5c04c5747999fa172ba424537dadb51427dc5d3a",
+      "distributed_sha256": "ee0b037209d4df582be5e0075ac370ac2d68bbb05e5b8d7d889ed88fe8e1ca87",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/12-创业与做生意.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/12-%E5%88%9B%E4%B8%9A%E4%B8%8E%E5%81%9A%E7%94%9F%E6%84%8F.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "9a8baa603ab1d098424154784069d72554b8de1780b74bd15804e0c8035dc35c",
+      "distributed_sha256": "2902193b3f99d00a61a19fc2179a3f4b1a621541897cb3314c0a88f2e88845b4",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/13-紧急情况.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/13-%E7%B4%A7%E6%80%A5%E6%83%85%E5%86%B5.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "65bb0b2038fde81d95897adece5847e3bbf7eb332e329174c09bbb9fcdd64bea",
+      "distributed_sha256": "451185f68717649bb8e58ac0bae14488e521eaa498e5cb3d92d9070af5a92e31",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/14-账号与信息安全.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/14-%E8%B4%A6%E5%8F%B7%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "da82cc3d6b37fa8bdd5ce6ccb1be0b2d0b25ee6f2e31fe1070b3fca2d9164d0b",
+      "distributed_sha256": "51bfe92a7968a86411253a21f6a77049b4a5e59d6397b47ef29c6440f90d3e42",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/15-租房与买房.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/15-%E7%A7%9F%E6%88%BF%E4%B8%8E%E4%B9%B0%E6%88%BF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "61081850c448856d7a2ba8acb0c6ea7c00318ce7f93b03373bec2db0936f2ad4",
+      "distributed_sha256": "a1ebf9c81bc078e88f92c0c90875785d71464035f369b34c7d643c74f00687b2",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/16-得了慢性病之后怎么活.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/16-%E5%BE%97%E4%BA%86%E6%85%A2%E6%80%A7%E7%97%85%E4%B9%8B%E5%90%8E%E6%80%8E%E4%B9%88%E6%B4%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "6d997cf1068c123a58e296eb7d4b74f9ef619d2790049a66eb3a217129ee76d2",
+      "distributed_sha256": "ff043886ae314bf8b72bac93667bd4ca5b5e9feb23fc54f2d0a34e97476e41fa",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/17-家里有老人.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/17-%E5%AE%B6%E9%87%8C%E6%9C%89%E8%80%81%E4%BA%BA.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "15936f220d85ac5084e369eb4dfffe5d1a44ddc4f561555ff94fb00811d1a0dc",
+      "distributed_sha256": "1fed66ff8e6d534a13350486f963fde3e59891eb89f35fff7bf4ad1e12cbd015",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/18-养孩子划不划算.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/18-%E5%85%BB%E5%AD%A9%E5%AD%90%E5%88%92%E4%B8%8D%E5%88%92%E7%AE%97.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "72ae66e46dce8993a4743d9441a59749dec46d24077f6374c0bafd44ba6ed606",
+      "distributed_sha256": "ab017c89b1eb2e8981c64d1f4389e7f97f463f81b640a0e6f13a938051223499",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/19-在职离职和工伤.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/19-%E5%9C%A8%E8%81%8C%E7%A6%BB%E8%81%8C%E5%92%8C%E5%B7%A5%E4%BC%A4.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "c64c8811a04d073e91eb9857cd5735423471d7e19bcd4289493460d7a9cb77c9",
+      "distributed_sha256": "12bb676b2565b7d2355848ff4e3bdbe9cfc4badad1093d27d68cea23377fcd15",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/20-刚出生的孩子怎么带.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/20-%E5%88%9A%E5%87%BA%E7%94%9F%E7%9A%84%E5%AD%A9%E5%AD%90%E6%80%8E%E4%B9%88%E5%B8%A6.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "23c8be17185edcd2c75726fd86fe8cc87298a867d7eaa770cbf84d4227772061",
+      "distributed_sha256": "dd957adaf3329cf0f51d8a7d7c2cb66397908b399af2e8816994d2e29d92a408",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/21-出国旅行与境外安全.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/21-%E5%87%BA%E5%9B%BD%E6%97%85%E8%A1%8C%E4%B8%8E%E5%A2%83%E5%A4%96%E5%AE%89%E5%85%A8.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "1eb5647d942c34e194ec1627d0a650155ed608493430a1c011000886917045e2",
+      "distributed_sha256": "c90efac1c84f3c03d9a35fbabd8a351c68c3079d3f0ffc89393ef55ff1add1e1",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/22-怎么放松.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/22-%E6%80%8E%E4%B9%88%E6%94%BE%E6%9D%BE.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "21e2b3f99b19fc1b14d8cd049aa3a63905fa805844e6da9c2eca2fb34c385571",
+      "distributed_sha256": "6907304eedc18b4eb526ce4c5f124c383e893ed6f7c6ffd6ef2fe28f535f979d",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/23-学什么技能划算.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/23-%E5%AD%A6%E4%BB%80%E4%B9%88%E6%8A%80%E8%83%BD%E5%88%92%E7%AE%97.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "600b57ee612b77326e396bffc7565f915e73beedac177149322ee44c30871cc8",
+      "distributed_sha256": "83f0e663ef1c0c0865673fea751da9318a900b5e05c83756de65f382361feefa",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/24-看病.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/24-%E7%9C%8B%E7%97%85.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "1ead1a8326606f2412cd567c25df028c929b487d92a029017888567a870e6791",
+      "distributed_sha256": "3f3c62aeac6047041a36b734331b003f1d6264bf77a5e62c7b1908db70702cea",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/25-人走了以后要办什么.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/25-%E4%BA%BA%E8%B5%B0%E4%BA%86%E4%BB%A5%E5%90%8E%E8%A6%81%E5%8A%9E%E4%BB%80%E4%B9%88.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "9e1bc9d2e8ad3e3a22bed8cc909b4dc4d1ee0c33d2d85e3d2164534d09712c89",
+      "distributed_sha256": "74ccd6def6113b1db9a761d8ef8b3aa3cdb39c068eebbb9bb7aca52bfb97b363",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/26-做一个网站或平台.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/26-%E5%81%9A%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%E6%88%96%E5%B9%B3%E5%8F%B0.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "0bfc844f96df45a54f2d1211badb68f521b927400f3ffd685582980c73af466a",
+      "distributed_sha256": "169f777a081e8f1c2afe0c3ff46eb59058553acd7c0a476e565dbeb071810b59",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        },
+        {
+          "from": "../LICENSE",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/LICENSE"
+        },
+        {
+          "from": "../LICENSE-CODE",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/LICENSE-CODE"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/27-怀孕和生产.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/27-%E6%80%80%E5%AD%95%E5%92%8C%E7%94%9F%E4%BA%A7.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "694b9a4e399e279c8e17aced423b5b53e32d16b3cf1004a4c4ea2484cc63e44f",
+      "distributed_sha256": "a526041e2068a7b682ece8ba18f29391b7288873f49d802164c8964827310e98",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/28-别为了外形把身体搞坏.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/28-%E5%88%AB%E4%B8%BA%E4%BA%86%E5%A4%96%E5%BD%A2%E6%8A%8A%E8%BA%AB%E4%BD%93%E6%90%9E%E5%9D%8F.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "2bbeb681e810aca6dca49bf3d616faccad5fc671506f502395e7c6e31f66dba2",
+      "distributed_sha256": "fd765ce83a646b0de9be055cb68ffc5354c406bafbfd71b2c337a7bb20f22572",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/29-遭遇重大打击之后.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/29-%E9%81%AD%E9%81%87%E9%87%8D%E5%A4%A7%E6%89%93%E5%87%BB%E4%B9%8B%E5%90%8E.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f79fd6b7b960fe9bcc6f4ba016978a8a3911156a3e28d8d13aa99246787f3cfc",
+      "distributed_sha256": "3f41c606527762f76b2dd3e26b1bd89680128d6d8b3c3602af8dd86ed12a513d",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/30-上学以后的孩子.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/30-%E4%B8%8A%E5%AD%A6%E4%BB%A5%E5%90%8E%E7%9A%84%E5%AD%A9%E5%AD%90.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "ad9fa087500ea8c13a74173ec7ee2d778af8471476f5204b850d40f714ecc107",
+      "distributed_sha256": "ea490eb5b031792b7d7073ad1bd4d7a33d2cc080c87adb307d604c7876c54d3d",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/31-十八岁之后有哪几条路.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/31-%E5%8D%81%E5%85%AB%E5%B2%81%E4%B9%8B%E5%90%8E%E6%9C%89%E5%93%AA%E5%87%A0%E6%9D%A1%E8%B7%AF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "dd46dab95791babdf83d009e4482550b4a0219bb4d43e916b1a7a45f627003e1",
+      "distributed_sha256": "72f92fd372654d14be0d03dede1150528e68d1bdab8a5819572c2a15bb6c7d9f",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/32-出国留学.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/32-%E5%87%BA%E5%9B%BD%E7%95%99%E5%AD%A6.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4a804908370c5a376475da4b47e2d9ed7850ac1d3a14e9201aaaa48edf3c070c",
+      "distributed_sha256": "3b5a51f930a668ee6c7cda1d38adb763f6916da26e70a6b43c9c0d780f68b481",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/33-残疾之后怎么活.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/33-%E6%AE%8B%E7%96%BE%E4%B9%8B%E5%90%8E%E6%80%8E%E4%B9%88%E6%B4%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "e737cccb256c9ce26adfd0224c742add7010e047087c50dce8682c71f43fb235",
+      "distributed_sha256": "7e7edc5b22a9333627c0c05fd60ce65b9061ac6228c6d4a2f4601cab6f80c547",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "book/34-家里的常备药别吃出事.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/book/34-%E5%AE%B6%E9%87%8C%E7%9A%84%E5%B8%B8%E5%A4%87%E8%8D%AF%E5%88%AB%E5%90%83%E5%87%BA%E4%BA%8B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "02e7da180f51c586030349ab5eed988b48bf26f568b439d01f7fb0c22b218cfb",
+      "distributed_sha256": "52d7e1d8c661a7328dbaac1cab46acd693e70285d6ecb041d86a163cbf89549c",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/做平台要办哪些证.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E5%81%9A%E5%B9%B3%E5%8F%B0%E8%A6%81%E5%8A%9E%E5%93%AA%E4%BA%9B%E8%AF%81.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "064cca0315f3887c3fffe43f19ad4a36006f702a770ad67ea7d57d7ca9da367a",
+      "distributed_sha256": "064cca0315f3887c3fffe43f19ad4a36006f702a770ad67ea7d57d7ca9da367a",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/刚确诊慢性病之后.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E5%88%9A%E7%A1%AE%E8%AF%8A%E6%85%A2%E6%80%A7%E7%97%85%E4%B9%8B%E5%90%8E.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "274961eadbcf06cc3b109a85c957ecea90876c9e06397926731171d29e4e1e51",
+      "distributed_sha256": "607649b3547a723966bfa7d6175d211cb0c5774efe19ef439bfc33a59d4be06b",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/孩子出生前后要办的事.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E5%AD%A9%E5%AD%90%E5%87%BA%E7%94%9F%E5%89%8D%E5%90%8E%E8%A6%81%E5%8A%9E%E7%9A%84%E4%BA%8B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "0e421bb812e63f86805ece55d229e165c3375507fd1d85de9381036e47e2e110",
+      "distributed_sha256": "e1a121a9ac46c73c5f020f08ce46e7208589666905c5e1885cca32878f2a3f78",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/家庭应急装备清单.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E5%AE%B6%E5%BA%AD%E5%BA%94%E6%80%A5%E8%A3%85%E5%A4%87%E6%B8%85%E5%8D%95.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "5017889be93fe8320837a1d6e54470e8267f18414335d1d4be1dc6e6711dd3f6",
+      "distributed_sha256": "5017889be93fe8320837a1d6e54470e8267f18414335d1d4be1dc6e6711dd3f6",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/引用对照.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E5%BC%95%E7%94%A8%E5%AF%B9%E7%85%A7.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "302bd969299e78b4631383199dcc1120f5c09407813e79856317742ed00aece7",
+      "distributed_sha256": "302bd969299e78b4631383199dcc1120f5c09407813e79856317742ed00aece7",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/01-不要早死.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/01-%E4%B8%8D%E8%A6%81%E6%97%A9%E6%AD%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "9a7471bfd49bfdb23c8e55851a654bb1d0cc1e0e9f10f81a853e8ada7b824f76",
+      "distributed_sha256": "9a7471bfd49bfdb23c8e55851a654bb1d0cc1e0e9f10f81a853e8ada7b824f76",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/02-不要慢慢死.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/02-%E4%B8%8D%E8%A6%81%E6%85%A2%E6%85%A2%E6%AD%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "880e0b4f65cc37be39266c79c5c655276d0911fcd1623cadc71f918323c1c8b1",
+      "distributed_sha256": "880e0b4f65cc37be39266c79c5c655276d0911fcd1623cadc71f918323c1c8b1",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/03-不要浪费精力.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/03-%E4%B8%8D%E8%A6%81%E6%B5%AA%E8%B4%B9%E7%B2%BE%E5%8A%9B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "2d11ab4d31fddd120424066e547c41707e7c3f7b5e3b8a8d6040a52c03584294",
+      "distributed_sha256": "2d11ab4d31fddd120424066e547c41707e7c3f7b5e3b8a8d6040a52c03584294",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/04-不要浪费时间.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/04-%E4%B8%8D%E8%A6%81%E6%B5%AA%E8%B4%B9%E6%97%B6%E9%97%B4.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a634678d1f9537cec321c1c2bc7bc823da4e3e895d21762e27ca942e6d8580a4",
+      "distributed_sha256": "a634678d1f9537cec321c1c2bc7bc823da4e3e895d21762e27ca942e6d8580a4",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/05-不要浪费钱.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/05-%E4%B8%8D%E8%A6%81%E6%B5%AA%E8%B4%B9%E9%92%B1.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a42c7f242d884ec5aa8cadeaa5b3509262e17d5758b540d5a15a421c6e0636a5",
+      "distributed_sha256": "a42c7f242d884ec5aa8cadeaa5b3509262e17d5758b540d5a15a421c6e0636a5",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/06-反面清单.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/06-%E5%8F%8D%E9%9D%A2%E6%B8%85%E5%8D%95.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a3228b3318e5fe61850d4265db4e7f9aa1ecd813d3bdf0ae7b4efa18a6b314c5",
+      "distributed_sha256": "a3228b3318e5fe61850d4265db4e7f9aa1ecd813d3bdf0ae7b4efa18a6b314c5",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/07-劳动仲裁条重写.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/07-%E5%8A%B3%E5%8A%A8%E4%BB%B2%E8%A3%81%E6%9D%A1%E9%87%8D%E5%86%99.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "6577ddc9417493a78c8409c1a5401a1f7f4df1a2866abaa91411a5f765bf7f08",
+      "distributed_sha256": "6577ddc9417493a78c8409c1a5401a1f7f4df1a2866abaa91411a5f765bf7f08",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/07-没钱的时候怎么活.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/07-%E6%B2%A1%E9%92%B1%E7%9A%84%E6%97%B6%E5%80%99%E6%80%8E%E4%B9%88%E6%B4%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "61df1b2bd9238a175b58f9451a7cd8c308d6c135cead993404cab782a2a8dada",
+      "distributed_sha256": "61df1b2bd9238a175b58f9451a7cd8c308d6c135cead993404cab782a2a8dada",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/08-别把自己搭进去.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/08-%E5%88%AB%E6%8A%8A%E8%87%AA%E5%B7%B1%E6%90%AD%E8%BF%9B%E5%8E%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f081795bea51df07ff16f31cf2c77d5bbd11dc51ceade4038e80a9f06d963299",
+      "distributed_sha256": "f081795bea51df07ff16f31cf2c77d5bbd11dc51ceade4038e80a9f06d963299",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/09-普通人容易踩的法律红线.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/09-%E6%99%AE%E9%80%9A%E4%BA%BA%E5%AE%B9%E6%98%93%E8%B8%A9%E7%9A%84%E6%B3%95%E5%BE%8B%E7%BA%A2%E7%BA%BF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "df7b092a124a6295cfc819f668f830c1d122ab4ab3f28cf0550739a956d369a6",
+      "distributed_sha256": "df7b092a124a6295cfc819f668f830c1d122ab4ab3f28cf0550739a956d369a6",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/10-21-23-恋爱出国娱乐减压与技能.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/10-21-23-%E6%81%8B%E7%88%B1%E5%87%BA%E5%9B%BD%E5%A8%B1%E4%B9%90%E5%87%8F%E5%8E%8B%E4%B8%8E%E6%8A%80%E8%83%BD.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a5c674565a64d882d32e9f916f6cbef52dc7d382ee9436444be1e8c2abe83297",
+      "distributed_sha256": "a5c674565a64d882d32e9f916f6cbef52dc7d382ee9436444be1e8c2abe83297",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/10-结婚划不划算.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/10-%E7%BB%93%E5%A9%9A%E5%88%92%E4%B8%8D%E5%88%92%E7%AE%97.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "fc7b1711b0420cc5d19ba92992aac6966c922d3681105b0da473d3be3ccae943",
+      "distributed_sha256": "fc7b1711b0420cc5d19ba92992aac6966c922d3681105b0da473d3be3ccae943",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/11-程序员红线.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/11-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%BA%A2%E7%BA%BF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "86897ae767aa381a7fbfa8f6a8585de8a32bd39160260d618f7423b4df7f253a",
+      "distributed_sha256": "86897ae767aa381a7fbfa8f6a8585de8a32bd39160260d618f7423b4df7f253a",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/12-创业与做生意.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/12-%E5%88%9B%E4%B8%9A%E4%B8%8E%E5%81%9A%E7%94%9F%E6%84%8F.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "28b21a83d7263e691a52470ce5ba92a600486249481df008542b36bc49ec3538",
+      "distributed_sha256": "28b21a83d7263e691a52470ce5ba92a600486249481df008542b36bc49ec3538",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/13-急救与野外补充.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/13-%E6%80%A5%E6%95%91%E4%B8%8E%E9%87%8E%E5%A4%96%E8%A1%A5%E5%85%85.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "514062beecf90c1f060954662f6580d98dddcc4a5b64f1f9265acca7d71d3331",
+      "distributed_sha256": "514062beecf90c1f060954662f6580d98dddcc4a5b64f1f9265acca7d71d3331",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/13-紧急情况.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/13-%E7%B4%A7%E6%80%A5%E6%83%85%E5%86%B5.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f0e23003e1e187c79a8e6ed524ed3f1373abc8fdd19de02c9ab27c0b1dd8ac96",
+      "distributed_sha256": "f0e23003e1e187c79a8e6ed524ed3f1373abc8fdd19de02c9ab27c0b1dd8ac96",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/14-19-新增章节与HowToLiveLonger合入.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/14-19-%E6%96%B0%E5%A2%9E%E7%AB%A0%E8%8A%82%E4%B8%8EHowToLiveLonger%E5%90%88%E5%85%A5.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "110fe624dba9315a18f14dd096a90ce597a287872f4fb7b5f9f9ea375fbc0b9f",
+      "distributed_sha256": "110fe624dba9315a18f14dd096a90ce597a287872f4fb7b5f9f9ea375fbc0b9f",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/19-工伤.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/19-%E5%B7%A5%E4%BC%A4.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "1759f014080d2f05809cef59e515d2678627ee6012658129cf130fcd2d8cd350",
+      "distributed_sha256": "1759f014080d2f05809cef59e515d2678627ee6012658129cf130fcd2d8cd350",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/24-25-看病与身后事.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/24-25-%E7%9C%8B%E7%97%85%E4%B8%8E%E8%BA%AB%E5%90%8E%E4%BA%8B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "479fff09eaee7f5cc42f9d844daa9f33a30fea2dceb394044da56f461f0c9bcc",
+      "distributed_sha256": "479fff09eaee7f5cc42f9d844daa9f33a30fea2dceb394044da56f461f0c9bcc",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/27-怀孕和生产与艾滋病预防阻断.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/27-%E6%80%80%E5%AD%95%E5%92%8C%E7%94%9F%E4%BA%A7%E4%B8%8E%E8%89%BE%E6%BB%8B%E7%97%85%E9%A2%84%E9%98%B2%E9%98%BB%E6%96%AD.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "3f60cd0414ccc9da4cd06872c0e1d7d076470f3efb252769fc4ee8ec06232747",
+      "distributed_sha256": "3f60cd0414ccc9da4cd06872c0e1d7d076470f3efb252769fc4ee8ec06232747",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/28-别为了外形把身体搞坏.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/28-%E5%88%AB%E4%B8%BA%E4%BA%86%E5%A4%96%E5%BD%A2%E6%8A%8A%E8%BA%AB%E4%BD%93%E6%90%9E%E5%9D%8F.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a082f40c49169d7b73b34b5f367a598a16a0b229bb1e293233a5daa0637bbf9d",
+      "distributed_sha256": "a082f40c49169d7b73b34b5f367a598a16a0b229bb1e293233a5daa0637bbf9d",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/29-遭遇重大打击之后.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/29-%E9%81%AD%E9%81%87%E9%87%8D%E5%A4%A7%E6%89%93%E5%87%BB%E4%B9%8B%E5%90%8E.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "32e5c63decb366e83f5075aac9ad4c980cb34e0fd8ebe91cbd802e73869ac709",
+      "distributed_sha256": "32e5c63decb366e83f5075aac9ad4c980cb34e0fd8ebe91cbd802e73869ac709",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/30-上学以后的孩子.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/30-%E4%B8%8A%E5%AD%A6%E4%BB%A5%E5%90%8E%E7%9A%84%E5%AD%A9%E5%AD%90.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "bbfc2b41ec4cd6e9b17096e9421326ef40c21dbcc6dff57bbf7c22e831ee0845",
+      "distributed_sha256": "bbfc2b41ec4cd6e9b17096e9421326ef40c21dbcc6dff57bbf7c22e831ee0845",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/32-出国留学.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/32-%E5%87%BA%E5%9B%BD%E7%95%99%E5%AD%A6.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f531beca544f7bdfeaa0c402e726d6ba7e85b11665023cd65469077c1c9ce5bb",
+      "distributed_sha256": "f531beca544f7bdfeaa0c402e726d6ba7e85b11665023cd65469077c1c9ce5bb",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/33-残疾之后怎么活.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/33-%E6%AE%8B%E7%96%BE%E4%B9%8B%E5%90%8E%E6%80%8E%E4%B9%88%E6%B4%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "cdcc8fc14a8f2d7fc34df1879205739bfcbeaf2fd3fbdea4122b2f171c116b8c",
+      "distributed_sha256": "cdcc8fc14a8f2d7fc34df1879205739bfcbeaf2fd3fbdea4122b2f171c116b8c",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/34-家里的常备药别吃出事.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/34-%E5%AE%B6%E9%87%8C%E7%9A%84%E5%B8%B8%E5%A4%87%E8%8D%AF%E5%88%AB%E5%90%83%E5%87%BA%E4%BA%8B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "68b74c8f64404ad91a440976a026489025b41d761e9bbd55ca3b0fe723723f40",
+      "distributed_sha256": "68b74c8f64404ad91a440976a026489025b41d761e9bbd55ca3b0fe723723f40",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/口径变更-受益人分四档.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E5%8F%A3%E5%BE%84%E5%8F%98%E6%9B%B4-%E5%8F%97%E7%9B%8A%E4%BA%BA%E5%88%86%E5%9B%9B%E6%A1%A3.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "94e1a66a0fdb341b1efd580b13d310da3c1e201a364c76186f871798200fadfe",
+      "distributed_sha256": "94e1a66a0fdb341b1efd580b13d310da3c1e201a364c76186f871798200fadfe",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/性取向相关条目.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E6%80%A7%E5%8F%96%E5%90%91%E7%9B%B8%E5%85%B3%E6%9D%A1%E7%9B%AE.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "279b43c8c6d63e17d5f0a278c41a6749c3bf34b5038b5e5503b31595b7b86c36",
+      "distributed_sha256": "279b43c8c6d63e17d5f0a278c41a6749c3bf34b5038b5e5503b31595b7b86c36",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/排查-只给禁止不给出路.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E6%8E%92%E6%9F%A5-%E5%8F%AA%E7%BB%99%E7%A6%81%E6%AD%A2%E4%B8%8D%E7%BB%99%E5%87%BA%E8%B7%AF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4a6a639593cb2ac63c3f86b8a7f396c68e3c36f660b288517cc76a74c313c607",
+      "distributed_sha256": "4a6a639593cb2ac63c3f86b8a7f396c68e3c36f660b288517cc76a74c313c607",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/排查-备注里的文献链接.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E6%8E%92%E6%9F%A5-%E5%A4%87%E6%B3%A8%E9%87%8C%E7%9A%84%E6%96%87%E7%8C%AE%E9%93%BE%E6%8E%A5.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "5095224e5638a012eda9a0698f1ea8e42bd6fd724c613c16abc5c5f3306b24ba",
+      "distributed_sha256": "5095224e5638a012eda9a0698f1ea8e42bd6fd724c613c16abc5c5f3306b24ba",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/排查-说人话栏与收益栏对齐.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E6%8E%92%E6%9F%A5-%E8%AF%B4%E4%BA%BA%E8%AF%9D%E6%A0%8F%E4%B8%8E%E6%94%B6%E7%9B%8A%E6%A0%8F%E5%AF%B9%E9%BD%90.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f82748cce97fa76e31e8b38a33a15b24c267a1b81c2da8db969ebcddf5658c82",
+      "distributed_sha256": "f82748cce97fa76e31e8b38a33a15b24c267a1b81c2da8db969ebcddf5658c82",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/新增-第31节十八岁之后有哪几条路.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E6%96%B0%E5%A2%9E-%E7%AC%AC31%E8%8A%82%E5%8D%81%E5%85%AB%E5%B2%81%E4%B9%8B%E5%90%8E%E6%9C%89%E5%93%AA%E5%87%A0%E6%9D%A1%E8%B7%AF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "c81f5445a26a7b7befb37e522b257eb47e81bb3bf93458ebeecaad361aa168b2",
+      "distributed_sha256": "c81f5445a26a7b7befb37e522b257eb47e81bb3bf93458ebeecaad361aa168b2",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-AI换脸拟声.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-AI%E6%8D%A2%E8%84%B8%E6%8B%9F%E5%A3%B0.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "745535d24eb2883a7fd654bdd380b87119661109dc36f8244a1955b114644489",
+      "distributed_sha256": "745535d24eb2883a7fd654bdd380b87119661109dc36f8244a1955b114644489",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue28八处补来源.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue28%E5%85%AB%E5%A4%84%E8%A1%A5%E6%9D%A5%E6%BA%90.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "80370c14cd85b90b3e3ec71508c8ace42e41a57e4a247e88478a6f739378d133",
+      "distributed_sha256": "80370c14cd85b90b3e3ec71508c8ace42e41a57e4a247e88478a6f739378d133",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue30国家赔偿免责与录音拍照留证.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue30%E5%9B%BD%E5%AE%B6%E8%B5%94%E5%81%BF%E5%85%8D%E8%B4%A3%E4%B8%8E%E5%BD%95%E9%9F%B3%E6%8B%8D%E7%85%A7%E7%95%99%E8%AF%81.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "209c2861ee6d35acb5c94468e7ad2588b220b21664b2b061da13daac36732da0",
+      "distributed_sha256": "209c2861ee6d35acb5c94468e7ad2588b220b21664b2b061da13daac36732da0",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue31情绪疏导家暴与职场欺负.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue31%E6%83%85%E7%BB%AA%E7%96%8F%E5%AF%BC%E5%AE%B6%E6%9A%B4%E4%B8%8E%E8%81%8C%E5%9C%BA%E6%AC%BA%E8%B4%9F.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "24831fca3d5122c5557b8a672683de947215c0f9cd87b90a42134b69f98bdb07",
+      "distributed_sha256": "24831fca3d5122c5557b8a672683de947215c0f9cd87b90a42134b69f98bdb07",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue37职称.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue37%E8%81%8C%E7%A7%B0.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4752321e3d2ba5050848b9ad8fe0a9e606edf0f3a6a5d7ca75ce16e135937f85",
+      "distributed_sha256": "4752321e3d2ba5050848b9ad8fe0a9e606edf0f3a6a5d7ca75ce16e135937f85",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue41境外投资渠道.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue41%E5%A2%83%E5%A4%96%E6%8A%95%E8%B5%84%E6%B8%A0%E9%81%93.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4a358753e63d64ed684cb511ea88948a1480a6db60fd4a0fe479ff1942a44003",
+      "distributed_sha256": "4a358753e63d64ed684cb511ea88948a1480a6db60fd4a0fe479ff1942a44003",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue44降尿酸药的选择.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue44%E9%99%8D%E5%B0%BF%E9%85%B8%E8%8D%AF%E7%9A%84%E9%80%89%E6%8B%A9.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "8cac127d71389241e9c8263cb8a07894bddff7ceb697c5979db53db0bbff48b3",
+      "distributed_sha256": "8cac127d71389241e9c8263cb8a07894bddff7ceb697c5979db53db0bbff48b3",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue57约会安全.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue57%E7%BA%A6%E4%BC%9A%E5%AE%89%E5%85%A8.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "341814065b657be614667670b21aeb383ba9160fe7f1a0a902b74f5fe0ecb1ff",
+      "distributed_sha256": "341814065b657be614667670b21aeb383ba9160fe7f1a0a902b74f5fe0ecb1ff",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue60给个人干活被欠钱.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue60%E7%BB%99%E4%B8%AA%E4%BA%BA%E5%B9%B2%E6%B4%BB%E8%A2%AB%E6%AC%A0%E9%92%B1.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "3e1f88ad87fce985c6224b8f429e9f5bc9837d1a492d2e74a6fd59bf5077c10b",
+      "distributed_sha256": "3e1f88ad87fce985c6224b8f429e9f5bc9837d1a492d2e74a6fd59bf5077c10b",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-issue61推理问题.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-issue61%E6%8E%A8%E7%90%86%E9%97%AE%E9%A2%98.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f73a113d3ebf009b384a56ff635be012ed5d5442161fac268c130707b1be986f",
+      "distributed_sha256": "f73a113d3ebf009b384a56ff635be012ed5d5442161fac268c130707b1be986f",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-保险六条.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E4%BF%9D%E9%99%A9%E5%85%AD%E6%9D%A1.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "5610d3ec03a7941ad04012efbcc0f40167fbd1a9515d6f97d1e5f7767e6c8eeb",
+      "distributed_sha256": "5610d3ec03a7941ad04012efbcc0f40167fbd1a9515d6f97d1e5f7767e6c8eeb",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-免责条款越界排查.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%85%8D%E8%B4%A3%E6%9D%A1%E6%AC%BE%E8%B6%8A%E7%95%8C%E6%8E%92%E6%9F%A5.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "0cc137d9dc3b53debdb057615c2109efd74ee5821296bd5a633b33a5bf39e45e",
+      "distributed_sha256": "0cc137d9dc3b53debdb057615c2109efd74ee5821296bd5a633b33a5bf39e45e",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-养不了孩子的合法出路.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%85%BB%E4%B8%8D%E4%BA%86%E5%AD%A9%E5%AD%90%E7%9A%84%E5%90%88%E6%B3%95%E5%87%BA%E8%B7%AF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "685e982e7409f78d8cd5b00c7ab16ca28d08fe42454920e428f9b1b2ed2e3cbd",
+      "distributed_sha256": "685e982e7409f78d8cd5b00c7ab16ca28d08fe42454920e428f9b1b2ed2e3cbd",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-养老诈骗.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%85%BB%E8%80%81%E8%AF%88%E9%AA%97.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f7606d0dc5e608abf3089382db6491d47b74a76f44e6a4b8b48e46bf3407d1ea",
+      "distributed_sha256": "f7606d0dc5e608abf3089382db6491d47b74a76f44e6a4b8b48e46bf3407d1ea",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-勃起功能与嫖娼.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%8B%83%E8%B5%B7%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%AB%96%E5%A8%BC.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f9e1e116a0d22a79defe3c20a9e832d60a44f07f721876ad5e74860b79f66ebe",
+      "distributed_sha256": "f9e1e116a0d22a79defe3c20a9e832d60a44f07f721876ad5e74860b79f66ebe",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-十条补缺.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%8D%81%E6%9D%A1%E8%A1%A5%E7%BC%BA.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "e80b23cbd5e2f4e6655dfdd40d1a51bf720c2b6a69c20fcf5aa58e775a8003f2",
+      "distributed_sha256": "e80b23cbd5e2f4e6655dfdd40d1a51bf720c2b6a69c20fcf5aa58e775a8003f2",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-午睡时长.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%8D%88%E7%9D%A1%E6%97%B6%E9%95%BF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "ee61301b63d26394baca7f6656919af6ce4602311f91b79f2a1b66fc348c9a43",
+      "distributed_sha256": "ee61301b63d26394baca7f6656919af6ce4602311f91b79f2a1b66fc348c9a43",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-卖器官.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%8D%96%E5%99%A8%E5%AE%98.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "394ad06e161dc71daf665ee59ad4ddc454c4f4d4f648ce2240459c9100f348de",
+      "distributed_sha256": "394ad06e161dc71daf665ee59ad4ddc454c4f4d4f648ce2240459c9100f348de",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-后循环卒中夹层头痛与中暑补液.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%90%8E%E5%BE%AA%E7%8E%AF%E5%8D%92%E4%B8%AD%E5%A4%B9%E5%B1%82%E5%A4%B4%E7%97%9B%E4%B8%8E%E4%B8%AD%E6%9A%91%E8%A1%A5%E6%B6%B2.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4904853581a82c58083186dfa75c1bdfa4435916fc947627fcea7bd68ac53b3c",
+      "distributed_sha256": "4904853581a82c58083186dfa75c1bdfa4435916fc947627fcea7bd68ac53b3c",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-和机构打交道.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%92%8C%E6%9C%BA%E6%9E%84%E6%89%93%E4%BA%A4%E9%81%93.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a19bf052ae689e06950aecdcea17dad48aae354a13f09552dcbb79b3811a4506",
+      "distributed_sha256": "a19bf052ae689e06950aecdcea17dad48aae354a13f09552dcbb79b3811a4506",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-喝茶的霉菌毒素与绿茶提取物.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%96%9D%E8%8C%B6%E7%9A%84%E9%9C%89%E8%8F%8C%E6%AF%92%E7%B4%A0%E4%B8%8E%E7%BB%BF%E8%8C%B6%E6%8F%90%E5%8F%96%E7%89%A9.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "9aee91f3c9726aba17001fd56765bea6ef7db94b54f9f0618d05934ea21ac60e",
+      "distributed_sha256": "9aee91f3c9726aba17001fd56765bea6ef7db94b54f9f0618d05934ea21ac60e",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-回填十二处法规原文.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%9B%9E%E5%A1%AB%E5%8D%81%E4%BA%8C%E5%A4%84%E6%B3%95%E8%A7%84%E5%8E%9F%E6%96%87.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "2dabf3389f21e902cdaacfcbad6d3ad5f4bced5afc37614ab6328ce125599da1",
+      "distributed_sha256": "2dabf3389f21e902cdaacfcbad6d3ad5f4bced5afc37614ab6328ce125599da1",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-回填统计急救与文献TODO.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%9B%9E%E5%A1%AB%E7%BB%9F%E8%AE%A1%E6%80%A5%E6%95%91%E4%B8%8E%E6%96%87%E7%8C%AETODO.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "d64470906981e0e840961da0e7ea49329f945e3c7dcd23c7cba2354706644670",
+      "distributed_sha256": "d64470906981e0e840961da0e7ea49329f945e3c7dcd23c7cba2354706644670",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-奢侈品收藏与十八岁路径.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%A5%A2%E4%BE%88%E5%93%81%E6%94%B6%E8%97%8F%E4%B8%8E%E5%8D%81%E5%85%AB%E5%B2%81%E8%B7%AF%E5%BE%84.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "2c27fcec0c36979ac728e2774cf44c6302fdf0242ee2c89d6a4e8f7e61c3b982",
+      "distributed_sha256": "2c27fcec0c36979ac728e2774cf44c6302fdf0242ee2c89d6a4e8f7e61c3b982",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-家庭应急装备.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%AE%B6%E5%BA%AD%E5%BA%94%E6%80%A5%E8%A3%85%E5%A4%87.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "0b6acced7011fa721ba00dfbe966f04f3bfec83618860017518c2cca67d3dc93",
+      "distributed_sha256": "0b6acced7011fa721ba00dfbe966f04f3bfec83618860017518c2cca67d3dc93",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-尿酸结石与胆囊结石.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%B0%BF%E9%85%B8%E7%BB%93%E7%9F%B3%E4%B8%8E%E8%83%86%E5%9B%8A%E7%BB%93%E7%9F%B3.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "fc753fe17731f83a4fc06fb7ff5af77ae351ee09e53308521687bd6be320ae63",
+      "distributed_sha256": "fc753fe17731f83a4fc06fb7ff5af77ae351ee09e53308521687bd6be320ae63",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-幼儿屏幕时间与近视并发症.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E5%B9%BC%E5%84%BF%E5%B1%8F%E5%B9%95%E6%97%B6%E9%97%B4%E4%B8%8E%E8%BF%91%E8%A7%86%E5%B9%B6%E5%8F%91%E7%97%87.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "6a3bbec0904853f8a4e286a5c3bf6dfb23948c814c8f91d4877c5aa85b221518",
+      "distributed_sha256": "6a3bbec0904853f8a4e286a5c3bf6dfb23948c814c8f91d4877c5aa85b221518",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-急诊分诊与伤残鉴定残疾人证.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%80%A5%E8%AF%8A%E5%88%86%E8%AF%8A%E4%B8%8E%E4%BC%A4%E6%AE%8B%E9%89%B4%E5%AE%9A%E6%AE%8B%E7%96%BE%E4%BA%BA%E8%AF%81.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "2c45d47270f2e3bb92799d6a9fbff1f2baee7b44af5e073ad3d0ffc9b986ed80",
+      "distributed_sha256": "2c45d47270f2e3bb92799d6a9fbff1f2baee7b44af5e073ad3d0ffc9b986ed80",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-情绪、算命、购物、打人.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%83%85%E7%BB%AA%E3%80%81%E7%AE%97%E5%91%BD%E3%80%81%E8%B4%AD%E7%89%A9%E3%80%81%E6%89%93%E4%BA%BA.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "7c53fc0e925dad0d5067fd93839ca67e896b340cd603e50a68d927146414d538",
+      "distributed_sha256": "7c53fc0e925dad0d5067fd93839ca67e896b340cd603e50a68d927146414d538",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-慢病长护险与个人信息权利.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%85%A2%E7%97%85%E9%95%BF%E6%8A%A4%E9%99%A9%E4%B8%8E%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E6%9D%83%E5%88%A9.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "cfc420e651e6a7a2825ce5e6a4ef760d6db4cce2f3795572c5e183f70aee8587",
+      "distributed_sha256": "cfc420e651e6a7a2825ce5e6a4ef760d6db4cce2f3795572c5e183f70aee8587",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-戒烟戒酒学习与拖延的具体办法.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%88%92%E7%83%9F%E6%88%92%E9%85%92%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8B%96%E5%BB%B6%E7%9A%84%E5%85%B7%E4%BD%93%E5%8A%9E%E6%B3%95.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "c3eac970c3357a680afd530da2d238985bbd1eddf18446f49a3dcec953f69acf",
+      "distributed_sha256": "c3eac970c3357a680afd530da2d238985bbd1eddf18446f49a3dcec953f69acf",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-拒执失信骗贷与新型毒品.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%8B%92%E6%89%A7%E5%A4%B1%E4%BF%A1%E9%AA%97%E8%B4%B7%E4%B8%8E%E6%96%B0%E5%9E%8B%E6%AF%92%E5%93%81.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "5f507ea197a8f0d91a1b0e04f4073554e55bc61eefea4a208963ae4a687aa0f4",
+      "distributed_sha256": "5f507ea197a8f0d91a1b0e04f4073554e55bc61eefea4a208963ae4a687aa0f4",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-攀比与别人的评价.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%94%80%E6%AF%94%E4%B8%8E%E5%88%AB%E4%BA%BA%E7%9A%84%E8%AF%84%E4%BB%B7.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "7c088f30af021697b91584e0df50e4fb978cc492dbd9b9c33597aa731d35e2e0",
+      "distributed_sha256": "7c088f30af021697b91584e0df50e4fb978cc492dbd9b9c33597aa731d35e2e0",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-早引入花生防过敏.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%97%A9%E5%BC%95%E5%85%A5%E8%8A%B1%E7%94%9F%E9%98%B2%E8%BF%87%E6%95%8F.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "b426ac8c8c4cf9ce3f4bbc98c36f2548aaf395b0747279605e1a0ee27e53dd73",
+      "distributed_sha256": "b426ac8c8c4cf9ce3f4bbc98c36f2548aaf395b0747279605e1a0ee27e53dd73",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-早餐与进食时间.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%97%A9%E9%A4%90%E4%B8%8E%E8%BF%9B%E9%A3%9F%E6%97%B6%E9%97%B4.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "622088ace38e73ea1ca39de26517b7d79bbfb5fd9818aa0e7249c6ce19f3d9f0",
+      "distributed_sha256": "622088ace38e73ea1ca39de26517b7d79bbfb5fd9818aa0e7249c6ce19f3d9f0",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-正当防卫.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%AD%A3%E5%BD%93%E9%98%B2%E5%8D%AB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a1b05f38345fffb6aba41f9730c97448cdf5e8928a6524e2003474e384b8cdbe",
+      "distributed_sha256": "a1b05f38345fffb6aba41f9730c97448cdf5e8928a6524e2003474e384b8cdbe",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-没有亲人朋友时怎么办.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%B2%A1%E6%9C%89%E4%BA%B2%E4%BA%BA%E6%9C%8B%E5%8F%8B%E6%97%B6%E6%80%8E%E4%B9%88%E5%8A%9E.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "fdd2d2ac3367225f3f52ab86452ac4d82e3cad88f42d3010cf55c3220e31971a",
+      "distributed_sha256": "fdd2d2ac3367225f3f52ab86452ac4d82e3cad88f42d3010cf55c3220e31971a",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-泄愤式极端暴力.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E6%B3%84%E6%84%A4%E5%BC%8F%E6%9E%81%E7%AB%AF%E6%9A%B4%E5%8A%9B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "e550fff7c585e9c94e64e5e79f5e40952dbdbdb898a5c47978963c237210a5a7",
+      "distributed_sha256": "e550fff7c585e9c94e64e5e79f5e40952dbdbdb898a5c47978963c237210a5a7",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-熬夜补觉与夜班.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%86%AC%E5%A4%9C%E8%A1%A5%E8%A7%89%E4%B8%8E%E5%A4%9C%E7%8F%AD.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "334609b862b1fc86078d26147e4090c86df46bece6027e1f03d470073b6e7b84",
+      "distributed_sha256": "334609b862b1fc86078d26147e4090c86df46bece6027e1f03d470073b6e7b84",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-燃气毒蘑菇车险预付消费与养犬.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%87%83%E6%B0%94%E6%AF%92%E8%98%91%E8%8F%87%E8%BD%A6%E9%99%A9%E9%A2%84%E4%BB%98%E6%B6%88%E8%B4%B9%E4%B8%8E%E5%85%BB%E7%8A%AC.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "43fe9c556d07c98d9e4ab72ec299a9d050282eea970179c8a8866db4b9ad57df",
+      "distributed_sha256": "43fe9c556d07c98d9e4ab72ec299a9d050282eea970179c8a8866db4b9ad57df",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-献血.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%8C%AE%E8%A1%80.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "5215f9e9c394c50f7161a847547f273aa079ee27fc4cdbb00eca35ba4415c4a5",
+      "distributed_sha256": "5215f9e9c394c50f7161a847547f273aa079ee27fc4cdbb00eca35ba4415c4a5",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-眼中风血栓硬膜下血肿与血尿.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%9C%BC%E4%B8%AD%E9%A3%8E%E8%A1%80%E6%A0%93%E7%A1%AC%E8%86%9C%E4%B8%8B%E8%A1%80%E8%82%BF%E4%B8%8E%E8%A1%80%E5%B0%BF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "b65735549c23c77c6ea0323619df8e68041148fdd09b7232fab2543c8bbbc983",
+      "distributed_sha256": "b65735549c23c77c6ea0323619df8e68041148fdd09b7232fab2543c8bbbc983",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-窗户破伤风二手烟公积金与猝死工伤.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AA%97%E6%88%B7%E7%A0%B4%E4%BC%A4%E9%A3%8E%E4%BA%8C%E6%89%8B%E7%83%9F%E5%85%AC%E7%A7%AF%E9%87%91%E4%B8%8E%E7%8C%9D%E6%AD%BB%E5%B7%A5%E4%BC%A4.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "937bd317f52093b974572bbaf694ad37c75131a587716bc76116f8f7566d10c1",
+      "distributed_sha256": "937bd317f52093b974572bbaf694ad37c75131a587716bc76116f8f7566d10c1",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第10节伴侣治疗.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC10%E8%8A%82%E4%BC%B4%E4%BE%A3%E6%B2%BB%E7%96%97.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "3b4b210e2d2d02c61b52e8a14aa4cf52258e862d503a85d5eaf108710df034aa",
+      "distributed_sha256": "3b4b210e2d2d02c61b52e8a14aa4cf52258e862d503a85d5eaf108710df034aa",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第10节父母出资与夫妻共同债务.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC10%E8%8A%82%E7%88%B6%E6%AF%8D%E5%87%BA%E8%B5%84%E4%B8%8E%E5%A4%AB%E5%A6%BB%E5%85%B1%E5%90%8C%E5%80%BA%E5%8A%A1.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "efa789e9ae1a7bb9fe14daa61e03226a15579d403ee1dd89013b93fc3735d96a",
+      "distributed_sha256": "efa789e9ae1a7bb9fe14daa61e03226a15579d403ee1dd89013b93fc3735d96a",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第11节白帽子与漏洞报送.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC11%E8%8A%82%E7%99%BD%E5%B8%BD%E5%AD%90%E4%B8%8E%E6%BC%8F%E6%B4%9E%E6%8A%A5%E9%80%81.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "08cfa18ef9e8656358ec697faddecfb2fa0b169b88d398a49d012823855d4030",
+      "distributed_sha256": "08cfa18ef9e8656358ec697faddecfb2fa0b169b88d398a49d012823855d4030",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第12节注册报税与涉税诈骗.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC12%E8%8A%82%E6%B3%A8%E5%86%8C%E6%8A%A5%E7%A8%8E%E4%B8%8E%E6%B6%89%E7%A8%8E%E8%AF%88%E9%AA%97.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "6d49c3ad827b54d3e9f6821971f06a9a0373c5a03905108ada421d1cadd6211c",
+      "distributed_sha256": "6d49c3ad827b54d3e9f6821971f06a9a0373c5a03905108ada421d1cadd6211c",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第13节婴儿噎住与心肺复苏.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC13%E8%8A%82%E5%A9%B4%E5%84%BF%E5%99%8E%E4%BD%8F%E4%B8%8E%E5%BF%83%E8%82%BA%E5%A4%8D%E8%8B%8F.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4b7afb08c25c9fbfb449f459992f1fbdbc5ee98c261e92aafc63a1dbcd8efb2e",
+      "distributed_sha256": "4b7afb08c25c9fbfb449f459992f1fbdbc5ee98c261e92aafc63a1dbcd8efb2e",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第15节与病历条回填.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC15%E8%8A%82%E4%B8%8E%E7%97%85%E5%8E%86%E6%9D%A1%E5%9B%9E%E5%A1%AB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a094a2a49701534c90ef6a1c11e7d1bdc856c8f7b4e7adf4e501f3968b1ec86d",
+      "distributed_sha256": "a094a2a49701534c90ef6a1c11e7d1bdc856c8f7b4e7adf4e501f3968b1ec86d",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第17节白内障手术.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC17%E8%8A%82%E7%99%BD%E5%86%85%E9%9A%9C%E6%89%8B%E6%9C%AF.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "fc26fb79cac5b9f07401cca00317496f5c859070e14b13fc3400175e67724f0a",
+      "distributed_sha256": "fc26fb79cac5b9f07401cca00317496f5c859070e14b13fc3400175e67724f0a",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第19节离职证明与补偿个税.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC19%E8%8A%82%E7%A6%BB%E8%81%8C%E8%AF%81%E6%98%8E%E4%B8%8E%E8%A1%A5%E5%81%BF%E4%B8%AA%E7%A8%8E.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "252e84f7ac2611542778b6250ade3f24fb27329c904b440d01a91f0c297b5a7a",
+      "distributed_sha256": "252e84f7ac2611542778b6250ade3f24fb27329c904b440d01a91f0c297b5a7a",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第1节冰面量厚度.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC1%E8%8A%82%E5%86%B0%E9%9D%A2%E9%87%8F%E5%8E%9A%E5%BA%A6.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "0bdbb0601aaf0b6330a29e059a29adde31350c37e33ed9cf5fad208a58d2b400",
+      "distributed_sha256": "0bdbb0601aaf0b6330a29e059a29adde31350c37e33ed9cf5fad208a58d2b400",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第1节失控放射源.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC1%E8%8A%82%E5%A4%B1%E6%8E%A7%E6%94%BE%E5%B0%84%E6%BA%90.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "b5df070dbd64d6df684521dc1ff599d6972b0837c77ecb0d0374bbcaa88be7c0",
+      "distributed_sha256": "b5df070dbd64d6df684521dc1ff599d6972b0837c77ecb0d0374bbcaa88be7c0",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第1节骨质疏松筛查.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC1%E8%8A%82%E9%AA%A8%E8%B4%A8%E7%96%8F%E6%9D%BE%E7%AD%9B%E6%9F%A5.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "33b94d7ef4a68caea7c5e6fa7d7b0cab0e4009c6d8753ad584fc0201c2cafb42",
+      "distributed_sha256": "33b94d7ef4a68caea7c5e6fa7d7b0cab0e4009c6d8753ad584fc0201c2cafb42",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第20节新生儿黄疸.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC20%E8%8A%82%E6%96%B0%E7%94%9F%E5%84%BF%E9%BB%84%E7%96%B8.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "058ea0522b73b582f3cb39affe44a09ae16ddb28790ee3663f3c29569f8a59fc",
+      "distributed_sha256": "058ea0522b73b582f3cb39affe44a09ae16ddb28790ee3663f3c29569f8a59fc",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第21节境外用卡.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC21%E8%8A%82%E5%A2%83%E5%A4%96%E7%94%A8%E5%8D%A1.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "80b62b98791b3d43dc89fcb84483f325dbae227301ec091f7efcaad520ccdfcc",
+      "distributed_sha256": "80b62b98791b3d43dc89fcb84483f325dbae227301ec091f7efcaad520ccdfcc",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第25节人没了当时怎么办.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC25%E8%8A%82%E4%BA%BA%E6%B2%A1%E4%BA%86%E5%BD%93%E6%97%B6%E6%80%8E%E4%B9%88%E5%8A%9E.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "77e8d6f8831c6abf7d8b870f31a73adda4c8f696ac0ec1161c9d158fc8d4ae69",
+      "distributed_sha256": "77e8d6f8831c6abf7d8b870f31a73adda4c8f696ac0ec1161c9d158fc8d4ae69",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第26节做平台.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC26%E8%8A%82%E5%81%9A%E5%B9%B3%E5%8F%B0.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "dcd1995d053b44a2a0a19863a28ecc134faf063e8cb3387f138b4c5bbabedd77",
+      "distributed_sha256": "dcd1995d053b44a2a0a19863a28ecc134faf063e8cb3387f138b4c5bbabedd77",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第2节室内空气.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC2%E8%8A%82%E5%AE%A4%E5%86%85%E7%A9%BA%E6%B0%94.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "a046d9c3e60e5d78028b5bf7cc239d30940f864047a80e78f0536b6c3288c59e",
+      "distributed_sha256": "a046d9c3e60e5d78028b5bf7cc239d30940f864047a80e78f0536b6c3288c59e",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第30节管孩子不打和养育课程.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC30%E8%8A%82%E7%AE%A1%E5%AD%A9%E5%AD%90%E4%B8%8D%E6%89%93%E5%92%8C%E5%85%BB%E8%82%B2%E8%AF%BE%E7%A8%8B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "ec0163bed7dfb64765e260017b24fbc9866c7f24cb9365e55bdb2c139ff86926",
+      "distributed_sha256": "ec0163bed7dfb64765e260017b24fbc9866c7f24cb9365e55bdb2c139ff86926",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第31节远程给境外雇主干活.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC31%E8%8A%82%E8%BF%9C%E7%A8%8B%E7%BB%99%E5%A2%83%E5%A4%96%E9%9B%87%E4%B8%BB%E5%B9%B2%E6%B4%BB.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "c384802859099e547e7014e3fafd7b56218aed760e3cd280a568b04fab6a9cb9",
+      "distributed_sha256": "c384802859099e547e7014e3fafd7b56218aed760e3cd280a568b04fab6a9cb9",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第34节过期药与相互作用.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC34%E8%8A%82%E8%BF%87%E6%9C%9F%E8%8D%AF%E4%B8%8E%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "b885f680757fae564309444c086929792962ddb4978aa92485fa4f528197c0d6",
+      "distributed_sha256": "b885f680757fae564309444c086929792962ddb4978aa92485fa4f528197c0d6",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第3、5节.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC3%E3%80%815%E8%8A%82.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "2312b710edc240532a6bfc38ffb0e388a2477d938e5d0b714e099877396dbffd",
+      "distributed_sha256": "2312b710edc240532a6bfc38ffb0e388a2477d938e5d0b714e099877396dbffd",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第5节炒股的两条行为账.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC5%E8%8A%82%E7%82%92%E8%82%A1%E7%9A%84%E4%B8%A4%E6%9D%A1%E8%A1%8C%E4%B8%BA%E8%B4%A6.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4f866819ae7862d0be7532bfdd3892c7ce81dddc411c5c8ebfd77b8e08b45060",
+      "distributed_sha256": "4f866819ae7862d0be7532bfdd3892c7ce81dddc411c5c8ebfd77b8e08b45060",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第6节通用体检套餐.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC6%E8%8A%82%E9%80%9A%E7%94%A8%E4%BD%93%E6%A3%80%E5%A5%97%E9%A4%90.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f7dd8d94ce5acd69d8678e04b23a570cf05e670853ecabc4bf406a35e274f2e4",
+      "distributed_sha256": "f7dd8d94ce5acd69d8678e04b23a570cf05e670853ecabc4bf406a35e274f2e4",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第7、8节.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC7%E3%80%818%E8%8A%82.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f47977991032d2f7096351e139d8e3ceba3d037cd1d91bcca142a9c5da5ece72",
+      "distributed_sha256": "f47977991032d2f7096351e139d8e3ceba3d037cd1d91bcca142a9c5da5ece72",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第8节被指控与被诬告.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC8%E8%8A%82%E8%A2%AB%E6%8C%87%E6%8E%A7%E4%B8%8E%E8%A2%AB%E8%AF%AC%E5%91%8A.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "0deaf687a2aab5064e71e9d821f2b6d05f2b13097910aa262a10cf59dc956303",
+      "distributed_sha256": "0deaf687a2aab5064e71e9d821f2b6d05f2b13097910aa262a10cf59dc956303",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第9节境外信息只看不转.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC9%E8%8A%82%E5%A2%83%E5%A4%96%E4%BF%A1%E6%81%AF%E5%8F%AA%E7%9C%8B%E4%B8%8D%E8%BD%AC.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "5141226ec9182c28c0bb74aca748bf42eb7f68a1e20d844ad42899b202315a6f",
+      "distributed_sha256": "5141226ec9182c28c0bb74aca748bf42eb7f68a1e20d844ad42899b202315a6f",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-第9节薅羊毛.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E7%AC%AC9%E8%8A%82%E8%96%85%E7%BE%8A%E6%AF%9B.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "b6d8febbe08d5e3d7e5aa21ac6cbe59310b1188fb4057a3bfd1571cae244fc5f",
+      "distributed_sha256": "b6d8febbe08d5e3d7e5aa21ac6cbe59310b1188fb4057a3bfd1571cae244fc5f",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-职业病与化学灼伤.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E8%81%8C%E4%B8%9A%E7%97%85%E4%B8%8E%E5%8C%96%E5%AD%A6%E7%81%BC%E4%BC%A4.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "3e6bb406b92f7930640c9c9bcdfb06faba58c1f1ef7362fe8ce667c0ec4fffbd",
+      "distributed_sha256": "3e6bb406b92f7930640c9c9bcdfb06faba58c1f1ef7362fe8ce667c0ec4fffbd",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-自杀的后果.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E8%87%AA%E6%9D%80%E7%9A%84%E5%90%8E%E6%9E%9C.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "0b6615d2af1972b804b3e8835a095df071448e694e54121520ae07a1c7c95c4b",
+      "distributed_sha256": "0b6615d2af1972b804b3e8835a095df071448e694e54121520ae07a1c7c95c4b",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-自首与追诉期限.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E8%87%AA%E9%A6%96%E4%B8%8E%E8%BF%BD%E8%AF%89%E6%9C%9F%E9%99%90.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "316c7cdde4c52ab15c87b8ae53e98fdbcdb2b88a6985825f3f036ea94fce61ad",
+      "distributed_sha256": "316c7cdde4c52ab15c87b8ae53e98fdbcdb2b88a6985825f3f036ea94fce61ad",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-被网暴之后怎么办.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E8%A2%AB%E7%BD%91%E6%9A%B4%E4%B9%8B%E5%90%8E%E6%80%8E%E4%B9%88%E5%8A%9E.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "5d55e0c2adf3e3fa31b948f2b1578d44680716057968ca194d029bfa20cd5be0",
+      "distributed_sha256": "5d55e0c2adf3e3fa31b948f2b1578d44680716057968ca194d029bfa20cd5be0",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-要不要死记硬背.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E8%A6%81%E4%B8%8D%E8%A6%81%E6%AD%BB%E8%AE%B0%E7%A1%AC%E8%83%8C.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "b278d4c33512f545f5e1b09e6c4c400cb05da8e1a5ff8145a841592dac35ffe6",
+      "distributed_sha256": "b278d4c33512f545f5e1b09e6c4c400cb05da8e1a5ff8145a841592dac35ffe6",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-读书还是打工.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E8%AF%BB%E4%B9%A6%E8%BF%98%E6%98%AF%E6%89%93%E5%B7%A5.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "0960a3d54a2a3d24412fefa51ecafdf11afad75c8566c78b4ffde2a0a991ea63",
+      "distributed_sha256": "0960a3d54a2a3d24412fefa51ecafdf11afad75c8566c78b4ffde2a0a991ea63",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-进货假货与图案版权.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E8%BF%9B%E8%B4%A7%E5%81%87%E8%B4%A7%E4%B8%8E%E5%9B%BE%E6%A1%88%E7%89%88%E6%9D%83.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "7af3bcc4eddae1cd551a1bc461fce8aacd76c2e399c920e49e38ad226677dc4a",
+      "distributed_sha256": "7af3bcc4eddae1cd551a1bc461fce8aacd76c2e399c920e49e38ad226677dc4a",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-针对孩子的骗局.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E9%92%88%E5%AF%B9%E5%AD%A9%E5%AD%90%E7%9A%84%E9%AA%97%E5%B1%80.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4f1eda009cd62d696ff8416505f23b1e4e7c9f5401a5dcb0bffef7e5147dd2bb",
+      "distributed_sha256": "4f1eda009cd62d696ff8416505f23b1e4e7c9f5401a5dcb0bffef7e5147dd2bb",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-陌生人出事该不该上.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E9%99%8C%E7%94%9F%E4%BA%BA%E5%87%BA%E4%BA%8B%E8%AF%A5%E4%B8%8D%E8%AF%A5%E4%B8%8A.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "13f90a8db7253f89d825211959042cdd7790795022cc399b5f9fde868e6628f3",
+      "distributed_sha256": "13f90a8db7253f89d825211959042cdd7790795022cc399b5f9fde868e6628f3",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-青光眼急性发作.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E9%9D%92%E5%85%89%E7%9C%BC%E6%80%A5%E6%80%A7%E5%8F%91%E4%BD%9C.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "f13453188b28c644256ee72ba652896464f6f68e133451ba6495036dc0c0aabc",
+      "distributed_sha256": "f13453188b28c644256ee72ba652896464f6f68e133451ba6495036dc0c0aabc",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-食品安全.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "140ef3d1826a7c266c1041fe7ec98a2f80282b10d624380399525c81d1db7e2c",
+      "distributed_sha256": "140ef3d1826a7c266c1041fe7ec98a2f80282b10d624380399525c81d1db7e2c",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/核实记录/追加-骗保.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95/%E8%BF%BD%E5%8A%A0-%E9%AA%97%E4%BF%9D.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "056e472859d5494d01398d1edcc9a9ed3f5e6d96aa4d7461bd2704da335464a9",
+      "distributed_sha256": "056e472859d5494d01398d1edcc9a9ed3f5e6d96aa4d7461bd2704da335464a9",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/生物钟和夜班.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E7%94%9F%E7%89%A9%E9%92%9F%E5%92%8C%E5%A4%9C%E7%8F%AD.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "4d0adfd5671486619db9daae4b242540b739537dc6482b19d2c87895fd708a8d",
+      "distributed_sha256": "ba5a95eba4e62d198a32d89387c2eb4ec630bb4430e33610cd5138003fe6ebf1",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/结婚划不划算.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E7%BB%93%E5%A9%9A%E5%88%92%E4%B8%8D%E5%88%92%E7%AE%97.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "e1feea02ecdc2066c15fd15f8a41ec6db089f3b14e7f3340133341635a1b4699",
+      "distributed_sha256": "e1feea02ecdc2066c15fd15f8a41ec6db089f3b14e7f3340133341635a1b4699",
+      "changes": [],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/被裁了之后先做什么.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E8%A2%AB%E8%A3%81%E4%BA%86%E4%B9%8B%E5%90%8E%E5%85%88%E5%81%9A%E4%BB%80%E4%B9%88.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "7ba0ad976a40e30eb7eec5fcee6407ff6dc3814e3ed3d3233caca9d4d0261b26",
+      "distributed_sha256": "e2ad50ab1629ef89b49908d7848a9f0cf5be9c9b23f414e8b4dac390e5ee7f17",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "docs/遇到陌生人出事该不该停.md",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/docs/%E9%81%87%E5%88%B0%E9%99%8C%E7%94%9F%E4%BA%BA%E5%87%BA%E4%BA%8B%E8%AF%A5%E4%B8%8D%E8%AF%A5%E5%81%9C.md",
+      "source_commit": "fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b",
+      "source_sha256": "772563494b568e1c2b5763bb6b123fe8aa5df875fd722e9f0acb6bf42ff54ef6",
+      "distributed_sha256": "f542304b5b73e0686405adb82048c2d49a10805edba3d469fc746ef5fff66b54",
+      "changes": [
+        {
+          "from": "../README.md",
+          "to": "https://github.com/eternity4719/HowToLiveBetter/blob/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b/README.md"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    }
+  ]
+}

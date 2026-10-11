@@ -1,0 +1,936 @@
+{
+  "schema_version": 1,
+  "collections": [
+    {
+      "id": "life-guide",
+      "title": "高性价比人生指南 · 正文与来源",
+      "path": "life-guide",
+      "license": "CC-BY-4.0",
+      "source_url": "https://github.com/eternity4719/HowToLiveBetter/tree/fcc93eb9a4bdc26e8a4e4c94bdaae0a89265927b"
+    },
+    {
+      "id": "advisor-reading",
+      "title": "顾问来源导读",
+      "path": "advisor-reading",
+      "license": "MIT",
+      "source_url": "https://github.com/chenxinan9/upward-workbench"
+    }
+  ],
+  "files": [
+    {
+      "path": "life-guide/LICENSE.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "life-guide/README.md",
+      "bytes": 25068,
+      "sha256": "c54b3b21247107375f0aaa432882d14d4707932b3565120a90a069376c6fe373"
+    },
+    {
+      "path": "life-guide/book/01-不要早死.md",
+      "bytes": 95482,
+      "sha256": "cfac711db604b9001ecd86416f4b78607f4d17cdd1970ae982372bc74ad04ecb"
+    },
+    {
+      "path": "life-guide/book/02-不要慢慢死.md",
+      "bytes": 87468,
+      "sha256": "597e6bf639c92472d5406a8b0708496d696498dad624b9582437d299de24014a"
+    },
+    {
+      "path": "life-guide/book/03-不要浪费精力.md",
+      "bytes": 46016,
+      "sha256": "d18393b4c3d503d9b22b5bee6a90ef222ce7de684ffcab3c9085ae65f5ba4ecf"
+    },
+    {
+      "path": "life-guide/book/04-不要浪费时间.md",
+      "bytes": 29459,
+      "sha256": "92fb71fe4d802f92d9c9fb975896d1fdecad666dc775df851b160f639b834278"
+    },
+    {
+      "path": "life-guide/book/05-不要浪费钱.md",
+      "bytes": 111698,
+      "sha256": "f24bf09d79ca7d6bc3d24df167203a3d875b1321095144981ce684a8fb199a61"
+    },
+    {
+      "path": "life-guide/book/06-反面清单.md",
+      "bytes": 83236,
+      "sha256": "a585813610dc2a3db5d569c1dc928796d887641eefdc9e0fa4ba0bfb174e90f8"
+    },
+    {
+      "path": "life-guide/book/07-没钱的时候怎么活.md",
+      "bytes": 58389,
+      "sha256": "528c833526b0b9f23c5eb0f6e0f434d256de60708b22f4e23fd1dd501b505353"
+    },
+    {
+      "path": "life-guide/book/08-别把自己搭进去.md",
+      "bytes": 131113,
+      "sha256": "7fe46facda6c73db6380abd497345e8152cdbea951d10434569401c884c7c2ad"
+    },
+    {
+      "path": "life-guide/book/09-普通人容易踩的法律红线.md",
+      "bytes": 67374,
+      "sha256": "62c9e70209ca3d8b6020a8f1cdfe9e9418d66db3b77366792a344727de52d537"
+    },
+    {
+      "path": "life-guide/book/10-恋爱和结婚划不划算.md",
+      "bytes": 48968,
+      "sha256": "3899be406a3f437d3533a7f4076988f758c40c05af405de13b2664882a9b4bbc"
+    },
+    {
+      "path": "life-guide/book/11-程序员和技术人容易踩的红线.md",
+      "bytes": 43458,
+      "sha256": "ee0b037209d4df582be5e0075ac370ac2d68bbb05e5b8d7d889ed88fe8e1ca87"
+    },
+    {
+      "path": "life-guide/book/12-创业与做生意.md",
+      "bytes": 66380,
+      "sha256": "2902193b3f99d00a61a19fc2179a3f4b1a621541897cb3314c0a88f2e88845b4"
+    },
+    {
+      "path": "life-guide/book/13-紧急情况.md",
+      "bytes": 112680,
+      "sha256": "451185f68717649bb8e58ac0bae14488e521eaa498e5cb3d92d9070af5a92e31"
+    },
+    {
+      "path": "life-guide/book/14-账号与信息安全.md",
+      "bytes": 16866,
+      "sha256": "51bfe92a7968a86411253a21f6a77049b4a5e59d6397b47ef29c6440f90d3e42"
+    },
+    {
+      "path": "life-guide/book/15-租房与买房.md",
+      "bytes": 13208,
+      "sha256": "a1ebf9c81bc078e88f92c0c90875785d71464035f369b34c7d643c74f00687b2"
+    },
+    {
+      "path": "life-guide/book/16-得了慢性病之后怎么活.md",
+      "bytes": 19940,
+      "sha256": "ff043886ae314bf8b72bac93667bd4ca5b5e9feb23fc54f2d0a34e97476e41fa"
+    },
+    {
+      "path": "life-guide/book/17-家里有老人.md",
+      "bytes": 24884,
+      "sha256": "1fed66ff8e6d534a13350486f963fde3e59891eb89f35fff7bf4ad1e12cbd015"
+    },
+    {
+      "path": "life-guide/book/18-养孩子划不划算.md",
+      "bytes": 7615,
+      "sha256": "ab017c89b1eb2e8981c64d1f4389e7f97f463f81b640a0e6f13a938051223499"
+    },
+    {
+      "path": "life-guide/book/19-在职离职和工伤.md",
+      "bytes": 43003,
+      "sha256": "12bb676b2565b7d2355848ff4e3bdbe9cfc4badad1093d27d68cea23377fcd15"
+    },
+    {
+      "path": "life-guide/book/20-刚出生的孩子怎么带.md",
+      "bytes": 27481,
+      "sha256": "dd957adaf3329cf0f51d8a7d7c2cb66397908b399af2e8816994d2e29d92a408"
+    },
+    {
+      "path": "life-guide/book/21-出国旅行与境外安全.md",
+      "bytes": 23052,
+      "sha256": "c90efac1c84f3c03d9a35fbabd8a351c68c3079d3f0ffc89393ef55ff1add1e1"
+    },
+    {
+      "path": "life-guide/book/22-怎么放松.md",
+      "bytes": 20326,
+      "sha256": "6907304eedc18b4eb526ce4c5f124c383e893ed6f7c6ffd6ef2fe28f535f979d"
+    },
+    {
+      "path": "life-guide/book/23-学什么技能划算.md",
+      "bytes": 53113,
+      "sha256": "83f0e663ef1c0c0865673fea751da9318a900b5e05c83756de65f382361feefa"
+    },
+    {
+      "path": "life-guide/book/24-看病.md",
+      "bytes": 29342,
+      "sha256": "3f3c62aeac6047041a36b734331b003f1d6264bf77a5e62c7b1908db70702cea"
+    },
+    {
+      "path": "life-guide/book/25-人走了以后要办什么.md",
+      "bytes": 23706,
+      "sha256": "74ccd6def6113b1db9a761d8ef8b3aa3cdb39c068eebbb9bb7aca52bfb97b363"
+    },
+    {
+      "path": "life-guide/book/26-做一个网站或平台.md",
+      "bytes": 33344,
+      "sha256": "169f777a081e8f1c2afe0c3ff46eb59058553acd7c0a476e565dbeb071810b59"
+    },
+    {
+      "path": "life-guide/book/27-怀孕和生产.md",
+      "bytes": 28862,
+      "sha256": "a526041e2068a7b682ece8ba18f29391b7288873f49d802164c8964827310e98"
+    },
+    {
+      "path": "life-guide/book/28-别为了外形把身体搞坏.md",
+      "bytes": 21516,
+      "sha256": "fd765ce83a646b0de9be055cb68ffc5354c406bafbfd71b2c337a7bb20f22572"
+    },
+    {
+      "path": "life-guide/book/29-遭遇重大打击之后.md",
+      "bytes": 33609,
+      "sha256": "3f41c606527762f76b2dd3e26b1bd89680128d6d8b3c3602af8dd86ed12a513d"
+    },
+    {
+      "path": "life-guide/book/30-上学以后的孩子.md",
+      "bytes": 48796,
+      "sha256": "ea490eb5b031792b7d7073ad1bd4d7a33d2cc080c87adb307d604c7876c54d3d"
+    },
+    {
+      "path": "life-guide/book/31-十八岁之后有哪几条路.md",
+      "bytes": 69381,
+      "sha256": "72f92fd372654d14be0d03dede1150528e68d1bdab8a5819572c2a15bb6c7d9f"
+    },
+    {
+      "path": "life-guide/book/32-出国留学.md",
+      "bytes": 18487,
+      "sha256": "3b5a51f930a668ee6c7cda1d38adb763f6916da26e70a6b43c9c0d780f68b481"
+    },
+    {
+      "path": "life-guide/book/33-残疾之后怎么活.md",
+      "bytes": 51563,
+      "sha256": "7e7edc5b22a9333627c0c05fd60ce65b9061ac6228c6d4a2f4601cab6f80c547"
+    },
+    {
+      "path": "life-guide/book/34-家里的常备药别吃出事.md",
+      "bytes": 27062,
+      "sha256": "52d7e1d8c661a7328dbaac1cab46acd693e70285d6ecb041d86a163cbf89549c"
+    },
+    {
+      "path": "life-guide/docs/做平台要办哪些证.md",
+      "bytes": 9002,
+      "sha256": "064cca0315f3887c3fffe43f19ad4a36006f702a770ad67ea7d57d7ca9da367a"
+    },
+    {
+      "path": "life-guide/docs/刚确诊慢性病之后.md",
+      "bytes": 6188,
+      "sha256": "607649b3547a723966bfa7d6175d211cb0c5774efe19ef439bfc33a59d4be06b"
+    },
+    {
+      "path": "life-guide/docs/孩子出生前后要办的事.md",
+      "bytes": 6242,
+      "sha256": "e1a121a9ac46c73c5f020f08ce46e7208589666905c5e1885cca32878f2a3f78"
+    },
+    {
+      "path": "life-guide/docs/家庭应急装备清单.md",
+      "bytes": 11487,
+      "sha256": "5017889be93fe8320837a1d6e54470e8267f18414335d1d4be1dc6e6711dd3f6"
+    },
+    {
+      "path": "life-guide/docs/引用对照.md",
+      "bytes": 147606,
+      "sha256": "302bd969299e78b4631383199dcc1120f5c09407813e79856317742ed00aece7"
+    },
+    {
+      "path": "life-guide/docs/核实记录/01-不要早死.md",
+      "bytes": 14110,
+      "sha256": "9a7471bfd49bfdb23c8e55851a654bb1d0cc1e0e9f10f81a853e8ada7b824f76"
+    },
+    {
+      "path": "life-guide/docs/核实记录/02-不要慢慢死.md",
+      "bytes": 17817,
+      "sha256": "880e0b4f65cc37be39266c79c5c655276d0911fcd1623cadc71f918323c1c8b1"
+    },
+    {
+      "path": "life-guide/docs/核实记录/03-不要浪费精力.md",
+      "bytes": 18998,
+      "sha256": "2d11ab4d31fddd120424066e547c41707e7c3f7b5e3b8a8d6040a52c03584294"
+    },
+    {
+      "path": "life-guide/docs/核实记录/04-不要浪费时间.md",
+      "bytes": 15455,
+      "sha256": "a634678d1f9537cec321c1c2bc7bc823da4e3e895d21762e27ca942e6d8580a4"
+    },
+    {
+      "path": "life-guide/docs/核实记录/05-不要浪费钱.md",
+      "bytes": 19221,
+      "sha256": "a42c7f242d884ec5aa8cadeaa5b3509262e17d5758b540d5a15a421c6e0636a5"
+    },
+    {
+      "path": "life-guide/docs/核实记录/06-反面清单.md",
+      "bytes": 17548,
+      "sha256": "a3228b3318e5fe61850d4265db4e7f9aa1ecd813d3bdf0ae7b4efa18a6b314c5"
+    },
+    {
+      "path": "life-guide/docs/核实记录/07-劳动仲裁条重写.md",
+      "bytes": 11621,
+      "sha256": "6577ddc9417493a78c8409c1a5401a1f7f4df1a2866abaa91411a5f765bf7f08"
+    },
+    {
+      "path": "life-guide/docs/核实记录/07-没钱的时候怎么活.md",
+      "bytes": 23611,
+      "sha256": "61df1b2bd9238a175b58f9451a7cd8c308d6c135cead993404cab782a2a8dada"
+    },
+    {
+      "path": "life-guide/docs/核实记录/08-别把自己搭进去.md",
+      "bytes": 24580,
+      "sha256": "f081795bea51df07ff16f31cf2c77d5bbd11dc51ceade4038e80a9f06d963299"
+    },
+    {
+      "path": "life-guide/docs/核实记录/09-普通人容易踩的法律红线.md",
+      "bytes": 24445,
+      "sha256": "df7b092a124a6295cfc819f668f830c1d122ab4ab3f28cf0550739a956d369a6"
+    },
+    {
+      "path": "life-guide/docs/核实记录/10-21-23-恋爱出国娱乐减压与技能.md",
+      "bytes": 21418,
+      "sha256": "a5c674565a64d882d32e9f916f6cbef52dc7d382ee9436444be1e8c2abe83297"
+    },
+    {
+      "path": "life-guide/docs/核实记录/10-结婚划不划算.md",
+      "bytes": 13520,
+      "sha256": "fc7b1711b0420cc5d19ba92992aac6966c922d3681105b0da473d3be3ccae943"
+    },
+    {
+      "path": "life-guide/docs/核实记录/11-程序员红线.md",
+      "bytes": 24376,
+      "sha256": "86897ae767aa381a7fbfa8f6a8585de8a32bd39160260d618f7423b4df7f253a"
+    },
+    {
+      "path": "life-guide/docs/核实记录/12-创业与做生意.md",
+      "bytes": 23000,
+      "sha256": "28b21a83d7263e691a52470ce5ba92a600486249481df008542b36bc49ec3538"
+    },
+    {
+      "path": "life-guide/docs/核实记录/13-急救与野外补充.md",
+      "bytes": 9301,
+      "sha256": "514062beecf90c1f060954662f6580d98dddcc4a5b64f1f9265acca7d71d3331"
+    },
+    {
+      "path": "life-guide/docs/核实记录/13-紧急情况.md",
+      "bytes": 23702,
+      "sha256": "f0e23003e1e187c79a8e6ed524ed3f1373abc8fdd19de02c9ab27c0b1dd8ac96"
+    },
+    {
+      "path": "life-guide/docs/核实记录/14-19-新增章节与HowToLiveLonger合入.md",
+      "bytes": 12682,
+      "sha256": "110fe624dba9315a18f14dd096a90ce597a287872f4fb7b5f9f9ea375fbc0b9f"
+    },
+    {
+      "path": "life-guide/docs/核实记录/19-工伤.md",
+      "bytes": 5290,
+      "sha256": "1759f014080d2f05809cef59e515d2678627ee6012658129cf130fcd2d8cd350"
+    },
+    {
+      "path": "life-guide/docs/核实记录/24-25-看病与身后事.md",
+      "bytes": 7370,
+      "sha256": "479fff09eaee7f5cc42f9d844daa9f33a30fea2dceb394044da56f461f0c9bcc"
+    },
+    {
+      "path": "life-guide/docs/核实记录/27-怀孕和生产与艾滋病预防阻断.md",
+      "bytes": 16679,
+      "sha256": "3f60cd0414ccc9da4cd06872c0e1d7d076470f3efb252769fc4ee8ec06232747"
+    },
+    {
+      "path": "life-guide/docs/核实记录/28-别为了外形把身体搞坏.md",
+      "bytes": 19661,
+      "sha256": "a082f40c49169d7b73b34b5f367a598a16a0b229bb1e293233a5daa0637bbf9d"
+    },
+    {
+      "path": "life-guide/docs/核实记录/29-遭遇重大打击之后.md",
+      "bytes": 6797,
+      "sha256": "32e5c63decb366e83f5075aac9ad4c980cb34e0fd8ebe91cbd802e73869ac709"
+    },
+    {
+      "path": "life-guide/docs/核实记录/30-上学以后的孩子.md",
+      "bytes": 7367,
+      "sha256": "bbfc2b41ec4cd6e9b17096e9421326ef40c21dbcc6dff57bbf7c22e831ee0845"
+    },
+    {
+      "path": "life-guide/docs/核实记录/32-出国留学.md",
+      "bytes": 13281,
+      "sha256": "f531beca544f7bdfeaa0c402e726d6ba7e85b11665023cd65469077c1c9ce5bb"
+    },
+    {
+      "path": "life-guide/docs/核实记录/33-残疾之后怎么活.md",
+      "bytes": 15973,
+      "sha256": "cdcc8fc14a8f2d7fc34df1879205739bfcbeaf2fd3fbdea4122b2f171c116b8c"
+    },
+    {
+      "path": "life-guide/docs/核实记录/34-家里的常备药别吃出事.md",
+      "bytes": 9243,
+      "sha256": "68b74c8f64404ad91a440976a026489025b41d761e9bbd55ca3b0fe723723f40"
+    },
+    {
+      "path": "life-guide/docs/核实记录/口径变更-受益人分四档.md",
+      "bytes": 5339,
+      "sha256": "94e1a66a0fdb341b1efd580b13d310da3c1e201a364c76186f871798200fadfe"
+    },
+    {
+      "path": "life-guide/docs/核实记录/性取向相关条目.md",
+      "bytes": 5380,
+      "sha256": "279b43c8c6d63e17d5f0a278c41a6749c3bf34b5038b5e5503b31595b7b86c36"
+    },
+    {
+      "path": "life-guide/docs/核实记录/排查-只给禁止不给出路.md",
+      "bytes": 5005,
+      "sha256": "4a6a639593cb2ac63c3f86b8a7f396c68e3c36f660b288517cc76a74c313c607"
+    },
+    {
+      "path": "life-guide/docs/核实记录/排查-备注里的文献链接.md",
+      "bytes": 3914,
+      "sha256": "5095224e5638a012eda9a0698f1ea8e42bd6fd724c613c16abc5c5f3306b24ba"
+    },
+    {
+      "path": "life-guide/docs/核实记录/排查-说人话栏与收益栏对齐.md",
+      "bytes": 7182,
+      "sha256": "f82748cce97fa76e31e8b38a33a15b24c267a1b81c2da8db969ebcddf5658c82"
+    },
+    {
+      "path": "life-guide/docs/核实记录/新增-第31节十八岁之后有哪几条路.md",
+      "bytes": 28181,
+      "sha256": "c81f5445a26a7b7befb37e522b257eb47e81bb3bf93458ebeecaad361aa168b2"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-AI换脸拟声.md",
+      "bytes": 5860,
+      "sha256": "745535d24eb2883a7fd654bdd380b87119661109dc36f8244a1955b114644489"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue28八处补来源.md",
+      "bytes": 5877,
+      "sha256": "80370c14cd85b90b3e3ec71508c8ace42e41a57e4a247e88478a6f739378d133"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue30国家赔偿免责与录音拍照留证.md",
+      "bytes": 4127,
+      "sha256": "209c2861ee6d35acb5c94468e7ad2588b220b21664b2b061da13daac36732da0"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue31情绪疏导家暴与职场欺负.md",
+      "bytes": 5985,
+      "sha256": "24831fca3d5122c5557b8a672683de947215c0f9cd87b90a42134b69f98bdb07"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue37职称.md",
+      "bytes": 4941,
+      "sha256": "4752321e3d2ba5050848b9ad8fe0a9e606edf0f3a6a5d7ca75ce16e135937f85"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue41境外投资渠道.md",
+      "bytes": 3926,
+      "sha256": "4a358753e63d64ed684cb511ea88948a1480a6db60fd4a0fe479ff1942a44003"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue44降尿酸药的选择.md",
+      "bytes": 4439,
+      "sha256": "8cac127d71389241e9c8263cb8a07894bddff7ceb697c5979db53db0bbff48b3"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue57约会安全.md",
+      "bytes": 3575,
+      "sha256": "341814065b657be614667670b21aeb383ba9160fe7f1a0a902b74f5fe0ecb1ff"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue60给个人干活被欠钱.md",
+      "bytes": 5024,
+      "sha256": "3e1f88ad87fce985c6224b8f429e9f5bc9837d1a492d2e74a6fd59bf5077c10b"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-issue61推理问题.md",
+      "bytes": 3285,
+      "sha256": "f73a113d3ebf009b384a56ff635be012ed5d5442161fac268c130707b1be986f"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-保险六条.md",
+      "bytes": 6840,
+      "sha256": "5610d3ec03a7941ad04012efbcc0f40167fbd1a9515d6f97d1e5f7767e6c8eeb"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-免责条款越界排查.md",
+      "bytes": 12720,
+      "sha256": "0cc137d9dc3b53debdb057615c2109efd74ee5821296bd5a633b33a5bf39e45e"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-养不了孩子的合法出路.md",
+      "bytes": 5172,
+      "sha256": "685e982e7409f78d8cd5b00c7ab16ca28d08fe42454920e428f9b1b2ed2e3cbd"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-养老诈骗.md",
+      "bytes": 8400,
+      "sha256": "f7606d0dc5e608abf3089382db6491d47b74a76f44e6a4b8b48e46bf3407d1ea"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-勃起功能与嫖娼.md",
+      "bytes": 8461,
+      "sha256": "f9e1e116a0d22a79defe3c20a9e832d60a44f07f721876ad5e74860b79f66ebe"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-十条补缺.md",
+      "bytes": 12812,
+      "sha256": "e80b23cbd5e2f4e6655dfdd40d1a51bf720c2b6a69c20fcf5aa58e775a8003f2"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-午睡时长.md",
+      "bytes": 5587,
+      "sha256": "ee61301b63d26394baca7f6656919af6ce4602311f91b79f2a1b66fc348c9a43"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-卖器官.md",
+      "bytes": 11599,
+      "sha256": "394ad06e161dc71daf665ee59ad4ddc454c4f4d4f648ce2240459c9100f348de"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-后循环卒中夹层头痛与中暑补液.md",
+      "bytes": 7669,
+      "sha256": "4904853581a82c58083186dfa75c1bdfa4435916fc947627fcea7bd68ac53b3c"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-和机构打交道.md",
+      "bytes": 11872,
+      "sha256": "a19bf052ae689e06950aecdcea17dad48aae354a13f09552dcbb79b3811a4506"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-喝茶的霉菌毒素与绿茶提取物.md",
+      "bytes": 3200,
+      "sha256": "9aee91f3c9726aba17001fd56765bea6ef7db94b54f9f0618d05934ea21ac60e"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-回填十二处法规原文.md",
+      "bytes": 8962,
+      "sha256": "2dabf3389f21e902cdaacfcbad6d3ad5f4bced5afc37614ab6328ce125599da1"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-回填统计急救与文献TODO.md",
+      "bytes": 10183,
+      "sha256": "d64470906981e0e840961da0e7ea49329f945e3c7dcd23c7cba2354706644670"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-奢侈品收藏与十八岁路径.md",
+      "bytes": 14698,
+      "sha256": "2c27fcec0c36979ac728e2774cf44c6302fdf0242ee2c89d6a4e8f7e61c3b982"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-家庭应急装备.md",
+      "bytes": 8335,
+      "sha256": "0b6acced7011fa721ba00dfbe966f04f3bfec83618860017518c2cca67d3dc93"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-尿酸结石与胆囊结石.md",
+      "bytes": 14917,
+      "sha256": "fc753fe17731f83a4fc06fb7ff5af77ae351ee09e53308521687bd6be320ae63"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-幼儿屏幕时间与近视并发症.md",
+      "bytes": 6870,
+      "sha256": "6a3bbec0904853f8a4e286a5c3bf6dfb23948c814c8f91d4877c5aa85b221518"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-急诊分诊与伤残鉴定残疾人证.md",
+      "bytes": 15759,
+      "sha256": "2c45d47270f2e3bb92799d6a9fbff1f2baee7b44af5e073ad3d0ffc9b986ed80"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-情绪、算命、购物、打人.md",
+      "bytes": 11307,
+      "sha256": "7c53fc0e925dad0d5067fd93839ca67e896b340cd603e50a68d927146414d538"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-慢病长护险与个人信息权利.md",
+      "bytes": 6513,
+      "sha256": "cfc420e651e6a7a2825ce5e6a4ef760d6db4cce2f3795572c5e183f70aee8587"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-戒烟戒酒学习与拖延的具体办法.md",
+      "bytes": 28379,
+      "sha256": "c3eac970c3357a680afd530da2d238985bbd1eddf18446f49a3dcec953f69acf"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-拒执失信骗贷与新型毒品.md",
+      "bytes": 10899,
+      "sha256": "5f507ea197a8f0d91a1b0e04f4073554e55bc61eefea4a208963ae4a687aa0f4"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-攀比与别人的评价.md",
+      "bytes": 8798,
+      "sha256": "7c088f30af021697b91584e0df50e4fb978cc492dbd9b9c33597aa731d35e2e0"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-早引入花生防过敏.md",
+      "bytes": 6385,
+      "sha256": "b426ac8c8c4cf9ce3f4bbc98c36f2548aaf395b0747279605e1a0ee27e53dd73"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-早餐与进食时间.md",
+      "bytes": 11617,
+      "sha256": "622088ace38e73ea1ca39de26517b7d79bbfb5fd9818aa0e7249c6ce19f3d9f0"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-正当防卫.md",
+      "bytes": 7838,
+      "sha256": "a1b05f38345fffb6aba41f9730c97448cdf5e8928a6524e2003474e384b8cdbe"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-没有亲人朋友时怎么办.md",
+      "bytes": 6069,
+      "sha256": "fdd2d2ac3367225f3f52ab86452ac4d82e3cad88f42d3010cf55c3220e31971a"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-泄愤式极端暴力.md",
+      "bytes": 12690,
+      "sha256": "e550fff7c585e9c94e64e5e79f5e40952dbdbdb898a5c47978963c237210a5a7"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-熬夜补觉与夜班.md",
+      "bytes": 19227,
+      "sha256": "334609b862b1fc86078d26147e4090c86df46bece6027e1f03d470073b6e7b84"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-燃气毒蘑菇车险预付消费与养犬.md",
+      "bytes": 8016,
+      "sha256": "43fe9c556d07c98d9e4ab72ec299a9d050282eea970179c8a8866db4b9ad57df"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-献血.md",
+      "bytes": 7491,
+      "sha256": "5215f9e9c394c50f7161a847547f273aa079ee27fc4cdbb00eca35ba4415c4a5"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-眼中风血栓硬膜下血肿与血尿.md",
+      "bytes": 8495,
+      "sha256": "b65735549c23c77c6ea0323619df8e68041148fdd09b7232fab2543c8bbbc983"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-窗户破伤风二手烟公积金与猝死工伤.md",
+      "bytes": 6228,
+      "sha256": "937bd317f52093b974572bbaf694ad37c75131a587716bc76116f8f7566d10c1"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第10节伴侣治疗.md",
+      "bytes": 9109,
+      "sha256": "3b4b210e2d2d02c61b52e8a14aa4cf52258e862d503a85d5eaf108710df034aa"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第10节父母出资与夫妻共同债务.md",
+      "bytes": 7109,
+      "sha256": "efa789e9ae1a7bb9fe14daa61e03226a15579d403ee1dd89013b93fc3735d96a"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第11节白帽子与漏洞报送.md",
+      "bytes": 8534,
+      "sha256": "08cfa18ef9e8656358ec697faddecfb2fa0b169b88d398a49d012823855d4030"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第12节注册报税与涉税诈骗.md",
+      "bytes": 10461,
+      "sha256": "6d49c3ad827b54d3e9f6821971f06a9a0373c5a03905108ada421d1cadd6211c"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第13节婴儿噎住与心肺复苏.md",
+      "bytes": 11539,
+      "sha256": "4b7afb08c25c9fbfb449f459992f1fbdbc5ee98c261e92aafc63a1dbcd8efb2e"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第15节与病历条回填.md",
+      "bytes": 5601,
+      "sha256": "a094a2a49701534c90ef6a1c11e7d1bdc856c8f7b4e7adf4e501f3968b1ec86d"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第17节白内障手术.md",
+      "bytes": 7943,
+      "sha256": "fc26fb79cac5b9f07401cca00317496f5c859070e14b13fc3400175e67724f0a"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第19节离职证明与补偿个税.md",
+      "bytes": 9003,
+      "sha256": "252e84f7ac2611542778b6250ade3f24fb27329c904b440d01a91f0c297b5a7a"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第1节冰面量厚度.md",
+      "bytes": 5343,
+      "sha256": "0bdbb0601aaf0b6330a29e059a29adde31350c37e33ed9cf5fad208a58d2b400"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第1节失控放射源.md",
+      "bytes": 7398,
+      "sha256": "b5df070dbd64d6df684521dc1ff599d6972b0837c77ecb0d0374bbcaa88be7c0"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第1节骨质疏松筛查.md",
+      "bytes": 10796,
+      "sha256": "33b94d7ef4a68caea7c5e6fa7d7b0cab0e4009c6d8753ad584fc0201c2cafb42"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第20节新生儿黄疸.md",
+      "bytes": 8663,
+      "sha256": "058ea0522b73b582f3cb39affe44a09ae16ddb28790ee3663f3c29569f8a59fc"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第21节境外用卡.md",
+      "bytes": 9400,
+      "sha256": "80b62b98791b3d43dc89fcb84483f325dbae227301ec091f7efcaad520ccdfcc"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第25节人没了当时怎么办.md",
+      "bytes": 7904,
+      "sha256": "77e8d6f8831c6abf7d8b870f31a73adda4c8f696ac0ec1161c9d158fc8d4ae69"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第26节做平台.md",
+      "bytes": 12379,
+      "sha256": "dcd1995d053b44a2a0a19863a28ecc134faf063e8cb3387f138b4c5bbabedd77"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第2节室内空气.md",
+      "bytes": 5124,
+      "sha256": "a046d9c3e60e5d78028b5bf7cc239d30940f864047a80e78f0536b6c3288c59e"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第30节管孩子不打和养育课程.md",
+      "bytes": 15897,
+      "sha256": "ec0163bed7dfb64765e260017b24fbc9866c7f24cb9365e55bdb2c139ff86926"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第31节远程给境外雇主干活.md",
+      "bytes": 10274,
+      "sha256": "c384802859099e547e7014e3fafd7b56218aed760e3cd280a568b04fab6a9cb9"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第34节过期药与相互作用.md",
+      "bytes": 8527,
+      "sha256": "b885f680757fae564309444c086929792962ddb4978aa92485fa4f528197c0d6"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第3、5节.md",
+      "bytes": 9250,
+      "sha256": "2312b710edc240532a6bfc38ffb0e388a2477d938e5d0b714e099877396dbffd"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第5节炒股的两条行为账.md",
+      "bytes": 8283,
+      "sha256": "4f866819ae7862d0be7532bfdd3892c7ce81dddc411c5c8ebfd77b8e08b45060"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第6节通用体检套餐.md",
+      "bytes": 5759,
+      "sha256": "f7dd8d94ce5acd69d8678e04b23a570cf05e670853ecabc4bf406a35e274f2e4"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第7、8节.md",
+      "bytes": 19051,
+      "sha256": "f47977991032d2f7096351e139d8e3ceba3d037cd1d91bcca142a9c5da5ece72"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第8节被指控与被诬告.md",
+      "bytes": 10584,
+      "sha256": "0deaf687a2aab5064e71e9d821f2b6d05f2b13097910aa262a10cf59dc956303"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第9节境外信息只看不转.md",
+      "bytes": 6420,
+      "sha256": "5141226ec9182c28c0bb74aca748bf42eb7f68a1e20d844ad42899b202315a6f"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-第9节薅羊毛.md",
+      "bytes": 9210,
+      "sha256": "b6d8febbe08d5e3d7e5aa21ac6cbe59310b1188fb4057a3bfd1571cae244fc5f"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-职业病与化学灼伤.md",
+      "bytes": 9051,
+      "sha256": "3e6bb406b92f7930640c9c9bcdfb06faba58c1f1ef7362fe8ce667c0ec4fffbd"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-自杀的后果.md",
+      "bytes": 17323,
+      "sha256": "0b6615d2af1972b804b3e8835a095df071448e694e54121520ae07a1c7c95c4b"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-自首与追诉期限.md",
+      "bytes": 7070,
+      "sha256": "316c7cdde4c52ab15c87b8ae53e98fdbcdb2b88a6985825f3f036ea94fce61ad"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-被网暴之后怎么办.md",
+      "bytes": 5482,
+      "sha256": "5d55e0c2adf3e3fa31b948f2b1578d44680716057968ca194d029bfa20cd5be0"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-要不要死记硬背.md",
+      "bytes": 4525,
+      "sha256": "b278d4c33512f545f5e1b09e6c4c400cb05da8e1a5ff8145a841592dac35ffe6"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-读书还是打工.md",
+      "bytes": 12141,
+      "sha256": "0960a3d54a2a3d24412fefa51ecafdf11afad75c8566c78b4ffde2a0a991ea63"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-进货假货与图案版权.md",
+      "bytes": 8533,
+      "sha256": "7af3bcc4eddae1cd551a1bc461fce8aacd76c2e399c920e49e38ad226677dc4a"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-针对孩子的骗局.md",
+      "bytes": 4979,
+      "sha256": "4f1eda009cd62d696ff8416505f23b1e4e7c9f5401a5dcb0bffef7e5147dd2bb"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-陌生人出事该不该上.md",
+      "bytes": 17370,
+      "sha256": "13f90a8db7253f89d825211959042cdd7790795022cc399b5f9fde868e6628f3"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-青光眼急性发作.md",
+      "bytes": 4941,
+      "sha256": "f13453188b28c644256ee72ba652896464f6f68e133451ba6495036dc0c0aabc"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-食品安全.md",
+      "bytes": 16164,
+      "sha256": "140ef3d1826a7c266c1041fe7ec98a2f80282b10d624380399525c81d1db7e2c"
+    },
+    {
+      "path": "life-guide/docs/核实记录/追加-骗保.md",
+      "bytes": 7771,
+      "sha256": "056e472859d5494d01398d1edcc9a9ed3f5e6d96aa4d7461bd2704da335464a9"
+    },
+    {
+      "path": "life-guide/docs/生物钟和夜班.md",
+      "bytes": 11272,
+      "sha256": "ba5a95eba4e62d198a32d89387c2eb4ec630bb4430e33610cd5138003fe6ebf1"
+    },
+    {
+      "path": "life-guide/docs/结婚划不划算.md",
+      "bytes": 18066,
+      "sha256": "e1feea02ecdc2066c15fd15f8a41ec6db089f3b14e7f3340133341635a1b4699"
+    },
+    {
+      "path": "life-guide/docs/被裁了之后先做什么.md",
+      "bytes": 5815,
+      "sha256": "e2ad50ab1629ef89b49908d7848a9f0cf5be9c9b23f414e8b4dac390e5ee7f17"
+    },
+    {
+      "path": "life-guide/docs/遇到陌生人出事该不该停.md",
+      "bytes": 8516,
+      "sha256": "f542304b5b73e0686405adb82048c2d49a10805edba3d469fc746ef5fff66b54"
+    },
+    {
+      "path": "life-guide/provenance.json",
+      "bytes": 103790,
+      "sha256": "40ff9a7624feae366d4129445c9e3a02f5fbf780b4bede502d1db7a32ffa6664"
+    },
+    {
+      "path": "advisor-reading/LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "13fb91ad7887d2019c28f435fbcbd4ad6754de24d681b1de894e62b32c17555f"
+    },
+    {
+      "path": "advisor-reading/README.md",
+      "bytes": 1927,
+      "sha256": "b14e3701fe077cc7587d1cc8637be08ace8a95dc57f97573babbfd84aa428df9"
+    },
+    {
+      "path": "advisor-reading/S01.md",
+      "bytes": 775,
+      "sha256": "3558b518855b0fcce4df1da81f43cd4fc0cbab7529533114fb091da53a985f48"
+    },
+    {
+      "path": "advisor-reading/S02.md",
+      "bytes": 646,
+      "sha256": "0bda3f5a102d746bb7132bf343cd2f3b6796786689c568ed3283624c4b2465a4"
+    },
+    {
+      "path": "advisor-reading/S03.md",
+      "bytes": 569,
+      "sha256": "415d845c2ca45734edc630e82a039e56b3401406600cb954dccc5d9a3a2543bb"
+    },
+    {
+      "path": "advisor-reading/S04.md",
+      "bytes": 690,
+      "sha256": "e0afda3f6329e09efea3374b4db1d257b3833a1b22a3c142eb8f2fe9ebebad7d"
+    },
+    {
+      "path": "advisor-reading/S05.md",
+      "bytes": 659,
+      "sha256": "a7826fc2447bc3f3432a7bbc583a7eeacc3d8446debced5e545a74251275f51d"
+    },
+    {
+      "path": "advisor-reading/S06.md",
+      "bytes": 587,
+      "sha256": "6979ecad71f1b3b46911b60dbe0c1f7cee521691c30de4a1b133a97748a2a99c"
+    },
+    {
+      "path": "advisor-reading/S07.md",
+      "bytes": 655,
+      "sha256": "4e194adbb733cb0d9a681a9cc1e79916688de8c1ff8564835999faa689416dfa"
+    },
+    {
+      "path": "advisor-reading/S08.md",
+      "bytes": 652,
+      "sha256": "b77a9a4f62d53926d8b7bdc0e766ebc38629f6a559753538acea8452d3613ae3"
+    },
+    {
+      "path": "advisor-reading/S09.md",
+      "bytes": 745,
+      "sha256": "eca4fc1ce752c58a7f36352209285b97eec329ffd5eca720647e6cf5f6c35730"
+    },
+    {
+      "path": "advisor-reading/S10.md",
+      "bytes": 667,
+      "sha256": "5bc808813ab7fd55186b23d608fe5b349da77541f1dabd514d69472a7a45cebb"
+    },
+    {
+      "path": "advisor-reading/S11.md",
+      "bytes": 616,
+      "sha256": "45e262c8762adbc66219ce36c5148d07f43a8801aa70d049991eb6fff41951e0"
+    },
+    {
+      "path": "advisor-reading/S12.md",
+      "bytes": 642,
+      "sha256": "de87502f07021e6c8e7810c60702f402a97a28bc9757e84e731fe9792908953a"
+    },
+    {
+      "path": "advisor-reading/S13.md",
+      "bytes": 648,
+      "sha256": "0506c15af115896a2be73e78cd1936c4dead6ebc4632476c97656cb8cc945cb8"
+    },
+    {
+      "path": "advisor-reading/S14.md",
+      "bytes": 649,
+      "sha256": "5300b58a953848b6685b2078ea8a564e0fe9dec8c3e09f7a5b1c8c5db3672132"
+    },
+    {
+      "path": "advisor-reading/S15.md",
+      "bytes": 648,
+      "sha256": "0a361b6f6c0dd4a1fd9d5a7933449f6520f91e2f65ae732829fdfc151259d77b"
+    },
+    {
+      "path": "advisor-reading/S16.md",
+      "bytes": 652,
+      "sha256": "80d49f7e37ad3a1d0b5f2faba271c06617d797920d37831b8a578bc5e4aca69c"
+    },
+    {
+      "path": "advisor-reading/S17.md",
+      "bytes": 681,
+      "sha256": "c95c37bad5000e3ff5dbbeb82dddaf230d139650a4e6c53243a27514ac810f10"
+    },
+    {
+      "path": "advisor-reading/S18.md",
+      "bytes": 632,
+      "sha256": "2e40940c4c4df114e83c12329a7703314d1eaed5cb30a0c4d233176f78f4664a"
+    },
+    {
+      "path": "advisor-reading/S19.md",
+      "bytes": 635,
+      "sha256": "4546d8e7f0f1b9bdd1555628915ed72e3e083a1d3d8a69e03223523184eecb5a"
+    },
+    {
+      "path": "advisor-reading/S20.md",
+      "bytes": 620,
+      "sha256": "c6f02ec5b9a9208292a0c3916f003752c635a08d6a36d57ffa385ad34774b644"
+    },
+    {
+      "path": "advisor-reading/S21.md",
+      "bytes": 640,
+      "sha256": "410f5df493902b08d78684a5292540ad1a0ab5cfe433d50df11cf857b555eb48"
+    },
+    {
+      "path": "advisor-reading/S22.md",
+      "bytes": 651,
+      "sha256": "46f7ed853403d5db5a81c6837e382d3973ddd54904dd5a31068d23a28f114961"
+    }
+  ]
+}

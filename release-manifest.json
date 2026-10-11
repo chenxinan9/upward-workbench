@@ -1,8 +1,14 @@
 {
-  "version": "0.3.0-rc1",
+  "version": "0.3.0-rc2",
   "edition": "public-growth-workspace-preview",
   "scope": "public source and licensed advisor excerpts; no private user data",
   "metrics": {
+    "bundled_advisor_reference_files": 90,
+    "public_knowledge_collections": 2,
+    "bundled_public_knowledge_markdown_files": 180,
+    "public_knowledge_chapters": 34,
+    "public_knowledge_support_documents": 122,
+    "public_source_cards": 22,
     "advisor_source_entries": 55,
     "source_categories": 51,
     "registered_workflows": 8,
@@ -17,7 +23,7 @@
       "CC-BY-4.0": 1
     },
     "local_installed_count": "requires local connection; not measured by public package",
-    "knowledge_documents": "requires local connection; not measured by public package",
+    "private_knowledge_documents": "requires local connection; not measured by public package",
     "outcomes": "not measured"
   },
   "files": [
@@ -43,13 +49,13 @@
     },
     {
       "path": "NOTICE",
-      "bytes": 746,
-      "sha256": "ab6691d21b0a154a4d05497c7a776bbc53489c7e89fa00566c06a18d00fe3df5"
+      "bytes": 1234,
+      "sha256": "7317e157fe057516a7902b7dad3a0251a509667df3c32e5ba5d3eb37e9599ec0"
     },
     {
       "path": "README.md",
-      "bytes": 3630,
-      "sha256": "e718f6fe68703b51dc6686ee58079f2d1586fc9ac6a4fa94f355077db9073e29"
+      "bytes": 4485,
+      "sha256": "6b730c114a389085158da83a80eed7e7929d8ba1acb6aef59ccc8e911fdb37e1"
     },
     {
       "path": "ROADMAP.md",
@@ -68,8 +74,8 @@
     },
     {
       "path": "advisors-bundle/README.md",
-      "bytes": 2997,
-      "sha256": "da4cdc0406fa027b1f68453d2e87f5f99d34893f31fbc81a8e9cbf83c5c9e7db"
+      "bytes": 3179,
+      "sha256": "a7bc8fbc5b4f02884a04b4a2f682b7fa5bd54da3212c4f0eb15864bdc27b6a60"
     },
     {
       "path": "advisors-bundle/adler-perspective/LICENSE",
@@ -78,13 +84,18 @@
     },
     {
       "path": "advisors-bundle/adler-perspective/SKILL.md",
-      "bytes": 2035,
-      "sha256": "00a1021b764e27f4b4a7ba8a055a1d25b6f03435e2db1c275dd85f499feea9f1"
+      "bytes": 2260,
+      "sha256": "f002e93c7dd231cd34637bc739ef610c75ad85cc2c5ce0c51e8f43c9ec3d5af5"
     },
     {
       "path": "advisors-bundle/adler-perspective/provenance.json",
-      "bytes": 2086,
-      "sha256": "3bea505ae42f2aec1b4903b4c02acc9db1c4536c08ac381957672ee318086809"
+      "bytes": 3158,
+      "sha256": "99810975a910116645cfbf91916fafe6efb5143e4964bfd2fe00e508baf5805e"
+    },
+    {
+      "path": "advisors-bundle/adler-perspective/references/tasks-and-cooperation.md",
+      "bytes": 2612,
+      "sha256": "26f5f444ebea70d07f66d2af66de0c3532b0b7ae591ab50fb99633776aab9328"
     },
     {
       "path": "advisors-bundle/andrej-karpathy-perspective/LICENSE",
@@ -93,13 +104,28 @@
     },
     {
       "path": "advisors-bundle/andrej-karpathy-perspective/SKILL.md",
-      "bytes": 2116,
-      "sha256": "3897a09546c92ba3a8932b2d8779763e0277c8368add242f52c7d8ea12f42410"
+      "bytes": 2756,
+      "sha256": "3da119741f7854cc88aaf9ce2ab89e0d0d625c21d0f94f7328daa6be36994f7c"
     },
     {
       "path": "advisors-bundle/andrej-karpathy-perspective/provenance.json",
-      "bytes": 2103,
-      "sha256": "7ecf941fb75ffe5bdc073ce67f58fff9774cc5a2004a98e760e37b2337ed96da"
+      "bytes": 4093,
+      "sha256": "71e17da3fe19fa87b6f84d1f8e7d5e04571980700120e4aa0b9496946124922e"
+    },
+    {
+      "path": "advisors-bundle/andrej-karpathy-perspective/references/practice-case.md",
+      "bytes": 1734,
+      "sha256": "9cb5ef744ee196a6357ed4d72f093b32f648bc492a8c31ab92ba96826405b495"
+    },
+    {
+      "path": "advisors-bundle/andrej-karpathy-perspective/references/source-map.md",
+      "bytes": 3554,
+      "sha256": "261cdb428869d43b21194b293e8bf2915ac90cb782d1b44075f1d12f40a8352a"
+    },
+    {
+      "path": "advisors-bundle/andrej-karpathy-perspective/references/study-notes.md",
+      "bytes": 2639,
+      "sha256": "574938c9fadefc02a06a96ba142e46aa33b8a6e53f5ab3b58c69dce2f166d6ba"
     },
     {
       "path": "advisors-bundle/aristotle-perspective/LICENSE",
@@ -108,13 +134,18 @@
     },
     {
       "path": "advisors-bundle/aristotle-perspective/SKILL.md",
-      "bytes": 2061,
-      "sha256": "c86bea9036339463655229f0238b083f4025bbcf3bd487f6689a1682f432bb14"
+      "bytes": 2296,
+      "sha256": "737c9afb09eb47e5f476361e1d8161378a6488e63c3a7a11a73196012632c7a1"
     },
     {
       "path": "advisors-bundle/aristotle-perspective/provenance.json",
-      "bytes": 2112,
-      "sha256": "c4ed95025c3f9e9bf9533a9ac9ea1aaba09e599f0bea85a367c361eb98211036"
+      "bytes": 3178,
+      "sha256": "5a6ee21c4333ebe2e7cb3b5c2bf8198b7fc4b21b210c3b743020450861006c38"
+    },
+    {
+      "path": "advisors-bundle/aristotle-perspective/references/practical-wisdom.md",
+      "bytes": 2554,
+      "sha256": "34c01561a1421fea512bb32b3717a668d88ba908e0966257bf6c750357ba34bb"
     },
     {
       "path": "advisors-bundle/aurelius-perspective/LICENSE",
@@ -123,13 +154,18 @@
     },
     {
       "path": "advisors-bundle/aurelius-perspective/SKILL.md",
-      "bytes": 2020,
-      "sha256": "588ab30e856ea5766cb93e930c6d7e18d5d44774442748afc8c87b2d0ca42617"
+      "bytes": 2246,
+      "sha256": "da15da81d26c1d5f41d3d59f3486f9074771be3a3fbe07ae291ac50514342fb3"
     },
     {
       "path": "advisors-bundle/aurelius-perspective/provenance.json",
-      "bytes": 2107,
-      "sha256": "6821631f9ba7561560c79ebe5671363b85d335e159af49e16a1c89f84711d625"
+      "bytes": 3178,
+      "sha256": "f9404589875bb03c60ed35e650f1fa34fb4044c17a9abc00bf5046fd32cfd372"
+    },
+    {
+      "path": "advisors-bundle/aurelius-perspective/references/judgment-and-agency.md",
+      "bytes": 2786,
+      "sha256": "60e64c9c490c107a6b75efe5111eadb0d4c5cbbaeb7cff1a9456312a11cf67e2"
     },
     {
       "path": "advisors-bundle/beauvoir-perspective/LICENSE",
@@ -138,13 +174,18 @@
     },
     {
       "path": "advisors-bundle/beauvoir-perspective/SKILL.md",
-      "bytes": 2062,
-      "sha256": "b5b8a9182e7c07495a5108544decedef1f3632fb8e598cb8327dc30abaa69b87"
+      "bytes": 2302,
+      "sha256": "a6ee20d4f582f741148e0dfb47dba1f2e1123a3420aeb2d3c0049f949d8c4551"
     },
     {
       "path": "advisors-bundle/beauvoir-perspective/provenance.json",
-      "bytes": 2101,
-      "sha256": "fd332de3bab1bb0659c5d0e2791dc7efae5addb170ed2fc6aa04b6967bdb5110"
+      "bytes": 3164,
+      "sha256": "9cfb462a3b804d9c69b78c321a1be71027e4846743700c7048e9d50fdb8c911d"
+    },
+    {
+      "path": "advisors-bundle/beauvoir-perspective/references/situated-choice.md",
+      "bytes": 2580,
+      "sha256": "d9f4f368b47adbc2af00e3229322b3309a5b408e2d278b864f01f5b085df64d8"
     },
     {
       "path": "advisors-bundle/big-purchase-decision/LICENSE",
@@ -153,13 +194,18 @@
     },
     {
       "path": "advisors-bundle/big-purchase-decision/SKILL.md",
-      "bytes": 2111,
-      "sha256": "a97e61d30dfcbfb88797e3c13de68c96cd370abbcbb13c2beb5e81a49e9080a7"
+      "bytes": 2378,
+      "sha256": "a92e72bc3f4e1683ddc781346b409cf6ac88778a74d85771d197743bb7a4b32c"
     },
     {
       "path": "advisors-bundle/big-purchase-decision/provenance.json",
-      "bytes": 2113,
-      "sha256": "418414c5f827507d0f68ac26a13e0a10789d07e2c7ef829849bf57225472f80a"
+      "bytes": 3191,
+      "sha256": "b50ca1655f8c2d57e65e1fbd8d67d9bcd641bea17b60e7f0cd2fb67c582f207f"
+    },
+    {
+      "path": "advisors-bundle/big-purchase-decision/references/total-cost-and-alternatives.md",
+      "bytes": 2476,
+      "sha256": "1d338c260c18d145cbffee39044c02af6f8796a922762651b5aa4b9ed1c4bb3c"
     },
     {
       "path": "advisors-bundle/budget-builder/LICENSE",
@@ -168,13 +214,18 @@
     },
     {
       "path": "advisors-bundle/budget-builder/SKILL.md",
-      "bytes": 2067,
-      "sha256": "d834812c50b96553396683f957ec84ecbe33ad33a81220ab18122e87630097dc"
+      "bytes": 2309,
+      "sha256": "21fdb235681d838adb98f2fff5ec240917e701550cd54ebbc4de6cef2c941759"
     },
     {
       "path": "advisors-bundle/budget-builder/provenance.json",
-      "bytes": 2087,
-      "sha256": "efdab2accee09e8991218e166bc212808a74458f69612d175df6e7a4863b07ec"
+      "bytes": 3145,
+      "sha256": "eb9b36a403aee83fbba545b864470f667ad0aa5d13af4b54194915aedc45ca6e"
+    },
+    {
+      "path": "advisors-bundle/budget-builder/references/cashflow-calendar.md",
+      "bytes": 2458,
+      "sha256": "f4e5464e1042e23b657d1ad817c6265d53a6985dbcf7b668c456705b8f7eb2c6"
     },
     {
       "path": "advisors-bundle/buffett-perspective/LICENSE",
@@ -183,18 +234,33 @@
     },
     {
       "path": "advisors-bundle/buffett-perspective/SKILL.md",
-      "bytes": 2102,
-      "sha256": "eda61889ad27cdfcffe83b82b90cf0528838158e1a7128f3056eeae803c57571"
+      "bytes": 2742,
+      "sha256": "7a3fa003f12c3143ff65051e06ba980468b9ee9ceb61acf6e57ec5f6a766a10a"
     },
     {
       "path": "advisors-bundle/buffett-perspective/provenance.json",
-      "bytes": 2096,
-      "sha256": "fe91d3cb62068232671cc6f60ef1c89b11abe7875ccb71b3f919e50e4892e03c"
+      "bytes": 4086,
+      "sha256": "ad97d8f0ef6b88d74f5eeff132e5afc08fabd8ac4e93fb440bd45dac12d441fd"
+    },
+    {
+      "path": "advisors-bundle/buffett-perspective/references/practice-case.md",
+      "bytes": 1904,
+      "sha256": "996265a7ecc052ce4c19ce131c0ce62a8d3afde68fd1d56a54dd3040b8cd9d35"
+    },
+    {
+      "path": "advisors-bundle/buffett-perspective/references/source-map.md",
+      "bytes": 4952,
+      "sha256": "ca7567f198157cff906de00e735320d865dfaf2e904483ac9c9db40d89b64bfb"
+    },
+    {
+      "path": "advisors-bundle/buffett-perspective/references/study-notes.md",
+      "bytes": 2758,
+      "sha256": "a39bcfdde011249432bede269c9bc747e5bce20e1a3fd605495ff7267228cb43"
     },
     {
       "path": "advisors-bundle/bundle-files.json",
-      "bytes": 26161,
-      "sha256": "8b8025e15386cc6901829305581707d45e94177219b6a327d1a5710ecde8e8a6"
+      "bytes": 42826,
+      "sha256": "75a1d22e4baba7635b7e93efa2e51e45f1a584c9a86bbe7e6bec274978a04594"
     },
     {
       "path": "advisors-bundle/clear-perspective/LICENSE",
@@ -203,13 +269,18 @@
     },
     {
       "path": "advisors-bundle/clear-perspective/SKILL.md",
-      "bytes": 2058,
-      "sha256": "f14e7919af03cecbb5ed0e3837e68c56af4feeea5b131cd823d952df60f05c65"
+      "bytes": 2291,
+      "sha256": "b58e33e4a442a838671de5aa57ca43096438821b54a86d08832b7a09b4c4d9ea"
     },
     {
       "path": "advisors-bundle/clear-perspective/provenance.json",
-      "bytes": 2088,
-      "sha256": "1abc61f44f2bc230ea020b9972e5bbf6870658f7c3c9228aff0f0f4e13e3beb6"
+      "bytes": 3158,
+      "sha256": "28aeb59b573b91ee7cd90d8673ab5710a33ee5ab043c2916b73d12724f851ebd"
+    },
+    {
+      "path": "advisors-bundle/clear-perspective/references/habit-friction-audit.md",
+      "bytes": 2773,
+      "sha256": "d1e9a2c8f2fce232080c57021b7fff2f1887e71acf42630bc8fd2f2549a0a412"
     },
     {
       "path": "advisors-bundle/conflict-resolution/LICENSE",
@@ -218,13 +289,18 @@
     },
     {
       "path": "advisors-bundle/conflict-resolution/SKILL.md",
-      "bytes": 2049,
-      "sha256": "1b0619b180c96c05f308ee272305478862a0262e5e5515292f6ad57651250a05"
+      "bytes": 2285,
+      "sha256": "4afa7837337adca21c42de6716789e97985ad5a4b578b101441160ea2270cb6f"
     },
     {
       "path": "advisors-bundle/conflict-resolution/provenance.json",
-      "bytes": 2094,
-      "sha256": "ff2969045122c9549ba9f4d208cb84e4508fbda0d574ce5142379f79e0e56cb8"
+      "bytes": 3164,
+      "sha256": "9cc9b90f1df4f0bae0b5f7e7a3f196a96736878a2d72a6cf87218f766161e86e"
+    },
+    {
+      "path": "advisors-bundle/conflict-resolution/references/interests-and-agreement.md",
+      "bytes": 2565,
+      "sha256": "a71c3d98857c2a3fd7ebbab6270e75f80b3072a4db8f981ac26615cce4cd11ad"
     },
     {
       "path": "advisors-bundle/dan-koe-skill/LICENSE",
@@ -233,13 +309,18 @@
     },
     {
       "path": "advisors-bundle/dan-koe-skill/SKILL.md",
-      "bytes": 2045,
-      "sha256": "b318289aafea1b00edbddf013c8b7326212bd9ce115d33a69f77c826555b80e1"
+      "bytes": 2283,
+      "sha256": "80bf16aedfc441963e2e08577f746b3957fd12cfca0585b89b828b5f2474e8c1"
     },
     {
       "path": "advisors-bundle/dan-koe-skill/provenance.json",
-      "bytes": 2084,
-      "sha256": "bae24a26e7431078473e8b2d890aa3fa83a7b2007134998d8774ec3b9fca3942"
+      "bytes": 3165,
+      "sha256": "681d6fb114e575d17c44b922e472b9147963171dd4c6d195cc960aa420d43d29"
+    },
+    {
+      "path": "advisors-bundle/dan-koe-skill/references/point-of-view-and-product.md",
+      "bytes": 2595,
+      "sha256": "469a3f27c0540b282eabf8b247be13024bfb019708351b46745335c927acf7c5"
     },
     {
       "path": "advisors-bundle/debt-payoff-planner/LICENSE",
@@ -248,13 +329,18 @@
     },
     {
       "path": "advisors-bundle/debt-payoff-planner/SKILL.md",
-      "bytes": 2091,
-      "sha256": "7a88613e5efe8934afc7b52f337288ad0e52afeb63a385a7094d23b90324c53a"
+      "bytes": 2338,
+      "sha256": "4adb38200c7c2579ae37a2a9affa534a630ea0c5dc3cbb1faa9b349e75884071"
     },
     {
       "path": "advisors-bundle/debt-payoff-planner/provenance.json",
-      "bytes": 2103,
-      "sha256": "38a0a012b8fec66a06cba442a4d14ca8979be53280cc2801db06ca79678c4d86"
+      "bytes": 3165,
+      "sha256": "eeb367a39c88870c3c0de7a532d94371b231a277e94cf093da3a2f7cfd8f0299"
+    },
+    {
+      "path": "advisors-bundle/debt-payoff-planner/references/repayment-scenarios.md",
+      "bytes": 2607,
+      "sha256": "7c29ffc003cd9162bf9cd8c3a27d33a357ebcec7089fd18c64f247b1b6a5217c"
     },
     {
       "path": "advisors-bundle/drucker-perspective/LICENSE",
@@ -263,13 +349,28 @@
     },
     {
       "path": "advisors-bundle/drucker-perspective/SKILL.md",
-      "bytes": 2027,
-      "sha256": "60330074ad11ea4e09471d1963bd2e79c1674960ccdede461f1f5b2cde409a29"
+      "bytes": 2667,
+      "sha256": "d130ad9e7935923a4ee9302746f85783789f55b32c6ea465d3cf0fa81913d171"
     },
     {
       "path": "advisors-bundle/drucker-perspective/provenance.json",
-      "bytes": 2096,
-      "sha256": "14f517e56cbfa76b423315498f03d16fb996d3072519f45dc21176e15a8145af"
+      "bytes": 4086,
+      "sha256": "19fe42b68aab6f7d63f7fee41a9c77f167f787861f84f5118b63e06c94085cef"
+    },
+    {
+      "path": "advisors-bundle/drucker-perspective/references/practice-case.md",
+      "bytes": 1676,
+      "sha256": "eff15f5f300f03581adc608ef2653aa56c95aae343e533b16a2d80591226915c"
+    },
+    {
+      "path": "advisors-bundle/drucker-perspective/references/source-map.md",
+      "bytes": 2139,
+      "sha256": "a72a0f04edd24a3a0c2ac39df81ba15758c9c7b04b82323081282b98ef7fcede"
+    },
+    {
+      "path": "advisors-bundle/drucker-perspective/references/study-notes.md",
+      "bytes": 2623,
+      "sha256": "5fb66086c938bfb07bd964766f1f24c959a0e4860cd30e82fe3c5f59c045e9e0"
     },
     {
       "path": "advisors-bundle/elon-musk-perspective/LICENSE",
@@ -278,13 +379,28 @@
     },
     {
       "path": "advisors-bundle/elon-musk-perspective/SKILL.md",
-      "bytes": 2181,
-      "sha256": "9c250fe5ef7a0725caafd17bdcd4f27d1d93e1aa071b890dc80cd8c87ab2e8e6"
+      "bytes": 2821,
+      "sha256": "6ade13fd06a2b8fb8783a6190ae7b26462e497521d142b61a014ef7c97e53c1a"
     },
     {
       "path": "advisors-bundle/elon-musk-perspective/provenance.json",
-      "bytes": 2102,
-      "sha256": "b4f673f25426e7f196d36134695842ce1440e384d39d76b958d4a1745d4d329e"
+      "bytes": 4095,
+      "sha256": "d2a43debb017b1306b82da8f6fbff73fe11418e6b2d80ac5f47e852211dc7f0f"
+    },
+    {
+      "path": "advisors-bundle/elon-musk-perspective/references/practice-case.md",
+      "bytes": 1880,
+      "sha256": "ca33e117265a8202771aed489ec72a78555d1bc4247786a010913b2db4d1e7dc"
+    },
+    {
+      "path": "advisors-bundle/elon-musk-perspective/references/source-map.md",
+      "bytes": 3036,
+      "sha256": "2867f24400bd392867e376a54f984e09cbb8f4ccec014ddc5d6e77c82206149d"
+    },
+    {
+      "path": "advisors-bundle/elon-musk-perspective/references/study-notes.md",
+      "bytes": 2695,
+      "sha256": "e511c9edf9b23ff416aefc7142ec22d06302d9522a30bf22452e162b0549a384"
     },
     {
       "path": "advisors-bundle/emergency-fund-planner/LICENSE",
@@ -293,13 +409,18 @@
     },
     {
       "path": "advisors-bundle/emergency-fund-planner/SKILL.md",
-      "bytes": 2082,
-      "sha256": "226e1f8751e0d79cd7ee46cb605d6dea2bc183ac86d07d3d04ebffb2d7adf4e5"
+      "bytes": 2316,
+      "sha256": "dde23b0bce4057209f0dbf6918e16caab52b1ab6419388f97ab248d95003ab52"
     },
     {
       "path": "advisors-bundle/emergency-fund-planner/provenance.json",
-      "bytes": 2103,
-      "sha256": "6cbe5b0f1cebb75eaccae7062ef3d9d3f7e4bc794658353a166dd5eec758181f"
+      "bytes": 3169,
+      "sha256": "caa5138031436b44f2065e6d8e504e96f318607b7f018c24cd92888dc0e95621"
+    },
+    {
+      "path": "advisors-bundle/emergency-fund-planner/references/cash-buffer-scenarios.md",
+      "bytes": 2573,
+      "sha256": "8b1124b2a21b1f4cf43e4db17d4413bce8f2b3ac80279d965c9ab522a3ea69ca"
     },
     {
       "path": "advisors-bundle/english-learning-coach/LICENSE",
@@ -308,13 +429,23 @@
     },
     {
       "path": "advisors-bundle/english-learning-coach/SKILL.md",
-      "bytes": 2155,
-      "sha256": "f5c017f4d96be4ded684004ad8690ef7d52420708cd718221b62e28f8293cc2e"
+      "bytes": 2516,
+      "sha256": "ddd3918a1b7b7abdc7e3c4bf30a435ae4122ca3d9ae80024ace38cc9581c9c4b"
     },
     {
       "path": "advisors-bundle/english-learning-coach/provenance.json",
-      "bytes": 2173,
-      "sha256": "57fffd661bee7f4086f78298dbc855095b42c4e192c4582c5ed7f397e8fa7089"
+      "bytes": 3756,
+      "sha256": "f2450caf41f4336692e6ad4206b8aaa74a595ceaa753cade098313cfaf318dec"
+    },
+    {
+      "path": "advisors-bundle/english-learning-coach/references/practice-and-retry.md",
+      "bytes": 2538,
+      "sha256": "ee68ba9d7e3932360368d04e09dec2457dbc093018ef6bad0a4e951f0e9edd4f"
+    },
+    {
+      "path": "advisors-bundle/english-learning-coach/references/vocabulary-in-context.md",
+      "bytes": 2210,
+      "sha256": "e93ce73756f5125a889073581f328a0c2fa56e7e4ddb5530f390b711bab1be8e"
     },
     {
       "path": "advisors-bundle/excluded.json",
@@ -328,13 +459,28 @@
     },
     {
       "path": "advisors-bundle/fengtang-perspective/SKILL.md",
-      "bytes": 2032,
-      "sha256": "19607ca5149c6a29ca373665b864ea76b8a94854d6ef8d35b1897c7c47529071"
+      "bytes": 2672,
+      "sha256": "0dcc6a466b96b751227046f709910bd3d7ad39e7dc19c21b8a7c4b002aad12ec"
     },
     {
       "path": "advisors-bundle/fengtang-perspective/provenance.json",
-      "bytes": 2098,
-      "sha256": "fc4621e3b32d87176b17f8da0ed0e6543fb87bee11157a54b68826d67eb47f1c"
+      "bytes": 4091,
+      "sha256": "c24c6450d9b8d50733fe41178b20aeea9fa419d737acbef11e91ef3d04ab0926"
+    },
+    {
+      "path": "advisors-bundle/fengtang-perspective/references/practice-case.md",
+      "bytes": 1592,
+      "sha256": "f068bbec1bc7322dca46bc5ca806a856c9cb84c373877eaa9db3bf9b514b7705"
+    },
+    {
+      "path": "advisors-bundle/fengtang-perspective/references/source-map.md",
+      "bytes": 3479,
+      "sha256": "be9d0b1e0d1d831b7613656012eb3166469ee42933a9c576d4253ed0b6c4036e"
+    },
+    {
+      "path": "advisors-bundle/fengtang-perspective/references/study-notes.md",
+      "bytes": 2461,
+      "sha256": "83d33b9c1cd39375e2c7e7bf44ccf347a1ffa794f6e5bd0231940b076e392e07"
     },
     {
       "path": "advisors-bundle/feynman-perspective/LICENSE",
@@ -343,13 +489,28 @@
     },
     {
       "path": "advisors-bundle/feynman-perspective/SKILL.md",
-      "bytes": 2029,
-      "sha256": "cac8a03c759bb408ad2459ec7672720824754588026a32bf990f54b1bdb67402"
+      "bytes": 2669,
+      "sha256": "6015ab8a051f4054681ecd96ea33baf9a830781d2099a42881ac25ad7075cc56"
     },
     {
       "path": "advisors-bundle/feynman-perspective/provenance.json",
-      "bytes": 2089,
-      "sha256": "e805b1f728e18db61d00c10039f02b882c7f6aab13b89efc89aa2c16ce307bc3"
+      "bytes": 4076,
+      "sha256": "00801959d634cd0889f8f8c26f8d983dddeaebc4b94071f6643c013ec9ab280c"
+    },
+    {
+      "path": "advisors-bundle/feynman-perspective/references/practice-case.md",
+      "bytes": 1759,
+      "sha256": "12d08550fe70e96f7838b7be5f649a8c8030da39cd36ad79b2851ca4a79d6d2b"
+    },
+    {
+      "path": "advisors-bundle/feynman-perspective/references/source-map.md",
+      "bytes": 3577,
+      "sha256": "84af2c16ac1b97b2d8a87d221246f13ede322b6e0c520f83243d5bfd36fd9d54"
+    },
+    {
+      "path": "advisors-bundle/feynman-perspective/references/study-notes.md",
+      "bytes": 2544,
+      "sha256": "0b52c9c0ab3c1be9e0990f135c547222c9be4d2e1afb4f42603745681105b790"
     },
     {
       "path": "advisors-bundle/frankl-perspective/LICENSE",
@@ -358,13 +519,18 @@
     },
     {
       "path": "advisors-bundle/frankl-perspective/SKILL.md",
-      "bytes": 2025,
-      "sha256": "fd35fa73e65153e1b45dd9ca59ba3850a7e898bc54b4d85ec5c1772beeb5c60f"
+      "bytes": 2250,
+      "sha256": "02c0eb2292265544254ef9fb2ff672083b086c442e7945d89fffec8601440bef"
     },
     {
       "path": "advisors-bundle/frankl-perspective/provenance.json",
-      "bytes": 2094,
-      "sha256": "bb5c9a3d954960296fa6321f5e3cfae8ae68fd3c1684139395b14a302a710ea4"
+      "bytes": 3173,
+      "sha256": "d8f84a8ef758f8e59d61a7bf44f129509445fe4a1ece038f7d287c1f31608370"
+    },
+    {
+      "path": "advisors-bundle/frankl-perspective/references/meaning-without-pressure.md",
+      "bytes": 2668,
+      "sha256": "f5317b65a9346c991ab6150d9721288c04f75cdd9329804be9c3c195fa86577c"
     },
     {
       "path": "advisors-bundle/grove-perspective/LICENSE",
@@ -373,13 +539,28 @@
     },
     {
       "path": "advisors-bundle/grove-perspective/SKILL.md",
-      "bytes": 2041,
-      "sha256": "d999a84bbc4e2a85e3967afe52747418bf77f89d3966abe9cfb05be785f6be94"
+      "bytes": 2681,
+      "sha256": "1f889514b544c383c8bf035e5312690e1444709b66fe796c378430ac58fdbfdc"
     },
     {
       "path": "advisors-bundle/grove-perspective/provenance.json",
-      "bytes": 2086,
-      "sha256": "3178d547dc55f3171919949ce40fb0f0662a73c2931c3c0eb6cc810b0d1c59e0"
+      "bytes": 4070,
+      "sha256": "a584786a34b77050c952ec42b4fa8bdb45038d0012cc603442d6b3420acde10b"
+    },
+    {
+      "path": "advisors-bundle/grove-perspective/references/practice-case.md",
+      "bytes": 1675,
+      "sha256": "4bdcbda655dafd42944d10519e72e395cd2f7be9b61179b17edd8e376d4a4ed3"
+    },
+    {
+      "path": "advisors-bundle/grove-perspective/references/source-map.md",
+      "bytes": 2121,
+      "sha256": "4feb11acff70c20c8032972f5e770976db199fe67f8e7dd4a129cd7e8550e46c"
+    },
+    {
+      "path": "advisors-bundle/grove-perspective/references/study-notes.md",
+      "bytes": 2593,
+      "sha256": "89c9e9f760069ae03de9e393a0f0282059919d2afa166f0d6cbc0d591e5f054a"
     },
     {
       "path": "advisors-bundle/ilya-sutskever-perspective/LICENSE",
@@ -388,13 +569,28 @@
     },
     {
       "path": "advisors-bundle/ilya-sutskever-perspective/SKILL.md",
-      "bytes": 2066,
-      "sha256": "7b7d4b55b52956f23491db3ed9b1398860582698d6970a68a5e118b6cf4b6535"
+      "bytes": 2706,
+      "sha256": "4b184c9c3cc9c917448593b399c8465b802571f390d56dd75227b4045c290072"
     },
     {
       "path": "advisors-bundle/ilya-sutskever-perspective/provenance.json",
-      "bytes": 2122,
-      "sha256": "34a3c1b9d80a10759e1329501113517486d76944ecae2d2637805bc14cac61d5"
+      "bytes": 4130,
+      "sha256": "698d43e53b76e5441fcf9291a28fb5e7af5794af7cb7f3ede6f2b13ae86a10a0"
+    },
+    {
+      "path": "advisors-bundle/ilya-sutskever-perspective/references/practice-case.md",
+      "bytes": 1693,
+      "sha256": "0b36bd8add95d6a9fba0993a5de01019954f9e895422323c3d7a3c7e55d38e3f"
+    },
+    {
+      "path": "advisors-bundle/ilya-sutskever-perspective/references/source-map.md",
+      "bytes": 3610,
+      "sha256": "43787e200d1038853b593e4edcfaf5e92776218cf2e5f5ccb9d8272d02c3bdc3"
+    },
+    {
+      "path": "advisors-bundle/ilya-sutskever-perspective/references/study-notes.md",
+      "bytes": 2658,
+      "sha256": "5d51a9564a216e7c141eff835c4046356233048a301b1f4dcd475280ccc1cec4"
     },
     {
       "path": "advisors-bundle/informed-patient/LICENSE",
@@ -403,18 +599,28 @@
     },
     {
       "path": "advisors-bundle/informed-patient/SKILL.md",
-      "bytes": 2379,
-      "sha256": "6ffb17299709a921ecb79ee6af72257b20fceb1190bc955e8528299b75077a0e"
+      "bytes": 2748,
+      "sha256": "8f3f76c6e3227fc18a2404f3842686542a8492b49523b1dd940f4c245bba32da"
     },
     {
       "path": "advisors-bundle/informed-patient/provenance.json",
-      "bytes": 2222,
-      "sha256": "87848a59e4e98b5b33d5f2843914aec7712694dcc248301562ab7d29356f08c5"
+      "bytes": 3766,
+      "sha256": "fb0cb8b52a09c2b3d2b28ae5822f792f7909e102d347460913380c0a364d8e3f"
+    },
+    {
+      "path": "advisors-bundle/informed-patient/references/research-reading.md",
+      "bytes": 2562,
+      "sha256": "24b749b9c470d5ea811318f0d32330d8afdddf8b975a60bf63375fa159729de8"
+    },
+    {
+      "path": "advisors-bundle/informed-patient/references/visit-summary.md",
+      "bytes": 2714,
+      "sha256": "2293237b18e25d1b9520ede2a8683f35d7e447f750bf428fa17c0983130cf1e8"
     },
     {
       "path": "advisors-bundle/install.py",
-      "bytes": 3484,
-      "sha256": "646bf16d13bc53637ea8d54719827ad4e50df00f1b93c8ed10a33e22690b7b83"
+      "bytes": 4144,
+      "sha256": "8b73e57a4b6660de3806393d4f1499fdf8f73fcd9ba8f01d21666120cc844233"
     },
     {
       "path": "advisors-bundle/insurance-agent-policy-explanation/LICENSE",
@@ -423,13 +629,18 @@
     },
     {
       "path": "advisors-bundle/insurance-agent-policy-explanation/SKILL.md",
-      "bytes": 2165,
-      "sha256": "94a78b6865067e7ef5ddd934113d144d14c4782647ce9584618a7b1d48fa3e49"
+      "bytes": 2416,
+      "sha256": "b43b1e01e2b0895ac2f07ecff507987d1a2ecad002123d15ee9a204ac627755c"
     },
     {
       "path": "advisors-bundle/insurance-agent-policy-explanation/provenance.json",
-      "bytes": 2146,
-      "sha256": "eacea0926b38ced687694165a557b60475c7b7e2494a0b9972f51a31008fe231"
+      "bytes": 3212,
+      "sha256": "e0a047f0ccbb61dae39b10e6b73f75314cd804535753792cec56cda7abb58e97"
+    },
+    {
+      "path": "advisors-bundle/insurance-agent-policy-explanation/references/policy-reading-table.md",
+      "bytes": 2755,
+      "sha256": "9176de66e7d2e1a679e07f76ac0b7248acb0649032c5b24e5c914ffedfdf0db8"
     },
     {
       "path": "advisors-bundle/interview-master/LICENSE",
@@ -438,13 +649,23 @@
     },
     {
       "path": "advisors-bundle/interview-master/SKILL.md",
-      "bytes": 2108,
-      "sha256": "7d9a3bf8d1b7279e9c29c033a7855eb13dc408dcee1d8bc00770859bdc310975"
+      "bytes": 2446,
+      "sha256": "dd47bd5cdb56cf0ff1659571c5bffe02808db1f067dd4013993e4c7f5784a31c"
     },
     {
       "path": "advisors-bundle/interview-master/provenance.json",
-      "bytes": 2118,
-      "sha256": "98e2ba49ea0bada10bf662ccdcd32a741681d8e83727a1881ae6c0bc79f0e5ac"
+      "bytes": 3663,
+      "sha256": "87863c840752b7db0ae3b2a4057034c11ce4279171bbe5cea11276b300859e97"
+    },
+    {
+      "path": "advisors-bundle/interview-master/references/evidence-bank.md",
+      "bytes": 2790,
+      "sha256": "f893635926a565e1a40b94084985c16bb25ebf1182ffcf010cf788a4cd988a98"
+    },
+    {
+      "path": "advisors-bundle/interview-master/references/offer-comparison.md",
+      "bytes": 2394,
+      "sha256": "cf8c1b4b38200d2d342010864bbd86cd888523868f09e9b396bd9a5009b1109f"
     },
     {
       "path": "advisors-bundle/kant-perspective/LICENSE",
@@ -453,13 +674,18 @@
     },
     {
       "path": "advisors-bundle/kant-perspective/SKILL.md",
-      "bytes": 2057,
-      "sha256": "62f15fcc5989b4e0acf8fdc441e4b46cf1a61092f77981b05d91f587daa631c8"
+      "bytes": 2296,
+      "sha256": "58a611f2475e36c3623b897e46e060e490754692ae7033afc23b4b8d64c9f539"
     },
     {
       "path": "advisors-bundle/kant-perspective/provenance.json",
-      "bytes": 2078,
-      "sha256": "2fc5f19bb8004b78eb6db641dbb096e96a4a06cad2745236a8af4040bde05e09"
+      "bytes": 3147,
+      "sha256": "4b3c05552e9c9d8d6b0d7b637a7f568cbb34a22665c95539ed5359dbf7a11d7a"
+    },
+    {
+      "path": "advisors-bundle/kant-perspective/references/principle-and-person.md",
+      "bytes": 2524,
+      "sha256": "888540292e746a804d01cb3e54eee557ac1f688529eee584b3309673261c096d"
     },
     {
       "path": "advisors-bundle/laozi-perspective/LICENSE",
@@ -468,13 +694,18 @@
     },
     {
       "path": "advisors-bundle/laozi-perspective/SKILL.md",
-      "bytes": 2014,
-      "sha256": "27a744c22c81b87c96cbe13f42869744a295302603abf026c40372bd57fe29f7"
+      "bytes": 2247,
+      "sha256": "8efd1fb4de143b142342bdf6de9524a31a6d3c0e1c1b7766651894807d1bea17"
     },
     {
       "path": "advisors-bundle/laozi-perspective/provenance.json",
-      "bytes": 2083,
-      "sha256": "d902a6ef95b96d5089440116de8c4131421c87abbede2d0e888a9b4fa058c599"
+      "bytes": 3147,
+      "sha256": "28153355f539d6c43df19ee454828dc42370aab8ff671d1f367323e5e3797e27"
+    },
+    {
+      "path": "advisors-bundle/laozi-perspective/references/less-interference.md",
+      "bytes": 2415,
+      "sha256": "bade079a47ecd8d66de8086832d26dd2aacdcdd391441aa2b4aff8b92f4c7c6e"
     },
     {
       "path": "advisors-bundle/manifest.json",
@@ -488,13 +719,18 @@
     },
     {
       "path": "advisors-bundle/mao-zedong-perspective/SKILL.md",
-      "bytes": 2111,
-      "sha256": "e59c3ca6c0637a3f80edc94e2a68d4a7b46d96074b6051f618e8e899cfff28e0"
+      "bytes": 2352,
+      "sha256": "43fd2a8b3556321995f5f610323d97fbd2276803cab4ecd3879006935bae6092"
     },
     {
       "path": "advisors-bundle/mao-zedong-perspective/provenance.json",
-      "bytes": 2090,
-      "sha256": "c252f52e3c22074aa7fc3c4565d996d5ca3de3133c317f23b4e80a55d8459489"
+      "bytes": 3163,
+      "sha256": "afc551130d1e11f2e0456651abc46a3ec628fe5764e22718f7637e5990b05669"
+    },
+    {
+      "path": "advisors-bundle/mao-zedong-perspective/references/investigation-and-test.md",
+      "bytes": 2616,
+      "sha256": "a65e21195aba51bd9130be34063a7da6d43e42dd5871dd5fd456f360098a36d1"
     },
     {
       "path": "advisors-bundle/methods.json",
@@ -508,13 +744,18 @@
     },
     {
       "path": "advisors-bundle/montaigne-perspective/SKILL.md",
-      "bytes": 1977,
-      "sha256": "2d545c38f0b7482e5edcdfd9f5f72db79cf2da7372fe506c46accbca93470996"
+      "bytes": 2222,
+      "sha256": "eb502a6eeae88488c70b1d4f6d4537e6dbbb95292a8108fac649eea24b51c993"
     },
     {
       "path": "advisors-bundle/montaigne-perspective/provenance.json",
-      "bytes": 2103,
-      "sha256": "184f3a321bc4a8524d8aa3b03bc37a33bca15e9050a8d4707d287a65e31b8d4f"
+      "bytes": 3189,
+      "sha256": "0737d2978be54d7448f89ebd23712dc7e8b1ed50edacd3a4c20a54762690ff05"
+    },
+    {
+      "path": "advisors-bundle/montaigne-perspective/references/experience-and-uncertainty.md",
+      "bytes": 2457,
+      "sha256": "b300db83fbbd2b7c95ad003bf278e3de01d304d51121ed4d48be573fca96aa82"
     },
     {
       "path": "advisors-bundle/mrbeast-perspective/LICENSE",
@@ -523,13 +764,18 @@
     },
     {
       "path": "advisors-bundle/mrbeast-perspective/SKILL.md",
-      "bytes": 2102,
-      "sha256": "02f73e3a1f38c44d2873338da80ab1732be0ed7aa2b55228d58ea1128ba9e744"
+      "bytes": 2349,
+      "sha256": "8b60464144f4c2ea8fa0ddbe7c864a91b734dfcf0b514b1f2c93da3a0e3a69bd"
     },
     {
       "path": "advisors-bundle/mrbeast-perspective/provenance.json",
-      "bytes": 2090,
-      "sha256": "2dda8989692cd1a67dae53abb0fbdeeecf1e4ead0a81a6c1dac4b21134998a34"
+      "bytes": 3177,
+      "sha256": "a1cca35c1c4298ef59873213cc61944c259e0d7257986c25f3ba30e8dec59cd8"
+    },
+    {
+      "path": "advisors-bundle/mrbeast-perspective/references/viewer-promise-and-retention.md",
+      "bytes": 2713,
+      "sha256": "410bf193b16f2aa541aaf27ff6103d14d847e29b8ce55cf88e7810ef99c07b38"
     },
     {
       "path": "advisors-bundle/munger-perspective/LICENSE",
@@ -538,13 +784,28 @@
     },
     {
       "path": "advisors-bundle/munger-perspective/SKILL.md",
-      "bytes": 2021,
-      "sha256": "01c11f7f42de30dca03b3e878a80a76bd1a495d85b4c919de0ca58edc74e2337"
+      "bytes": 2661,
+      "sha256": "f81e57938d9881f2351746a66b42685a83e68b6db730b43a5ab4dc5a0441a85b"
     },
     {
       "path": "advisors-bundle/munger-perspective/provenance.json",
-      "bytes": 2084,
-      "sha256": "c3d21e601cdb3c7a94323069d096b8280e04baefbc0ac9da3d0d3fb391e62270"
+      "bytes": 4068,
+      "sha256": "f087aa9a1c21a7b045ec86c68aa82a3bcf4d4ce65c6bace8eeb0b304eca3223c"
+    },
+    {
+      "path": "advisors-bundle/munger-perspective/references/practice-case.md",
+      "bytes": 1816,
+      "sha256": "4796e26a64e064e393ae11dc85b28f810a1d3e33284d822ee815c4d86716a579"
+    },
+    {
+      "path": "advisors-bundle/munger-perspective/references/source-map.md",
+      "bytes": 2939,
+      "sha256": "33a77facaee39ebee33e5fa6cbe3935c7d4240e9ad0b6b4628358650e0acb318"
+    },
+    {
+      "path": "advisors-bundle/munger-perspective/references/study-notes.md",
+      "bytes": 2650,
+      "sha256": "dd22680108a4a1d74c0016a6144a97ed411cd83cddef8a72e5852ea3808a4792"
     },
     {
       "path": "advisors-bundle/naval-perspective/LICENSE",
@@ -553,13 +814,28 @@
     },
     {
       "path": "advisors-bundle/naval-perspective/SKILL.md",
-      "bytes": 2118,
-      "sha256": "956b0e733b692dbb8dc75be07e52b60ccbbe31fd6d9f9079527a5139d87d690a"
+      "bytes": 2758,
+      "sha256": "1b08e53df5ef836435d3d41614965e8f99e54e2a2376d84876bfbccb712cfb2e"
     },
     {
       "path": "advisors-bundle/naval-perspective/provenance.json",
-      "bytes": 2082,
-      "sha256": "82f4d31f960e6a4dd06a029e7093636b709eaabb5717e06ca1db2702f75fafe5"
+      "bytes": 4063,
+      "sha256": "bbf53db56ea309873845c9768e070e6aedf56280248b801cb22536f8f410dd6f"
+    },
+    {
+      "path": "advisors-bundle/naval-perspective/references/practice-case.md",
+      "bytes": 1860,
+      "sha256": "ac49ac8928eaf2e0200e3757a8268303b0e74edadc2a75571d74720215b6d890"
+    },
+    {
+      "path": "advisors-bundle/naval-perspective/references/source-map.md",
+      "bytes": 2955,
+      "sha256": "6960c409966e71c9f8eb445cd7f8c01a6277dde7feb91d0072df57d5fdb9b4ee"
+    },
+    {
+      "path": "advisors-bundle/naval-perspective/references/study-notes.md",
+      "bytes": 2867,
+      "sha256": "f3cd20311ec2d86993880f5ca6dacab6fa1e9ac2c39b7b147de419f39dd2494a"
     },
     {
       "path": "advisors-bundle/nietzsche-perspective/LICENSE",
@@ -568,13 +844,18 @@
     },
     {
       "path": "advisors-bundle/nietzsche-perspective/SKILL.md",
-      "bytes": 2055,
-      "sha256": "42ca37196bb6eb39f1caaac415d879ccb701556f399c563da0eea55a2726c103"
+      "bytes": 2292,
+      "sha256": "2e5b158f9c9471eaf3ff78b7693fc6a174ba64d5684425eb1eb8a05135908cd8"
     },
     {
       "path": "advisors-bundle/nietzsche-perspective/provenance.json",
-      "bytes": 2103,
-      "sha256": "01955c022dd1ea60bc274dc3822fccb163f2459a664046afeb834261dce28452"
+      "bytes": 3179,
+      "sha256": "f8dbe672928ad8a3e4fee8c738a5eba7fd248e20fc19e2588f56b562ca4214ad"
+    },
+    {
+      "path": "advisors-bundle/nietzsche-perspective/references/values-and-experiment.md",
+      "bytes": 2553,
+      "sha256": "dc18483f22a4c8cd2a2d0c6faa9b93e5d37a73de405263e651bef71ebc8da531"
     },
     {
       "path": "advisors-bundle/opc-growth/LICENSE",
@@ -583,13 +864,23 @@
     },
     {
       "path": "advisors-bundle/opc-growth/SKILL.md",
-      "bytes": 2084,
-      "sha256": "b0985e9eb8969fcb62eba276aa77b30f589f2927f48a494cf7ca62dc24b6a9ac"
+      "bytes": 2452,
+      "sha256": "5230a5fbb9985d3460d74d21dcdb0b4dae33cc56693a2f1b5f815492ba9e4ddf"
     },
     {
       "path": "advisors-bundle/opc-growth/provenance.json",
-      "bytes": 2107,
-      "sha256": "ce28963e5fcc57dac6384976ef796c77126f7f58df04824c79dc688a5afca640"
+      "bytes": 3676,
+      "sha256": "e7cd330ff9a10490b123c5615875d1316a37eaaa21a960c54e50f3ab722e739b"
+    },
+    {
+      "path": "advisors-bundle/opc-growth/references/pipeline-and-delivery.md",
+      "bytes": 2727,
+      "sha256": "7c6e82242ef58775ea6d6b9d20c16fa151d9e6245075deb0d5442c83b398b06c"
+    },
+    {
+      "path": "advisors-bundle/opc-growth/references/retention-with-consent.md",
+      "bytes": 2493,
+      "sha256": "56abe53686e7a0947a8831d90877759ec4bc572030f72b8826570ccdb0ac9b45"
     },
     {
       "path": "advisors-bundle/opc-strategy/LICENSE",
@@ -598,13 +889,23 @@
     },
     {
       "path": "advisors-bundle/opc-strategy/SKILL.md",
-      "bytes": 2116,
-      "sha256": "24f215f100dbbed64333f2991ce92d480a052e39cf153f9e1a58a680f4d24a6c"
+      "bytes": 2509,
+      "sha256": "733109a3090c4acd3a37ce7256af6829ac5f056bab60528224c758343bc3b1df"
     },
     {
       "path": "advisors-bundle/opc-strategy/provenance.json",
-      "bytes": 2111,
-      "sha256": "6c6d5cb098b5e1a1a9e7676a2efefd7ac1e4a4dd7241e6c435ffd1ed2c3d4e5c"
+      "bytes": 3688,
+      "sha256": "d88ac12ad2238a7f1b15fc66df0362a94e3097ed20f9caf916fb18d36bbf3b59"
+    },
+    {
+      "path": "advisors-bundle/opc-strategy/references/customer-problem-validation.md",
+      "bytes": 2729,
+      "sha256": "77e4afa4ace62707d51a4feb0147a2ea1de99817847498b10c3a25f3ff9ed37e"
+    },
+    {
+      "path": "advisors-bundle/opc-strategy/references/pricing-and-capacity.md",
+      "bytes": 2540,
+      "sha256": "a02d9518a9a2dda4b0809c0c6fde163fe6f5e6c14fb083ef44e71ada6ecf96e1"
     },
     {
       "path": "advisors-bundle/paul-graham-perspective/LICENSE",
@@ -613,13 +914,28 @@
     },
     {
       "path": "advisors-bundle/paul-graham-perspective/SKILL.md",
-      "bytes": 2054,
-      "sha256": "def98b0b2ccb58f2973f6add709fbfdb2be788d0fc794ef0e8bc2a83402ed863"
+      "bytes": 2694,
+      "sha256": "fe1f1dd12c98ef130319ebd7ea09df23eceaedc8e98ee6c420739c21e08aecb8"
     },
     {
       "path": "advisors-bundle/paul-graham-perspective/provenance.json",
-      "bytes": 2114,
-      "sha256": "cde60b5f7fe1957d1a64950dac14a98ef9d1b99afdca460f5c432128fd89e2e7"
+      "bytes": 4113,
+      "sha256": "7f692f451817f6ce2d00b5ee0de628db4b712dcd91ae8bcc6917571ecbe2590f"
+    },
+    {
+      "path": "advisors-bundle/paul-graham-perspective/references/practice-case.md",
+      "bytes": 1825,
+      "sha256": "014bac58ee943a2fc7b0d720f1b342c7cd36a4793f6b3dd5a307940dc9db0a5f"
+    },
+    {
+      "path": "advisors-bundle/paul-graham-perspective/references/source-map.md",
+      "bytes": 3543,
+      "sha256": "a7bcf6596f4c8bc0eed9da0b9bc3bdec880b020e000f3fe8620622af3063c8b1"
+    },
+    {
+      "path": "advisors-bundle/paul-graham-perspective/references/study-notes.md",
+      "bytes": 2682,
+      "sha256": "e2d48c6b6c4740da25731bba67db91a74c63168e3e4bdc1028e7b67bba136906"
     },
     {
       "path": "advisors-bundle/personal-ai-learning/LICENSE",
@@ -628,13 +944,18 @@
     },
     {
       "path": "advisors-bundle/personal-ai-learning/SKILL.md",
-      "bytes": 2069,
-      "sha256": "10798d78fdfe2d6f2da6c454f56e07354cf653897160f58972ba1189b6ff78b8"
+      "bytes": 2311,
+      "sha256": "cd8d71523d77e03969d8038727c9c7ca5e613e7fdc30749e01fd789215476510"
     },
     {
       "path": "advisors-bundle/personal-ai-learning/provenance.json",
-      "bytes": 2144,
-      "sha256": "9a53723ce7f8da65c1bca995eb7d5caaace102107d3df539ead0add81e8d6694"
+      "bytes": 3227,
+      "sha256": "81bfd314e9354597f97b477d86fc6cdc5de8f3721c78b55fe8870eb9779b50a9"
+    },
+    {
+      "path": "advisors-bundle/personal-ai-learning/references/evidence-and-transfer.md",
+      "bytes": 2762,
+      "sha256": "c918b82bd6cec845f6bf386a8e8f153fec03fead8558cdca82a05c80ece19c9b"
     },
     {
       "path": "advisors-bundle/personal-trainer/LICENSE",
@@ -643,13 +964,18 @@
     },
     {
       "path": "advisors-bundle/personal-trainer/SKILL.md",
-      "bytes": 2171,
-      "sha256": "9e3ae634f2b3a16dd8b780876469a5c554a29d4735bd8553ecf8871988f852ab"
+      "bytes": 2426,
+      "sha256": "2bcb5784cc26ab604e11d0cf768d78f0b190aea6669353e5c992db5ca230193b"
     },
     {
       "path": "advisors-bundle/personal-trainer/provenance.json",
-      "bytes": 2164,
-      "sha256": "be5491ff784b04cfb954d407d664c4fb2c21d16c4a991106f8f3cd8e6aed8090"
+      "bytes": 3259,
+      "sha256": "5c803fe7042ab5b287b9f33b0d0ce191ace005137a64f7b909c5d32ae0b770d4"
+    },
+    {
+      "path": "advisors-bundle/personal-trainer/references/training-log-and-adjustment.md",
+      "bytes": 2717,
+      "sha256": "ff641b34515298c49d1c0c50a78c5591e8f071e68116721afe543fecf8336d43"
     },
     {
       "path": "advisors-bundle/salary-negotiation/LICENSE",
@@ -658,13 +984,18 @@
     },
     {
       "path": "advisors-bundle/salary-negotiation/SKILL.md",
-      "bytes": 2072,
-      "sha256": "5bc7fa1b7a6be574f9f70af0ae6e9c0bdec5df02bbefd61d5978da0150244e5c"
+      "bytes": 2312,
+      "sha256": "17fcc32f88625584d5585ccdf7a7968a783d25da4ba48e5fb3c332b6c6063913"
     },
     {
       "path": "advisors-bundle/salary-negotiation/provenance.json",
-      "bytes": 2092,
-      "sha256": "81f406b429c7b883ad44989bf85990cb24163b45bece062516b342f5ba94222c"
+      "bytes": 3160,
+      "sha256": "144d9a1e12829a81749e1a67af556d7b845954d9d884003651f4496ad93f7f2d"
+    },
+    {
+      "path": "advisors-bundle/salary-negotiation/references/compensation-and-batna.md",
+      "bytes": 2579,
+      "sha256": "2b29d5565b3e92a5c852bedd15d574a3149867b7eb6d2479f8b801b85409d675"
     },
     {
       "path": "advisors-bundle/sleep-optimizer/LICENSE",
@@ -673,13 +1004,18 @@
     },
     {
       "path": "advisors-bundle/sleep-optimizer/SKILL.md",
-      "bytes": 2072,
-      "sha256": "a541daf087f2cbb014a57b504516b5681de6d7c4b3e52f421a6adcc5881891f1"
+      "bytes": 2290,
+      "sha256": "af2d228feb8fe2d2fb410d7c1a9d91ff606038e3fd741df5cacc5ad3c57dc2cc"
     },
     {
       "path": "advisors-bundle/sleep-optimizer/provenance.json",
-      "bytes": 2086,
-      "sha256": "c20c2bde81a68b1d8ad0a83ecd7906e75790b4a8e453838f1fdec8e1b2d36d77"
+      "bytes": 3144,
+      "sha256": "9aad41569ff6f0fa347db434e19b813b743c14a07599271ba8bb03b8d1d24d0a"
+    },
+    {
+      "path": "advisors-bundle/sleep-optimizer/references/sleep-observation.md",
+      "bytes": 2706,
+      "sha256": "892a1570951754364caf1f108b4e972ca61b50f7822c7a39c6bd744f986674ca"
     },
     {
       "path": "advisors-bundle/socrates-perspective/LICENSE",
@@ -688,13 +1024,18 @@
     },
     {
       "path": "advisors-bundle/socrates-perspective/SKILL.md",
-      "bytes": 2038,
-      "sha256": "c8357f792aea6f12f88eb186d0fc48eeec5a725a8c959811034031240b6b7e33"
+      "bytes": 2272,
+      "sha256": "527562778796127d85e1639c54c9ec261aae377df8d1f2294027105a77f9ca3f"
     },
     {
       "path": "advisors-bundle/socrates-perspective/provenance.json",
-      "bytes": 2104,
-      "sha256": "d7a15668e18e7c6aa446bd9501ef972631290260908de59b0a8c517002447f5c"
+      "bytes": 3185,
+      "sha256": "6cd433d843fddbe3ea3c179e19a0003defd61a73e7bec36e9e8a29b1ceaefd5f"
+    },
+    {
+      "path": "advisors-bundle/socrates-perspective/references/claim-and-counterexample.md",
+      "bytes": 2421,
+      "sha256": "6a497a3d30564a1e630fb36cc27add8bdd9758b9192191eaebc0dbe322b1f122"
     },
     {
       "path": "advisors-bundle/steve-jobs-perspective/LICENSE",
@@ -703,13 +1044,28 @@
     },
     {
       "path": "advisors-bundle/steve-jobs-perspective/SKILL.md",
-      "bytes": 2065,
-      "sha256": "40cb3dfd3a86a29535b04966855e79dbe51765fb9f97b04473ecc47419fa63bb"
+      "bytes": 2705,
+      "sha256": "2fc157df62736103d51f47f12f5834428a71eb9b9de3601464c3789547a77323"
     },
     {
       "path": "advisors-bundle/steve-jobs-perspective/provenance.json",
-      "bytes": 2107,
-      "sha256": "0c8ec9e0b6da81d1f353638da97d672113404521e3e0841196531285761fcc4f"
+      "bytes": 4103,
+      "sha256": "543e7d413b208042195202ddb5aa6c8ce90d97e518cbac18d021ebb3da7d3912"
+    },
+    {
+      "path": "advisors-bundle/steve-jobs-perspective/references/practice-case.md",
+      "bytes": 1923,
+      "sha256": "4360e2bc6d78eb93a2a6f3340b28ba952877a5a2a4ae0d6ad57dd70fa46374d3"
+    },
+    {
+      "path": "advisors-bundle/steve-jobs-perspective/references/source-map.md",
+      "bytes": 3748,
+      "sha256": "50bfc136a1e299e54918d5046b74c14e5b1958cbc1943a7fe19058a6205d19e4"
+    },
+    {
+      "path": "advisors-bundle/steve-jobs-perspective/references/study-notes.md",
+      "bytes": 2703,
+      "sha256": "98a6e2153c334e2b344f2e966350a757768d72e22dc6ee471b149634a9afde4e"
     },
     {
       "path": "advisors-bundle/stress-management/LICENSE",
@@ -718,13 +1074,18 @@
     },
     {
       "path": "advisors-bundle/stress-management/SKILL.md",
-      "bytes": 2062,
-      "sha256": "7405df4b2620e4b9cceb168701e05e4369b9866c2e3335a2d3faa51ba748ef12"
+      "bytes": 2289,
+      "sha256": "36dcb212e804f551c7dfcffd8df2be60b3e6d24697ad43fae495e975f1909cbf"
     },
     {
       "path": "advisors-bundle/stress-management/provenance.json",
-      "bytes": 2090,
-      "sha256": "bad6718b0cac827cf47ef2886383cf4a5e6a89ed0a4cb0faddef1582f20c74af"
+      "bytes": 3154,
+      "sha256": "9a90c89158a3875552e27b85da027c2ace29c638da02a4041fa1ccacdf73fea4"
+    },
+    {
+      "path": "advisors-bundle/stress-management/references/trigger-response-map.md",
+      "bytes": 2656,
+      "sha256": "05995c1acc42a4d05bebe34dd84411c36fda53dd09212420bed9840e3d37f249"
     },
     {
       "path": "advisors-bundle/taleb-perspective/LICENSE",
@@ -733,13 +1094,28 @@
     },
     {
       "path": "advisors-bundle/taleb-perspective/SKILL.md",
-      "bytes": 2064,
-      "sha256": "cee5bcefb063bc944f7acbe0eab8eb630ac50838290930a089e1bfc7d7e2b7e2"
+      "bytes": 2704,
+      "sha256": "147eaddc5afede25fef0025f09fa69b602fcc8ad34108aa84854c6c1ebcc31ac"
     },
     {
       "path": "advisors-bundle/taleb-perspective/provenance.json",
-      "bytes": 2082,
-      "sha256": "eed7a41c12844194a5119cb445c466d0144caf0f4fa17e6e96d71ccb4aa588d1"
+      "bytes": 4063,
+      "sha256": "1c4342690998796735d627a03b7956009e02cf14251c7479a56fa1b96ca7220b"
+    },
+    {
+      "path": "advisors-bundle/taleb-perspective/references/practice-case.md",
+      "bytes": 1764,
+      "sha256": "5c242ac92339d6b01ecba6ea8f62c0b6e10ae6f86c5570eb437580e218893b80"
+    },
+    {
+      "path": "advisors-bundle/taleb-perspective/references/source-map.md",
+      "bytes": 3531,
+      "sha256": "7f5f407a02f72b96c64daacb5c5280c777bd9192f6801d0e2bcb42fc290331fd"
+    },
+    {
+      "path": "advisors-bundle/taleb-perspective/references/study-notes.md",
+      "bytes": 2636,
+      "sha256": "98758ddc8ab96a8dd83620819e4db4ded9d54be6eaa41aac9d267bf8937af0b7"
     },
     {
       "path": "advisors-bundle/think-woop/LICENSE",
@@ -748,13 +1124,18 @@
     },
     {
       "path": "advisors-bundle/think-woop/SKILL.md",
-      "bytes": 2090,
-      "sha256": "4d3b2d75dd6665da8333fb6a02544097bd1222f89d3e12f35eeca0914bcec20b"
+      "bytes": 2351,
+      "sha256": "7c9a7afcdec970ed5c9a627434031154087819c937e91a136c2ce4b0818641d6"
     },
     {
       "path": "advisors-bundle/think-woop/provenance.json",
-      "bytes": 2199,
-      "sha256": "6d36e8a4bfed3ba2e309a39bdab74e77f09bb83c1a7b2bfcd464b3b3d0244948"
+      "bytes": 3297,
+      "sha256": "7546c9beef51e19730b98d470256e9f56a8d0460c6fa68f416444154443c8f91"
+    },
+    {
+      "path": "advisors-bundle/think-woop/references/woop-card-and-review.md",
+      "bytes": 2824,
+      "sha256": "534c234a87b553fe0c127cae332bc14be5576bab4dbb5e61c605f88d275e8600"
     },
     {
       "path": "advisors-bundle/wangyangming-perspective/LICENSE",
@@ -763,13 +1144,28 @@
     },
     {
       "path": "advisors-bundle/wangyangming-perspective/SKILL.md",
-      "bytes": 2040,
-      "sha256": "63bdd000281164c4a4a4f565a514f8b4648eb9070151d5787e421e2d688aee36"
+      "bytes": 2680,
+      "sha256": "084fa54821e9caf8f0f34f6e21ea9083cd1ab3675c3f5e4680e93948ef6ef93d"
     },
     {
       "path": "advisors-bundle/wangyangming-perspective/provenance.json",
-      "bytes": 2121,
-      "sha256": "46c9470a51140d622690df7245e03142923a4e342360b36ab4ade40bc0557a76"
+      "bytes": 4126,
+      "sha256": "3c48ec043a0fcd850a9f83d50ef27a0b0255c5a309ac8a144d07d5ce2a8f31a6"
+    },
+    {
+      "path": "advisors-bundle/wangyangming-perspective/references/practice-case.md",
+      "bytes": 1660,
+      "sha256": "8b6cff81c0430fd72d47e2ad3f87ef84cb719c103341af8096f5d54aa6aa7236"
+    },
+    {
+      "path": "advisors-bundle/wangyangming-perspective/references/source-map.md",
+      "bytes": 2136,
+      "sha256": "e9c560d646f21ca43f97bd84ffc524c407deda7ce15cd84afa6d73652a8d6abd"
+    },
+    {
+      "path": "advisors-bundle/wangyangming-perspective/references/study-notes.md",
+      "bytes": 2433,
+      "sha256": "dd126fc2270cbc8769e352622e83494c32cad7986595d85910cff712fb3c101b"
     },
     {
       "path": "advisors-bundle/wittgenstein-perspective/LICENSE",
@@ -778,13 +1174,18 @@
     },
     {
       "path": "advisors-bundle/wittgenstein-perspective/SKILL.md",
-      "bytes": 2043,
-      "sha256": "354325746d99d4e10632f770523a8f408473b7eea1351d18c99e88ac7f620aa3"
+      "bytes": 2274,
+      "sha256": "cbe6d15883ac31ee5383bdf545c30f6aa3252195b0417bfcb2741b48f05d1227"
     },
     {
       "path": "advisors-bundle/wittgenstein-perspective/provenance.json",
-      "bytes": 2127,
-      "sha256": "a99222b990b314421a0d7ee25af76518e08e026cb942dd73f893eca34c14bb6c"
+      "bytes": 3188,
+      "sha256": "93da5fd46991374081c8446e72a13cd4ed27e8b136672590830e5a969ed25a76"
+    },
+    {
+      "path": "advisors-bundle/wittgenstein-perspective/references/words-in-use.md",
+      "bytes": 2559,
+      "sha256": "9addd35b027f00ec50951d1a53d4934831a96efdde9f40ff3ca86ed1354c8b3b"
     },
     {
       "path": "advisors-bundle/workplace-communication/LICENSE",
@@ -793,13 +1194,18 @@
     },
     {
       "path": "advisors-bundle/workplace-communication/SKILL.md",
-      "bytes": 2066,
-      "sha256": "68b0fbdfd6119854342f7e432c16e6fc7c2981a3d96b4b44ea9e58da8bb1550c"
+      "bytes": 2313,
+      "sha256": "19b5d6a30b6bc9627e4842516b637c888859038622e3466e3b9770e98a6275c9"
     },
     {
       "path": "advisors-bundle/workplace-communication/provenance.json",
-      "bytes": 2147,
-      "sha256": "215bf1d711a0b819ab483e5e20ea044050a71123fbc975638952e3027000f322"
+      "bytes": 3234,
+      "sha256": "a5f7483f6680f5724fdb1d5783e5b6da7b570dd6ca5dadd2997f9a968c226875"
+    },
+    {
+      "path": "advisors-bundle/workplace-communication/references/boundaries-and-replies.md",
+      "bytes": 2745,
+      "sha256": "8b45e7fe2a13a305d0e684ab82899438507465d787dba333dc03dc8390cb7b24"
     },
     {
       "path": "advisors-bundle/zengguofan-perspective/LICENSE",
@@ -808,13 +1214,28 @@
     },
     {
       "path": "advisors-bundle/zengguofan-perspective/SKILL.md",
-      "bytes": 2027,
-      "sha256": "1b374f5d2b6c5c4e1a2cd6a5b8d457c9b73a1c6a609680316231905b505464c7"
+      "bytes": 2667,
+      "sha256": "1989065c8613a1fe339e490cb05177b0926027408c8dd079fd6d135c079c0347"
     },
     {
       "path": "advisors-bundle/zengguofan-perspective/provenance.json",
-      "bytes": 2111,
-      "sha256": "ef61b5cfeed9d6df70b1651a5d6d5466213965b18a9fd4c04fc4bd66e1c5ae11"
+      "bytes": 4110,
+      "sha256": "75248f7ef8522aee0bcd0398ce3c489cc6c216181415f0582ce26da395b070c3"
+    },
+    {
+      "path": "advisors-bundle/zengguofan-perspective/references/practice-case.md",
+      "bytes": 1641,
+      "sha256": "e4496fe150d442b3cea21095a73ba073a67d2dfe2f5951fd099f2516427995ef"
+    },
+    {
+      "path": "advisors-bundle/zengguofan-perspective/references/source-map.md",
+      "bytes": 2161,
+      "sha256": "a6714ccbf19ffcb5f883b5e9327dea022330724837d299515ff2a67d020093c0"
+    },
+    {
+      "path": "advisors-bundle/zengguofan-perspective/references/study-notes.md",
+      "bytes": 2480,
+      "sha256": "142a2a18b60246fa68582b8f5718ef385735ff0dffb27f31ee3630f8a96fa60e"
     },
     {
       "path": "advisors-bundle/zhang-yiming-perspective/LICENSE",
@@ -823,13 +1244,28 @@
     },
     {
       "path": "advisors-bundle/zhang-yiming-perspective/SKILL.md",
-      "bytes": 2078,
-      "sha256": "09575c449aa27f3845f880669f6895b423aaa67a8dfd08698452540b2b9edf53"
+      "bytes": 2718,
+      "sha256": "964f6dffdfba15ef40cbdade337f0e309426f8fd36b1632a206e14b2e778a10c"
     },
     {
       "path": "advisors-bundle/zhang-yiming-perspective/provenance.json",
-      "bytes": 2117,
-      "sha256": "9e2cad7c55851f5e6d408d362d774e3c40c71156b73623e976f31c1222692254"
+      "bytes": 4119,
+      "sha256": "cc0d4c4add44634182680a7d44443a5d87b5a5f389e86a6a03100b9c11f9af68"
+    },
+    {
+      "path": "advisors-bundle/zhang-yiming-perspective/references/practice-case.md",
+      "bytes": 1717,
+      "sha256": "0d9c4dc673e80d8347ed748224c22ebcf78b67574ae811305012c03ef4ebe5fa"
+    },
+    {
+      "path": "advisors-bundle/zhang-yiming-perspective/references/source-map.md",
+      "bytes": 3529,
+      "sha256": "7d222beb92d89feb3a9acc6c8f85106a96ab52af4d585eb43e2a6be44615a728"
+    },
+    {
+      "path": "advisors-bundle/zhang-yiming-perspective/references/study-notes.md",
+      "bytes": 2555,
+      "sha256": "25aca42dac068818d3f62010d977b72d4004e749986e0fdda7b41daabecf4796"
     },
     {
       "path": "advisors-bundle/zhangxuefeng-perspective/LICENSE",
@@ -838,13 +1274,28 @@
     },
     {
       "path": "advisors-bundle/zhangxuefeng-perspective/SKILL.md",
-      "bytes": 2129,
-      "sha256": "0636ed11ccf4749fcf17ae897e0a2800186333b4c6cd97995eaf0a7276e50261"
+      "bytes": 2769,
+      "sha256": "4dfd3c703ee2162984a73fb8921714421a95ac2fe00600b2a39edfadad8499d2"
     },
     {
       "path": "advisors-bundle/zhangxuefeng-perspective/provenance.json",
-      "bytes": 2117,
-      "sha256": "e7abeb3fcd276dcf67cdb1bcdad2ea18266cb496f3dab8329ae3f8f970122ce3"
+      "bytes": 4119,
+      "sha256": "5e9b78021e69de783ae0a0e4cdb1db98638432837a50b51393acb2e4165c7f15"
+    },
+    {
+      "path": "advisors-bundle/zhangxuefeng-perspective/references/practice-case.md",
+      "bytes": 2035,
+      "sha256": "3b53b6fa8719894dcfe03cbcb46609508e55651bf6b50c776ee9835957900a6e"
+    },
+    {
+      "path": "advisors-bundle/zhangxuefeng-perspective/references/source-map.md",
+      "bytes": 3548,
+      "sha256": "264183e17a97f87ac0c95309bf2bb9747467f9ed2aac27ec09a6d8875fafe661"
+    },
+    {
+      "path": "advisors-bundle/zhangxuefeng-perspective/references/study-notes.md",
+      "bytes": 2879,
+      "sha256": "c45cb9ce2743dd4ec55db199b301ac83bf1e178f5ee45d110905359fc62c0043"
     },
     {
       "path": "advisors-bundle/zhuangzi-perspective/LICENSE",
@@ -853,18 +1304,28 @@
     },
     {
       "path": "advisors-bundle/zhuangzi-perspective/SKILL.md",
-      "bytes": 2035,
-      "sha256": "265bd4b1e607079fc01eaaa1080516da1c1ca28768ddc2c42915bcc832958c84"
+      "bytes": 2279,
+      "sha256": "2b309da2812f29181488fa7e9e20a17baa11a81325f5026c629bf2c29fa1530f"
     },
     {
       "path": "advisors-bundle/zhuangzi-perspective/provenance.json",
-      "bytes": 2098,
-      "sha256": "3f67aeee43bca495686c288e9b4aecfdf2b37a77a65638021aa0c5193a3dea9f"
+      "bytes": 3169,
+      "sha256": "6bd415ce65028772708d3390b40912cd4cb467c16c74aef966b7ce967a98b7ce"
+    },
+    {
+      "path": "advisors-bundle/zhuangzi-perspective/references/perspective-and-use.md",
+      "bytes": 2385,
+      "sha256": "8a925fe125abe02809d1651d0808ea2334bea67b66c7eb06b903fa8dead2e529"
     },
     {
       "path": "app.py",
       "bytes": 45828,
       "sha256": "3abe6c69be692161724d2a362eef5693b5179d11cf75525e178848e420138242"
+    },
+    {
+      "path": "bundle_resources.py",
+      "bytes": 7576,
+      "sha256": "1908db06a4c94076ca0691ea2dfe5fe1904ce76609b3c28e80ffd397969f0fc1"
     },
     {
       "path": "capture.py",
@@ -873,8 +1334,8 @@
     },
     {
       "path": "codex_workspace.py",
-      "bytes": 31136,
-      "sha256": "b3b32c59f13734827add0e0de931833a188c2649ab47d2a1aee490c06ad77c83"
+      "bytes": 31402,
+      "sha256": "2b364d252bc561b89d13d9cf6c5723b59017e17b30b1e6405902623a41a03163"
     },
     {
       "path": "conversation.py",
@@ -908,8 +1369,8 @@
     },
     {
       "path": "desktop/install.py",
-      "bytes": 11872,
-      "sha256": "abc6f5fb7388bb09186eee2a20d7879d7832437f798032465fe73493dff80b2c"
+      "bytes": 12164,
+      "sha256": "28f5ab4004f7435e201b3b025536a7e3bd847ca59961da1c66fbed7d1593f875"
     },
     {
       "path": "desktop/start_service.py",
@@ -928,8 +1389,8 @@
     },
     {
       "path": "docs/advisor-bundle-audit.md",
-      "bytes": 13268,
-      "sha256": "4629a85ed40090d59e94bb5e098db877d09b4d799942fc4bbf9f486223e50e37"
+      "bytes": 13649,
+      "sha256": "d097f35da4c13d2a05b84347a51d04c7cff17a67411d9e31a390d8017e555f5e"
     },
     {
       "path": "docs/advisor-council.md",
@@ -968,18 +1429,23 @@
     },
     {
       "path": "docs/distribution-policy.md",
-      "bytes": 6634,
-      "sha256": "e9f4dff6226f6af7c0271185b31319906ba5d4c1ae872bdb19d05ba8200bc1a7"
+      "bytes": 7273,
+      "sha256": "4b27339581106abd476d3f03bc1d1cc20f623cff2c12b1bded2307772ea0d665"
     },
     {
       "path": "docs/getting-started.md",
-      "bytes": 6807,
-      "sha256": "328ede9652b22f5060424e2b2fcd7b40212f66268d603de85c0e3899d1960bd7"
+      "bytes": 6947,
+      "sha256": "e073f94086d788ad5d00c2289f3b106f0ea035c4d61a70915abcab5bc47a2269"
     },
     {
       "path": "docs/integration.md",
       "bytes": 2589,
       "sha256": "2c87da2b8c851fe6998eff9c10a9bc3937b7f0465d4eb6ac855a029715559c69"
+    },
+    {
+      "path": "docs/knowledge-library.md",
+      "bytes": 3874,
+      "sha256": "bc9fca9c38ad04ee0cc6ea45497f2b7f128902ffd6080c308e6a926c0342cb4c"
     },
     {
       "path": "docs/models-and-streaming.md",
@@ -1015,6 +1481,11 @@
       "path": "docs/release-v0.3.0-rc1.md",
       "bytes": 2929,
       "sha256": "db5541b962b10ead2181d12c843cd638725642852f83faaa5a55c2fce2206d8e"
+    },
+    {
+      "path": "docs/release-v0.3.0-rc2.md",
+      "bytes": 1669,
+      "sha256": "d684a8004a3bdfe0acbb12548fd54f3a6ab2cc2a54fbc9793a8051d226a2efb8"
     },
     {
       "path": "docs/research.md",
@@ -1078,13 +1549,933 @@
     },
     {
       "path": "growth.py",
-      "bytes": 17936,
-      "sha256": "030f789f752a14c5307e7456de91b2f4aa8fc7e7eae7a01bdd120e6c4df1df77"
+      "bytes": 18059,
+      "sha256": "791a68be08a062a54e42b6278e0d9621838b2d9591b65709908e2e83e95df7db"
     },
     {
       "path": "growth_workspace.py",
       "bytes": 14849,
       "sha256": "fcecb10c3063cde3fc2952c6dc967007478f193014f4d94f6a675ee0acf66be2"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "13fb91ad7887d2019c28f435fbcbd4ad6754de24d681b1de894e62b32c17555f"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/README.md",
+      "bytes": 1927,
+      "sha256": "b14e3701fe077cc7587d1cc8637be08ace8a95dc57f97573babbfd84aa428df9"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S01.md",
+      "bytes": 775,
+      "sha256": "3558b518855b0fcce4df1da81f43cd4fc0cbab7529533114fb091da53a985f48"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S02.md",
+      "bytes": 646,
+      "sha256": "0bda3f5a102d746bb7132bf343cd2f3b6796786689c568ed3283624c4b2465a4"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S03.md",
+      "bytes": 569,
+      "sha256": "415d845c2ca45734edc630e82a039e56b3401406600cb954dccc5d9a3a2543bb"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S04.md",
+      "bytes": 690,
+      "sha256": "e0afda3f6329e09efea3374b4db1d257b3833a1b22a3c142eb8f2fe9ebebad7d"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S05.md",
+      "bytes": 659,
+      "sha256": "a7826fc2447bc3f3432a7bbc583a7eeacc3d8446debced5e545a74251275f51d"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S06.md",
+      "bytes": 587,
+      "sha256": "6979ecad71f1b3b46911b60dbe0c1f7cee521691c30de4a1b133a97748a2a99c"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S07.md",
+      "bytes": 655,
+      "sha256": "4e194adbb733cb0d9a681a9cc1e79916688de8c1ff8564835999faa689416dfa"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S08.md",
+      "bytes": 652,
+      "sha256": "b77a9a4f62d53926d8b7bdc0e766ebc38629f6a559753538acea8452d3613ae3"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S09.md",
+      "bytes": 745,
+      "sha256": "eca4fc1ce752c58a7f36352209285b97eec329ffd5eca720647e6cf5f6c35730"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S10.md",
+      "bytes": 667,
+      "sha256": "5bc808813ab7fd55186b23d608fe5b349da77541f1dabd514d69472a7a45cebb"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S11.md",
+      "bytes": 616,
+      "sha256": "45e262c8762adbc66219ce36c5148d07f43a8801aa70d049991eb6fff41951e0"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S12.md",
+      "bytes": 642,
+      "sha256": "de87502f07021e6c8e7810c60702f402a97a28bc9757e84e731fe9792908953a"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S13.md",
+      "bytes": 648,
+      "sha256": "0506c15af115896a2be73e78cd1936c4dead6ebc4632476c97656cb8cc945cb8"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S14.md",
+      "bytes": 649,
+      "sha256": "5300b58a953848b6685b2078ea8a564e0fe9dec8c3e09f7a5b1c8c5db3672132"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S15.md",
+      "bytes": 648,
+      "sha256": "0a361b6f6c0dd4a1fd9d5a7933449f6520f91e2f65ae732829fdfc151259d77b"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S16.md",
+      "bytes": 652,
+      "sha256": "80d49f7e37ad3a1d0b5f2faba271c06617d797920d37831b8a578bc5e4aca69c"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S17.md",
+      "bytes": 681,
+      "sha256": "c95c37bad5000e3ff5dbbeb82dddaf230d139650a4e6c53243a27514ac810f10"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S18.md",
+      "bytes": 632,
+      "sha256": "2e40940c4c4df114e83c12329a7703314d1eaed5cb30a0c4d233176f78f4664a"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S19.md",
+      "bytes": 635,
+      "sha256": "4546d8e7f0f1b9bdd1555628915ed72e3e083a1d3d8a69e03223523184eecb5a"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S20.md",
+      "bytes": 620,
+      "sha256": "c6f02ec5b9a9208292a0c3916f003752c635a08d6a36d57ffa385ad34774b644"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S21.md",
+      "bytes": 640,
+      "sha256": "410f5df493902b08d78684a5292540ad1a0ab5cfe433d50df11cf857b555eb48"
+    },
+    {
+      "path": "knowledge-bundle/advisor-reading/S22.md",
+      "bytes": 651,
+      "sha256": "46f7ed853403d5db5a81c6837e382d3973ddd54904dd5a31068d23a28f114961"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/LICENSE.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/README.md",
+      "bytes": 25068,
+      "sha256": "c54b3b21247107375f0aaa432882d14d4707932b3565120a90a069376c6fe373"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/01-不要早死.md",
+      "bytes": 95482,
+      "sha256": "cfac711db604b9001ecd86416f4b78607f4d17cdd1970ae982372bc74ad04ecb"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/02-不要慢慢死.md",
+      "bytes": 87468,
+      "sha256": "597e6bf639c92472d5406a8b0708496d696498dad624b9582437d299de24014a"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/03-不要浪费精力.md",
+      "bytes": 46016,
+      "sha256": "d18393b4c3d503d9b22b5bee6a90ef222ce7de684ffcab3c9085ae65f5ba4ecf"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/04-不要浪费时间.md",
+      "bytes": 29459,
+      "sha256": "92fb71fe4d802f92d9c9fb975896d1fdecad666dc775df851b160f639b834278"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/05-不要浪费钱.md",
+      "bytes": 111698,
+      "sha256": "f24bf09d79ca7d6bc3d24df167203a3d875b1321095144981ce684a8fb199a61"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/06-反面清单.md",
+      "bytes": 83236,
+      "sha256": "a585813610dc2a3db5d569c1dc928796d887641eefdc9e0fa4ba0bfb174e90f8"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/07-没钱的时候怎么活.md",
+      "bytes": 58389,
+      "sha256": "528c833526b0b9f23c5eb0f6e0f434d256de60708b22f4e23fd1dd501b505353"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/08-别把自己搭进去.md",
+      "bytes": 131113,
+      "sha256": "7fe46facda6c73db6380abd497345e8152cdbea951d10434569401c884c7c2ad"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/09-普通人容易踩的法律红线.md",
+      "bytes": 67374,
+      "sha256": "62c9e70209ca3d8b6020a8f1cdfe9e9418d66db3b77366792a344727de52d537"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/10-恋爱和结婚划不划算.md",
+      "bytes": 48968,
+      "sha256": "3899be406a3f437d3533a7f4076988f758c40c05af405de13b2664882a9b4bbc"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/11-程序员和技术人容易踩的红线.md",
+      "bytes": 43458,
+      "sha256": "ee0b037209d4df582be5e0075ac370ac2d68bbb05e5b8d7d889ed88fe8e1ca87"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/12-创业与做生意.md",
+      "bytes": 66380,
+      "sha256": "2902193b3f99d00a61a19fc2179a3f4b1a621541897cb3314c0a88f2e88845b4"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/13-紧急情况.md",
+      "bytes": 112680,
+      "sha256": "451185f68717649bb8e58ac0bae14488e521eaa498e5cb3d92d9070af5a92e31"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/14-账号与信息安全.md",
+      "bytes": 16866,
+      "sha256": "51bfe92a7968a86411253a21f6a77049b4a5e59d6397b47ef29c6440f90d3e42"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/15-租房与买房.md",
+      "bytes": 13208,
+      "sha256": "a1ebf9c81bc078e88f92c0c90875785d71464035f369b34c7d643c74f00687b2"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/16-得了慢性病之后怎么活.md",
+      "bytes": 19940,
+      "sha256": "ff043886ae314bf8b72bac93667bd4ca5b5e9feb23fc54f2d0a34e97476e41fa"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/17-家里有老人.md",
+      "bytes": 24884,
+      "sha256": "1fed66ff8e6d534a13350486f963fde3e59891eb89f35fff7bf4ad1e12cbd015"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/18-养孩子划不划算.md",
+      "bytes": 7615,
+      "sha256": "ab017c89b1eb2e8981c64d1f4389e7f97f463f81b640a0e6f13a938051223499"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/19-在职离职和工伤.md",
+      "bytes": 43003,
+      "sha256": "12bb676b2565b7d2355848ff4e3bdbe9cfc4badad1093d27d68cea23377fcd15"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/20-刚出生的孩子怎么带.md",
+      "bytes": 27481,
+      "sha256": "dd957adaf3329cf0f51d8a7d7c2cb66397908b399af2e8816994d2e29d92a408"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/21-出国旅行与境外安全.md",
+      "bytes": 23052,
+      "sha256": "c90efac1c84f3c03d9a35fbabd8a351c68c3079d3f0ffc89393ef55ff1add1e1"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/22-怎么放松.md",
+      "bytes": 20326,
+      "sha256": "6907304eedc18b4eb526ce4c5f124c383e893ed6f7c6ffd6ef2fe28f535f979d"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/23-学什么技能划算.md",
+      "bytes": 53113,
+      "sha256": "83f0e663ef1c0c0865673fea751da9318a900b5e05c83756de65f382361feefa"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/24-看病.md",
+      "bytes": 29342,
+      "sha256": "3f3c62aeac6047041a36b734331b003f1d6264bf77a5e62c7b1908db70702cea"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/25-人走了以后要办什么.md",
+      "bytes": 23706,
+      "sha256": "74ccd6def6113b1db9a761d8ef8b3aa3cdb39c068eebbb9bb7aca52bfb97b363"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/26-做一个网站或平台.md",
+      "bytes": 33344,
+      "sha256": "169f777a081e8f1c2afe0c3ff46eb59058553acd7c0a476e565dbeb071810b59"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/27-怀孕和生产.md",
+      "bytes": 28862,
+      "sha256": "a526041e2068a7b682ece8ba18f29391b7288873f49d802164c8964827310e98"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/28-别为了外形把身体搞坏.md",
+      "bytes": 21516,
+      "sha256": "fd765ce83a646b0de9be055cb68ffc5354c406bafbfd71b2c337a7bb20f22572"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/29-遭遇重大打击之后.md",
+      "bytes": 33609,
+      "sha256": "3f41c606527762f76b2dd3e26b1bd89680128d6d8b3c3602af8dd86ed12a513d"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/30-上学以后的孩子.md",
+      "bytes": 48796,
+      "sha256": "ea490eb5b031792b7d7073ad1bd4d7a33d2cc080c87adb307d604c7876c54d3d"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/31-十八岁之后有哪几条路.md",
+      "bytes": 69381,
+      "sha256": "72f92fd372654d14be0d03dede1150528e68d1bdab8a5819572c2a15bb6c7d9f"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/32-出国留学.md",
+      "bytes": 18487,
+      "sha256": "3b5a51f930a668ee6c7cda1d38adb763f6916da26e70a6b43c9c0d780f68b481"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/33-残疾之后怎么活.md",
+      "bytes": 51563,
+      "sha256": "7e7edc5b22a9333627c0c05fd60ce65b9061ac6228c6d4a2f4601cab6f80c547"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/book/34-家里的常备药别吃出事.md",
+      "bytes": 27062,
+      "sha256": "52d7e1d8c661a7328dbaac1cab46acd693e70285d6ecb041d86a163cbf89549c"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/做平台要办哪些证.md",
+      "bytes": 9002,
+      "sha256": "064cca0315f3887c3fffe43f19ad4a36006f702a770ad67ea7d57d7ca9da367a"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/刚确诊慢性病之后.md",
+      "bytes": 6188,
+      "sha256": "607649b3547a723966bfa7d6175d211cb0c5774efe19ef439bfc33a59d4be06b"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/孩子出生前后要办的事.md",
+      "bytes": 6242,
+      "sha256": "e1a121a9ac46c73c5f020f08ce46e7208589666905c5e1885cca32878f2a3f78"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/家庭应急装备清单.md",
+      "bytes": 11487,
+      "sha256": "5017889be93fe8320837a1d6e54470e8267f18414335d1d4be1dc6e6711dd3f6"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/引用对照.md",
+      "bytes": 147606,
+      "sha256": "302bd969299e78b4631383199dcc1120f5c09407813e79856317742ed00aece7"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/01-不要早死.md",
+      "bytes": 14110,
+      "sha256": "9a7471bfd49bfdb23c8e55851a654bb1d0cc1e0e9f10f81a853e8ada7b824f76"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/02-不要慢慢死.md",
+      "bytes": 17817,
+      "sha256": "880e0b4f65cc37be39266c79c5c655276d0911fcd1623cadc71f918323c1c8b1"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/03-不要浪费精力.md",
+      "bytes": 18998,
+      "sha256": "2d11ab4d31fddd120424066e547c41707e7c3f7b5e3b8a8d6040a52c03584294"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/04-不要浪费时间.md",
+      "bytes": 15455,
+      "sha256": "a634678d1f9537cec321c1c2bc7bc823da4e3e895d21762e27ca942e6d8580a4"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/05-不要浪费钱.md",
+      "bytes": 19221,
+      "sha256": "a42c7f242d884ec5aa8cadeaa5b3509262e17d5758b540d5a15a421c6e0636a5"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/06-反面清单.md",
+      "bytes": 17548,
+      "sha256": "a3228b3318e5fe61850d4265db4e7f9aa1ecd813d3bdf0ae7b4efa18a6b314c5"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/07-劳动仲裁条重写.md",
+      "bytes": 11621,
+      "sha256": "6577ddc9417493a78c8409c1a5401a1f7f4df1a2866abaa91411a5f765bf7f08"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/07-没钱的时候怎么活.md",
+      "bytes": 23611,
+      "sha256": "61df1b2bd9238a175b58f9451a7cd8c308d6c135cead993404cab782a2a8dada"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/08-别把自己搭进去.md",
+      "bytes": 24580,
+      "sha256": "f081795bea51df07ff16f31cf2c77d5bbd11dc51ceade4038e80a9f06d963299"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/09-普通人容易踩的法律红线.md",
+      "bytes": 24445,
+      "sha256": "df7b092a124a6295cfc819f668f830c1d122ab4ab3f28cf0550739a956d369a6"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/10-21-23-恋爱出国娱乐减压与技能.md",
+      "bytes": 21418,
+      "sha256": "a5c674565a64d882d32e9f916f6cbef52dc7d382ee9436444be1e8c2abe83297"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/10-结婚划不划算.md",
+      "bytes": 13520,
+      "sha256": "fc7b1711b0420cc5d19ba92992aac6966c922d3681105b0da473d3be3ccae943"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/11-程序员红线.md",
+      "bytes": 24376,
+      "sha256": "86897ae767aa381a7fbfa8f6a8585de8a32bd39160260d618f7423b4df7f253a"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/12-创业与做生意.md",
+      "bytes": 23000,
+      "sha256": "28b21a83d7263e691a52470ce5ba92a600486249481df008542b36bc49ec3538"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/13-急救与野外补充.md",
+      "bytes": 9301,
+      "sha256": "514062beecf90c1f060954662f6580d98dddcc4a5b64f1f9265acca7d71d3331"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/13-紧急情况.md",
+      "bytes": 23702,
+      "sha256": "f0e23003e1e187c79a8e6ed524ed3f1373abc8fdd19de02c9ab27c0b1dd8ac96"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/14-19-新增章节与HowToLiveLonger合入.md",
+      "bytes": 12682,
+      "sha256": "110fe624dba9315a18f14dd096a90ce597a287872f4fb7b5f9f9ea375fbc0b9f"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/19-工伤.md",
+      "bytes": 5290,
+      "sha256": "1759f014080d2f05809cef59e515d2678627ee6012658129cf130fcd2d8cd350"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/24-25-看病与身后事.md",
+      "bytes": 7370,
+      "sha256": "479fff09eaee7f5cc42f9d844daa9f33a30fea2dceb394044da56f461f0c9bcc"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/27-怀孕和生产与艾滋病预防阻断.md",
+      "bytes": 16679,
+      "sha256": "3f60cd0414ccc9da4cd06872c0e1d7d076470f3efb252769fc4ee8ec06232747"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/28-别为了外形把身体搞坏.md",
+      "bytes": 19661,
+      "sha256": "a082f40c49169d7b73b34b5f367a598a16a0b229bb1e293233a5daa0637bbf9d"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/29-遭遇重大打击之后.md",
+      "bytes": 6797,
+      "sha256": "32e5c63decb366e83f5075aac9ad4c980cb34e0fd8ebe91cbd802e73869ac709"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/30-上学以后的孩子.md",
+      "bytes": 7367,
+      "sha256": "bbfc2b41ec4cd6e9b17096e9421326ef40c21dbcc6dff57bbf7c22e831ee0845"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/32-出国留学.md",
+      "bytes": 13281,
+      "sha256": "f531beca544f7bdfeaa0c402e726d6ba7e85b11665023cd65469077c1c9ce5bb"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/33-残疾之后怎么活.md",
+      "bytes": 15973,
+      "sha256": "cdcc8fc14a8f2d7fc34df1879205739bfcbeaf2fd3fbdea4122b2f171c116b8c"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/34-家里的常备药别吃出事.md",
+      "bytes": 9243,
+      "sha256": "68b74c8f64404ad91a440976a026489025b41d761e9bbd55ca3b0fe723723f40"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/口径变更-受益人分四档.md",
+      "bytes": 5339,
+      "sha256": "94e1a66a0fdb341b1efd580b13d310da3c1e201a364c76186f871798200fadfe"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/性取向相关条目.md",
+      "bytes": 5380,
+      "sha256": "279b43c8c6d63e17d5f0a278c41a6749c3bf34b5038b5e5503b31595b7b86c36"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/排查-只给禁止不给出路.md",
+      "bytes": 5005,
+      "sha256": "4a6a639593cb2ac63c3f86b8a7f396c68e3c36f660b288517cc76a74c313c607"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/排查-备注里的文献链接.md",
+      "bytes": 3914,
+      "sha256": "5095224e5638a012eda9a0698f1ea8e42bd6fd724c613c16abc5c5f3306b24ba"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/排查-说人话栏与收益栏对齐.md",
+      "bytes": 7182,
+      "sha256": "f82748cce97fa76e31e8b38a33a15b24c267a1b81c2da8db969ebcddf5658c82"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/新增-第31节十八岁之后有哪几条路.md",
+      "bytes": 28181,
+      "sha256": "c81f5445a26a7b7befb37e522b257eb47e81bb3bf93458ebeecaad361aa168b2"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-AI换脸拟声.md",
+      "bytes": 5860,
+      "sha256": "745535d24eb2883a7fd654bdd380b87119661109dc36f8244a1955b114644489"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue28八处补来源.md",
+      "bytes": 5877,
+      "sha256": "80370c14cd85b90b3e3ec71508c8ace42e41a57e4a247e88478a6f739378d133"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue30国家赔偿免责与录音拍照留证.md",
+      "bytes": 4127,
+      "sha256": "209c2861ee6d35acb5c94468e7ad2588b220b21664b2b061da13daac36732da0"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue31情绪疏导家暴与职场欺负.md",
+      "bytes": 5985,
+      "sha256": "24831fca3d5122c5557b8a672683de947215c0f9cd87b90a42134b69f98bdb07"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue37职称.md",
+      "bytes": 4941,
+      "sha256": "4752321e3d2ba5050848b9ad8fe0a9e606edf0f3a6a5d7ca75ce16e135937f85"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue41境外投资渠道.md",
+      "bytes": 3926,
+      "sha256": "4a358753e63d64ed684cb511ea88948a1480a6db60fd4a0fe479ff1942a44003"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue44降尿酸药的选择.md",
+      "bytes": 4439,
+      "sha256": "8cac127d71389241e9c8263cb8a07894bddff7ceb697c5979db53db0bbff48b3"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue57约会安全.md",
+      "bytes": 3575,
+      "sha256": "341814065b657be614667670b21aeb383ba9160fe7f1a0a902b74f5fe0ecb1ff"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue60给个人干活被欠钱.md",
+      "bytes": 5024,
+      "sha256": "3e1f88ad87fce985c6224b8f429e9f5bc9837d1a492d2e74a6fd59bf5077c10b"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-issue61推理问题.md",
+      "bytes": 3285,
+      "sha256": "f73a113d3ebf009b384a56ff635be012ed5d5442161fac268c130707b1be986f"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-保险六条.md",
+      "bytes": 6840,
+      "sha256": "5610d3ec03a7941ad04012efbcc0f40167fbd1a9515d6f97d1e5f7767e6c8eeb"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-免责条款越界排查.md",
+      "bytes": 12720,
+      "sha256": "0cc137d9dc3b53debdb057615c2109efd74ee5821296bd5a633b33a5bf39e45e"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-养不了孩子的合法出路.md",
+      "bytes": 5172,
+      "sha256": "685e982e7409f78d8cd5b00c7ab16ca28d08fe42454920e428f9b1b2ed2e3cbd"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-养老诈骗.md",
+      "bytes": 8400,
+      "sha256": "f7606d0dc5e608abf3089382db6491d47b74a76f44e6a4b8b48e46bf3407d1ea"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-勃起功能与嫖娼.md",
+      "bytes": 8461,
+      "sha256": "f9e1e116a0d22a79defe3c20a9e832d60a44f07f721876ad5e74860b79f66ebe"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-十条补缺.md",
+      "bytes": 12812,
+      "sha256": "e80b23cbd5e2f4e6655dfdd40d1a51bf720c2b6a69c20fcf5aa58e775a8003f2"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-午睡时长.md",
+      "bytes": 5587,
+      "sha256": "ee61301b63d26394baca7f6656919af6ce4602311f91b79f2a1b66fc348c9a43"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-卖器官.md",
+      "bytes": 11599,
+      "sha256": "394ad06e161dc71daf665ee59ad4ddc454c4f4d4f648ce2240459c9100f348de"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-后循环卒中夹层头痛与中暑补液.md",
+      "bytes": 7669,
+      "sha256": "4904853581a82c58083186dfa75c1bdfa4435916fc947627fcea7bd68ac53b3c"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-和机构打交道.md",
+      "bytes": 11872,
+      "sha256": "a19bf052ae689e06950aecdcea17dad48aae354a13f09552dcbb79b3811a4506"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-喝茶的霉菌毒素与绿茶提取物.md",
+      "bytes": 3200,
+      "sha256": "9aee91f3c9726aba17001fd56765bea6ef7db94b54f9f0618d05934ea21ac60e"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-回填十二处法规原文.md",
+      "bytes": 8962,
+      "sha256": "2dabf3389f21e902cdaacfcbad6d3ad5f4bced5afc37614ab6328ce125599da1"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-回填统计急救与文献TODO.md",
+      "bytes": 10183,
+      "sha256": "d64470906981e0e840961da0e7ea49329f945e3c7dcd23c7cba2354706644670"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-奢侈品收藏与十八岁路径.md",
+      "bytes": 14698,
+      "sha256": "2c27fcec0c36979ac728e2774cf44c6302fdf0242ee2c89d6a4e8f7e61c3b982"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-家庭应急装备.md",
+      "bytes": 8335,
+      "sha256": "0b6acced7011fa721ba00dfbe966f04f3bfec83618860017518c2cca67d3dc93"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-尿酸结石与胆囊结石.md",
+      "bytes": 14917,
+      "sha256": "fc753fe17731f83a4fc06fb7ff5af77ae351ee09e53308521687bd6be320ae63"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-幼儿屏幕时间与近视并发症.md",
+      "bytes": 6870,
+      "sha256": "6a3bbec0904853f8a4e286a5c3bf6dfb23948c814c8f91d4877c5aa85b221518"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-急诊分诊与伤残鉴定残疾人证.md",
+      "bytes": 15759,
+      "sha256": "2c45d47270f2e3bb92799d6a9fbff1f2baee7b44af5e073ad3d0ffc9b986ed80"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-情绪、算命、购物、打人.md",
+      "bytes": 11307,
+      "sha256": "7c53fc0e925dad0d5067fd93839ca67e896b340cd603e50a68d927146414d538"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-慢病长护险与个人信息权利.md",
+      "bytes": 6513,
+      "sha256": "cfc420e651e6a7a2825ce5e6a4ef760d6db4cce2f3795572c5e183f70aee8587"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-戒烟戒酒学习与拖延的具体办法.md",
+      "bytes": 28379,
+      "sha256": "c3eac970c3357a680afd530da2d238985bbd1eddf18446f49a3dcec953f69acf"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-拒执失信骗贷与新型毒品.md",
+      "bytes": 10899,
+      "sha256": "5f507ea197a8f0d91a1b0e04f4073554e55bc61eefea4a208963ae4a687aa0f4"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-攀比与别人的评价.md",
+      "bytes": 8798,
+      "sha256": "7c088f30af021697b91584e0df50e4fb978cc492dbd9b9c33597aa731d35e2e0"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-早引入花生防过敏.md",
+      "bytes": 6385,
+      "sha256": "b426ac8c8c4cf9ce3f4bbc98c36f2548aaf395b0747279605e1a0ee27e53dd73"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-早餐与进食时间.md",
+      "bytes": 11617,
+      "sha256": "622088ace38e73ea1ca39de26517b7d79bbfb5fd9818aa0e7249c6ce19f3d9f0"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-正当防卫.md",
+      "bytes": 7838,
+      "sha256": "a1b05f38345fffb6aba41f9730c97448cdf5e8928a6524e2003474e384b8cdbe"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-没有亲人朋友时怎么办.md",
+      "bytes": 6069,
+      "sha256": "fdd2d2ac3367225f3f52ab86452ac4d82e3cad88f42d3010cf55c3220e31971a"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-泄愤式极端暴力.md",
+      "bytes": 12690,
+      "sha256": "e550fff7c585e9c94e64e5e79f5e40952dbdbdb898a5c47978963c237210a5a7"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-熬夜补觉与夜班.md",
+      "bytes": 19227,
+      "sha256": "334609b862b1fc86078d26147e4090c86df46bece6027e1f03d470073b6e7b84"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-燃气毒蘑菇车险预付消费与养犬.md",
+      "bytes": 8016,
+      "sha256": "43fe9c556d07c98d9e4ab72ec299a9d050282eea970179c8a8866db4b9ad57df"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-献血.md",
+      "bytes": 7491,
+      "sha256": "5215f9e9c394c50f7161a847547f273aa079ee27fc4cdbb00eca35ba4415c4a5"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-眼中风血栓硬膜下血肿与血尿.md",
+      "bytes": 8495,
+      "sha256": "b65735549c23c77c6ea0323619df8e68041148fdd09b7232fab2543c8bbbc983"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-窗户破伤风二手烟公积金与猝死工伤.md",
+      "bytes": 6228,
+      "sha256": "937bd317f52093b974572bbaf694ad37c75131a587716bc76116f8f7566d10c1"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第10节伴侣治疗.md",
+      "bytes": 9109,
+      "sha256": "3b4b210e2d2d02c61b52e8a14aa4cf52258e862d503a85d5eaf108710df034aa"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第10节父母出资与夫妻共同债务.md",
+      "bytes": 7109,
+      "sha256": "efa789e9ae1a7bb9fe14daa61e03226a15579d403ee1dd89013b93fc3735d96a"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第11节白帽子与漏洞报送.md",
+      "bytes": 8534,
+      "sha256": "08cfa18ef9e8656358ec697faddecfb2fa0b169b88d398a49d012823855d4030"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第12节注册报税与涉税诈骗.md",
+      "bytes": 10461,
+      "sha256": "6d49c3ad827b54d3e9f6821971f06a9a0373c5a03905108ada421d1cadd6211c"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第13节婴儿噎住与心肺复苏.md",
+      "bytes": 11539,
+      "sha256": "4b7afb08c25c9fbfb449f459992f1fbdbc5ee98c261e92aafc63a1dbcd8efb2e"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第15节与病历条回填.md",
+      "bytes": 5601,
+      "sha256": "a094a2a49701534c90ef6a1c11e7d1bdc856c8f7b4e7adf4e501f3968b1ec86d"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第17节白内障手术.md",
+      "bytes": 7943,
+      "sha256": "fc26fb79cac5b9f07401cca00317496f5c859070e14b13fc3400175e67724f0a"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第19节离职证明与补偿个税.md",
+      "bytes": 9003,
+      "sha256": "252e84f7ac2611542778b6250ade3f24fb27329c904b440d01a91f0c297b5a7a"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第1节冰面量厚度.md",
+      "bytes": 5343,
+      "sha256": "0bdbb0601aaf0b6330a29e059a29adde31350c37e33ed9cf5fad208a58d2b400"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第1节失控放射源.md",
+      "bytes": 7398,
+      "sha256": "b5df070dbd64d6df684521dc1ff599d6972b0837c77ecb0d0374bbcaa88be7c0"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第1节骨质疏松筛查.md",
+      "bytes": 10796,
+      "sha256": "33b94d7ef4a68caea7c5e6fa7d7b0cab0e4009c6d8753ad584fc0201c2cafb42"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第20节新生儿黄疸.md",
+      "bytes": 8663,
+      "sha256": "058ea0522b73b582f3cb39affe44a09ae16ddb28790ee3663f3c29569f8a59fc"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第21节境外用卡.md",
+      "bytes": 9400,
+      "sha256": "80b62b98791b3d43dc89fcb84483f325dbae227301ec091f7efcaad520ccdfcc"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第25节人没了当时怎么办.md",
+      "bytes": 7904,
+      "sha256": "77e8d6f8831c6abf7d8b870f31a73adda4c8f696ac0ec1161c9d158fc8d4ae69"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第26节做平台.md",
+      "bytes": 12379,
+      "sha256": "dcd1995d053b44a2a0a19863a28ecc134faf063e8cb3387f138b4c5bbabedd77"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第2节室内空气.md",
+      "bytes": 5124,
+      "sha256": "a046d9c3e60e5d78028b5bf7cc239d30940f864047a80e78f0536b6c3288c59e"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第30节管孩子不打和养育课程.md",
+      "bytes": 15897,
+      "sha256": "ec0163bed7dfb64765e260017b24fbc9866c7f24cb9365e55bdb2c139ff86926"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第31节远程给境外雇主干活.md",
+      "bytes": 10274,
+      "sha256": "c384802859099e547e7014e3fafd7b56218aed760e3cd280a568b04fab6a9cb9"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第34节过期药与相互作用.md",
+      "bytes": 8527,
+      "sha256": "b885f680757fae564309444c086929792962ddb4978aa92485fa4f528197c0d6"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第3、5节.md",
+      "bytes": 9250,
+      "sha256": "2312b710edc240532a6bfc38ffb0e388a2477d938e5d0b714e099877396dbffd"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第5节炒股的两条行为账.md",
+      "bytes": 8283,
+      "sha256": "4f866819ae7862d0be7532bfdd3892c7ce81dddc411c5c8ebfd77b8e08b45060"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第6节通用体检套餐.md",
+      "bytes": 5759,
+      "sha256": "f7dd8d94ce5acd69d8678e04b23a570cf05e670853ecabc4bf406a35e274f2e4"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第7、8节.md",
+      "bytes": 19051,
+      "sha256": "f47977991032d2f7096351e139d8e3ceba3d037cd1d91bcca142a9c5da5ece72"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第8节被指控与被诬告.md",
+      "bytes": 10584,
+      "sha256": "0deaf687a2aab5064e71e9d821f2b6d05f2b13097910aa262a10cf59dc956303"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第9节境外信息只看不转.md",
+      "bytes": 6420,
+      "sha256": "5141226ec9182c28c0bb74aca748bf42eb7f68a1e20d844ad42899b202315a6f"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-第9节薅羊毛.md",
+      "bytes": 9210,
+      "sha256": "b6d8febbe08d5e3d7e5aa21ac6cbe59310b1188fb4057a3bfd1571cae244fc5f"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-职业病与化学灼伤.md",
+      "bytes": 9051,
+      "sha256": "3e6bb406b92f7930640c9c9bcdfb06faba58c1f1ef7362fe8ce667c0ec4fffbd"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-自杀的后果.md",
+      "bytes": 17323,
+      "sha256": "0b6615d2af1972b804b3e8835a095df071448e694e54121520ae07a1c7c95c4b"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-自首与追诉期限.md",
+      "bytes": 7070,
+      "sha256": "316c7cdde4c52ab15c87b8ae53e98fdbcdb2b88a6985825f3f036ea94fce61ad"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-被网暴之后怎么办.md",
+      "bytes": 5482,
+      "sha256": "5d55e0c2adf3e3fa31b948f2b1578d44680716057968ca194d029bfa20cd5be0"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-要不要死记硬背.md",
+      "bytes": 4525,
+      "sha256": "b278d4c33512f545f5e1b09e6c4c400cb05da8e1a5ff8145a841592dac35ffe6"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-读书还是打工.md",
+      "bytes": 12141,
+      "sha256": "0960a3d54a2a3d24412fefa51ecafdf11afad75c8566c78b4ffde2a0a991ea63"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-进货假货与图案版权.md",
+      "bytes": 8533,
+      "sha256": "7af3bcc4eddae1cd551a1bc461fce8aacd76c2e399c920e49e38ad226677dc4a"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-针对孩子的骗局.md",
+      "bytes": 4979,
+      "sha256": "4f1eda009cd62d696ff8416505f23b1e4e7c9f5401a5dcb0bffef7e5147dd2bb"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-陌生人出事该不该上.md",
+      "bytes": 17370,
+      "sha256": "13f90a8db7253f89d825211959042cdd7790795022cc399b5f9fde868e6628f3"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-青光眼急性发作.md",
+      "bytes": 4941,
+      "sha256": "f13453188b28c644256ee72ba652896464f6f68e133451ba6495036dc0c0aabc"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-食品安全.md",
+      "bytes": 16164,
+      "sha256": "140ef3d1826a7c266c1041fe7ec98a2f80282b10d624380399525c81d1db7e2c"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/核实记录/追加-骗保.md",
+      "bytes": 7771,
+      "sha256": "056e472859d5494d01398d1edcc9a9ed3f5e6d96aa4d7461bd2704da335464a9"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/生物钟和夜班.md",
+      "bytes": 11272,
+      "sha256": "ba5a95eba4e62d198a32d89387c2eb4ec630bb4430e33610cd5138003fe6ebf1"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/结婚划不划算.md",
+      "bytes": 18066,
+      "sha256": "e1feea02ecdc2066c15fd15f8a41ec6db089f3b14e7f3340133341635a1b4699"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/被裁了之后先做什么.md",
+      "bytes": 5815,
+      "sha256": "e2ad50ab1629ef89b49908d7848a9f0cf5be9c9b23f414e8b4dac390e5ee7f17"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/docs/遇到陌生人出事该不该停.md",
+      "bytes": 8516,
+      "sha256": "f542304b5b73e0686405adb82048c2d49a10805edba3d469fc746ef5fff66b54"
+    },
+    {
+      "path": "knowledge-bundle/life-guide/provenance.json",
+      "bytes": 103790,
+      "sha256": "40ff9a7624feae366d4129445c9e3a02f5fbf780b4bede502d1db7a32ffa6664"
+    },
+    {
+      "path": "knowledge-bundle/manifest.json",
+      "bytes": 34835,
+      "sha256": "67ac39385b356bf0a2e29bde0133db77e42a841f2ea58b21031738ea729e0dab"
     },
     {
       "path": "local_tools.py",
@@ -1155,6 +2546,11 @@
       "path": "tests/test_advisor_council.py",
       "bytes": 10675,
       "sha256": "5801d23c2c9c3999e1a924f3015a9a60be6f717ffa48c5cfbfef3a9e2940a126"
+    },
+    {
+      "path": "tests/test_bundle_resources.py",
+      "bytes": 10282,
+      "sha256": "9dba79cda2956a672f6c530ce73fefdf3e3ffe50007c9ea44cb4b45d05b1dd8e"
     },
     {
       "path": "tests/test_capture.py",
@@ -1243,8 +2639,8 @@
     },
     {
       "path": "tests/test_phase.py",
-      "bytes": 26137,
-      "sha256": "020399e51394c9b151c7b1a141ec5a6c1ae3e699a6f0507762ef3b902e5a18d0"
+      "bytes": 26163,
+      "sha256": "c4b47012e7d2cd8db66567b06ff5071ff22a6885c5a96521f032808baebf2a82"
     },
     {
       "path": "tests/test_phase_frontend.cjs",
@@ -1293,8 +2689,8 @@
     },
     {
       "path": "tools/build_release.py",
-      "bytes": 7086,
-      "sha256": "31fdc5c99914b9a4cdfd5d2065179a0324c152e2dac9f3dbfb8065273035efad"
+      "bytes": 7989,
+      "sha256": "3822125a9b7ee2f1cfbb41b1a64dded64d398a72d9e8e7b89438220a0290fbbc"
     },
     {
       "path": "tools/capture_conversation.py",
@@ -1313,8 +2709,8 @@
     },
     {
       "path": "tools/metrics.py",
-      "bytes": 1269,
-      "sha256": "9f92a9e98ec8b9b0b6fef0f668b343946ba6bed49223ae6b97e8a096e8a749eb"
+      "bytes": 2224,
+      "sha256": "6162c7861d70db3042dfa3939c05a768e797af78d1b119e6d489814b1d2c1708"
     },
     {
       "path": "tools/migrate_workspace.py",
@@ -1388,8 +2784,8 @@
     },
     {
       "path": "workspace_api.py",
-      "bytes": 46417,
-      "sha256": "b9216d11ebd90990046785264f0fdf0d6329995f458243d96c150bd99bfe26fb"
+      "bytes": 46899,
+      "sha256": "cd7a2c008efa72bb73be054fe8609726390765b2ed71b8d43a047e235d87bad2"
     }
   ]
 }

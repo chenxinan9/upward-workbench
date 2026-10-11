@@ -33,3 +33,9 @@ description: 日常睡眠习惯整理与作息试验时使用，提供具体分�
 - 固定提交：`6b3044d569595b481a3677da8f68af7aa239dc09`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 想整理作息或找出习惯干扰时，读 [睡眠观察与单变量调整](references/sleep-observation.md)。
