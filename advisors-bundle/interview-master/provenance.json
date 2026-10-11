@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "interview-master",
   "title": "面试与Offer",
   "upstream": {
@@ -13,25 +13,55 @@
     "license_sha256": "0e15af77d9f36add9f315222edf7e4053d53ac0771504c5a04b404cefcf62e63"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "cfaf6ceaabbd16209a6e968c8ff2060380c71241e211d31f3059580c1b2b274b",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2446,
+      "sha256": "dd47bd5cdb56cf0ff1659571c5bffe02808db1f067dd4013993e4c7f5784a31c"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1086,
+      "sha256": "0e15af77d9f36add9f315222edf7e4053d53ac0771504c5a04b404cefcf62e63"
+    },
+    {
+      "path": "references/evidence-bank.md",
+      "bytes": 2790,
+      "sha256": "f893635926a565e1a40b94084985c16bb25ebf1182ffcf010cf788a4cd988a98"
+    },
+    {
+      "path": "references/offer-comparison.md",
+      "bytes": 2394,
+      "sha256": "cf8c1b4b38200d2d342010864bbd86cd888523868f09e9b396bd9a5009b1109f"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "cfaf6ceaabbd16209a6e968c8ff2060380c71241e211d31f3059580c1b2b274b",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "7d9a3bf8d1b7279e9c29c033a7855eb13dc408dcee1d8bc00770859bdc310975",
-      "bytes": 2108
+      "file": "references/evidence-bank.md",
+      "source_url": "https://github.com/chen3tu/interview-master-skill/tree/de3a72cd9493f09d3c33079587e37130b62cbd2b",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     },
     {
-      "path": "LICENSE",
-      "sha256": "0e15af77d9f36add9f315222edf7e4053d53ac0771504c5a04b404cefcf62e63",
-      "bytes": 1086
+      "file": "references/offer-comparison.md",
+      "source_url": "https://github.com/chen3tu/interview-master-skill/tree/de3a72cd9493f09d3c33079587e37130b62cbd2b",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

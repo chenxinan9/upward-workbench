@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "frankl-perspective",
   "title": "弗兰克尔",
   "upstream": {
@@ -13,25 +13,44 @@
     "license_sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "621674855e56e3e013f252ebef1f9f02ee2e7fb632beba2fb1cc1f36b32b7755",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2250,
+      "sha256": "02c0eb2292265544254ef9fb2ff672083b086c442e7945d89fffec8601440bef"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1063,
+      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
+    },
+    {
+      "path": "references/meaning-without-pressure.md",
+      "bytes": 2668,
+      "sha256": "f5317b65a9346c991ab6150d9721288c04f75cdd9329804be9c3c195fa86577c"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "621674855e56e3e013f252ebef1f9f02ee2e7fb632beba2fb1cc1f36b32b7755",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "fd35fa73e65153e1b45dd9ca59ba3850a7e898bc54b4d85ec5c1772beeb5c60f",
-      "bytes": 2025
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae",
-      "bytes": 1063
+      "file": "references/meaning-without-pressure.md",
+      "source_url": "https://github.com/nuwa-skills/frankl-skill/tree/f3b360bc5f55f01c52c22bf8defadf89d6da1d4f",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

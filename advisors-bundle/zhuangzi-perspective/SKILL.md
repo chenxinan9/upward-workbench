@@ -33,3 +33,9 @@ description: 单一成功标准与过度功利压力时使用，提供具体分�
 - 固定提交：`2acd5532cacb9167b7da5e2f3cbebc6dc07706cb`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 被单一评价压住或无法允许自己探索时，读 [评价视角与无用时间的重新安排](references/perspective-and-use.md)。

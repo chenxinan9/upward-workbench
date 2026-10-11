@@ -94,7 +94,7 @@ class GrowthMixin:
             for e in json.loads(manifest.read_text()).get('entries',[]):
                 folder=(root/e['path']).resolve()
                 if root.resolve() not in folder.parents or not (folder/'SKILL.md').is_file():continue
-                entries.append(dict(e,installed_path=str(folder),status='installed_verified',review_note='随包提供的审阅缩编方法；不是名人本人或完整著作'))
+                entries.append(dict(e,installed_path=str(folder),status='installed_verified',review_note='随包提供的审阅方法与配套参考、练习；不是名人本人或完整著作'))
         return entries
     def advisor_entry(self,name):
         entry=next((x for x in self.advisor_entries() if x.get('name')==name),None)
@@ -119,9 +119,11 @@ class GrowthMixin:
         return result
     def advisor_files(self,name):
         entry=self.advisor_entry(name);root=Path(entry['installed_path']).resolve();files=[]
-        candidates=[root/'SKILL.md']+sorted((root/'references').rglob('*')) if (root/'references').exists() else [root/'SKILL.md']
+        candidates=[root/'SKILL.md']
+        for folder in ('references','examples'):
+            if (root/folder).is_dir():candidates.extend(sorted((root/folder).rglob('*')))
         for p in candidates:
-            if p.is_symlink() or not p.is_file() or p.suffix.lower() not in ['.md','.txt'] or root not in p.resolve().parents or p.stat().st_size>1_000_000:continue
+            if p.is_symlink() or any(parent.is_symlink() for parent in p.parents) or not p.is_file() or p.suffix.lower() not in ['.md','.txt','.json'] or root not in p.resolve().parents or p.stat().st_size>1_000_000:continue
             rel=p.relative_to(root).as_posix();text=p.read_text(errors='replace');match=re.search(r'^#\s+(.+)',text,re.M)
             title=(match.group(1).strip() if match else p.stem.replace('-',' '))[:130]
             files.append({'id':'advisor-file:'+name+':'+rel,'path':rel,'title':'方法入口' if rel=='SKILL.md' else title,'characters':len(text),'type':'方法说明' if rel=='SKILL.md' else '参考材料'})

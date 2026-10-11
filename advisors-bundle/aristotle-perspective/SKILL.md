@@ -33,3 +33,9 @@ description: 长期幸福、实践判断与习惯取舍时使用，提供具体�
 - 固定提交：`2adf130171cef24a144b399dd29e8e93a07abc0a`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 需要把短期行动放回长期生活中判断时，读 [长期生活、习惯与处境判断](references/practical-wisdom.md)。

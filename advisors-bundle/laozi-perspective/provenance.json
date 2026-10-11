@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "laozi-perspective",
   "title": "老子",
   "upstream": {
@@ -13,25 +13,44 @@
     "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "aeb0f0b5013d23938f5031acb240f67e90c18bb964d6d56fcc2c72f7c8a258ba",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2247,
+      "sha256": "8efd1fb4de143b142342bdf6de9524a31a6d3c0e1c1b7766651894807d1bea17"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "references/less-interference.md",
+      "bytes": 2415,
+      "sha256": "bade079a47ecd8d66de8086832d26dd2aacdcdd391441aa2b4aff8b92f4c7c6e"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "aeb0f0b5013d23938f5031acb240f67e90c18bb964d6d56fcc2c72f7c8a258ba",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "27a744c22c81b87c96cbe13f42869744a295302603abf026c40372bd57fe29f7",
-      "bytes": 2014
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
-      "bytes": 1056
+      "file": "references/less-interference.md",
+      "source_url": "https://github.com/nuwa-skills/laozi-skill/tree/ac27fca32a651eeec122d0da7e946f00238a924e",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

@@ -35,3 +35,10 @@ description: 就诊前材料整理和医学文献信息理解时使用，提供�
 - 固定提交：`3b8583a065a0c37374e84b12877c02b808bd06b8`。
 - 本版保留来源许可 `CC-BY-4.0`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 需要把症状和检查整理给临床人员时，读 [一页就诊摘要与问题清单](references/visit-summary.md)。
+- 用户带来论文、报道或检查术语希望理解时，读 [医学资料阅读与不确定性记录](references/research-reading.md)。

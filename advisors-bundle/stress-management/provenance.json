@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "stress-management",
   "title": "压力管理",
   "upstream": {
@@ -13,25 +13,44 @@
     "license_sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "0bebdef35d9750684d0326cc0c69dc606cd6551aba81f7b89dc7ee08195abe60",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2289,
+      "sha256": "36dcb212e804f551c7dfcffd8df2be60b3e6d24697ad43fae495e975f1909cbf"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "references/trigger-response-map.md",
+      "bytes": 2656,
+      "sha256": "05995c1acc42a4d05bebe34dd84411c36fda53dd09212420bed9840e3d37f249"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "0bebdef35d9750684d0326cc0c69dc606cd6551aba81f7b89dc7ee08195abe60",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "7405df4b2620e4b9cceb168701e05e4369b9866c2e3335a2d3faa51ba748ef12",
-      "bytes": 2062
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292",
-      "bytes": 1074
+      "file": "references/trigger-response-map.md",
+      "source_url": "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

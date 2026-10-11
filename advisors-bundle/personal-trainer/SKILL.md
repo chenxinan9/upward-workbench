@@ -33,3 +33,9 @@ description: 日常健身计划、动作替换与进度复盘时使用，提供�
 - 固定提交：`c124827dd0e855926548d8a32e2a7b39d9a928ba`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 已有训练意愿，需要可记录和可调整的安排时，读 [器械匹配、训练记录与调整](references/training-log-and-adjustment.md)。

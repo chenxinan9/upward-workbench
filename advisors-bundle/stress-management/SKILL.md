@@ -33,3 +33,9 @@ description: 压力触发整理与日常应对时使用，提供具体分析与�
 - 固定提交：`6b3044d569595b481a3677da8f68af7aa239dc09`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 压力反复出现又找不到具体来源时，读 [压力触发与应对选择表](references/trigger-response-map.md)。

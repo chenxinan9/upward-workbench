@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "paul-graham-perspective",
   "title": "Paul Graham",
   "upstream": {
@@ -13,25 +13,66 @@
     "license_sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "2925ad1e736aaba757fd4ed3ec46ea426a2a1cbacc6924604dae3e3a2b7bd6d3",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2694,
+      "sha256": "fe1f1dd12c98ef130319ebd7ea09df23eceaedc8e98ee6c420739c21e08aecb8"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1072,
+      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
+    },
+    {
+      "path": "references/practice-case.md",
+      "bytes": 1825,
+      "sha256": "014bac58ee943a2fc7b0d720f1b342c7cd36a4793f6b3dd5a307940dc9db0a5f"
+    },
+    {
+      "path": "references/source-map.md",
+      "bytes": 3543,
+      "sha256": "a7bcf6596f4c8bc0eed9da0b9bc3bdec880b020e000f3fe8620622af3063c8b1"
+    },
+    {
+      "path": "references/study-notes.md",
+      "bytes": 2682,
+      "sha256": "e2d48c6b6c4740da25731bba67db91a74c63168e3e4bdc1028e7b67bba136906"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "2925ad1e736aaba757fd4ed3ec46ea426a2a1cbacc6924604dae3e3a2b7bd6d3",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "def98b0b2ccb58f2973f6add709fbfdb2be788d0fc794ef0e8bc2a83402ed863",
-      "bytes": 2054
+      "file": "references/practice-case.md",
+      "source_url": "https://github.com/alchaincyf/paul-graham-skill/tree/e6ed220cd417e8bfc100dddd38a41a62fa692a71",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     },
     {
-      "path": "LICENSE",
-      "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37",
-      "bytes": 1072
+      "file": "references/source-map.md",
+      "source_url": "https://github.com/alchaincyf/paul-graham-skill/tree/e6ed220cd417e8bfc100dddd38a41a62fa692a71",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
+    },
+    {
+      "file": "references/study-notes.md",
+      "source_url": "https://github.com/alchaincyf/paul-graham-skill/tree/e6ed220cd417e8bfc100dddd38a41a62fa692a71",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "conflict-resolution",
   "title": "冲突沟通",
   "upstream": {
@@ -13,25 +13,44 @@
     "license_sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "ee7204a8c10024a236d09551010855fc97230160b4cdd9dfbb739dbaadb7b8af",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2285,
+      "sha256": "4afa7837337adca21c42de6716789e97985ad5a4b578b101441160ea2270cb6f"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1074,
+      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292"
+    },
+    {
+      "path": "references/interests-and-agreement.md",
+      "bytes": 2565,
+      "sha256": "a71c3d98857c2a3fd7ebbab6270e75f80b3072a4db8f981ac26615cce4cd11ad"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "ee7204a8c10024a236d09551010855fc97230160b4cdd9dfbb739dbaadb7b8af",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "1b0619b180c96c05f308ee272305478862a0262e5e5515292f6ad57651250a05",
-      "bytes": 2049
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292",
-      "bytes": 1074
+      "file": "references/interests-and-agreement.md",
+      "source_url": "https://github.com/SkillMedev/skills/tree/6b3044d569595b481a3677da8f68af7aa239dc09",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

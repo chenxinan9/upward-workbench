@@ -33,3 +33,9 @@ description: 承诺、诚信与尊重他人的伦理取舍时使用，提供具�
 - 固定提交：`d72e2da4cff7083cb3fe6d5d0e27ecf213b9dfe3`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 面临诚信、隐私或把人当工具的取舍时，读 [承诺、普遍原则与尊重他人](references/principle-and-person.md)。

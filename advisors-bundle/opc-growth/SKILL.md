@@ -33,3 +33,10 @@ description: 一人公司获客、报价、交付与复购时使用，提供具�
 - 固定提交：`74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89`。
 - 本版保留来源许可 `Apache-2.0`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 已有服务但成交、交付或返工不稳定时，读 [从咨询到验收的服务流程](references/pipeline-and-delivery.md)。
+- 客户不复购或需要设计持续服务时，读 [复购原因与有边界的跟进](references/retention-with-consent.md)。

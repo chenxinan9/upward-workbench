@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "reviewed-compact-adaptation",
+  "edition": "reviewed-methods-with-reference-materials",
   "name": "personal-ai-learning",
   "title": "个人AI学习伙伴",
   "upstream": {
@@ -13,25 +13,44 @@
     "license_sha256": "6ae494275f005683b896ca506a2cc66a11d57d9ba80beb4873d4aefe9f0535a7"
   },
   "license": "MIT",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Compact operational text adapted by Growth Desk contributors, 2026-10-06. No endorsement by named individuals.",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
   "changes": [
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+  ],
+  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
+  "reviewed_local_input_sha256": "e600364c22d327e9bf5fe059d7780e061b4e3db4912439e05c866974e157d76d",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2311,
+      "sha256": "cd8d71523d77e03969d8038727c9c7ca5e613e7fdc30749e01fd789215476510"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1096,
+      "sha256": "6ae494275f005683b896ca506a2cc66a11d57d9ba80beb4873d4aefe9f0535a7"
+    },
+    {
+      "path": "references/evidence-and-transfer.md",
+      "bytes": 2762,
+      "sha256": "c918b82bd6cec845f6bf386a8e8f153fec03fead8558cdca82a05c80ece19c9b"
+    }
+  ],
+  "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
     "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
   ],
-  "review_scope": "Final distributed SKILL text read in full; upstream method and applicability sections inspected; full upstream reference corpus not cleared for redistribution.",
-  "reviewed_local_input_sha256": "e600364c22d327e9bf5fe059d7780e061b4e3db4912439e05c866974e157d76d",
-  "files": [
+  "updated_at": "2026-10-11",
+  "reference_sources": [
     {
-      "path": "SKILL.md",
-      "sha256": "10798d78fdfe2d6f2da6c454f56e07354cf653897160f58972ba1189b6ff78b8",
-      "bytes": 2069
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "6ae494275f005683b896ca506a2cc66a11d57d9ba80beb4873d4aefe9f0535a7",
-      "bytes": 1096
+      "file": "references/evidence-and-transfer.md",
+      "source_url": "https://github.com/yuewenyumenle/personal-ai-learning/tree/9e6420c8e11f2f9025e8c6f748e471e069dbc2bd",
+      "license": "MIT",
+      "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
     }
   ]
 }

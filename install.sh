@@ -24,9 +24,9 @@ import urllib.request
 import webbrowser
 import zipfile
 
-VERSION = 'v0.3.0-rc1'
-ARCHIVE_URL = 'https://github.com/chenxinan9/upward-workbench/releases/download/v0.3.0-rc1/upward-workbench-v0.3.0-rc1.zip'
-ARCHIVE_SHA256 = 'f5a71c94f41a5f2e008d7158a37080ee92152e9101c2f07f46bda94f4df4185d'
+VERSION = 'v0.3.0-rc2'
+ARCHIVE_URL = 'https://github.com/chenxinan9/upward-workbench/releases/download/v0.3.0-rc2/upward-workbench-v0.3.0-rc2.zip'
+ARCHIVE_SHA256 = '6f70cff35af2619fda9d807a032c0c8badcbdc617cc73803a9e8e878b6d0bf8f'
 MAX_DOWNLOAD = 10 * 1024 * 1024
 
 

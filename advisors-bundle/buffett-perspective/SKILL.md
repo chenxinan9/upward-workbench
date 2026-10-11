@@ -33,3 +33,11 @@ description: 商业质量、估值假设与长期投资学习时使用，提供�
 - 固定提交：`7f3f017343c359c4fe5c4d450c67df5c560dc890`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按问题阅读参考资料
+
+- 需要理解本视角的具体概念、判断条件和误用边界时，读 [references/study-notes.md](references/study-notes.md)。
+- 需要把方法用于一次行动或复盘、区分可观察证据与口号时，读 [references/practice-case.md](references/practice-case.md)。
+- 需要追查上游研究版本、版权处理或确认哪些内容未分发时，读 [references/source-map.md](references/source-map.md)。
+
+按当前问题选择相关文件，不默认加载整套资料。研究转述和合成案例不是人物原话；实际回答区分来源方法、用户事实和本轮建议。

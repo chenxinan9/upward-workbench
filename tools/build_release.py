@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Explicit allowlist release builder. No parent-directory collection or publishing."""
-import argparse,ast,hashlib,json,re,zipfile
+import argparse,ast,hashlib,json,re,zipfile,sys
 from pathlib import Path
 try:
  from .metrics import metrics
@@ -9,16 +9,16 @@ except ImportError:
  from metrics import metrics
  from check_public import check
 ROOT=Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
+from bundle_resources import advisor_resources, knowledge_resources, relative_path, read_resource
 FILES=['README.md','LICENSE','NOTICE','.gitignore','app.py','start.command','methods.json','quotes.json','public-advisors.json','web/index.html','web/app.js','web/style.css','tools/backup.py','tools/connect_local.py','tools/metrics.py','tools/build_release.py','tests/test_core.py','docs/product.md','docs/acceptance-criteria.md','docs/acceptance-report.md','docs/audit-plan.md','docs/audit-findings.md','docs/research.md','docs/distribution-policy.md','docs/integration.md','docs/process.md','docs/validation.md']
 FILES += ['growth.py','tools/plan_index.py','tests/test_growth.py','tests/test_frontend_steps.cjs','desktop/README.md','desktop/install.py','desktop/start_service.py','desktop/GrowthDesk.swift','desktop/icon.swift','docs/v2-workflow.md','docs/v2-validation.md','docs/v2-independent-acceptance.md','docs/advisor-bundle-audit.md','advisors-bundle/README.md','advisors-bundle/manifest.json','advisors-bundle/methods.json','advisors-bundle/install.py','advisors-bundle/excluded.json','advisors-bundle/bundle-files.json']
-for e in json.loads((ROOT/'advisors-bundle/manifest.json').read_text())['entries']:
- for filename in ['SKILL.md','LICENSE','provenance.json']:FILES.append('advisors-bundle/'+e['path']+'/'+filename)
 FILES += ['desktop/assets/upward-icon.png','desktop/assets/README.md','docs/page-responsibilities.md']
 FILES += ['CONTRIBUTING.md','SECURITY.md','ROADMAP.md','docs/daily-use.md','docs/getting-started.md','.github/workflows/check.yml','tools/check_public.py','tools/setup_knowledge.py','tests/test_advisor.py','tests/test_knowledge_setup.py','skills/upward-advisor/SKILL.md','skills/upward-advisor/scripts/advisor.py','examples/README.md','examples/growth-plan.sample.json','examples/init_demo.py','examples/sources/profile.md','examples/sources/project.md','examples/sources/method.md']
 FILES += ['capture.py','conversation.py','advisor_council.py','tools/capture_conversation.py','tests/test_capture.py','tests/test_conversation.py','docs/conversation-capture.md','tests/test_advisor_council.py','tests/test_council_pipeline.py','docs/advisor-council.md']
 FILES += ['tests/test_experience.py','tests/test_existing_updates.py','tests/test_chat_experience.cjs','docs/daily-experience.md']
 FILES += ['docs/models-and-streaming.md','stream_transport.py','model_access.py','model_check.py','tests/desk_fixture.py','tests/test_stream_transport.py','tests/test_model_access.py','tests/test_model_frontend.cjs','tests/test_model_check.py','docs/phase-local.md','phase.py','local_tools.py','web/experience.js','web/experience.css','tests/test_local_tools.py','tests/test_phase.py','tests/test_phase_frontend.cjs']
-FILES += ['docs/advisors.md','docs/reference.md','docs/release-v0.3.0-rc1.md']
+FILES += ['docs/knowledge-library.md','docs/release-v0.3.0-rc2.md','docs/advisors.md','docs/reference.md','docs/release-v0.3.0-rc1.md']
 # The network installer and its checksum test remain repository-only to avoid a self-referential archive hash.
 FILES += ['growth_workspace.py','web/growth-workspace.js','web/growth-workspace.css','tests/test_growth_workspace.py','tests/test_growth_workspace.cjs',
           'workspace_api.py','vault.py','codex_workspace.py','web/workspace.html','web/workspace.js','web/workspace.css',
@@ -26,9 +26,25 @@ FILES += ['growth_workspace.py','web/growth-workspace.js','web/growth-workspace.
           'tests/test_workspace_migration.py','tests/test_workspace_frontend.cjs','tests/test_workspace_install.py','tests/test_private_backup.py','docs/workspace-migration.md']
 
 
+def resource_files():
+ resources={}
+ entries=json.loads(read_resource(ROOT/'advisors-bundle','manifest.json'))['entries']
+ seen=set()
+ for entry in entries:
+  name=relative_path(entry['path']).as_posix()
+  if name!=entry['name'] or '/' in name or name in seen:raise ValueError('顾问清单路径异常')
+  seen.add(name)
+  content=advisor_resources(ROOT/'advisors-bundle'/name)
+  resources.update(('advisors-bundle/'+name+'/'+rel,data) for rel,data in content.items())
+ _,knowledge=knowledge_resources(ROOT/'knowledge-bundle')
+ resources.update(('knowledge-bundle/'+rel,data) for rel,data in knowledge.items())
+ return resources
+
+
 def release_files():
- if len(FILES)!=len(set(FILES)):raise ValueError('白名单条目重复')
- return list(FILES)
+ paths=list(FILES)+['bundle_resources.py','tests/test_bundle_resources.py']+list(resource_files())
+ if len(paths)!=len(set(paths)):raise ValueError('白名单条目重复')
+ return paths
 
 
 def validate_dependencies(paths):
@@ -55,11 +71,13 @@ def build(output):
  scan=check(ROOT,paths)
  if not scan['passed']:raise ValueError(json.dumps(scan,ensure_ascii=False,indent=2))
  validate_dependencies(paths)
+ reviewed=resource_files()
+ if not set(reviewed)<=set(paths):raise ValueError('资料清单在构建期间发生变化')
  content={}
  for rel in paths:
   f=ROOT/rel
   if f.is_symlink() or ROOT not in f.resolve().parents:raise ValueError('白名单路径异常：'+rel)
-  data=f.read_bytes()
+  data=reviewed[rel] if rel in reviewed else f.read_bytes()
   if rel=='desktop/assets/upward-icon.png':
    if not data.startswith(b'\x89PNG\r\n\x1a\n'):raise ValueError('图标不是PNG')
    content[rel]=data;continue
@@ -67,7 +85,7 @@ def build(output):
   if re.search(r'/(?:Users|home)/[A-Za-z0-9_.-]+/',text):raise ValueError('疑似真实用户绝对路径：'+rel)
   if re.search(r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----|sk-[A-Za-z0-9]{30,}',text):raise ValueError('疑似凭据：'+rel)
   content[rel]=data
- manifest={'version':'0.3.0-rc1','edition':'public-growth-workspace-preview','scope':'public source and licensed advisor excerpts; no private user data','metrics':metrics(),'files':[{'path':p,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for p,b in sorted(content.items())]}
+ manifest={'version':'0.3.0-rc2','edition':'public-growth-workspace-preview','scope':'public source and licensed advisor excerpts; no private user data','metrics':metrics(),'files':[{'path':p,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for p,b in sorted(content.items())]}
  content['release-manifest.json']=(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode()
  out.parent.mkdir(parents=True,exist_ok=True)
  with zipfile.ZipFile(out,'x',zipfile.ZIP_DEFLATED) as z:

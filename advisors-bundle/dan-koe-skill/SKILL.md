@@ -33,3 +33,9 @@ description: 创作者定位、技能组合与个人业务时使用，提供具�
 - 固定提交：`a647dbdc7a8bcca11e135e2aee97eac90a18a8fe`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 创作者想找定位或验证一人业务时，读 [从兴趣组合到观点与小产品](references/point-of-view-and-product.md)。

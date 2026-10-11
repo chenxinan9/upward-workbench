@@ -33,3 +33,10 @@ description: 面试准备、经历梳理与模拟练习时使用，提供具体�
 - 固定提交：`de3a72cd9493f09d3c33079587e37130b62cbd2b`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 准备面试回答或检查简历真实性时，读 [从岗位要求到真实经历证据](references/evidence-bank.md)。
+- 已有岗位机会需要核对条件时，读 [Offer比较与反向提问](references/offer-comparison.md)。

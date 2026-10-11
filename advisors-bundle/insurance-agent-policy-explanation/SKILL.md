@@ -33,3 +33,9 @@ description: 实际保单条款、免责与续保安排解读时使用，提供�
 - 固定提交：`9a0d0b871e8b84068d687b3260561b41b0609393`。
 - 本版保留来源许可 `MIT`，见 [LICENSE](LICENSE)；具体来源、修改及文件哈希见 [provenance.json](provenance.json)。2026-10-06 由 Growth Desk contributors 编写缩编操作文本。
 - 无外部脚本、模型密钥或其他技能依赖。按现有对话即可执行本页方法；需要最新资料且未联网时注明尚未核实。
+
+## 按需资料
+
+只在相关问题需要进一步展开时阅读，不一次加载所有参考。
+
+- 手上有实际保单，需要理解能保什么及条件时，读 [保障、免责与续保条款阅读表](references/policy-reading-table.md)。

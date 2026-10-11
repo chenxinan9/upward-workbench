@@ -5,3 +5,5 @@ quotes.json 含附出处的简短引用、自译或明确意译；原作者及�
 不包含私人档案、真实对话、模型凭据、私人知识库或项目发起者的宣传视频素材。
 
 advisors-bundle 中51份缩编Skill按各目录LICENSE分别分发：47 MIT、3 Apache-2.0、1 CC-BY-4.0。保留原作者署名和修改记录，本项目根MIT不覆盖这些不同许可。见 docs/advisor-bundle-audit.md。
+
+自 v0.3.0-rc2 起，各顾问目录另含带来源与修改说明的参考改编，沿用各自 LICENSE。knowledge-bundle/life-guide 中来自 eternity4719/HowToLiveBetter 及其贡献者的书籍与 docs 正文依 CC BY 4.0 分发；该集合的 LICENSE.txt、README.md、provenance.json 给出署名、固定版本与修改记录。本项目 MIT 不覆盖这套 CC BY 内容。knowledge-bundle/advisor-reading 为原创导读和来源链接，不包含链接目标的完整原著。
