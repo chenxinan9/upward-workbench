@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Offline life-advisor index. Python 3.10+, standard library; no network or model calls."""
 from pathlib import Path
+from contextlib import contextmanager
 import argparse, datetime, fnmatch, hashlib, json, os, re, sqlite3, sys, tempfile, zipfile
 import xml.etree.ElementTree as ET
 
@@ -102,11 +103,13 @@ def build(config):
         conn.close(); Path(temp).unlink(missing_ok=True);raise
     return report
 
+@contextmanager
 def ro(path):
     p = Path(path)
     if not p.is_file():raise FileNotFoundError(f'Index missing: {p}. Run build first.')
     db=sqlite3.connect(p.resolve().as_uri()+'?mode=ro',uri=True);db.row_factory=sqlite3.Row
-    return db
+    try:yield db
+    finally:db.close()
 
 def terms_for(words):
     return list(dict.fromkeys(t.casefold() for w in words for t in re.split(r'[\s,，]+',w) if t))[:8]

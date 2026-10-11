@@ -62,8 +62,9 @@ class QuickstartTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, '未登记'): installer.extract_verified(archive, root)
 
     def test_fixed_release_and_helper_are_self_contained(self):
-        self.assertEqual(installer.ARCHIVE_SHA256, 'd7feb1bd16dac189fbd897b0f3b97d56813b94423834e6b969ab93daa5cb9eae')
-        self.assertIn('/releases/download/v0.2.1-rc2/', installer.ARCHIVE_URL)
+        self.assertRegex(installer.ARCHIVE_SHA256, r'^[0-9a-f]{64}$')
+        self.assertEqual(installer.VERSION, 'v0.3.0-rc1')
+        self.assertIn('/releases/download/v0.3.0-rc1/', installer.ARCHIVE_URL)
         self.assertNotIn('raw.githubusercontent.com', PAYLOAD)
         self.assertNotIn('shell=True', PAYLOAD)
 

@@ -3,7 +3,7 @@ import importlib.util, json, sys, tempfile, unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from app import Desk
+from desk_fixture import Desk
 spec = importlib.util.spec_from_file_location('setup_knowledge', ROOT/'tools/setup_knowledge.py')
 module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
 
