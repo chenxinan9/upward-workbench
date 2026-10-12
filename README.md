@@ -23,11 +23,13 @@ curl -fsSL https://raw.githubusercontent.com/chenxinan9/upward-workbench/main/in
 - **知道回答依据：**显示实际读取的资料、选用的顾问及理由，以及工具进度、文件写入回执。
 - **把知识留在自己手里：**Markdown 保存在本地；Obsidian 可打开同一文件夹，双方编辑会检查文件冲突。
 
-保留浅蓝书房界面；顾问书房在知识库上方。电脑信息、备忘录和其他文件通过单独配置的本机工具访问。只有已登记范围内的资料进入知识工具，不自动扫描整台电脑。
+保留浅蓝书房界面；顾问书房在知识库上方。右侧将设置收进菜单，把主要空间留给回复。附件、语音、模型与发送集中在输入区。
+
+“本机助手”可联网、执行命令、读取系统允许访问的文件，默认仅工作目录可写，越界操作按请求审批。“资料顾问”围绕所选资料工作。备忘录和 MCP 连接器需要本机已配置并授权；不会自动拥有 Codex 桌面的全部插件。[能力与权限说明 →](docs/codex-native-capabilities.md)
 
 ## 接上自己的 Codex
 
-先在本机安装并登录 Codex CLI，再从右侧“模型与连接设置”检查连接。选择器只列出实际验证成功的模型；检查会发起真实模型请求，使用所选账号及路由的额度。向上沿用本机认证，不随包提供账号或密钥，也不会接管 Codex 桌面的原聊天。
+先在本机安装并登录 Codex CLI，再从右侧“对话设置”中的“模型与连接设置”检查连接。选择器只列出实际验证成功的模型；检查会发起真实模型请求，使用所选账号及路由的额度。向上沿用本机认证，不随包提供账号或密钥，也不会接管 Codex 桌面的原聊天。
 
 每轮可选择用途、顾问与资料范围：**我的资料与顾问 / 当前文档 / 顾问与公开资料**。公开进度与摘要可见，隐藏推理全文不在展示范围内。[连接与使用步骤 →](docs/getting-started.md)
 
@@ -46,7 +48,7 @@ curl -fsSL https://raw.githubusercontent.com/chenxinan9/upward-workbench/main/in
 公开内容是程序、顾问方法与案例、许可明确的公共知识正文、通用流程与合成示例。个人档案、健康财务、真实目标、聊天、模型回执和宣传创作资料不在包内。
 
 - [日常使用](docs/daily-use.md) · [安装与 Obsidian 接入](docs/getting-started.md) · [macOS 桌面入口](desktop/README.md)
-- [运行与备份](docs/reference.md) · [本版变化与验收范围](docs/release-v0.3.0-rc2.md)
+- [运行与备份](docs/reference.md) · [本版变化与验收范围](docs/release-v0.4.0-rc1.md)
 - [贡献说明](CONTRIBUTING.md) · [安全说明](SECURITY.md) · [路线图](ROADMAP.md)
 
-当前版本为 **v0.3.0-rc2 预发布版**。原创代码采用 [MIT](LICENSE)；第三方顾问内容遵循各自许可，见 [NOTICE](NOTICE)。
+当前版本为 **v0.4.0-rc1 预发布版**。原创代码采用 [MIT](LICENSE)；第三方顾问内容遵循各自许可，见 [NOTICE](NOTICE)。

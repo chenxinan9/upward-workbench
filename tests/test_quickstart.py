@@ -63,8 +63,8 @@ class QuickstartTests(unittest.TestCase):
 
     def test_fixed_release_and_helper_are_self_contained(self):
         self.assertRegex(installer.ARCHIVE_SHA256, r'^[0-9a-f]{64}$')
-        self.assertEqual(installer.VERSION, 'v0.3.0-rc2')
-        self.assertIn('/releases/download/v0.3.0-rc2/', installer.ARCHIVE_URL)
+        self.assertEqual(installer.VERSION, 'v0.4.0-rc1')
+        self.assertIn('/releases/download/v0.4.0-rc1/', installer.ARCHIVE_URL)
         self.assertNotIn('raw.githubusercontent.com', PAYLOAD)
         self.assertNotIn('shell=True', PAYLOAD)
 

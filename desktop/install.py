@@ -142,7 +142,7 @@ def deploy_runtime(source, support, data, *, upgrade=False):
 def build_app(source, destination):
     contents = destination/'Contents'
     (contents/'MacOS').mkdir(parents=True); (contents/'Resources').mkdir()
-    subprocess.run(['xcrun','swiftc','-O',str(source/'desktop/GrowthDesk.swift'),'-o',str(contents/'MacOS/GrowthDesk'),'-framework','AppKit','-framework','WebKit'],check=True)
+    subprocess.run(['xcrun','swiftc','-O',str(source/'desktop/GrowthDesk.swift'),'-o',str(contents/'MacOS/GrowthDesk'),'-framework','AppKit','-framework','WebKit','-framework','Speech','-framework','AVFoundation'],check=True)
     with tempfile.TemporaryDirectory() as temp:
         temp=Path(temp); png=temp/'icon.png'; icons=temp/'AppIcon.iconset'; icons.mkdir()
         designed=source/'desktop/assets/upward-icon.png'
@@ -155,7 +155,9 @@ def build_app(source, destination):
         subprocess.run(['iconutil','-c','icns',str(icons),'-o',str(contents/'Resources/AppIcon.icns')],check=True)
     info={'CFBundleIconFile':'AppIcon.icns','CFBundleDisplayName':'向上工作台','CFBundleName':'向上工作台',
           'CFBundleIdentifier':APP_ID,'CFBundleExecutable':'GrowthDesk','CFBundlePackageType':'APPL',
-          'CFBundleShortVersionString':'0.2.1','CFBundleVersion':'5','NSHighResolutionCapable':True,
+          'CFBundleShortVersionString':'0.4.0','CFBundleVersion':'6',
+          'NSMicrophoneUsageDescription':'点击语音输入时使用麦克风，把你的话转为可编辑的文字。',
+          'NSSpeechRecognitionUsageDescription':'将你主动录入的语音转为文字；优先使用本机识别，必要时使用 Apple 语音服务。','NSHighResolutionCapable':True,
           'NSAppTransportSecurity':{'NSAllowsLocalNetworking':True},'NSHumanReadableCopyright':'向上知识工作台'}
     (contents/'Info.plist').write_bytes(plistlib.dumps(info))
     subprocess.run(['codesign','--force','--deep','--sign','-',str(destination)],check=True)

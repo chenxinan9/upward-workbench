@@ -30,7 +30,7 @@ read()
 request=read(); params=request['params']; state=root/'thread.json'
 if request['method']=='thread/start':
  assert params['ephemeral'] is False
- assert params['sandbox']=='read-only'
+ assert params['sandbox']==('workspace-write' if mode.startswith('native') else 'read-only')
  assert params['dynamicTools'][0]['type']=='function'
  state.write_text(json.dumps({'id':'thread-1','turns':0,'tools':params['dynamicTools']}))
 else:
@@ -53,6 +53,34 @@ if mode=='cancel':
 if mode=='unknown_request':
  send({'id':100,'method':'item/commandExecution/requestApproval','params':{'threadId':'thread-1','turnId':tid}})
  read();sys.exit()
+if mode.startswith('native'):
+ emit('item/started',threadId='thread-1',turnId=tid,item={'type':'commandExecution','id':'exec-1','status':'inProgress','command':'printf result','cwd':str(root)})
+ emit('item/commandExecution/outputDelta',threadId='thread-1',turnId=tid,itemId='exec-1',delta='actual stream')
+ method='item/commandExecution/requestApproval'
+ approval_params={'threadId':'thread-1','turnId':tid,'itemId':'exec-1','command':'printf result'}
+ if mode=='native_input':
+  method='item/tool/requestUserInput';approval_params['questions']=[{'id':'q1','header':'选择','question':'保存哪一项','options':[{'label':'一','description':'第一项'}]}]
+ if mode=='native_mcp':
+  method='mcpServer/elicitation/request';approval_params.update(serverName='test',mode='form',message='输入',requestedSchema={'type':'object','properties':{}})
+ if mode=='native_permissions':
+  method='item/permissions/requestApproval';approval_params['permissions']={'network':{'enabled':True}}
+ if mode=='native_wrong_turn':approval_params['turnId']='wrong-turn'
+ call={'id':'approval-1','method':method,'params':approval_params}
+ send(call)
+ emit('item/reasoning/summaryTextDelta',threadId='thread-1',turnId=tid,itemId='r',summaryIndex=0,delta='审批期间仍有真实流')
+ if mode=='native_resolved':
+  emit('serverRequest/resolved',threadId='thread-1',requestId='approval-1')
+ else:
+  result=read();(root/'approval-response.json').write_text(json.dumps(result))
+  if mode=='native_cancel':
+   assert result['method']=='turn/interrupt'
+   reply(result['id'],{})
+   emit('turn/completed',threadId='thread-1',turn={'id':tid,'status':'interrupted'});sys.exit()
+  if mode=='native_duplicate':send(call);read();sys.exit()
+ emit('item/completed',threadId='thread-1',turnId=tid,item={'type':'commandExecution','id':'exec-1','status':'completed','command':'printf result','exitCode':0,'aggregatedOutput':'actual stream'})
+ for kind in ['webSearch','mcpToolCall','imageView','fileChange']:
+  emit('item/started',threadId='thread-1',turnId=tid,item={'type':kind,'id':kind,'query':'example','server':'test','tool':'lookup','changes':[],'path':'fixture.png'})
+  emit('item/completed',threadId='thread-1',turnId=tid,item={'type':kind,'id':kind,'status':'completed'})
 if mode=='tool' or mode.startswith('write') or mode in ('duplicate','wrong_turn','bad_args','foreign_namespace'):
  if mode.startswith('write'):
   args={'content':'model generated summary','expected_sha256':'a'*64}; name='write_current'
@@ -223,9 +251,129 @@ class WorkspaceTests(unittest.TestCase):
             self.assertEqual(config['features.'+name],'false')
         self.assertEqual(config['sandbox_mode'],'"read-only"')
     def test_tool_schema_is_fixed_and_does_not_offer_arbitrary_paths(self):
-        self.assertEqual([x['name'] for x in TOOLS],['knowledge_search','knowledge_tree','knowledge_read','write_current','select_advisor','create_growth_note','update_growth_goal','local_action'])
+        self.assertEqual([x['name'] for x in TOOLS],['knowledge_search','knowledge_tree','knowledge_read','write_current','select_advisor','create_growth_note','update_growth_goal','local_action','attachment_read'])
         write=next(x['inputSchema'] for x in TOOLS if x['name']=='write_current');self.assertEqual(set(write['properties']),{'content','expected_sha256'})
         self.assertFalse(write['additionalProperties'])
+
+    def test_assistant_native_stream_and_one_shot_approval(self):
+        requests=[]
+        def approve(req):
+            requests.append(req)
+            return {'decision':'accept'}
+        result=self.run_fake('native',execution_mode='assistant',context={'scope':'personal'},approval_callback=approve)
+        self.assertEqual(result['execution_mode'],'assistant')
+        self.assertEqual(len(result['native_tools']),5)
+        response=json.loads((self.root/'approval-response.json').read_text())
+        self.assertEqual(response,{'id':'approval-1','result':{'decision':'accept'}})
+        self.assertEqual(requests[0]['thread_id'],'thread-1')
+        self.assertEqual(requests[0]['turn_id'],'turn-1')
+        self.assertTrue(any(e['type']=='native_tool' and e.get('detail',{}).get('text')=='actual stream' for e in self.events))
+        params=next(x['params'] for x in self.requests() if x.get('method')=='turn/start')
+        self.assertEqual(params['sandboxPolicy']['writableRoots'],[str(self.root.resolve())])
+        self.assertTrue(params['sandboxPolicy']['excludeSlashTmp'])
+        self.assertEqual(params['approvalPolicy'],'on-request')
+        self.assertNotIn('environments',params)
+        start=next(x['params'] for x in self.requests() if x.get('method')=='thread/start')
+        self.assertNotIn('environments',start)
+
+    def test_native_default_and_invalid_callback_deny(self):
+        for callback in [None,lambda req:{'decision':'acceptForSession'},lambda req:{'decision':{'acceptWithExecpolicyAmendment':{'execpolicy_amendment':['sh']}}}]:
+            self.run_fake('native',execution_mode='assistant',context={'scope':'personal'},approval_callback=callback)
+            self.assertEqual(json.loads((self.root/'approval-response.json').read_text())['result'],{'decision':'decline'})
+
+    def test_native_user_input_and_mcp_responses(self):
+        for mode,response in [('native_input',{'answers':{'q1':{'answers':['一']}}}),('native_mcp',{'action':'decline','content':None}),('native_permissions',{'permissions':{},'scope':'turn'})]:
+            self.run_fake(mode,execution_mode='assistant',context={'scope':'personal'},approval_callback=lambda req:response)
+            self.assertEqual(json.loads((self.root/'approval-response.json').read_text())['result'],response)
+
+    def test_native_cross_turn_and_duplicate_requests_rejected(self):
+        for mode in ['native_wrong_turn','native_duplicate']:
+            with self.assertRaises(WorkspaceProtocolError):
+                self.run_fake(mode,execution_mode='assistant',context={'scope':'personal'})
+
+    def test_approval_wait_does_not_block_stream_or_cancel(self):
+        cancel=threading.Event();release=threading.Event()
+        def approve(req):
+            release.wait(3)
+            return {'decision':'accept'}
+        def event(e):
+            self.events.append(e)
+            if e['type']=='summary' and e['text']=='审批期间仍有真实流':cancel.set()
+        try:
+            result=self.run_fake('native_cancel',execution_mode='assistant',context={'scope':'personal'},approval_callback=approve,cancel_event=cancel,on_event=event)
+            self.assertEqual(result['status'],'cancelled')
+            self.assertFalse(any(x.get('result',{}).get('decision')=='accept' for x in self.requests()))
+        finally:release.set()
+
+    def test_pending_approval_timeout_revokes_callback(self):
+        observed=[]
+        def approve(req):
+            observed.append(req)
+            req['cancel_event'].wait(2)
+            return {'decision':'accept'}
+        with self.assertRaisesRegex(WorkspaceProtocolError,'超时'):
+            self.run_fake('native',execution_mode='assistant',context={'scope':'personal'},approval_callback=approve,timeout=.15)
+        self.assertTrue(observed)
+        self.assertTrue(observed[0]['cancel_event'].is_set())
+        self.assertFalse(any(x.get('result',{}).get('decision')=='accept' for x in self.requests()))
+
+    def test_resolved_request_discards_late_decision(self):
+        release=threading.Event()
+        def approve(req):
+            release.wait(3)
+            return {'decision':'accept'}
+        try:
+            result=self.run_fake('native_resolved',execution_mode='assistant',context={'scope':'personal'},approval_callback=approve)
+            self.assertEqual(result['status'],'completed')
+            self.assertFalse(any(x.get('id')=='approval-1' and 'result' in x for x in self.requests()))
+        finally:release.set()
+
+    def test_scope_narrowing_disables_native_at_process_and_turn(self):
+        for scope in ['advisors','document',None]:
+            self.run_fake(execution_mode='assistant',context={'scope':scope})
+            start=[x for x in self.requests() if x.get('method')=='thread/start'][-1]
+            self.assertEqual(start['params']['sandbox'],'read-only')
+            self.assertEqual(start['params']['approvalPolicy'],'never')
+            self.assertEqual(start['params']['environments'],[])
+            turn=[x for x in self.requests() if x.get('method')=='turn/start'][-1]
+            self.assertEqual(turn['params']['environments'],[])
+
+    def test_assistant_command_enables_supported_native_not_desktop_tools(self):
+        (self.root/'config.toml').write_text('[mcp_servers.demo]\ncommand="example"\n[mcp_servers.demo.tools."write/file"]\napproval_mode="approve"\n')
+        with patch.dict(os.environ,{'CODEX_HOME':str(self.root)}):
+            native=safe_command('codex','assistant',self.root)
+            restricted=safe_command('codex')
+        config={part.split('=',1)[0]:part.split('=',1)[1] for part in native if '=' in part}
+        self.assertEqual(config['web_search'],'"live"')
+        self.assertEqual(config['features.shell_tool'],'true')
+        self.assertEqual(config['features.unified_exec'],'true')
+        self.assertEqual(config['features.view_image'],'true')
+        self.assertEqual(config['sandbox_mode'],'"workspace-write"')
+        self.assertNotIn('mcp_servers.demo.enabled',config)
+        self.assertEqual(config['mcp_servers.demo.default_tools_approval_mode'],'"prompt"')
+        self.assertEqual(config['mcp_servers.demo.tools."write/file".approval_mode'],'"prompt"')
+        self.assertEqual(config['approvals_reviewer'],'"user"')
+        self.assertIn('mcp_servers.demo.enabled=false',restricted)
+        for key in ['computer_use','browser_use','in_app_browser','apps','plugins']:
+            self.assertEqual(config['features.'+key],'false')
+
+    def test_authorized_local_image_and_attachment_tool(self):
+        image=self.root/'image.png';image.write_bytes(b'fixture')
+        self.run_fake(input_items=[{'type':'localImage','path':str(image)}])
+        turn=[x for x in self.requests() if x.get('method')=='turn/start'][-1]
+        self.assertEqual(turn['params']['input'][-1],{'type':'localImage','path':str(image)})
+        from codex_workspace import _validated_args
+        self.assertEqual(_validated_args('attachment_read',{'attachment_id':'att-1','offset':300,'limit':100})['offset'],300)
+        with self.assertRaises(ValueError):_validated_args('attachment_read',{'path':'/private'})
+        with self.assertRaises(ValueError):self.run_fake(input_items=[{'type':'skill','path':'/private'}])
+
+    def test_permission_response_cannot_expand_requested_grant(self):
+        from codex_native import approval_response
+        method='item/permissions/requestApproval'
+        result=approval_response(method,{'permissions':{'network':{'enabled':True}}},{'permissions':{'fileSystem':{'write':['/']}}})
+        self.assertEqual(result,{'permissions':{},'scope':'turn'})
+        result=approval_response(method,{'permissions':{'network':{'enabled':True}}},{'permissions':{'network':{'enabled':True}},'scope':'session'})
+        self.assertEqual(result['scope'],'turn')
 
     def test_growth_write_intent_and_adoption_boundaries(self):
         from codex_workspace import explicit_growth_intent, explicit_goal_intent, _validated_args

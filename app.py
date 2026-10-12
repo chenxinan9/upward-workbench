@@ -480,7 +480,7 @@ class Handler(BaseHTTPRequestHandler):
             if self.headers.get('Content-Type','').split(';')[0]!='application/json':raise ValueError('需要 JSON 请求')
             n=int(self.headers.get('Content-Length','0'))
             path=urlsplit(self.path).path
-            max_request=50*1024*1024 if path in ('/api/vault/save','/api/vault/create') else 120000
+            max_request=30*1024*1024 if path=='/api/workspace/attachments' else 50*1024*1024 if path in ('/api/vault/save','/api/vault/create') else 120000
             if not 0<n<max_request:raise ValueError('请求大小不正确')
             d=json.loads(self.rfile.read(n))
             if not isinstance(d,dict):raise ValueError('需要对象')
