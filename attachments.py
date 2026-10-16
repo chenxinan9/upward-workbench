@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import stat
 import subprocess
 import uuid
 import zipfile
@@ -14,8 +15,10 @@ import xml.etree.ElementTree as ET
 import warnings
 import selectors
 import time
+import threading
 
 MAX_BYTES = 20 * 1024 * 1024
+MAX_TOTAL_BYTES = 500 * 1024 * 1024
 TEXT_EXT = {'.txt', '.md', '.csv', '.json', '.log', '.yaml', '.yml', '.py', '.js', '.html', '.css'}
 IMAGE_EXT = {'.png', '.jpg', '.jpeg', '.gif', '.webp'}
 DOCUMENT_EXT = {'.pdf', '.docx', '.xlsx', '.pptx'}
@@ -74,16 +77,24 @@ def _office(data, suffix):
 
 class AttachmentStore:
     def __init__(self, data_dir):
+        self.lock = threading.RLock()
         self.root = Path(data_dir).resolve() / 'workspace-attachments'
         if self.root.is_symlink():
             raise ValueError('附件目录不能是符号链接')
         self.root.mkdir(mode=0o700, exist_ok=True)
 
-    def _folder(self, identifier):
+    def _folder(self, identifier, missing_ok=False):
         if not isinstance(identifier, str) or not re.fullmatch(r'[0-9a-f]{32}', identifier):
             raise ValueError('附件标识无效')
+        if not stat.S_ISDIR(self.root.lstat().st_mode):
+            raise ValueError('附件根目录路径异常')
         folder = self.root / identifier
-        if self.root.is_symlink() or folder.is_symlink() or not folder.is_dir():
+        try:
+            mode = folder.lstat().st_mode
+        except FileNotFoundError:
+            if missing_ok: return None
+            raise ValueError('附件不存在或路径异常') from None
+        if not stat.S_ISDIR(mode):
             raise ValueError('附件不存在或路径异常')
         return folder
 
@@ -98,7 +109,8 @@ class AttachmentStore:
     def public(meta):
         return {k:meta[k] for k in ('id','name','kind','bytes','status','sha256','note','text_characters') if k in meta}
 
-    def upload(self, name, encoded):
+    def upload(self, name, encoded, draft_id=None):
+        if draft_id is not None: self._draft_id(draft_id)
         if not isinstance(name, str) or not name.strip() or len(name) > 180 or any(c in name for c in '/\\\x00'):
             raise ValueError('附件名称无效')
         suffix = Path(name).suffix.lower()
@@ -112,14 +124,18 @@ class AttachmentStore:
             raise ValueError('附件编码无效') from None
         if not 0 < len(data) <= MAX_BYTES:
             raise ValueError('附件为空或超过 20 MB')
-        if sum(p.stat().st_size for p in self.root.glob('*/source*') if p.is_file() and not p.is_symlink()) + len(data) > 500 * 1024 * 1024:
-            raise ValueError('本机附件已超过 500 MB，请先整理历史附件')
-        identifier = uuid.uuid4().hex
-        folder = self.root / identifier
-        folder.mkdir(mode=0o700)
-        source = folder / ('source' + suffix)
+        with self.lock:
+            if sum(p.stat().st_size for p in self.root.glob('*/source*') if p.is_file() and not p.is_symlink()) + len(data) > MAX_TOTAL_BYTES:
+                raise ValueError('本机附件已超过 500 MB，请先整理历史附件')
+            identifier = uuid.uuid4().hex
+            folder = self.root / identifier
+            folder.mkdir(mode=0o700)
+            source = folder / ('source' + suffix)
+            try: _write(source, data)
+            except BaseException:
+                shutil.rmtree(folder)
+                raise
         try:
-            _write(source, data)
             note = ''; text = ''
             if suffix in IMAGE_EXT:
                 valid = (suffix == '.png' and data.startswith(b'\x89PNG\r\n\x1a\n') or
@@ -190,25 +206,66 @@ class AttachmentStore:
             meta = {'id':identifier,'name':name,'kind':kind,'bytes':len(data),'status':'ready',
                     'sha256':hashlib.sha256(data).hexdigest(),'text_sha256':hashlib.sha256(text.encode()).hexdigest(),
                     'text_characters':len(text),'note':note,'suffix':suffix,'session_id':None}
+            if draft_id is not None: meta['draft_refs'] = [draft_id]
             _write(folder/'metadata.json',(json.dumps(meta,ensure_ascii=False)+'\n').encode())
             return self.public(meta)
         except BaseException:
-            shutil.rmtree(folder)
+            with self.lock: shutil.rmtree(folder)
             raise
 
-    def bind(self, identifiers, session_id):
-        if not isinstance(identifiers,list) or len(identifiers)>8 or len(set(identifiers))!=len(identifiers):
-            raise ValueError('每次最多 8 个不同附件')
-        metas = [self._load(i) for i in identifiers]
-        if any(m['session_id'] not in (None,session_id) for m in metas):
-            raise PermissionError('附件属于另一段对话，请重新选择上传')
-        for meta in metas:
-            if meta['session_id'] is None:
-                meta['session_id']=session_id;folder=self._folder(meta['id'])
-                temp=folder/('metadata-'+uuid.uuid4().hex+'.tmp')
-                _write(temp,(json.dumps(meta,ensure_ascii=False)+'\n').encode());os.replace(temp,folder/'metadata.json')
-        return [self.public(m) for m in metas]
+    @staticmethod
+    def _draft_id(value):
+        if not isinstance(value, str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,160}', value):
+            raise ValueError('附件草稿标识无效')
 
+    def _save(self, meta):
+        folder = self._folder(meta['id'])
+        temporary = folder / ('metadata-' + uuid.uuid4().hex + '.tmp')
+        _write(temporary, (json.dumps(meta, ensure_ascii=False) + '\n').encode())
+        os.replace(temporary, folder / 'metadata.json')
+
+    def retain(self, identifier, draft_id):
+        self._draft_id(draft_id)
+        with self.lock:
+            meta = self._load(identifier)
+            refs = meta.get('draft_refs')
+            if refs is not None and draft_id not in refs:
+                if len(refs) >= 128: raise ValueError('附件草稿引用过多，请重新上传')
+                meta['draft_refs'] = [*refs, draft_id]
+                self._save(meta)
+            return {'retained': True, 'tracked': refs is not None}
+
+    def remove(self, identifier, draft_id):
+        self._draft_id(draft_id)
+        with self.lock:
+            folder = self._folder(identifier, missing_ok=True)
+            if folder is None: return {'deleted': True}
+            meta = self._load(identifier)
+            if meta.get('session_id') is not None:
+                return {'deleted': False, 'retained': 'sent'}
+            refs = meta.get('draft_refs')
+            # Old uploads have unregistered recovery drafts, so never infer they are unused.
+            if refs is None: return {'deleted': False, 'retained': 'legacy'}
+            if draft_id not in refs: raise PermissionError('附件不属于此草稿，未删除')
+            meta['draft_refs'] = [ref for ref in refs if ref != draft_id]
+            if meta['draft_refs']:
+                self._save(meta)
+                return {'deleted': False, 'retained': 'other_draft'}
+            shutil.rmtree(folder)
+            return {'deleted': True}
+
+    def bind(self, identifiers, session_id):
+        with self.lock:
+            if not isinstance(identifiers,list) or len(identifiers)>8 or len(set(identifiers))!=len(identifiers):
+                raise ValueError('每次最多 8 个不同附件')
+            metas = [self._load(i) for i in identifiers]
+            if any(m['session_id'] not in (None,session_id) for m in metas):
+                raise PermissionError('附件属于另一段对话，请重新选择上传')
+            for meta in metas:
+                if meta['session_id'] is None:
+                    meta['session_id']=session_id
+                    self._save(meta)
+            return [self.public(m) for m in metas]
     def read(self, identifier, session_id, offset=0, limit=120):
         meta=self._load(identifier)
         if meta['session_id']!=session_id: raise PermissionError('附件不属于本会话')

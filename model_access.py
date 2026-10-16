@@ -12,12 +12,15 @@ import os
 from pathlib import Path
 import re
 import tomllib
+import time
+import shutil
 from urllib.parse import urlsplit
 
 _MODEL_ID = re.compile(r'[A-Za-z0-9][A-Za-z0-9._:/-]{0,159}\Z')
 _EFFORTS = ('none', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max', 'ultra')
 _MAX_METADATA_BYTES = 12 * 1024 * 1024
 _RECEIPT_LOCK = threading.RLock()
+_DIRECTORY_LOCK = threading.RLock()
 
 
 def _read(path, kind):
@@ -65,11 +68,48 @@ def _normalize(raw, source, provider):
         'reasoning_efforts': list(supported),
         'default_reasoning_effort': default,
         'verified': False,
-        'verification': '已接入目录，尚未在工作台完成调用',
+        'verification': '尚未试答',
+        'is_default': raw.get('isDefault') is True,
     }
 
 
 class ModelAccessMixin:
+    def _directory_key(self):
+        home, config, overlay = self._model_configuration()
+        cli = shutil.which(str(getattr(self,'cli','') or '')) or str(getattr(self,'cli','') or '')
+        paths = [home/'config.toml',home/'opencodex.config.toml',home/'auth.json']
+        path = config.get('model_catalog_json') or overlay.get('model_catalog_json')
+        if isinstance(path,str) and path:
+            path = Path(path).expanduser(); paths.append(path if path.is_absolute() else home/path)
+        if cli: paths.append(Path(cli).resolve())
+        identity = []
+        for path in paths:
+            try:
+                value = path.stat(); signature = [value.st_dev,value.st_ino,value.st_mtime_ns,value.st_size]
+            except OSError: signature = None
+            identity.append([str(path),signature])
+        return hashlib.sha256(json.dumps([cli,identity]).encode()).hexdigest()
+
+    def _native_directory(self, *, refresh=False):
+        from codex_workspace import read_model_directory
+        with _DIRECTORY_LOCK:
+            key = self._directory_key()
+            cached = getattr(self,'_model_directory_cache',None)
+            if not refresh and cached and cached['key']==key and time.monotonic()-cached['at']<30:
+                return copy.deepcopy(cached)
+            entry = {'key':key,'at':time.monotonic(),'models':[],'error':''}
+            try:
+                home, _, _ = self._model_configuration()
+                metadata = read_model_directory(getattr(self,'cli',None),home=home)
+                rows = [_normalize(row,'当前Codex账户目录','Codex') for row in metadata['models']]
+                entry['models'] = [row for row in rows if row]
+                if not entry['models']: raise ValueError('当前Codex目录没有提供模型，请保留选择后刷新')
+                if key != self._directory_key(): raise ValueError('读取期间账户或配置发生变化，请重新刷新模型目录')
+            except (ValueError,OSError) as exc:
+                entry.update(models=[],error=str(exc))
+            self._model_directory_cache = entry
+            return copy.deepcopy(entry)
+
     def _model_configuration(self):
         home = Path(getattr(self, 'model_home', os.environ.get('CODEX_HOME', str(Path.home() / '.codex'))))
         config = _read(home / 'config.toml', 'toml')
@@ -197,44 +237,75 @@ class ModelAccessMixin:
             temp.write_text(json.dumps({'version': 1, 'models': receipts}, ensure_ascii=False))
             temp.chmod(0o600); temp.replace(path)
 
-    def model_catalog(self):
+    def model_catalog(self, *, refresh=False):
+        key = self._directory_key()
         catalog = self._configured_catalog()
+        _, config, _ = self._model_configuration()
+        native = config.get('model_provider') in (None,'','openai')
+        directory = self._native_directory(refresh=refresh) if native else None
+        configured = {row['id']:row for row in catalog['models']}
+        offered = {row['id']:row for row in directory['models']} if directory else {}
+        models = list(offered.values()) + [row for ident,row in configured.items() if ident not in offered]
         try: state = _read(self._verification_path(), 'json')
         except ValueError: state = {}
         receipts = state.get('models', {})
         if not isinstance(receipts, dict): receipts = {}
-        ready = []
         current = dt.datetime.now(dt.timezone.utc)
-        for model in catalog['models']:
+        for model in models:
+            model.update(selectable=False,availability='not_provided',verification='当前目录未提供')
             receipt = receipts.get(model['id'], {})
-            if not isinstance(receipt, dict): continue
+            valid = False
             try:
                 when = dt.datetime.fromisoformat(receipt['verified_at'])
-                if when.tzinfo is None or current < when: continue
-            except (KeyError, ValueError, TypeError): continue
-            if receipt.get('actual_model') != model['id']: continue
-            if receipt.get('configuration_fingerprint') != self._configuration_fingerprint(model): continue
-            model.update(verified=True, verified_at=receipt['verified_at'], verification='已通过真实调用验证')
-            ready.append(model)
-        default = catalog['default_id'] if any(m['id'] == catalog['default_id'] for m in ready) else ''
-        catalog.update(models=ready, default_id=default, default_model=default,
-                       status='ready' if ready else 'checking',
-                       notice='仅显示已通过真实调用验证的 Codex 和 Gemini 模型；验证日期可查看。选择只影响本轮；后续可用性仍取决于登录、额度和服务状态。')
+                valid = (when.tzinfo is not None and when<=current and receipt.get('actual_model')==model['id']
+                         and receipt.get('configuration_fingerprint')==self._configuration_fingerprint(model))
+            except (KeyError,ValueError,TypeError): pass
+            if valid: model.update(verified=True,verified_at=receipt['verified_at'])
+            other_route = not native or model['id'].startswith('gemini-web/')
+            if model['id'] in offered:
+                model.update(selectable=True,availability='provided',verification='本机已回答核验' if valid else '当前账户目录提供；尚无独立连接检查回执，本轮回答状态以会话回执为准')
+            elif other_route:
+                model.update(selectable=valid,availability='verified_route' if valid else 'unverified_route',
+                    verification='本机已回答核验' if valid else '独立路由尚未完成本机回答核验')
+            elif directory['error']:
+                model.update(availability='directory_unavailable',verification='目录暂不可读，保留选择待重核')
+        default = (next((m['id'] for m in models if m.get('is_default') and m['id'] in offered),'') if native else
+                   next((m['id'] for m in models if m['id']==catalog['default_id'] and m['selectable']),''))
+        changed = key != self._directory_key() or directory is not None and directory['key'] != key
+        if changed:
+            for model in models:
+                model.update(selectable=False,availability='directory_unavailable',verification='账户或配置读取期间变化，保留选择待重核')
+            default = ''
+        scope_rows = [{key:model.get(key) for key in ('id','supported_reasoning_efforts','selectable','is_default','availability')} for model in models]
+        scope = hashlib.sha256(json.dumps([self._directory_key(),scope_rows],sort_keys=True).encode()).hexdigest()
+        catalog.update(models=models,default_id=default,default_model=default,scope_fingerprint=scope,
+            status='unavailable' if changed or directory and directory['error'] else 'ready' if any(m['selectable'] for m in models) else 'checking',
+            directory_error='账户或配置已变化，请重新刷新目录' if changed else directory['error'] if directory else '',
+            notice='此目录来自本工作台连接的Codex CLI与当前账户，其他客户端或入口可能不同。目录提供项可直接选择，尚未试答不代表不可选；回答核验只说明历史成功，选择不改全局配置。')
         return catalog
 
     def resolve_model(self, ident=None, require_verified=True):
-        catalog = self.model_catalog() if require_verified else self._configured_catalog()
+        catalog = self.model_catalog()
         if ident is None or ident == '': ident = catalog['default_id']
         if not isinstance(ident, str) or not _MODEL_ID.fullmatch(ident):
-            raise ValueError('默认模型尚未完成可用性验证，请选择已验证模型')
+            raise ValueError(catalog.get('directory_error') or '当前目录没有可用默认，请明确选择模型')
         model = next((m for m in catalog['models'] if m['id'] == ident), None)
-        if model is None:
-            raise ValueError('这个模型尚未通过当前工作台的可用性验证，请刷新后选择')
+        if not require_verified and model is not None and model['availability']=='unverified_route':
+            model = dict(model,selectable=True)
+        if model is None or not model.get('selectable'):
+            raise ValueError(catalog.get('directory_error') or '当前目录未提供这个模型，或独立路由尚未核验；选择已保留，未发送')
         _, config, _ = self._model_configuration()
         result = copy.deepcopy(model)
         supported = result['supported_reasoning_efforts']
         configured_effort = config.get('model_reasoning_effort')
         answer = configured_effort if configured_effort in supported else result['default_reasoning_effort']
         route = next((e for e in _EFFORTS if e in supported), None)
-        result.update(reasoning_effort=answer, routing_effort=route)
+        result.update(reasoning_effort=answer, routing_effort=route,
+            selection_fingerprint=hashlib.sha256((catalog['scope_fingerprint']+self._configuration_fingerprint(model)).encode()).hexdigest())
         return result
+
+    def require_model_selection(self, selected):
+        current = self.resolve_model(selected.get('id'))
+        if selected.get('selection_fingerprint') != current['selection_fingerprint']:
+            raise ValueError('模型目录、账户或路由已变化，请保留问题并重新选择或预览')
+        return current

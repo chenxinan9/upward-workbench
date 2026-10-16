@@ -20,7 +20,7 @@ final class GrowthApp: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNavi
     func applicationDidFinishLaunching(_ notification: Notification) {
         makeMenu()
         window = NSWindow(contentRect:NSRect(x:0,y:0,width:1260,height:860),styleMask:[.titled,.closable,.miniaturizable,.resizable],backing:.buffered,defer:false)
-        window.title = "向上工作台"
+        window.title = "睿顾台"
         window.delegate = self
         window.minSize = NSSize(width:760,height:580)
         window.setFrameAutosaveName("GrowthDeskMain")
@@ -32,7 +32,7 @@ final class GrowthApp: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNavi
         web.autoresizingMask = [.width,.height]
         web.navigationDelegate = self; web.uiDelegate = self
         window.contentView?.addSubview(web)
-        web.loadHTMLString("<html lang='zh-CN'><body style='font:20px system-ui;padding:60px;background:#f6f7fb;color:#253047'>正在打开你的成长工作台…</body></html>",baseURL:nil)
+        web.loadHTMLString("<html lang='zh-CN'><body style='font:20px system-ui;padding:60px;background:#f6f7fb;color:#253047'>正在打开睿顾台…</body></html>",baseURL:nil)
         window.makeKeyAndOrderFront(nil); NSApp.activate(ignoringOtherApps:true)
         let file = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/向上成长顾问/desktop.json")
         do { config = try JSONSerialization.jsonObject(with:Data(contentsOf:file)) as? [String:String] ?? [:]; probe() }
@@ -40,7 +40,7 @@ final class GrowthApp: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNavi
     }
     func makeMenu() {
         let bar=NSMenu();let item=NSMenuItem();bar.addItem(item)
-        let app=NSMenu();app.addItem(withTitle:"退出向上工作台",action:#selector(NSApplication.terminate(_:)),keyEquivalent:"q");item.submenu=app
+        let app=NSMenu();app.addItem(withTitle:"退出睿顾台",action:#selector(NSApplication.terminate(_:)),keyEquivalent:"q");item.submenu=app
         let editItem=NSMenuItem();bar.addItem(editItem);let edit=NSMenu(title:"编辑");editItem.submenu=edit
         for (title,action,key) in [("撤销","undo:","z"),("剪切","cut:","x"),("拷贝","copy:","c"),("粘贴","paste:","v"),("全选","selectAll:","a")] { edit.addItem(withTitle:title,action:Selector(action),keyEquivalent:key) }
         let viewItem=NSMenuItem();bar.addItem(viewItem);let view=NSMenu(title:"查看");viewItem.submenu=view
@@ -76,11 +76,11 @@ final class GrowthApp: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNavi
         SFSpeechRecognizer.requestAuthorization { status in
             DispatchQueue.main.async {
                 guard self.speechID == id else {return}
-                guard status == .authorized else {self.speechEvent("error",message:"请在系统设置的隐私与安全中允许向上工作台使用语音识别",id:id);self.stopSpeech(cancel:true);return}
+                guard status == .authorized else {self.speechEvent("error",message:"请在系统设置的隐私与安全中允许睿顾台使用语音识别",id:id);self.stopSpeech(cancel:true);return}
                 AVCaptureDevice.requestAccess(for:.audio) { allowed in
                     DispatchQueue.main.async {
                         guard self.speechID == id else {return}
-                        guard allowed else {self.speechEvent("error",message:"麦克风权限未开启，请在系统设置中允许向上工作台使用麦克风",id:id);self.stopSpeech(cancel:true);return}
+                        guard allowed else {self.speechEvent("error",message:"麦克风权限未开启，请在系统设置中允许睿顾台使用麦克风",id:id);self.stopSpeech(cancel:true);return}
                         self.recordSpeech(id)
                     }
                 }

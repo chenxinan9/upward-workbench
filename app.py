@@ -17,6 +17,7 @@ from model_access import ModelAccessMixin
 from model_check import ModelCheckMixin
 from workspace_api import WorkspaceMixin
 from growth_workspace import GrowthWorkspaceMixin
+from codex_workspace import resolve_codex_cli
 ROOT=Path(__file__).resolve().parent
 
 def now(): return dt.datetime.now(dt.timezone.utc).isoformat()
@@ -48,23 +49,32 @@ class Store:
         with self.conn() as c:r=c.execute('SELECT * FROM objects WHERE id=?',(id,)).fetchone()
         if not r or (kind and r['kind']!=kind): raise ValueError('记录不存在')
         return dict(json.loads(r['data']),id=r['id'],rev=r['rev'])
-    def put(self,kind,data,id=None,rev=None,action='save'):
+    def put(self,kind,data,id=None,rev=None,action='save',record_version=True):
         with self.lock,self.conn() as c:
             id=id or uid();old=c.execute('SELECT * FROM objects WHERE id=?',(id,)).fetchone()
             if old and (old['kind']!=kind or rev!=old['rev']):raise ValueError('记录已变化，请刷新后重试，未覆盖他人修改')
             data={k:v for k,v in data.items() if k not in ('id','rev')};data['updated_at']=now();data.setdefault('created_at',now());n=(old['rev']+1) if old else 1
-            c.execute('INSERT OR REPLACE INTO objects VALUES (?,?,?,?)',(id,kind,js(data),n));c.execute('INSERT INTO versions VALUES (?,?,?)',(id,n,js(data)))
+            c.execute('INSERT OR REPLACE INTO objects VALUES (?,?,?,?)',(id,kind,js(data),n))
+            if record_version:c.execute('INSERT INTO versions VALUES (?,?,?)',(id,n,js(data)))
             c.execute('INSERT INTO audit(at,action,object_id,detail) VALUES (?,?,?,?)',(now(),action,id,js({'kind':kind,'rev':n})))
             return dict(data,id=id,rev=n)
     def change(self,id,kind,**changes):
         with self.lock:
             v=self.get(id,kind);v.update(changes);return self.put(kind,v,id,v['rev'])
+    def checkpoint(self,id,**changes):
+        with self.lock:
+            v=self.get(id,'workspace-job')
+            if v.get('status') not in ('queued','running','cancelling') or 'status' in changes:
+                raise ValueError('仅运行中的工作区任务可保存进度检查点')
+            v.update(changes)
+            # Current progress is durable; only lifecycle changes need historical copies.
+            return self.put('workspace-job',v,id,v['rev'],action='checkpoint',record_version=False)
 
 class Desk(GrowthWorkspaceMixin, WorkspaceMixin, ModelCheckMixin, StreamTransportMixin, ModelAccessMixin, PhaseMixin, LocalToolsMixin, AdvisorCouncilMixin, CaptureMixin, ConversationMixin, GrowthMixin):
     def __init__(self,path):
         self.store=Store(path);self.token=secrets.token_urlsafe(32);self.processes={};self._live_feedback={};self.runlock=threading.RLock();self.indexlock=threading.Lock();self._creator_lock=threading.Lock()
         p=self.store.path/'settings.json';self.settings=json.loads(p.read_text()) if p.exists() else {}
-        self.cli=self.settings.get('codex_cli') or shutil.which('codex')
+        self.cli=resolve_codex_cli(self.settings.get('codex_cli'))
         for job in self.store.all('job'):
             pending=[dict(a,status='uncertain',summary='服务在操作中中断；结果未确认，请回读目标文件，勿直接重复写入') if a.get('status')=='started' else a for a in job.get('local_actions',[])]
             if pending!=job.get('local_actions',[]):self.store.change(job['id'],'job',local_actions=pending)
@@ -294,8 +304,8 @@ class Desk(GrowthWorkspaceMixin, WorkspaceMixin, ModelCheckMixin, StreamTranspor
             if (dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(p['created_at'])).total_seconds()>900:raise ValueError('发送预览已过期，请重新生成')
             if not p.get('advisor_council'):raise ValueError('此预览来自旧版，请重新预览以接入顾问团')
             if not self.cli:raise ValueError('本机未发现 Codex CLI，原问题已保留，未发送')
-            if not p.get('model_selection'):raise ValueError('此预览尚未选择已验证模型，请重新生成')
-            self.resolve_model(p['model_selection']['id'])
+            if not p.get('model_selection'):raise ValueError('此预览尚未选择当前目录模型，请重新生成')
+            self.require_model_selection(p['model_selection'])
             sid=p['session_id']
             if not sid:sid=self.store.put('session',{'title':p['message'][:35]})['id']
             if any(j['session_id']==sid and j['status'] in ['queued','running'] for j in self.store.all('job')):raise ValueError('本会话上一轮尚未完成')
@@ -326,9 +336,9 @@ class Desk(GrowthWorkspaceMixin, WorkspaceMixin, ModelCheckMixin, StreamTranspor
             cmd=self.isolated_model_command()
             preview=self.store.get(j['preview_id'],'preview');manifest=preview['advisor_council']
             chosen=preview.get('model_selection')
-            if not chosen:raise ValueError('此预览没有已验证模型，请重新发送')
+            if not chosen:raise ValueError('此预览没有当前目录模型，请重新发送')
             if chosen:
-                self.resolve_model(chosen['id'])
+                self.require_model_selection(chosen)
                 cmd+=['-c','model='+json.dumps(chosen['id'])]
                 if chosen.get('reasoning_effort'):cmd+=['-c','model_reasoning_effort='+json.dumps(chosen['reasoning_effort'])]
             routing=self.council_route_prompt(j['message'],preview['history'],manifest,preview.get('refs',[]),preview['contexts'],self.local_capabilities())
@@ -397,6 +407,7 @@ class Desk(GrowthWorkspaceMixin, WorkspaceMixin, ModelCheckMixin, StreamTranspor
             self.store.change(job_id,'job',progress_events=(events+[{'key':key,'at':now(),'text':text}])[-12:])
 
     def model_text(self,j,cmd,folder,prompt,stage,timeout):
+        if j.get('model_selection'):self.require_model_selection(j['model_selection'])
         return self.stream_model_text(j,cmd,folder,prompt,stage,timeout)
 
     @staticmethod
@@ -440,7 +451,7 @@ class Handler(BaseHTTPRequestHandler):
             if u.path=='/api/workspace/source':return self.reply(self.app.source(q.get('id','')))
             if u.path.startswith(('/api/vault/', '/api/workspace/')):return self.reply(self.app.workspace_get(u.path,q))
             if u.path=='/api/models/check':return self.reply(self.app.model_check_status())
-            if u.path=='/api/models':return self.reply(self.app.model_catalog())
+            if u.path=='/api/models':return self.reply(self.app.model_catalog(refresh=q.get('refresh')=='1'))
             if u.path=='/api/capture':return self.reply(self.app.capture_status(q['request_id']) if q.get('request_id') else self.app.capture_recent(int(q.get('limit','20'))))
             if u.path=='/api/phase':return self.reply(self.app.phase_snapshot(q.get('days','7')))
             if u.path=='/api/local/capabilities':return self.reply(self.app.local_capabilities())

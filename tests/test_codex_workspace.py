@@ -1,5 +1,6 @@
 import json
 import os
+import subprocess
 from pathlib import Path
 import sys
 import tempfile
@@ -8,7 +9,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from codex_workspace import CodexWorkspace, WorkspaceProtocolError, explicit_write_intent, TOOLS, safe_command
+from codex_workspace import CodexWorkspace, WorkspaceProtocolError, explicit_write_intent, TOOLS, safe_command, resolve_codex_cli
 
 SERVER = r'''
 import json,sys,pathlib
@@ -45,6 +46,13 @@ request=read(); assert request['method']=='turn/start'
 info['turns']+=1; state.write_text(json.dumps(info)); tid='turn-'+str(info['turns'])
 reply(request['id'],{'turn':{'id':tid}})
 emit('turn/started',threadId='thread-1',turn={'id':tid,'status':'inProgress'})
+if mode in ('slow_progress','heartbeat_only','private_progress'):
+ import time
+ for _ in range(7):
+  if mode=='slow_progress':emit('item/reasoning/summaryTextDelta',threadId='thread-1',turnId=tid,itemId='reason',delta='checking ')
+  elif mode=='private_progress':emit('item/reasoning/textDelta',threadId='thread-1',turnId=tid,itemId='reason',delta='PRIVATE_SENTINEL')
+  else:emit('unrelated/heartbeat',threadId='thread-1')
+  time.sleep(.12)
 if mode=='cancel':
  request=read();assert request['method']=='turn/interrupt'
  reply(request['id'],{})
@@ -111,6 +119,55 @@ emit('turn/completed',threadId='thread-1',turn={'id':tid,'status':'completed'})
 '''
 
 
+class CliResolutionTests(unittest.TestCase):
+    def resolve(self, versions, configured=None):
+        def probe(args, **kw):
+            result = versions[args[0]]
+            if isinstance(result, Exception): raise result
+            return subprocess.CompletedProcess(args, 0, result)
+        with patch('codex_workspace.sys.platform', 'darwin'), \
+             patch('codex_workspace.shutil.which', return_value='/path/codex'), \
+             patch('codex_workspace.Path.is_file', lambda path: str(path) in versions), \
+             patch('codex_workspace.os.access', return_value=True), \
+             patch('codex_workspace.subprocess.run', side_effect=probe) as run:
+            result = resolve_codex_cli(configured)
+            return result, run.call_count
+
+    def test_explicit_cli_is_never_replaced_or_probed(self):
+        self.assertEqual(self.resolve({}, '/chosen/codex'), ('/chosen/codex', 0))
+
+    def test_newer_official_bundle_used_for_both_catalog_and_conversation(self):
+        bundle = '/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex'
+        self.assertEqual(self.resolve({'/path/codex':'codex-cli 0.153.4\n',
+            bundle:'codex-cli 0.162.0-alpha.17.2\n'})[0], bundle)
+        self.assertEqual(self.resolve({'/path/codex':'codex-cli 0.163.0\n',
+            bundle:'codex-cli 0.162.0-alpha.17.2\n'})[0], '/path/codex')
+
+    def test_unreadable_or_malformed_bundle_cannot_displace_path(self):
+        bundle = '/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex'
+        for value in ('not a Codex version', subprocess.TimeoutExpired(bundle,2)):
+            with self.subTest(value=type(value).__name__):
+                self.assertEqual(self.resolve({'/path/codex':'codex-cli 0.153.4\n',bundle:value})[0], '/path/codex')
+        self.assertIsNone(self.resolve({bundle:'unrecognized'})[0])
+        self.assertIsNone(self.resolve({})[0])
+
+    def test_prerelease_serial_stage_and_stable_precedence(self):
+        bundle = '/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex'
+        cases = [
+            ('0.162.0-alpha.17.2','0.162.0-alpha.18.0',bundle),
+            ('0.162.0-alpha.17.10','0.162.0-alpha.17.2','/path/codex'),
+            ('0.162.0-alpha.99','0.162.0-beta.1',bundle),
+            ('0.162.0-beta.99','0.162.0-rc.1',bundle),
+            ('0.162.0-rc.99','0.162.0',bundle),
+            ('0.162.0','0.162.0-rc.99','/path/codex'),
+            ('0.162.0','0.163.0-preview.1','/path/codex'),
+        ]
+        for path_version,bundle_version,expected in cases:
+            with self.subTest(path=path_version,bundle=bundle_version):
+                self.assertEqual(self.resolve({'/path/codex':'codex-cli '+path_version+'\n',
+                    bundle:'codex-cli '+bundle_version+'\n'})[0],expected)
+
+
 class WorkspaceTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
@@ -127,6 +184,17 @@ class WorkspaceTests(unittest.TestCase):
         message=defaults.pop('message','请核对资料')
         return runner.run_turn(message,'test-model',**defaults)
     def requests(self):return [json.loads(x) for x in (self.root/'requests.jsonl').read_text().splitlines()]
+    def test_c20_before_send_refuses_real_protocol_before_turn_payload(self):
+        from shared_knowledge import SharedError
+        def refuse(): raise SharedError('共享范围变化，未发送')
+        with self.assertRaisesRegex(SharedError,'未发送'):
+            self.run_fake(before_send=refuse)
+        requests=self.requests()
+        self.assertTrue(any(v.get('method')=='thread/start' for v in requests))
+        self.assertFalse(any(v.get('method')=='turn/start' for v in requests))
+        self.assertNotIn('请核对资料',json.dumps(requests,ensure_ascii=False))
+        self.assertFalse(any(v.get('type')=='thread' for v in self.events))
+
     def test_two_turns_resume_same_persisted_thread(self):
         a=self.run_fake();b=self.run_fake(thread_id=a['thread_id'])
         self.assertEqual((a['text'],b['text']),('回答第1轮','回答第2轮'))
@@ -212,6 +280,37 @@ class WorkspaceTests(unittest.TestCase):
     def test_cancel_before_start_has_no_subprocess(self):
         cancel=threading.Event();cancel.set();result=self.run_fake(cancel_event=cancel)
         self.assertEqual(result['status'],'cancelled');self.assertFalse((self.root/'requests.jsonl').exists())
+    def test_active_research_can_exceed_inactivity_window(self):
+        result=self.run_fake('slow_progress',timeout=3,idle_timeout=.4)
+        self.assertEqual(result['status'],'completed')
+
+    def test_unrelated_heartbeat_does_not_keep_turn_alive(self):
+        with self.assertRaisesRegex(WorkspaceProtocolError,'未返回新内容'):
+            self.run_fake('heartbeat_only',timeout=3,idle_timeout=.3)
+
+    def test_hard_deadline_still_bounds_active_research(self):
+        with self.assertRaisesRegex(WorkspaceProtocolError,'总时限'):
+            self.run_fake('slow_progress',timeout=.5,idle_timeout=.4)
+
+    def test_invalid_timeout_never_spawns_a_process(self):
+        for value in (float('inf'),float('nan'),True,0,-1):
+            with self.assertRaises(ValueError):self.run_fake(timeout=value)
+        self.assertFalse((self.root/'requests.jsonl').exists())
+
+    def test_internal_reasoning_is_liveness_only_and_never_exposed(self):
+        result=self.run_fake('private_progress',timeout=3,idle_timeout=.4)
+        self.assertEqual(result['status'],'completed')
+        self.assertNotIn('PRIVATE_SENTINEL',json.dumps([result,self.events]))
+
+    def test_approval_wait_does_not_consume_inactivity_budget(self):
+        import time
+        def approve(request):
+            time.sleep(.6)
+            return {'decision':'accept'}
+        result=self.run_fake('native',execution_mode='assistant',context={'scope':'personal'},
+                             approval_callback=approve,timeout=3,idle_timeout=.3)
+        self.assertEqual(result['status'],'completed')
+
     def test_timeout_is_failure(self):
         with self.assertRaisesRegex(WorkspaceProtocolError,'超时'):self.run_fake('cancel',timeout=.1)
     def test_write_intent_negative_questions_reported_and_conditional_are_rejected(self):
@@ -391,6 +490,41 @@ class WorkspaceTests(unittest.TestCase):
             self.assertFalse(explicit_goal_intent(message,'active'),message)
         with self.assertRaises(ValueError):_validated_args('local_action',{'action':'shell','user_quote':'运行shell'})
         with self.assertRaises(ValueError):_validated_args('create_growth_note',{'kind':'script','title':'x','content':'x'})
+
+    def test_growth_create_with_other_file_protection_does_not_authorize_replacement(self):
+        from codex_workspace import explicit_growth_intent
+        messages = [
+            '把刚才的阶段复盘保存为一篇阶段复盘，标题为“合成验收阶段复盘”，建议仍明确标注为未采纳建议，只保存这一篇，不修改其他目标或文件。',
+            '保存复盘，不修改其他目标或文件',
+            '请保存这次想法，不要改写其它文档和笔记。',
+            '不要修改其他文件，帮我保存这次复盘。',
+        ]
+        for message in messages:
+            with self.subTest(message=message):
+                self.assertTrue(explicit_growth_intent(message))
+                self.assertFalse(explicit_write_intent(message))
+        denied = [
+            '不要保存复盘，也不要修改其他文件',
+            '保存复盘，不修改任何文件',
+            '保存复盘，不做任何写入',
+            '保存复盘，不修改其他目标或文件，但先不执行',
+            '保存复盘，不修改其他文件，只是讨论',
+            '保存复盘，不修改其他文件？',
+            '如果确认无误，保存复盘，不修改其他文件',
+            '昨天我要求保存复盘，不修改其他文件',
+            '他说保存复盘，不修改其他文件',
+            '“保存复盘，不修改其他文件”',
+            '```保存复盘，不修改其他文件```',
+            '保存到当前笔记，不修改其他目标',
+            '保存到当前文件，不修改其他目标',
+            '更新阶段目标，不修改其他文件',
+            '保存复盘并覆盖旧稿，不修改其他文件',
+            '保存到 /tmp/review.md，不修改其他文件',
+            '不要修改其他目标或文件',
+            '请保存复盘，不修改其他文件但不要保存',
+        ]
+        for message in denied:
+            with self.subTest(message=message): self.assertFalse(explicit_growth_intent(message))
 
     def test_natural_goal_commitments_are_not_confused_with_plans_or_reports(self):
         from codex_workspace import explicit_goal_intent

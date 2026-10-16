@@ -18,8 +18,11 @@ class ModelCheckMixin:
             if state.get('finished_at'):
                 elapsed=(dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(state['finished_at'])).total_seconds()
                 if elapsed<30: return self.model_check_status()
-            catalog=self._configured_catalog()
-            ids=[m['id'] for m in catalog['models'] if m['id']==catalog['default_id'] or m['id'].startswith('gemini-web/')][:4]
+            catalog=self.model_catalog()
+            ids=[m['id'] for m in catalog['models'] if
+                 (m.get('selectable') and m['id']==catalog['default_id']) or
+                 (m.get('availability') in ('verified_route','unverified_route') and
+                  (m['id'].startswith('gemini-web/') or m.get('is_default')))][:4]
             if not ids: raise ValueError('本机尚未发现 Codex 或 Gemini 配置')
             self._model_check_stop=threading.Event()
             self._model_check={'status':'running','models':ids,'results':[],'started_at':dt.datetime.now(dt.timezone.utc).isoformat()}
@@ -57,7 +60,7 @@ class ModelCheckMixin:
                 if self._model_check_stop.is_set():break
                 try:self.invalidate_model(ident)
                 except (ValueError,OSError):pass
-                result={'id':ident,'status':'failed','message':'本次检查未成功，暂不列入可选模型；请检查本机登录或服务连接。'}
+                result={'id':ident,'status':'failed','message':'本次未回答核验成功；目录提供状态与试答结果分别显示，请检查登录、额度或连接。'}
             with self.runlock:self._model_check['results'].append(result)
         with self.runlock:self._model_check.update(status='cancelled' if self._model_check_stop.is_set() else 'completed',finished_at=dt.datetime.now(dt.timezone.utc).isoformat())
 

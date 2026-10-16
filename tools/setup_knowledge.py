@@ -146,11 +146,11 @@ def setup(data, *, vaults=(), initialize_legacy=True, preserve_existing=False):
         atomic_json(settings_file, settings)
     welcome = notes / '开始使用.md'
     if needs_default_notes and not welcome.exists():
-        text = ('# 向上 · 我的知识库\n\n左边阅读和整理内容，右边与 Codex 持续讨论。\n\n'
+        text = ('# 睿顾台 · 我的知识库\n\n左边阅读和整理内容，右边与 Codex 持续讨论。\n\n'
                 '可以从一条近期想法、一个正在做的项目或一个具体问题开始。'
                 '顾问团提供方法参考，个人目标与决定以你自己的记录为准。\n\n'
                 '本目录是普通 Markdown 文件夹，可以在 Obsidian 中作为 Vault 打开。'
-                '保存后可直接搜索；外部修改会在向上重新读取，不需要再点“入库”。\n')
+                '保存后可直接搜索；外部修改会在睿顾台重新读取，不需要再点“入库”。\n')
         fd = os.open(welcome, os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, 'O_NOFOLLOW', 0), 0o600)
         with os.fdopen(fd, 'w', encoding='utf-8') as handle:
             handle.write(text)

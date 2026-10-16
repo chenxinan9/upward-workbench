@@ -126,6 +126,32 @@ class WorkspaceInstallTests(unittest.TestCase):
         self.assertEqual((support/'程序/previous-marker.txt').read_text(),'old')
         self.assertEqual((data/'settings.json').read_bytes(),settings_before)
         self.assertEqual((support/'desktop.json').read_bytes(),desktop_before)
+    def test_renamed_desktop_upgrade_keeps_data_and_restores_old_name_on_failure(self):
+        for fail in (False, True):
+            with self.subTest(final_swap_failure=fail), tempfile.TemporaryDirectory() as folder:
+                home=Path(folder).resolve();data=home/'data';support=home/'Library/Application Support/向上成长顾问'
+                installer.deploy_runtime(ROOT,support,data)
+                before=(data/'settings.json').read_bytes()
+                old=home/'Desktop/向上工作台.app';(old/'Contents').mkdir(parents=True)
+                (old/'Contents/Info.plist').write_bytes(installer.plistlib.dumps({'CFBundleIdentifier':installer.APP_ID}))
+                (old/'old-marker').write_text('existing desktop')
+                target=home/'Desktop/睿顾台.app';real_move=installer.shutil.move
+                def build(source,destination):
+                    destination.mkdir();(destination/'new-marker').write_text('new desktop')
+                def move(source,destination):
+                    if fail and '.向上安装-' in str(source) and Path(destination)==target:
+                        raise OSError('synthetic rename failure')
+                    return real_move(source,destination)
+                with patch.object(installer.Path,'home',return_value=home), patch.object(installer,'build_app',side_effect=build), patch.object(installer.urllib.request,'urlopen',side_effect=OSError('offline')), patch.object(installer.shutil,'move',side_effect=move):
+                    if fail:
+                        with self.assertRaisesRegex(OSError,'rename failure'): installer.install(data,target,upgrade=True,source=ROOT)
+                        self.assertEqual((old/'old-marker').read_text(),'existing desktop');self.assertFalse(target.exists())
+                    else:
+                        receipt=installer.install(data,target,upgrade=True,source=ROOT)
+                        self.assertFalse(old.exists());self.assertTrue((target/'new-marker').is_file())
+                        self.assertEqual((Path(receipt['backup'])/'向上工作台.app/old-marker').read_text(),'existing desktop')
+                        self.assertEqual(json.loads((support/'desktop.json').read_text())['data'],str(data))
+                self.assertEqual((data/'settings.json').read_bytes(),before)
     def test_unsafe_or_source_private_directory_is_rejected(self):
         with self.assertRaises(ValueError):setup_module.setup(ROOT/'private-data',initialize_legacy=False)
         external=self.base/'outside';external.mkdir();linked=self.base/'linked';linked.symlink_to(external)
