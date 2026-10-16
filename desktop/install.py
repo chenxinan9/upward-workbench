@@ -153,12 +153,12 @@ def build_app(source, destination):
                 name=f'icon_{size}x{size}'+('@2x' if scale==2 else '')+'.png'
                 subprocess.run(['sips','-z',str(size*scale),str(size*scale),str(png),'--out',str(icons/name)],check=True,stdout=subprocess.DEVNULL)
         subprocess.run(['iconutil','-c','icns',str(icons),'-o',str(contents/'Resources/AppIcon.icns')],check=True)
-    info={'CFBundleIconFile':'AppIcon.icns','CFBundleDisplayName':'向上工作台','CFBundleName':'向上工作台',
+    info={'CFBundleIconFile':'AppIcon.icns','CFBundleDisplayName':'睿顾台','CFBundleName':'睿顾台',
           'CFBundleIdentifier':APP_ID,'CFBundleExecutable':'GrowthDesk','CFBundlePackageType':'APPL',
-          'CFBundleShortVersionString':'0.4.0','CFBundleVersion':'6',
+          'CFBundleShortVersionString':'0.4.4','CFBundleVersion':'11',
           'NSMicrophoneUsageDescription':'点击语音输入时使用麦克风，把你的话转为可编辑的文字。',
           'NSSpeechRecognitionUsageDescription':'将你主动录入的语音转为文字；优先使用本机识别，必要时使用 Apple 语音服务。','NSHighResolutionCapable':True,
-          'NSAppTransportSecurity':{'NSAllowsLocalNetworking':True},'NSHumanReadableCopyright':'向上知识工作台'}
+          'NSAppTransportSecurity':{'NSAllowsLocalNetworking':True},'NSHumanReadableCopyright':'睿顾台'}
     (contents/'Info.plist').write_bytes(plistlib.dumps(info))
     subprocess.run(['codesign','--force','--deep','--sign','-',str(destination)],check=True)
 
@@ -167,37 +167,41 @@ def install(data, destination, *, upgrade=False, source=SOURCE):
     source=Path(source).resolve(); data=Path(data).expanduser().absolute()
     destination=Path(destination).expanduser().absolute(); _safe_destination(destination); _safe_destination(data)
     support=Path.home()/'Library/Application Support/向上成长顾问'
-    if destination.exists():
+    previous_destination = destination
+    legacy = Path.home()/'Desktop/向上工作台.app'
+    if upgrade and destination == Path.home()/'Desktop/睿顾台.app' and not destination.exists() and legacy.exists():
+        _safe_destination(legacy); previous_destination = legacy
+    if previous_destination.exists():
         if not upgrade: raise ValueError('目标已存在，拒绝覆盖；升级请用 --upgrade')
-        info=destination/'Contents/Info.plist'
+        info=previous_destination/'Contents/Info.plist'
         if not info.is_file() or plistlib.loads(info.read_bytes()).get('CFBundleIdentifier') != APP_ID:
-            raise ValueError('目标不是向上工作台，拒绝替换')
+            raise ValueError('目标不是睿顾台或兼容的向上工作台，拒绝替换')
     try:
         with urllib.request.urlopen('http://127.0.0.1:60128/api/identity',timeout=1) as response:
             running=json.load(response)
         if running.get('application')=='growth-desk':
-            raise ValueError('请先退出向上窗口并停止后台服务，再安装或升级；未改动当前运行副本')
+            raise ValueError('请先退出睿顾台（原向上）窗口并停止后台服务，再安装或升级；未改动当前运行副本')
     except (OSError, json.JSONDecodeError):
         pass
     destination.parent.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='.向上安装-',dir=destination.parent) as temp:
-        candidate=Path(temp)/'向上工作台.app'
+        candidate=Path(temp)/'睿顾台.app'
         build_app(source,candidate)
         settings_path=data/'settings.json'
         settings_before=settings_path.read_bytes() if settings_path.exists() else None
         receipt=deploy_runtime(source,support,data,upgrade=upgrade)
-        backup=Path(receipt['backup']); previous_app=backup/'向上工作台.app'
+        backup=Path(receipt['backup']); previous_app=backup/previous_destination.name
         app_moved=False
         try:
-            if destination.exists():
-                shutil.move(str(destination),str(previous_app)); app_moved=True
+            if previous_destination.exists():
+                shutil.move(str(previous_destination),str(previous_app)); app_moved=True
             shutil.move(str(candidate),str(destination))
         except Exception:
             # Restore both halves of an upgrade if the final desktop swap fails.
             # Keep failed artifacts for diagnosis; never remove private documents.
             if app_moved:
                 if destination.exists(): shutil.move(str(destination),str(backup/'未完成的新入口.app'))
-                shutil.move(str(previous_app),str(destination))
+                shutil.move(str(previous_app),str(previous_destination))
             elif not candidate.exists() and destination.exists():
                 shutil.move(str(destination),str(backup/'未完成的新入口.app'))
             for name in ['程序','desktop.json','deployment.json','start_service.py','启动服务.command']:
@@ -217,7 +221,7 @@ def install(data, destination, *, upgrade=False, source=SOURCE):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data-dir',required=True)
-    parser.add_argument('--destination',default=str(Path.home()/'Desktop/向上工作台.app'))
+    parser.add_argument('--destination',default=str(Path.home()/'Desktop/睿顾台.app'))
     parser.add_argument('--upgrade',action='store_true',help='停止服务后备份旧运行副本并升级，保留私人数据')
     args=parser.parse_args()
     try: print(json.dumps(install(args.data_dir,args.destination,upgrade=args.upgrade),ensure_ascii=False,indent=2))

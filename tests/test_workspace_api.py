@@ -300,6 +300,39 @@ class GrowthWorkspaceTests(unittest.TestCase):
             with self.assertRaises(PermissionError):kw['tool_call']('create_growth_note',{'kind':'idea','title':'x','content':'x'})
         self.run_growth(denied,message='不要保存，只讨论')
 
+    def test_review_create_with_protection_writes_one_note_and_preserves_other_files(self):
+        self.fixture()
+        before = {p: p.read_bytes() for p in self.vault.rglob('*') if p.is_file()}
+        message = '把刚才的阶段复盘保存为一篇阶段复盘，标题为“合成验收阶段复盘”，建议仍明确标注为未采纳建议，只保存这一篇，不修改其他目标或文件。'
+        def check(kw):
+            args = {'kind': 'review', 'title': '合成验收阶段复盘', 'content': '## 未采纳建议\n先验证一项行动。'}
+            receipt = kw['tool_call']('create_growth_note', args)
+            self.assertTrue(receipt['verified'])
+            self.assertEqual(receipt, kw['tool_call']('create_growth_note', args))
+            text = self.desk.vault.read(receipt['document_id'])['text']
+            self.assertIn('adoption: "not-adopted"', text)
+            self.assertIn('## 未采纳建议', text)
+            with self.assertRaises(ValueError):
+                kw['tool_call']('create_growth_note', dict(args, title='不允许第二篇'))
+            with self.assertRaises(PermissionError):
+                kw['tool_call']('write_current', {'content':'不允许覆盖', 'expected_sha256':'0'*64})
+        actual = self.run_growth(check, message=message)
+        self.assertEqual(len(actual['write_receipts']), 1)
+        for path, content in before.items(): self.assertEqual(path.read_bytes(), content)
+        after = {p for p in self.vault.rglob('*') if p.is_file()}
+        self.assertEqual(len(after-set(before)), 1)
+
+    def test_growth_create_keeps_one_exact_title_and_preserves_body(self):
+        self.fixture()
+        for content in ('阶段事实与未采纳建议', '# 单一标题\n\n阶段事实与未采纳建议', '# 不同的小节标题\n\n阶段事实与未采纳建议', '    # 单一标题\n\n保留代码块'):
+            def check(kw):
+                receipt = kw['tool_call']('create_growth_note', {'kind':'review','title':'单一标题','content':content})
+                saved = self.desk.vault.read(receipt['document_id'])['text'].split('\n---\n\n',1)[1]
+                self.assertEqual(saved.splitlines().count('# 单一标题'), 1)
+                self.assertIn(content, saved)
+                self.assertTrue(receipt['verified'])
+            self.run_growth(check, message='保存本阶段复盘')
+
     def test_local_tools_use_existing_permissions_and_current_user_words(self):
         self.fixture();self.desk.settings['local_access']={'enabled':True,'notes_enabled':False,'read_roots':[str(self.vault)],'write_roots':[str(self.vault)]}
         message='查看电脑信息'
@@ -390,3 +423,63 @@ class GrowthWorkspaceTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class EvidenceVisibilityTests(GrowthWorkspaceTests):
+    def test_read_and_search_receipts_publish_without_waiting_for_text(self):
+        self.fixture()
+        def check(kw):
+            kw['on_event']({'type':'progress','turn_id':'accepted-turn','text':'accepted'})
+            tool=kw['tool_call']
+            result=tool('knowledge_search',{'query':'原文'})
+            live=list(self.desk._workspace_live.values())[-1]
+            self.assertEqual(live['knowledge_searches'][-1]['count'],len(result['results']))
+            self.assertEqual(live['references'],[])
+            tool('knowledge_read',{'document_id':'upward:note.md'})
+            live=list(self.desk._workspace_live.values())[-1]
+            self.assertEqual(live['references'][0]['id'],'upward:note.md')
+            self.assertEqual(live['advisor_selection'],[])
+        job=self.run_growth(check)
+        answer=next(m for m in self.desk.store.all('workspace-message') if m.get('job_id')==job['id'])
+        self.assertEqual(answer['knowledge_searches'],job['knowledge_searches'])
+        self.assertEqual(answer['provided_context'][0]['status'],'provided')
+
+    def test_previous_receipts_are_separate_and_scope_filtered(self):
+        self.fixture()
+        session=self.desk.store.put('workspace-session',{'title':'history'})
+        prior=self.desk.store.put('workspace-job',{'session_id':session['id'],'status':'failed','request_context':{'scope':'personal'},'references':[{'id':'upward:note.md','title':'private title'}],'advisor_selection':[{'name':'test-advisor','title':'测试顾问','reason':'historical reason'}]})
+        job=self.desk.store.put('workspace-job',{'session_id':session['id'],'status':'queued','request_context':{'scope':'personal'}})
+        def fake(client,**kw):
+            history=kw['context']['previous_evidence']
+            self.assertEqual(history['source_job_id'],prior['id'])
+            self.assertEqual(history['status'],'historical_only')
+            self.assertEqual(history['references'][0]['id'],'upward:note.md')
+            return {'text':'继续讨论','status':'completed'}
+        with patch('codex_workspace.CodexWorkspace.run_turn',fake):
+            self.desk.workspace_run(job,session,{'id':'fake'},'继续讨论',None,'',False,threading.Event())
+        result=self.desk.store.get(job['id'],'workspace-job')
+        self.assertEqual(result['references'],[])
+        self.assertEqual(result['advisor_selection'],[])
+        self.assertEqual(result['previous_evidence']['source_job_id'],prior['id'])
+        policy=self.desk._workspace_policy({'scope':'advisors'})
+        advisors,roots=self.desk._workspace_scope(policy,None)
+        self.assertEqual(self.desk._workspace_previous_evidence(job,session,policy,advisors,lambda fid:fid.startswith('advisor-')), {})
+
+    def test_previous_document_scope_cannot_import_other_document(self):
+        self.fixture();session=self.desk.store.put('workspace-session',{'title':'scope'})
+        self.desk.store.put('workspace-job',{'session_id':session['id'],'status':'completed','request_context':{'scope':'document','current_file_id':'upward:other.md'},'references':[{'id':'upward:other.md','title':'secret'}]})
+        job=self.desk.store.put('workspace-job',{'session_id':session['id'],'status':'queued'})
+        doc=self.desk.vault.read('upward:note.md');policy=self.desk._workspace_policy({'scope':'document'},doc)
+        advisors,roots=self.desk._workspace_scope(policy,doc)
+        self.assertEqual(self.desk._workspace_previous_evidence(job,session,policy,advisors,lambda fid:True),{})
+
+class ContextDeliveryTests(unittest.TestCase):
+    setUp=WorkspaceAPITest.setUp
+    tearDown=WorkspaceAPITest.tearDown
+    def test_startup_failure_never_claims_context_was_delivered(self):
+        session=self.desk.store.put('workspace-session',{'title':'startup-failure'})
+        job=self.desk.store.put('workspace-job',{'session_id':session['id'],'status':'queued'})
+        with patch('codex_workspace.CodexWorkspace.run_turn',side_effect=RuntimeError('failed before turn acceptance')):
+            self.desk.workspace_run(job,session,{'id':'fake'},'问题',None,'',False,threading.Event())
+        result=self.desk.store.get(job['id'],'workspace-job')
+        self.assertEqual(result['status'],'failed')
+        self.assertEqual(result['provided_context'][0]['status'],'prepared')

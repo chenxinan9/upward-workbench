@@ -8,7 +8,10 @@ vm.createContext(box);vm.runInContext(experience,box);vm.runInContext(source.sli
 (async()=>{
  run("dataScope='model-test';page='chat';S={goals:[],sessions:[],jobs:[],notes:[]};globalThis.requests=[];api=async(path,payload)=>{requests.push({path,payload});return {default_model:'model-a',models:[{id:'model-a',label:'模型甲',provider:'本地路由'},{id:'model-b',label:'模型乙',description:'第二个模型'}],status:'available'}};");
  await Promise.all([run('loadModels()'),run('loadModels()')]);assert.equal(run('requests.length'),1,'concurrent model reads share request');
- assert.match(run('modelSelectorHTML()'),/跟随本机默认 · 模型甲/);assert.match(run('modelSelectorHTML()'),/value="model-b"/);assert.match(run('modelConnectionHTML()'),/以下模型均已完成真实调用验证/);
+ await run('loadModels(true)');assert.equal(run('requests.at(-1).path'),'/api/models','status polling reuses backend directory cache');
+ await run("action('models-refresh')");assert.equal(run('requests.at(-1).path'),'/api/models?refresh=1','explicit legacy refresh bypasses backend cache');
+ assert.equal(run('requests.filter(r=>r.payload).length'),0,'directory refresh never starts generation');
+ assert.match(run('modelSelectorHTML()'),/跟随本机默认 · 模型甲/);assert.match(run('modelSelectorHTML()'),/value="model-b"/);assert.match(run('modelConnectionHTML()'),/当前目录提供的型号可直接选择/);
  run("persistChatState({text:'保留这句未发送的话',model:'model-b'})");element('#chat-text').value='保留这句未发送的话';element('#chat-model').value='model-b';
  assert.equal(run('chatSnapshot().model'),'model-b');assert.equal(run('chatSnapshot().message'),'保留这句未发送的话');
  run("globalThis.firstKey=chatKey();newDraft();persistChatState({text:'另一个草稿',model:'model-a'});globalThis.secondKey=chatKey();draftKey=firstKey");

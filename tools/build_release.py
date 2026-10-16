@@ -18,8 +18,9 @@ FILES += ['CONTRIBUTING.md','SECURITY.md','ROADMAP.md','docs/daily-use.md','docs
 FILES += ['capture.py','conversation.py','advisor_council.py','tools/capture_conversation.py','tests/test_capture.py','tests/test_conversation.py','docs/conversation-capture.md','tests/test_advisor_council.py','tests/test_council_pipeline.py','docs/advisor-council.md']
 FILES += ['tests/test_experience.py','tests/test_existing_updates.py','tests/test_chat_experience.cjs','docs/daily-experience.md']
 FILES += ['docs/models-and-streaming.md','stream_transport.py','model_access.py','model_check.py','tests/desk_fixture.py','tests/test_stream_transport.py','tests/test_model_access.py','tests/test_model_frontend.cjs','tests/test_model_check.py','docs/phase-local.md','phase.py','local_tools.py','web/experience.js','web/experience.css','tests/test_local_tools.py','tests/test_phase.py','tests/test_phase_frontend.cjs']
-FILES += ['docs/release-v0.4.0-rc1.md','docs/knowledge-library.md','docs/release-v0.3.0-rc2.md','docs/advisors.md','docs/reference.md','docs/release-v0.3.0-rc1.md']
+FILES += ['docs/current-workspace.md','docs/knowledge-library.md','docs/release-v0.4.4-rc1.md','docs/release-v0.3.0-rc2.md','docs/advisors.md','docs/reference.md','docs/release-v0.3.0-rc1.md']
 # The network installer and its checksum test remain repository-only to avoid a self-referential archive hash.
+FILES += ['shared_knowledge.py','tests/test_shared_knowledge.py','tests/test_backend_retention.py','tests/test_attachments.py']
 FILES += ['growth_workspace.py','web/growth-workspace.js','web/growth-workspace.css','tests/test_growth_workspace.py','tests/test_growth_workspace.cjs',
           'workspace_api.py','vault.py','codex_workspace.py','web/workspace.html','web/workspace.js','web/workspace.css',
           'tools/migrate_workspace.py','tests/test_vault.py','tests/test_workspace_api.py','tests/test_capability_audit.py','tests/test_codex_workspace.py',
@@ -85,12 +86,12 @@ def build(output):
   if re.search(r'/(?:Users|home)/[A-Za-z0-9_.-]+/',text):raise ValueError('疑似真实用户绝对路径：'+rel)
   if re.search(r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----|sk-[A-Za-z0-9]{30,}',text):raise ValueError('疑似凭据：'+rel)
   content[rel]=data
- manifest={'version':'0.4.0-rc1','edition':'public-growth-workspace-preview','scope':'public source and licensed advisor excerpts; no private user data','metrics':metrics(),'files':[{'path':p,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for p,b in sorted(content.items())]}
+ manifest={'version':'0.4.4-rc1','edition':'public-growth-workspace-preview','scope':'public source and licensed advisor excerpts; no private user data','metrics':metrics(),'files':[{'path':p,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for p,b in sorted(content.items())]}
  content['release-manifest.json']=(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode()
  out.parent.mkdir(parents=True,exist_ok=True)
  with zipfile.ZipFile(out,'x',zipfile.ZIP_DEFLATED) as z:
   for rel,data in sorted(content.items()):
-   i=zipfile.ZipInfo('growth-desk/'+rel,date_time=(2026,10,12,0,0,0));i.compress_type=zipfile.ZIP_DEFLATED;i.external_attr=(0o100755 if rel in ['start.command','desktop/install.py','advisors-bundle/install.py'] else 0o100644)<<16;z.writestr(i,data)
+   i=zipfile.ZipInfo('growth-desk/'+rel,date_time=(2026,10,11,0,0,0));i.compress_type=zipfile.ZIP_DEFLATED;i.external_attr=(0o100755 if rel in ['start.command','desktop/install.py','advisors-bundle/install.py'] else 0o100644)<<16;z.writestr(i,data)
  return {'archive':str(out),'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'files':len(content),'bytes':out.stat().st_size,'metrics':metrics()}
 
 

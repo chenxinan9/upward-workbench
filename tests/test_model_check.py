@@ -30,7 +30,7 @@ class ModelCheckTests(unittest.TestCase):
  def test_failed_explicit_recheck_removes_previously_verified_option(self):
   with patch.object(self.d,'_probe_model',side_effect=ValueError('synthetic failure')):
    self.d.check_models();self.wait_check()
-  self.assertEqual(self.d.model_catalog()['models'],[])
+  self.assertEqual([m for m in self.d.model_catalog()['models'] if m['selectable']],[])
   with self.assertRaises(ValueError):self.d.preview({'message':'keep my draft'})
  def test_default_missing_verification_never_bypasses_allowlist(self):
   self.d.invalidate_model('gpt-fixture')
@@ -38,8 +38,8 @@ class ModelCheckTests(unittest.TestCase):
    with self.assertRaises(ValueError):self.d.preview(request)
   self.assertEqual(self.d.store.all('preview'),[])
  def test_preview_model_is_bound_to_call_and_receipt_io_cannot_undo_reply(self):
-  p=self.d.preview({'message':'只讨论','organize':False,'model':'gpt-fixture'})
   self.d.cli='fixture-cli'
+  p=self.d.preview({'message':'只讨论','organize':False,'model':'gpt-fixture'})
   with patch('threading.Thread.start'):
    j=self.d.send({'preview_id':p['id']})
   calls=[];name=p['advisor_council']['catalog'][0]['name']
