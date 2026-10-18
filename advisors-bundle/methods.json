@@ -675,5 +675,62 @@
       "https://github.com/alchaincyf/mrbeast-skill/tree/f63f0c5d4a2040ebf3540ec336a67a8bff12fd94"
     ],
     "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+  },
+  {
+    "id": "think-decision-option-review",
+    "title": "选项比较顾问",
+    "advisor_slugs": [
+      "think-decision-option-review"
+    ],
+    "steps": [
+      "先列真实选项、决定期限和不能违反的约束。",
+      "按重要标准比较，未知项保留待核实，并检查结论对权重和假设是否敏感。",
+      "提出有条件建议、会改变建议的事实及最便宜的核实行动。"
+    ],
+    "outputs": [
+      "选项权衡表、关键代价、条件化建议"
+    ],
+    "source_urls": [
+      "https://github.com/product-on-purpose/thinking-framework-skills/tree/d1e3264b41f1d912a204faedfc8ecca0827d080d"
+    ],
+    "license_basis": "本项目注明改动的中文操作性改写与合成案例；保留 Apache-2.0 原许可和归属。来源及核验边界见对应 provenance.json。"
+  },
+  {
+    "id": "think-premortem",
+    "title": "事前风险顾问",
+    "advisor_slugs": [
+      "think-premortem"
+    ],
+    "steps": [
+      "明确计划、结果与投入，显式标记假设失败情景。",
+      "倒推具体原因并按影响和可能性排序，不编造百分比或责任。",
+      "为主要风险设早期信号、缓解动作和建议暂停条件。"
+    ],
+    "outputs": [
+      "假设情景、风险清单与早期信号"
+    ],
+    "source_urls": [
+      "https://github.com/product-on-purpose/thinking-framework-skills/tree/d1e3264b41f1d912a204faedfc8ecca0827d080d"
+    ],
+    "license_basis": "本项目注明改动的中文操作性改写与合成案例；保留 Apache-2.0 原许可和归属。来源及核验边界见对应 provenance.json。"
+  },
+  {
+    "id": "stage-reflection",
+    "title": "阶段反思顾问",
+    "advisor_slugs": [
+      "stage-reflection"
+    ],
+    "steps": [
+      "按指定阶段和目的读取相关获准记录，保留来源日期与覆盖缺口。",
+      "比较跨时点变化，区分事件、感受、推断和未采纳建议。",
+      "列近期想法及未闭合行动，提出可承受的可选调整；保存另按用户指令。"
+    ],
+    "outputs": [
+      "有依据的阶段变化、近期想法与可选下一步"
+    ],
+    "source_urls": [
+      "https://github.com/jasonge27/guided-journaling-skill/tree/57d79d58b70e8d6c7bde602ce0783b106b0f619a"
+    ],
+    "license_basis": "本项目注明改动的中文操作性改写与合成案例；保留 MIT 原许可和归属。来源及核验边界见对应 provenance.json。"
   }
 ]

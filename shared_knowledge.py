@@ -43,7 +43,7 @@ class SharedKnowledge:
                 if not stat.S_ISREG(info.st_mode) or info.st_uid != os.getuid() or stat.S_IMODE(info.st_mode) != 0o600 or info.st_size > 4096:
                     raise ValueError()
                 value = json.load(handle)
-            if (value.get('version') != 1 or value.get('protocol_version') != 1
+            if (not isinstance(value, dict) or value.get('version') != 1 or value.get('protocol_version') != 1
                     or value.get('application') != 'local-knowledge-workbench' or value.get('target') != 'growth'
                     or value.get('online') is not True or type(value.get('port')) is not int or not 1024 <= value['port'] <= 65535
                     or not isinstance(value.get('instance_id'), str) or not re.fullmatch(r'[A-Za-z0-9_-]{16,128}', value['instance_id'])
@@ -82,10 +82,21 @@ class SharedKnowledge:
             value = json.loads(raw)
             if not isinstance(value,dict): raise SharedError('共享服务回执无效。')
             if response.status != 200 or value.get('ok') is False or value.get('error'):
-                error = value.get('error') or {}
-                raise SharedError(error.get('message', '共享来源暂不可核验，请重试。'), error.get('code', 'shared_unavailable'), error.get('retryable', False))
+                error = value.get('error')
+                error = error if isinstance(error, dict) else {}
+                messages = {
+                    'share_source_changed': '来源范围或隐私规则已变，请在知识工作台重新分享。',
+                    'share_conflict': '共享版本或范围已变，请重新核对目录与片段。',
+                    'share_revoked': '该片段已撤回，请在知识工作台重新分享。',
+                    'share_not_found': '该共享片段已不可用，请在知识工作台重新分享。',
+                    'shared_scope_changed': '共享范围已变，请重新核对目录。',
+                }
+                code = error.get('code')
+                code = code if isinstance(code, str) and code in messages else 'shared_unavailable'
+                raise SharedError(messages.get(code, '共享来源暂不可核验；问题与片段选择保留。'),
+                                  code, error.get('retryable') is True)
             value = value.get('data', value)
-            if value.get('instance_id') != connection['instance_id'] or type(value.get('generation')) is not int or not SHA.fullmatch(str(value.get('scope_fingerprint', ''))):
+            if not isinstance(value, dict) or value.get('instance_id') != connection['instance_id'] or type(value.get('generation')) is not int or not SHA.fullmatch(str(value.get('scope_fingerprint', ''))):
                 raise SharedError('共享实例或范围回执无效，请重新预览。', 'shared_scope_changed')
             return value
         except (OSError, http.client.HTTPException, json.JSONDecodeError):
@@ -118,7 +129,9 @@ class SharedKnowledge:
         if not isinstance(shares, list) or len(shares) > 12:
             raise SharedError('共享目录回执无效。')
         for item in shares:
-            if not SHARE_ID.fullmatch(str(item.get('share_id', ''))) or type(item.get('version')) is not int:
+            if (not isinstance(item, dict) or not SHARE_ID.fullmatch(str(item.get('share_id', '')))
+                    or type(item.get('version')) is not int or item['version'] < 1
+                    or not isinstance(item.get('state'), str) or len(item['state']) > 64):
                 raise SharedError('共享目录身份无效。')
         return dict(self.scope(value), shares=[{k: item[k] for k in ('share_id', 'version', 'state')} for item in shares])
 

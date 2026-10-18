@@ -350,7 +350,7 @@ class WorkspaceTests(unittest.TestCase):
             self.assertEqual(config['features.'+name],'false')
         self.assertEqual(config['sandbox_mode'],'"read-only"')
     def test_tool_schema_is_fixed_and_does_not_offer_arbitrary_paths(self):
-        self.assertEqual([x['name'] for x in TOOLS],['knowledge_search','knowledge_tree','knowledge_read','write_current','select_advisor','create_growth_note','update_growth_goal','local_action','attachment_read'])
+        self.assertEqual([x['name'] for x in TOOLS],['knowledge_search','knowledge_tree','knowledge_read','write_current','select_advisor','create_growth_note','update_growth_goal','local_action','attachment_read','read_growth_plan','update_growth_plan'])
         write=next(x['inputSchema'] for x in TOOLS if x['name']=='write_current');self.assertEqual(set(write['properties']),{'content','expected_sha256'})
         self.assertFalse(write['additionalProperties'])
 

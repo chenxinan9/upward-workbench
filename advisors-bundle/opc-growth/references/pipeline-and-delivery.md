@@ -14,9 +14,15 @@
 | 执行与内审 | 事实、权限、质量是否可核对？ | 版本、证据、问题及修复 |
 | 交付验收 | 客户能否按预期使用？ | 实际反馈、未解决项、接受状态 |
 
+## 客户定位先留证据
+
+用已有获准资料说明：为哪类人在什么场景解决哪项任务、他们原来怎么办、为何值得改变、谁使用和谁付钱、谁暂不适合。把来源与日期附在关键判断旁；从介绍页推测的优势是待验证定位，不能变成客户证言。尚无数据时给可讨论的草案和一条验证动作，不制造完整用户画像。
+
 ## 先定位流失环节
 
 咨询多而方案少可能是人群不匹配或需求不清；方案多而成交少可能是价值、范围、信任或预算问题。要查同一批机会的实际记录，不能套通用“健康转化率”给业务判死刑。
+
+把渠道、人群、期间与分母写清，避免把不同批客户的点击、咨询、付款混成漏斗。样本不足时保留数量与未知。选择一处最有证据的瓶颈，约定最小改动、观察期、投入上限和停止/回退条件；同时记录每单贡献、交付工时、返工与已占用产能。咨询增长而产能或贡献变差，不算增长成功。
 
 合成例：资料整理服务频繁返工。核对后发现客户认为包含重新撰写，而提供者只计划整理。改进首先是样例、排除项和验收标准，不是增加自动化工具。
 
@@ -33,3 +39,11 @@
 - 固定版本方法入口：[上游 SKILL.md](https://raw.githubusercontent.com/jiangye1314/opc-skill/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89/opc-growth/SKILL.md)。
 - 上游提交：`74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89`。许可：`Apache-2.0`；见 [LICENSE](../LICENSE) 与 [provenance.json](../provenance.json)。上游作者署名保留于本技能的 LICENSE 与 provenance.json。
 - 改写范围：保留适用的分析框架，重写步骤和示例，移除私人接入、固定效果承诺、长引用及未随包研究依赖。文中其他阅读入口是核对线索，本页不声称已逐条重新验证全部原典或研究。
+
+## 2026-10-18 方法增补与权利边界
+
+新增部分由 Growth Desk contributors 按个人业务场景重新编写；借鉴以下固定版本的方法组织，不复制嘉宾长引、采访逐字稿或 Newsletter 正文，也不采用固定访谈人数、美元价档或成功率承诺。
+
+- [Lenny Skills：客户访谈](https://github.com/RefoundAI/lenny-skills/blob/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/customer-interviews/SKILL.md)、[想法验证](https://github.com/RefoundAI/lenny-skills/blob/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/idea-validation/SKILL.md)。MIT 只覆盖技能文件结构与组织，底层内容权利仍归作者与嘉宾；许可声明见 [LICENSE.lenny-skills](../LICENSE.lenny-skills)。此处不声称重新核验了全部节目或历史案例。
+- [Marketing Skills：客户定位](https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/product-marketing/SKILL.md)、[定价](https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/pricing/SKILL.md)。保留 [MIT 声明](../LICENSE.marketingskills)；不导入赞助推广、外部账号连接、自动发信或广告执行。
+- 原 Apache-2.0 来源与资料保留不变；本页新增和旧版文件的核验范围、来源哈希见 [provenance.json](../provenance.json)。

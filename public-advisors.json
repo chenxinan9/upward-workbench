@@ -548,5 +548,35 @@
     "commit": "9a0d0b871e8b84068d687b3260561b41b0609393",
     "license": "MIT",
     "distribution": "source_link_only_in_this_release; license-compatible candidate pending per-file rights, attribution and privacy review"
+  },
+  {
+    "slug": "think-decision-option-review",
+    "title": "选项比较顾问",
+    "category": "决策与行动",
+    "repo": "product-on-purpose/thinking-framework-skills",
+    "url": "https://github.com/product-on-purpose/thinking-framework-skills",
+    "commit": "d1e3264b41f1d912a204faedfc8ecca0827d080d",
+    "license": "Apache-2.0",
+    "distribution": "reviewed-adaptation-bundled; see per-file attribution and provenance"
+  },
+  {
+    "slug": "think-premortem",
+    "title": "事前风险顾问",
+    "category": "决策与行动",
+    "repo": "product-on-purpose/thinking-framework-skills",
+    "url": "https://github.com/product-on-purpose/thinking-framework-skills",
+    "commit": "d1e3264b41f1d912a204faedfc8ecca0827d080d",
+    "license": "Apache-2.0",
+    "distribution": "reviewed-adaptation-bundled; see per-file attribution and provenance"
+  },
+  {
+    "slug": "stage-reflection",
+    "title": "阶段反思顾问",
+    "category": "复盘与成长",
+    "repo": "jasonge27/guided-journaling-skill",
+    "url": "https://github.com/jasonge27/guided-journaling-skill",
+    "commit": "57d79d58b70e8d6c7bde602ce0783b106b0f619a",
+    "license": "MIT",
+    "distribution": "reviewed-adaptation-bundled; see per-file attribution and provenance"
   }
 ]

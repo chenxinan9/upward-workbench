@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-methods-with-reference-materials",
+  "name": "stage-reflection",
+  "title": "阶段反思顾问",
+  "upstream": {
+    "repo": "jasonge27/guided-journaling-skill",
+    "url": "https://github.com/jasonge27/guided-journaling-skill",
+    "commit": "57d79d58b70e8d6c7bde602ce0783b106b0f619a",
+    "skill_source_url": "https://raw.githubusercontent.com/jasonge27/guided-journaling-skill/57d79d58b70e8d6c7bde602ce0783b106b0f619a/skills/guided-journaling/SKILL.md",
+    "skill_sha256": "170a5fefe22771269df3739862b1210a7646178947201a8cb3058578fa831ad7",
+    "license_source_url": "https://raw.githubusercontent.com/jasonge27/guided-journaling-skill/57d79d58b70e8d6c7bde602ce0783b106b0f619a/LICENSE.md",
+    "license_sha256": "0889ae7da9ab02e3699da8f989b1ff338acea05d390237af41f835f1f985130d",
+    "selected_sources": [
+      {
+        "path": "LICENSE.md",
+        "url": "https://raw.githubusercontent.com/jasonge27/guided-journaling-skill/57d79d58b70e8d6c7bde602ce0783b106b0f619a/LICENSE.md",
+        "bytes": 1064,
+        "sha256": "0889ae7da9ab02e3699da8f989b1ff338acea05d390237af41f835f1f985130d"
+      },
+      {
+        "path": "skills/guided-journaling/SKILL.md",
+        "url": "https://raw.githubusercontent.com/jasonge27/guided-journaling-skill/57d79d58b70e8d6c7bde602ce0783b106b0f619a/skills/guided-journaling/SKILL.md",
+        "bytes": 7725,
+        "sha256": "170a5fefe22771269df3739862b1210a7646178947201a8cb3058578fa831ad7"
+      },
+      {
+        "path": "skills/guided-journaling/modes/reflective.md",
+        "url": "https://raw.githubusercontent.com/jasonge27/guided-journaling-skill/57d79d58b70e8d6c7bde602ce0783b106b0f619a/skills/guided-journaling/modes/reflective.md",
+        "bytes": 3215,
+        "sha256": "ec0f1fd8e34fe87c0a3cf05528a313ebcca0a0ec27cd35364594200df34b42e7"
+      }
+    ],
+    "notice_review": "Fixed-commit repository tree inspected: no upstream NOTICE file was present. Existing license and copyright notices retained verbatim."
+  },
+  "license": "MIT",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Chinese workflow and synthetic references adapted by Growth Desk contributors, 2026-10-18. No endorsement by upstream authors.",
+  "changes": [
+    "Rewrote the selected upstream entry into a standalone Chinese advisor workflow.",
+    "Retained exact upstream license bytes and notices; omitted upstream executable tools, installation instructions and unrelated materials.",
+    "Added an original Chinese synthetic practice case and an optional task-specific reference; examples contain no private-user data.",
+    "Selected only nonclinical reflective-listening, clarification and user-agency ideas from the main skill and reflective mode.",
+    "Removed therapy/CBT role, mandatory all-history reading, full transcript storage and automatic saving; added dated stage comparison and idea/status separation."
+  ],
+  "review_scope": "Selected upstream text and license fetched at the fixed commit and read on 2026-10-18. Distributed adaptation checked for self-contained use, privacy and unsafe instructions. Upstream cited empirical studies were not independently revalidated; no effectiveness claims or numerical effect sizes reproduced. No upstream code executed.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1064,
+      "sha256": "0889ae7da9ab02e3699da8f989b1ff338acea05d390237af41f835f1f985130d"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 2890,
+      "sha256": "5a7475ccd712cdd37dd6f66ecc53682327eb6a344c976af9c12cd544ced734af"
+    },
+    {
+      "path": "references/stage-reflection-card.md",
+      "bytes": 3403,
+      "sha256": "673cba8264108137b7deafc50777909d680103b517559db2dcec5be048f15cc9"
+    }
+  ],
+  "updated_at": "2026-10-18",
+  "reference_sources": [
+    {
+      "file": "references/stage-reflection-card.md",
+      "source_url": "https://github.com/jasonge27/guided-journaling-skill/blob/57d79d58b70e8d6c7bde602ce0783b106b0f619a/skills/guided-journaling/SKILL.md",
+      "additional_source_urls": [
+        "https://raw.githubusercontent.com/jasonge27/guided-journaling-skill/57d79d58b70e8d6c7bde602ce0783b106b0f619a/skills/guided-journaling/modes/reflective.md"
+      ],
+      "license": "MIT",
+      "changes": "Chinese operational study note, card and original synthetic example; source limits stated inside the reference."
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 from pathlib import Path
 import datetime as dt, hashlib, json, re, zipfile
 import xml.etree.ElementTree as ET
+from growth_plan import GrowthPlanMixin
 
 THEMES={
  'career':['职业','求职','简历','面试','岗位','薪资','职场'],
@@ -18,13 +19,14 @@ def plain(text,limit=5000):
     if not isinstance(text,str) or len(text)>limit:raise ValueError('文字类型或长度不正确')
     return text.strip()
 
-class GrowthMixin:
+class GrowthMixin(GrowthPlanMixin):
     def plan(self):
         path=self.settings.get('growth_plan')
-        if path and Path(path).is_file():
-            result=json.loads(Path(path).read_text())
-            result['connected']=True
-        else:result={'schema_version':1,'connected':False,'domains':[],'source_register':[]}
+        try:
+            _,_,result=self._plan_read();result['connected']=True
+        except (ValueError,OSError,UnicodeError):
+            result={'schema_version':1,'connected':False,'domains':[],'source_register':[],
+                    'plan_notice':'个人方案尚未配置或暂不可核验；未自动创建或覆盖文件'}
         return result
     def commitments(self):
         config=self.settings.get('advisor_config')
@@ -38,8 +40,13 @@ class GrowthMixin:
         return {'id':'source:canonical-commitments','title':'现有目标与承诺台账','text':path.read_text()[:60000],'source':'本人现行周复盘台账 · 只读','kind':'历史目标、已知结果与未确认建议，须保留原状态'}
     def source_items(self):
         sources=self.plan().get('source_register',[])
-        return [dict(v,id=k) for k,v in sources.items()] if isinstance(sources,dict) else sources
+        return [dict(v,id=k) for k,v in sources.items() if isinstance(v,dict)] if isinstance(sources,dict) else [v for v in sources if isinstance(v,dict)] if isinstance(sources,list) else []
     def source(self,sid):
+        if isinstance(sid,str) and sid.startswith('growth-update:'):
+            row=self.store.get(sid.split(':',1)[1],'growth-plan-statement')
+            if row.get('status')!='verified':raise ValueError('这项方案陈述尚未完成写回核验')
+            return {'id':sid,'title':'本轮长期方向更新原话','text':'本人当轮要求：\n'+row['user_text']+'\n\n写入的长期方向：\n'+row['value'],
+                    'source':row.get('at',''),'kind':'本人当轮明确要求与实际写回；不代表旧资料中的原话'}
         if sid=='canonical-commitments':return self.commitment_source()
         source=next((s for s in self.source_items() if s.get('id',s.get('source_id'))==sid),None)
         if not source:raise ValueError('资料来源不存在')

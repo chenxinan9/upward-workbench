@@ -1,9 +1,7 @@
 """Dated personal phase evidence. No inferred publishing streaks or broad file scans."""
 import datetime as dt
 import json
-import threading
-import time
-import urllib.request
+from creator_evidence import read_creator_evidence
 from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo('Asia/Shanghai')
@@ -29,58 +27,11 @@ def moment_key(value):
 
 class PhaseMixin:
     def creator_evidence(self):
-        """Only the explicitly configured local creator service, cached for 60s."""
-        if not self.settings.get('creator_port'):
-            return {'status': 'not_configured', 'works': [], 'publications': [], 'warnings': ['尚未连接自媒体工作台，不能据此判断发布数量。']}
-        port = self.settings['creator_port']
-        if type(port) is not int or not 1024 <= port <= 65535:
-            return {'status': 'unavailable', 'works': [], 'publications': [], 'warnings': ['本地工作台端口配置不正确。']}
-        cached = getattr(self, '_creator_cache', None)
-        if cached and time.monotonic() - cached[0] < 60:
-            return cached[1]
-        lock = getattr(self, '_creator_lock', None)
-        if lock is None:
-            self._creator_lock = lock = threading.Lock()
-        with lock:
-            cached = getattr(self, '_creator_cache', None)
-            if cached and time.monotonic() - cached[0] < 60:
-                return cached[1]
-            result = {'status': 'connected', 'read_at': dt.datetime.now(TZ).isoformat(), 'works': [], 'publications': [], 'warnings': []}
-            # Reject redirects and environment proxies; this is a local-only bridge.
-            class NoRedirect(urllib.request.HTTPRedirectHandler):
-                def redirect_request(self, *args):
-                    return None
-            opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
-            excluded_projects=set()
-            for endpoint in ('/api/state', '/api/publications/history'):
-                try:
-                    with opener.open(f'http://127.0.0.1:{port}{endpoint}', timeout=4) as response:
-                        raw = response.read(8_000_001)
-                    if len(raw) > 8_000_000:
-                        raise ValueError('来源过大')
-                    data = json.loads(raw)
-                    if endpoint.endswith('state'):
-                        for p in data.get('projects', []):
-                            if p.get('synthetic') or p.get('purpose') in ('test','acceptance','fixture'):
-                                excluded_projects.add(p.get('id'));continue
-                            result['works'].append({'id': p.get('id'), 'title': p.get('title', '未命名作品'), 'status': p.get('status', '待核'), 'at': p.get('created_at'), 'source': '自媒体工作台·本地项目记录'})
-                    else:
-                        seen = set()
-                        for p in data.get('records', []):
-                            if p.get('synthetic') or p.get('purpose') in ('test','acceptance','fixture') or p.get('project_id') in excluded_projects:continue
-                            key = (p.get('platform'), p.get('post_id') or p.get('url') or p.get('id'))
-                            if key in seen:
-                                continue
-                            seen.add(key)
-                            result['publications'].append({'id': p.get('id'), 'title': p.get('project_title', '未命名作品'), 'at': p.get('evidence_at'), 'platform': p.get('platform'), 'status': p.get('status', '待核'), 'phase': p.get('phase'), 'project_id': p.get('project_id'), 'url': p.get('url'), 'evidence_level': p.get('evidence_level'), 'live_verified': p.get('live_verified', False), 'source': p.get('source_label', '本地发布记录')})
-                except Exception:
-                    result['warnings'].append('未成功读取' + ('作品记录' if endpoint.endswith('state') else '发布回执') + '；缺失不表示没有成果。')
-            if len(result['warnings']) == 2:
-                result['status'] = 'unavailable'
-            elif result['warnings']:
-                result['status'] = 'partial'
-            self._creator_cache = (time.monotonic(), result)
-            return result
+        """Only pinned production records are personal evidence; legacy ports are unverified."""
+        if 'creator_binding' in self.settings:
+            return read_creator_evidence(self.settings['creator_binding'])
+        return {'status': 'not_configured', 'identity_verified': False, 'works': [], 'publications': [],
+                'coverage': {'complete': False}, 'warnings': ['尚未核定创宇台正式资料库身份；旧端口不作为本人创作证据。']}
 
     def review_metadata(self, source):
         if not isinstance(source,str) or not source.startswith('codex:'):return {}
@@ -146,16 +97,19 @@ class PhaseMixin:
             if within(receipt.get('created_at')):
                 events.append({'id': receipt['id'], 'title': '已整理：'+'；'.join(str(x.get('title','记录'))[:80] for x in receipt.get('saved_items',[])[:3]), 'at': receipt.get('created_at'), 'kind': 'capture', 'status': receipt.get('status'), 'source': '实际保存回执', 'ref': 'capture:'+receipt['id']})
         creator = dict(self.creator_evidence())
-        creator['works'] = [x for x in creator.get('works', []) if within(x.get('at'))]
-        creator['publications'] = [x for x in creator.get('publications', []) if within(x.get('at'))]
+        creator['works'] = [x for x in creator.get('works', []) if not x.get('at') or within(x.get('at'))]
+        creator['publications'] = [x for x in creator.get('publications', []) if not x.get('at') or within(x.get('at'))]
         creator['days'] = []
         for offset in range(days):
             date = (start+dt.timedelta(days=offset)).isoformat()
-            records = [x for x in creator['publications'] if local_date(x.get('at')) == date and x.get('phase') == 'published']
+            records = [x for x in creator['publications'] if local_date(x.get('at')) == date and x.get('phase') == 'published' and x.get('at_kind') != '登记日期（发生日未登记）']
             works = {x.get('project_id') or x['title'] for x in records}
-            creator['days'].append({'date': date, 'count': len(works), 'status': '有发布留底' if works else '尚无发布留底'})
-        creator['summary'] = '同一作品多平台分发按1篇计；这里是本地证据留底，不代表刚刚核验了平台。缺记录不等于当天没有创作。'
+            complete = creator.get('status') == 'connected' and creator.get('coverage', {}).get('complete', True)
+            creator['days'].append({'date': date, 'count': len(works) if complete else None, 'known_count': len(works), 'status': ('有发布留底' if works else '尚无发布留底') if complete else '未完整核对'})
+        creator['summary'] = '同一作品多平台分发按1篇计；仅统计已绑定正式库的本地发布登记，不代表刚刚核验了平台。缺记录不等于当天没有创作；读取时刻不是作品或发布发生日。'
         for row in creator['publications']:
+            if not within(row.get('at')):
+                continue
             events.append({'id': row['id'], 'title': row['title'], 'at': row['at'], 'kind': 'publication', 'status': row['status'], 'source': row['source'], 'ref': row.get('url')})
         sources = [{'id': 'workbench', 'title': '向上目标、想法与对话', 'status': 'connected', 'read_at': dt.datetime.now(TZ).isoformat(), 'detail': '本人原话与真实保存记录'}]
         methods = [s for s in self.source_items() if s.get('evidence_type') == 'historical_method' and ('让我伟大' in s.get('path', '') or '让我伟大' in s.get('title', ''))]

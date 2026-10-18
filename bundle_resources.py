@@ -109,7 +109,7 @@ def advisor_resources(root):
         if not isinstance(entry, dict):
             raise ValueError('Invalid advisor inventory entry')
         rel = relative_path(entry.get('path'))
-        if rel.as_posix() not in ('SKILL.md', 'LICENSE') and not (
+        if rel.as_posix() not in ('SKILL.md', 'LICENSE') and not re.fullmatch(r'LICENSE\.[a-z0-9][a-z0-9-]{0,63}', rel.as_posix()) and not (
             len(rel.parts) > 1 and rel.parts[0] in ('references', 'examples') and rel.suffix.lower() in ('.md', '.txt', '.json')
         ):
             raise ValueError('Unreviewed advisor resource type')

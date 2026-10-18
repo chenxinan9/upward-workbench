@@ -157,6 +157,9 @@ class GrowthWorkspaceMixin:
             existing.add(body);ideas.append({'id':row['id'],'title':body[:60],'body':body,'created_at':at,
                 'source':'本人近期对话 · 未当作已完成或正式计划','file_id':None,'ref':'workspace-message:'+row['id']})
         today=clock.date().isoformat();actions=[];overdue=[];unscheduled=[]
+        focus=dict(snapshot['focus'])
+        focus.update(applies_today=focus.get('date')==today and focus.get('status')=='confirmed',
+                     date_note=('今日已明确更新' if focus.get('status')=='confirmed' else '今日重点尚未确认') if focus.get('date')==today else '历史或未注明适用日期的重点，不计为今日已确认')
         for goal in goals:
             if goal.get('status')!='active':continue
             for step in goal.get('steps',[]):
@@ -174,15 +177,18 @@ class GrowthWorkspaceMixin:
         for source in self.source_items():
             sources.append({'id':source['id'],'title':source.get('title',''),'date':source.get('date',''),
                 'status':source.get('evidence_type','参考资料'),'detail':source.get('read_scope',source.get('note',''))})
+        for source in self.store.all('growth-plan-statement'):
+            if source.get('status')=='verified':sources.append({'id':'growth-update:'+source['id'],'title':'本人当轮方向更新原话','date':source.get('at',''),'status':'current_user_instruction','detail':'当轮要求和实际写回，可回读'})
         sources+=snapshot['sources']
         for warning in warnings:sources.append({'id':'scan-warning','title':'知识空间读取范围','status':'partial','detail':warning})
         method=dict(snapshot['method'],mastery=snapshot['vision'].get('mastery',{}))
         return {'period':period,'generated_at':clock.isoformat(),
-                'today':{'date':today,'quote':daily,'focus':snapshot['focus'],'actions':actions,'overdue':overdue,'unscheduled':unscheduled},
+                'today':{'date':today,'quote':daily,'focus':focus,'actions':actions,'overdue':overdue,'unscheduled':unscheduled},
                 'panorama':snapshot['vision'],'goals':goals,'goal_proposals':[{k:d[k] for k in ('id','title','summary','status','plan_draft','actions','source_ids') if k in d} for d in self.plan().get('domains',[])],
                 'ideas':sorted(ideas,key=lambda x:moment_key(x['created_at']),reverse=True)[:100],
                 'reviews':sorted(reviews,key=lambda x:moment_key(x['created_at']),reverse=True)[:50],
                 'learning':sorted(learning,key=lambda x:moment_key(x['created_at']),reverse=True)[:80],'events':snapshot['events'],'creator':snapshot['creator'],'method':method,'sources':sources,
+                'freshness':self.source_freshness(),
                 'advisors':self._workspace_advisors,'local_access':self.local_capabilities(),'presets':PURPOSES,
                 'scope_warnings':list(dict.fromkeys(warnings)),'scope_note':'共享 Markdown 为当前文档事实；本人原话、历史资料、候选计划与实际成果分别保留。'}
 
@@ -190,7 +196,7 @@ class GrowthWorkspaceMixin:
         if purpose not in {p['id'] for p in PURPOSES}:raise ValueError('未知成长用途')
         snapshot=self.growth_snapshot(days)
         context={'purpose':purpose,'period':snapshot['period'],'generated_at':snapshot['generated_at'],
-                 'scope_note':snapshot['scope_note'],'focus':snapshot['today']['focus']}
+                 'scope_note':snapshot['scope_note'],'focus':snapshot['today']['focus'], 'freshness':snapshot['freshness']}
         fields={'daily':['today','creator'],'panorama':['panorama'],'goals':['goals','goal_proposals'],
                 'ideas':['ideas'],'review':['goals','ideas','reviews','learning','events','creator','method'],
                 'learn':['method','learning'],'local':[],'general':[]}

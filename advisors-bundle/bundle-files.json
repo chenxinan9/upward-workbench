@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-11",
-  "scope": "All reviewed bundle files except this manifest; no private reports",
+  "generated_at": "2026-10-18",
+  "scope": "Reviewed advisor entries, references and license notices; no private reports",
   "files": [
     {
       "path": "README.md",
-      "bytes": 3179,
-      "sha256": "a7bc8fbc5b4f02884a04b4a2f682b7fa5bd54da3212c4f0eb15864bdc27b6a60"
+      "bytes": 3196,
+      "sha256": "b56a8dd77ce8330b115f7251fba317ff8b9ad91017fc04e2d808733338da3ad0"
     },
     {
       "path": "adler-perspective/LICENSE",
@@ -634,8 +634,8 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 15532,
-      "sha256": "f27bae495b465e79e9c17ba9db3aee4a930b305f84965777d09e884ddcf59dc2"
+      "bytes": 16511,
+      "sha256": "c7787fd72ee1153ee17928f25f220575243d1aa8719fd732a89120b93a41fd61"
     },
     {
       "path": "mao-zedong-perspective/LICENSE",
@@ -659,8 +659,8 @@
     },
     {
       "path": "methods.json",
-      "bytes": 30680,
-      "sha256": "f2ef328cb85613e88a0877d2378b9fdea9ed2f5e57a5e6f43cf231e4c2e713d1"
+      "bytes": 33144,
+      "sha256": "00751aa3a05aa5cc91174c12ebe0691cee87e20d4743d0cf3b803bf704a6dfa7"
     },
     {
       "path": "montaigne-perspective/LICENSE",
@@ -788,24 +788,34 @@
       "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
     },
     {
+      "path": "opc-growth/LICENSE.lenny-skills",
+      "bytes": 1067,
+      "sha256": "e282fa0e40644e932d13e2d77e8c91e9599c516deea52f22563e3a9e8389a416"
+    },
+    {
+      "path": "opc-growth/LICENSE.marketingskills",
+      "bytes": 1069,
+      "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+    },
+    {
       "path": "opc-growth/SKILL.md",
-      "bytes": 2452,
-      "sha256": "5230a5fbb9985d3460d74d21dcdb0b4dae33cc56693a2f1b5f815492ba9e4ddf"
+      "bytes": 3705,
+      "sha256": "5099aba17b73e7c9d1d3ea02a4c896c863bfb93f054350b57c2d2cf673cd8cbb"
     },
     {
       "path": "opc-growth/provenance.json",
-      "bytes": 3676,
-      "sha256": "e7cd330ff9a10490b123c5615875d1316a37eaaa21a960c54e50f3ab722e739b"
+      "bytes": 11041,
+      "sha256": "5e48d81354abd1e8aaa1cdd0a20b0538bca52ee6b08c37f6e59dc0ac0c2011f6"
     },
     {
       "path": "opc-growth/references/pipeline-and-delivery.md",
-      "bytes": 2727,
-      "sha256": "7c6e82242ef58775ea6d6b9d20c16fa151d9e6245075deb0d5442c83b398b06c"
+      "bytes": 4894,
+      "sha256": "fccf29c8042ea8d0d88dd40bd9c6341d50234640c8c2173b17a6a753eec22093"
     },
     {
       "path": "opc-growth/references/retention-with-consent.md",
-      "bytes": 2493,
-      "sha256": "56abe53686e7a0947a8831d90877759ec4bc572030f72b8826570ccdb0ac9b45"
+      "bytes": 4509,
+      "sha256": "a014c535c3879308519b69a17776950a5f8aceab2230654cf141e63cdab839e0"
     },
     {
       "path": "opc-strategy/LICENSE",
@@ -813,24 +823,34 @@
       "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
     },
     {
+      "path": "opc-strategy/LICENSE.lenny-skills",
+      "bytes": 1067,
+      "sha256": "e282fa0e40644e932d13e2d77e8c91e9599c516deea52f22563e3a9e8389a416"
+    },
+    {
+      "path": "opc-strategy/LICENSE.marketingskills",
+      "bytes": 1069,
+      "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+    },
+    {
       "path": "opc-strategy/SKILL.md",
-      "bytes": 2509,
-      "sha256": "733109a3090c4acd3a37ce7256af6829ac5f056bab60528224c758343bc3b1df"
+      "bytes": 3693,
+      "sha256": "47b35843e7a4e67ee067a6155d47775b68a01f703d686e90be08dd6e9de6201f"
     },
     {
       "path": "opc-strategy/provenance.json",
-      "bytes": 3688,
-      "sha256": "d88ac12ad2238a7f1b15fc66df0362a94e3097ed20f9caf916fb18d36bbf3b59"
+      "bytes": 11061,
+      "sha256": "3a92de7624a56f9c974c52a14d216174d48e9a39d32b66db2dec2f85131621b5"
     },
     {
       "path": "opc-strategy/references/customer-problem-validation.md",
-      "bytes": 2729,
-      "sha256": "77e4afa4ace62707d51a4feb0147a2ea1de99817847498b10c3a25f3ff9ed37e"
+      "bytes": 5379,
+      "sha256": "aa5182eb8cde6c4d2fe70a40c5c192b75dfce0df3b2d08d4fe9431322aca53a1"
     },
     {
       "path": "opc-strategy/references/pricing-and-capacity.md",
-      "bytes": 2540,
-      "sha256": "a02d9518a9a2dda4b0809c0c6fde163fe6f5e6c14fb083ef44e71ada6ecf96e1"
+      "bytes": 4867,
+      "sha256": "7dfa0a6e211ed1a49c2b636cf5456e1ac3a74ffe1cf011864353c46fa44607ee"
     },
     {
       "path": "paul-graham-perspective/LICENSE",
@@ -963,6 +983,26 @@
       "sha256": "6a497a3d30564a1e630fb36cc27add8bdd9758b9192191eaebc0dbe322b1f122"
     },
     {
+      "path": "stage-reflection/LICENSE",
+      "bytes": 1064,
+      "sha256": "0889ae7da9ab02e3699da8f989b1ff338acea05d390237af41f835f1f985130d"
+    },
+    {
+      "path": "stage-reflection/SKILL.md",
+      "bytes": 2890,
+      "sha256": "5a7475ccd712cdd37dd6f66ecc53682327eb6a344c976af9c12cd544ced734af"
+    },
+    {
+      "path": "stage-reflection/provenance.json",
+      "bytes": 4404,
+      "sha256": "61c789564b2f420542f232acc2db434ddd27f4e97f5cfaf3e3518cc593a4bf6b"
+    },
+    {
+      "path": "stage-reflection/references/stage-reflection-card.md",
+      "bytes": 3403,
+      "sha256": "673cba8264108137b7deafc50777909d680103b517559db2dcec5be048f15cc9"
+    },
+    {
       "path": "steve-jobs-perspective/LICENSE",
       "bytes": 1072,
       "sha256": "d0952e801d7484cc5344f41cc0378567d20a3c996b784eb97460287adde9ab37"
@@ -1041,6 +1081,46 @@
       "path": "taleb-perspective/references/study-notes.md",
       "bytes": 2636,
       "sha256": "98758ddc8ab96a8dd83620819e4db4ded9d54be6eaa41aac9d267bf8937af0b7"
+    },
+    {
+      "path": "think-decision-option-review/LICENSE",
+      "bytes": 10712,
+      "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+    },
+    {
+      "path": "think-decision-option-review/SKILL.md",
+      "bytes": 2587,
+      "sha256": "69fbfab01a8ae5ecfca45ef8ab0e916572c0489f87353671aa4cb9c7e5b592d3"
+    },
+    {
+      "path": "think-decision-option-review/provenance.json",
+      "bytes": 4505,
+      "sha256": "5afa9d1e9018ed0a39a3c29d3b3ccda65aa19324462a556b2d71ff5d9d5d3d5b"
+    },
+    {
+      "path": "think-decision-option-review/references/option-comparison-card.md",
+      "bytes": 3118,
+      "sha256": "a43388b83ee255fe846d9cd54568f83b6a3016a02a41ded27766c51464ce01dd"
+    },
+    {
+      "path": "think-premortem/LICENSE",
+      "bytes": 10712,
+      "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+    },
+    {
+      "path": "think-premortem/SKILL.md",
+      "bytes": 2681,
+      "sha256": "c88ac91dd8c475b493a638eff448c02b941636b38100aa753f8a76ff1fa8766d"
+    },
+    {
+      "path": "think-premortem/provenance.json",
+      "bytes": 4427,
+      "sha256": "ec1eea6c9ec6f1deeb47060bc8af693f601943a61e1e7215b8fbbec04d6d9c96"
+    },
+    {
+      "path": "think-premortem/references/risk-card-and-example.md",
+      "bytes": 3206,
+      "sha256": "c5ec0b3f3e448e42b9ad10b6126ea874ca0e064a8b78dc2759476c226cde31f9"
     },
     {
       "path": "think-woop/LICENSE",

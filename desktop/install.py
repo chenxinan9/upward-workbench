@@ -155,7 +155,7 @@ def build_app(source, destination):
         subprocess.run(['iconutil','-c','icns',str(icons),'-o',str(contents/'Resources/AppIcon.icns')],check=True)
     info={'CFBundleIconFile':'AppIcon.icns','CFBundleDisplayName':'睿顾台','CFBundleName':'睿顾台',
           'CFBundleIdentifier':APP_ID,'CFBundleExecutable':'GrowthDesk','CFBundlePackageType':'APPL',
-          'CFBundleShortVersionString':'0.4.4','CFBundleVersion':'11',
+          'CFBundleShortVersionString':'0.4.7','CFBundleVersion':'12',
           'NSMicrophoneUsageDescription':'点击语音输入时使用麦克风，把你的话转为可编辑的文字。',
           'NSSpeechRecognitionUsageDescription':'将你主动录入的语音转为文字；优先使用本机识别，必要时使用 Apple 语音服务。','NSHighResolutionCapable':True,
           'NSAppTransportSecurity':{'NSAllowsLocalNetworking':True},'NSHumanReadableCopyright':'睿顾台'}

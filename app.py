@@ -475,7 +475,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.app.store.get(q.get('id',''))
                 with self.app.store.conn() as c:return self.reply({'versions':[{'rev':r['rev'],'data':json.loads(r['data'])} for r in c.execute('SELECT rev,data FROM versions WHERE id=? ORDER BY rev DESC',(q['id'],))]})
             if u.path=='/scene.png':
-                scene=self.app.settings.get('scene')
+                scene=self.app.settings.get('scene') or ROOT/'desktop/assets/study-scene.png'
                 if not scene or not Path(scene).is_file():return self.reply({'error':'未配置场景'},404)
                 p=Path(scene);raw=p.read_bytes();self.send_response(200);self.headers_common('image/png',len(raw));self.end_headers();self.wfile.write(raw);return
             paths={'/':'web/workspace.html','/legacy':'web/index.html','/workspace.js':'web/workspace.js','/workspace.css':'web/workspace.css','/growth-workspace.js':'web/growth-workspace.js','/growth-workspace.css':'web/growth-workspace.css','/app.js':'web/app.js','/style.css':'web/style.css','/experience.js':'web/experience.js','/experience.css':'web/experience.css'}

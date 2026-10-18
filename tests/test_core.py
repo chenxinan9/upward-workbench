@@ -62,6 +62,10 @@ class CoreTests(unittest.TestCase):
             self.assertEqual(req('GET','/api/state',{'Origin':'https://evil.example'})[0],403)
             self.assertEqual(req('POST','/api/notes',{'Content-Type':'application/json'},'{}')[0],403)
             self.assertEqual(req('GET','/../app.py')[0],404)
+            self.assertEqual(req('GET','/scene.png'),(200,(app.ROOT/'desktop/assets/study-scene.png').read_bytes()))
+            scene=self.path/'custom.png';scene.write_bytes(b'custom-scene');server.app.settings['scene']=str(scene)
+            self.assertEqual(req('GET','/scene.png'),(200,b'custom-scene'))
+            scene.unlink();self.assertEqual(req('GET','/scene.png')[0],404)
             original=server.app.state
             server.app.state=lambda: (_ for _ in ()).throw(AssertionError('bootstrap cannot read full state'))
             status,raw=req('GET','/api/bootstrap');self.assertEqual(status,200);boot=json.loads(raw);token=boot['token'];self.assertIn('data_id',boot);self.assertNotIn('jobs',boot)

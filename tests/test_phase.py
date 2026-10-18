@@ -140,7 +140,7 @@ class PhaseTests(unittest.TestCase):
         s=self.d.phase_snapshot()
         self.assertEqual(s['creator']['status'],'not_configured')
         self.assertIn('不等于',s['creator']['summary'])
-        self.assertTrue(all(x['status']=='尚无发布留底' for x in s['creator']['days']))
+        self.assertTrue(all(x['status']=='未完整核对' and x['count'] is None for x in s['creator']['days']))
         self.assertTrue(any(x['id']=='creator' and x['status']=='not_configured' for x in s['sources']))
     def test_context_is_bounded_valid_json_with_large_realistic_data(self):
         for i in range(100):
@@ -167,35 +167,19 @@ class PhaseTests(unittest.TestCase):
         self.assertIn('历史',source['kind'])
 
 class CreatorBridgeTests(unittest.TestCase):
-    def setUp(self):
-        self.tmp=tempfile.TemporaryDirectory();self.d=Desk(Path(self.tmp.name)/'data');self.d.settings['creator_port']=60019
-    def tearDown(self):self.tmp.cleanup()
-    def test_bridge_excludes_synthetic_and_duplicates_and_forbids_proxy_redirect(self):
-        class Response:
-            def __init__(self,value):self.raw=json.dumps(value).encode()
-            def __enter__(self):return self
-            def __exit__(self,*a):pass
-            def read(self,n):return self.raw[:n]
-        state={'projects':[{'id':'p','title':'production','created_at':'2026-10-07'},{'id':'test','title':'synthetic','synthetic':True}]}
-        row={'id':'r','platform':'youtube','post_id':'post','project_id':'p','project_title':'production','evidence_at':'2026-10-07','phase':'published'}
-        history={'records':[row,dict(row,id='r-duplicate'),dict(row,id='test-r',post_id='test-post',project_id='test')]}
-        with patch('phase.urllib.request.build_opener') as build:
-            build.return_value.open.side_effect=[Response(state),Response(history)]
-            result=self.d.creator_evidence()
-            self.assertEqual(len(result['publications']),1)
-            self.assertEqual(len(result['works']),1)
-            self.assertEqual(build.call_args.args[0].proxies,{})
-            self.assertIsNone(build.call_args.args[1].redirect_request(None,None,None,None,None,None))
-            urls=[c.args[0] for c in build.return_value.open.call_args_list]
-            self.assertTrue(all(u.startswith('http://127.0.0.1:60019/') for u in urls))
-            self.d.creator_evidence();self.assertEqual(build.return_value.open.call_count,2)
-    def test_failed_reads_are_unavailable_and_not_silent_zero(self):
-        with patch('phase.urllib.request.build_opener') as build:
-            build.return_value.open.side_effect=OSError('offline')
-            s=self.d.creator_evidence()
-        self.assertEqual(s['status'],'unavailable')
-        self.assertEqual(len(s['warnings']),2)
-        self.assertTrue(all('缺失不表示没有成果' in w for w in s['warnings']))
+    def test_legacy_port_is_not_personal_evidence(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            desk=Desk(Path(temporary)/'data');desk.settings['creator_port']=60019
+            result=desk.creator_evidence()
+            self.assertEqual(result['status'],'not_configured')
+            self.assertFalse(result['identity_verified'])
+            self.assertEqual(result['publications'],[])
+    def test_invalid_formal_binding_cannot_fall_back_to_legacy_port(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            desk=Desk(Path(temporary)/'data');desk.settings.update(creator_port=60019,creator_binding={})
+            result=desk.creator_evidence()
+            self.assertEqual(result['status'],'unavailable')
+            self.assertEqual(result['publications'],[])
 
 class LocalRouteTests(unittest.TestCase):
     def setUp(self):

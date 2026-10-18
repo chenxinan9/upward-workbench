@@ -202,8 +202,9 @@ class WorkspaceMixin:
                 if write.get('status') == 'started':
                     self.store.change(row['id'], 'workspace-write', status='uncertain', error='写入中服务中断；请回读核对，不自动重试')
                     write['status'] = 'uncertain'
-                writes.append({'id':write['document_id'], 'title':write.get('title',''), 'sha':write.get('sha'),
-                               'undo_id':write.get('undo_id'), 'status':write.get('status','uncertain')})
+                writes.append(dict({'id':write['document_id'], 'title':write.get('title',''), 'sha':write.get('sha'),
+                               'undo_id':write.get('undo_id'), 'status':write.get('status','uncertain')},
+                               **{key:write[key] for key in ('format','operation','section','version','changed') if key in write}))
             self.store.change(job['id'], 'workspace-job', status='interrupted', finished_at=stamp(),
                               write_receipts=writes or job.get('write_receipts', []),
                               error='服务重启，本轮未确认完成；已执行的文件修改请回读核对。')
@@ -280,6 +281,8 @@ class WorkspaceMixin:
             return ui_file(self.vault.create(data['root_id'], data['path'], data.get('text', '')))
         if path == '/api/vault/undo':
             return ui_file(self.vault.undo(data['undo_id'], data['expected_sha']))
+        if path == '/api/workspace/growth-plan/undo':
+            return self.undo_growth_plan(data.get('undo_id'),data.get('expected_sha'))
         if path == '/api/workspace/send':
             return self.workspace_send(data)
         if path == '/api/workspace/cancel':
@@ -477,7 +480,7 @@ class WorkspaceMixin:
             if context_delivered:
                 for item in live['provided_context']:
                     item['status']='provided'
-            if kind == 'thread' and value.get('thread_id'):
+            if kind == 'thread' and value.get('thread_id') and not live.get('shared_invalidated'):
                 self.store.change(session['id'], 'workspace-session', thread_id=value['thread_id'])
                 live['actual_model'] = value.get('actual_model')
             elif kind == 'message':
@@ -490,7 +493,7 @@ class WorkspaceMixin:
                 else:
                     live['analysis_updates'].append({'kind': 'summary', 'text': value.get('text', '')})
             elif kind == 'tool':
-                labels = {'knowledge_search':'检索知识库', 'knowledge_read':'读取资料', 'knowledge_tree':'查看目录', 'write_current':'写回当前文档', 'select_advisor':'选用顾问方法', 'create_growth_note':'保存成长记录', 'local_action':'执行本机请求', 'update_growth_goal':'更新成长目标'}
+                labels = {'knowledge_search':'检索知识库', 'knowledge_read':'读取资料', 'knowledge_tree':'查看目录', 'write_current':'写回当前文档', 'select_advisor':'选用顾问方法', 'create_growth_note':'保存成长记录', 'local_action':'执行本机请求', 'update_growth_goal':'更新成长目标', 'read_growth_plan':'读取JSON个人方案','update_growth_plan':'更新个人方案'}
                 tool_event = {k:value.get(k) for k in ('name','status','call_id')}
                 tool_event['args'] = {k:v for k,v in value.get('args', {}).items() if k in ('document_id','query','root_id','path','offset','limit','expected_sha256','action','name','reason','kind','title')}
                 if isinstance(value.get('result'), dict) and value['result'].get('error'):
@@ -534,6 +537,8 @@ class WorkspaceMixin:
         local_count = 0
         local_read_versions = {}
         created_notes = {}
+        plan_read_sha = None
+        plan_updates = {}
         def growth_roots():
             if hasattr(self,'growth_root_ids'):
                 ids=self.growth_root_ids()
@@ -544,8 +549,22 @@ class WorkspaceMixin:
             return [rid for rid in ids if any(r['id']==rid and r.get('writable') is True for r in scoped_roots)]
         shared_preview = None
         shared_id = job.get('shared_preview_id')
-        def shared_current():
-            return self.shared_knowledge.check(shared_id)
+        shared_failure = None
+        def shared_invalid(exc, during_tool=False):
+            nonlocal shared_failure
+            shared_failure = exc
+            live['shared_invalidated'] = True
+            if during_tool: live['shared_invalidated_during_turn'] = True
+            self.store.change(session['id'], 'workspace-session', thread_id=None)
+            for ref in live['references']:
+                if ref.get('kind') == 'shared': ref['current_valid'] = False
+        def shared_current(during_tool=False):
+            if shared_failure: raise shared_failure
+            try:
+                return self.shared_knowledge.check(shared_id)
+            except SharedError as exc:
+                shared_invalid(exc, during_tool)
+                raise
         def shared_before_send():
             def current_binding(binding):
                 data=dict(binding['policy'],message=binding['message'],model=binding['model'],session_id=binding['session_id'],selection=binding['selection'],attachment_ids=binding['attachment_ids'],allow_write=binding['allow_write'])
@@ -556,9 +575,39 @@ class WorkspaceMixin:
             except Exception:
                 raise SharedError('发送前资料或模型暂不可核验；问题保留，请重新预览。', 'shared_preflight_failed', True) from None
         def tool(name, args):
-            nonlocal local_count
+            nonlocal local_count, plan_read_sha
             if stop.is_set():
                 raise ValueError('本轮已停止，不再执行新操作')
+            if name == 'read_growth_plan':
+                if policy['scope']!='personal':raise PermissionError('本轮资料范围不包含个人方案')
+                result=self.read_growth_plan();plan_read_sha=result['sha256']
+                live['references'].append({'id':'growth-plan','kind':'growth_plan','title':'个人方案 · JSON',
+                    'section':'panorama' if policy['purpose']=='panorama' else 'daily','sha':result['sha256'],'version':result['version']})
+                event({'type':'progress','text':'已读取个人方案JSON当前版本'})
+                return result
+            if name == 'update_growth_plan':
+                if policy['scope']!='personal':raise PermissionError('本轮资料范围不包含个人方案更新')
+                section=args.get('section');key=hashlib.sha256(json.dumps([section,args.get('content')],sort_keys=True).encode()).hexdigest()
+                if key in plan_updates:
+                    if self.read_growth_plan()['sha256']!=plan_updates[key]['sha256']:
+                        raise ValueError('方案在上次写回后已有变化，请重新读取；未复用过期成功回执')
+                    return plan_updates[key]
+                if section in [value.get('section') for value in plan_updates.values()]:raise ValueError('本轮这项方案已更新，不重复执行不同改写')
+                if not plan_read_sha or plan_read_sha!=args.get('expected_sha256'):
+                    raise ValueError('更新个人方案前必须本轮读取同一版本')
+                try:
+                    result=self.update_growth_plan(section,args.get('content'),args.get('expected_sha256'),message=message,job_id=job['id'],stop=stop)
+                except Exception:
+                    writes=[v for v in self.store.all('workspace-write') if v.get('job_id')==job['id'] and v.get('operation')=='plan_update' and v.get('section')==section]
+                    if writes:
+                        value=writes[0];live['write_receipts'].append({'id':'growth-plan','title':value['title'],'format':'json','section':section,'status':value['status'],'operation':'plan_update'})
+                    raise
+                plan_updates[key]=result;plan_read_sha=result['sha256']
+                live['write_receipts'].append({'id':'growth-plan','title':'人生全景' if section=='panorama' else '今日重点',
+                    'format':'json','section':section,'status':'verified','operation':'plan_update','sha':result['sha256'],
+                    'version':result['version'],'undo_id':result.get('undo_id'),'changed':result['changed']})
+                event({'type':'progress','evidence':True,'text':('已更新并回读JSON方案：' if result['changed'] else '内容未变，已回读JSON方案：')+('人生全景' if section=='panorama' else '今日重点')})
+                return result
             if name == 'attachment_read':
                 ids=set(job.get('attachment_ids',[]))
                 if policy['scope']=='personal':
@@ -569,8 +618,12 @@ class WorkspaceMixin:
                 event({'type':'progress','text':'读取附件：'+result['name']})
                 return result
             if name == 'knowledge_search' and args.get('root_id') == SHARED_ROOT:
-                preview = shared_current()
-                result = self.shared_knowledge.search(args.get('query',''), min(args.get('limit',12),12), preview['shares'], self.shared_knowledge.scope(preview))
+                preview = shared_current(during_tool=True)
+                try:
+                    result = self.shared_knowledge.search(args.get('query',''), min(args.get('limit',12),12), preview['shares'], self.shared_knowledge.scope(preview))
+                except SharedError as exc:
+                    shared_invalid(exc, during_tool=True)
+                    raise
                 live['knowledge_searches'].append({'query':args.get('query','')[:120], 'root_id':SHARED_ROOT,'count':len(result['results']),'at':stamp()})
                 return dict(result, results=[dict(v,id=v['share_id'],file_id=v['share_id']) for v in result['results']])
             if name == 'knowledge_search':
@@ -593,7 +646,7 @@ class WorkspaceMixin:
                     raise PermissionError('该目录不在本轮资料范围内；当前文档请用已给出的ID读取')
                 return scoped_vault.tree(args.get('root_id'), args.get('path', ''))
             if name == 'knowledge_read' and str(args.get('document_id','')).startswith('SHR-'):
-                preview = shared_current()
+                preview = shared_current(during_tool=True)
                 item = next((v for v in preview['items'] if v['share_id']==args['document_id']),None)
                 if item is None: raise PermissionError('共享片段不在本轮已确认范围内')
                 offset=args.get('offset',0); limit=args.get('limit',120)
@@ -880,6 +933,8 @@ class WorkspaceMixin:
                 execution_mode=policy['execution_mode'],input_items=self.attachments.image_inputs(job.get('attachment_ids',[]),session['id']),
                 approval_callback=lambda request:self.workspace_approval(job,live,request,stop,event),
                 before_send=before_send)
+            if shared_failure:
+                raise shared_failure
             if result.get('thread_id'):
                 self.store.change(session['id'], 'workspace-session', thread_id=result['thread_id'])
             status = result.get('status', 'completed')
@@ -899,8 +954,10 @@ class WorkspaceMixin:
         except Exception as exc:
             if shared_id and isinstance(exc,SharedError):
                 self.store.change(session['id'],'workspace-session',thread_id=None)
-                live['shared_not_sent'] = True
+                live['shared_not_sent'] = not live.get('shared_invalidated_during_turn', False)
             message = str(exc)[:350] if isinstance(exc, (ValueError, PermissionError, RuntimeError)) else type(exc).__name__
+            if live.get('shared_invalidated_during_turn'):
+                message = '本轮共享在对话中途失效，后续对话需重新预览。' + message
             with self.runlock:
                 self.store.change(job['id'], 'workspace-job', **dict(live,
                     status='cancelled' if stop.is_set() else 'failed', error=message, finished_at=stamp()))

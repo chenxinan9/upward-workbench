@@ -24,9 +24,9 @@ import urllib.request
 import webbrowser
 import zipfile
 
-VERSION = 'v0.4.4-rc1'
-ARCHIVE_URL = 'https://github.com/chenxinan9/upward-workbench/releases/download/v0.4.4-rc1/upward-workbench-v0.4.4-rc1.zip'
-ARCHIVE_SHA256 = '37c7fff5504cad5b7d406f35815c19208e8258e712bff46b846c89dc39d2d4a8'
+VERSION = 'v0.4.7-rc1'
+ARCHIVE_URL = 'https://github.com/chenxinan9/upward-workbench/releases/download/v0.4.7-rc1/upward-workbench-v0.4.7-rc1.zip'
+ARCHIVE_SHA256 = '3986e25b0b06bb3dc10da6faf3bfa3ab1b362579eae410ad6ab715867bdb5a6d'
 MAX_DOWNLOAD = 10 * 1024 * 1024
 
 
@@ -141,7 +141,7 @@ def start_service(install, data, port, open_browser):
     receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n')
     receipt_path.chmod(0o600)
     print(f'\n睿顾台已启动：{url}', flush=True)
-    print('内含 51 份顾问缩编书房；摄影与英语资料均为合成示例。未安装全局技能，也未调用 AI 模型。')
+    print('内含 54 份顾问缩编书房；摄影与英语资料均为合成示例。未安装全局技能，也未调用 AI 模型。')
     print(f'程序：{install}\n资料：{data}\n启动记录：{receipt_path}')
     print('关闭网页不会停止服务。停止本次服务：kill ' + str(process.pid))
     print('停止后再次启动：' + shlex.join(command[:-1] + [url.rsplit(':', 1)[1]]))

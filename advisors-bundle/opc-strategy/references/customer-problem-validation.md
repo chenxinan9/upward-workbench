@@ -17,11 +17,21 @@
 | 有付费可能 | 清楚范围后的真实购买决定 | 未来一定复购 |
 | 能持续交付 | 实际交付工时、返工和验收 | 可无限扩大 |
 
+## 把访谈写成可检验的问题
+
+先说希望理解当前做法，不先推销方案。可按实际情况取用：最近哪次任务让你想换做法？从发生到完成经过哪些步骤？当时用了什么、花了多久或多少钱？谁决定改变，谁批准预算？以前为什么放弃其他办法？在哪些情况下你宁可维持原样？不把这些当逐项必填问卷。
+
+记录“具体事件与日期／观察或自述／顾问推断／下一条待验证假设”。访谈自述仍需与使用记录区别；礼貌支持和假设性的购买回答不升级为付款证据。主动找未采用者和反例，但不为凑固定人数继续消耗预算。
+
 ## 有边界的试点
 
 选择一个完整但很小的交付，先写输入、结果、验收、价格条件、退款/失败安排和投入上限。试点节奏按可接触用户、销售周期和交付复杂度决定，不照搬“七天、三单、某个价格”作为通用及格线。
 
 合成例：为小型社团整理公开活动资料。先确认他们是否真在重复整理、谁决定付费、材料能否合法使用；用一次活动验证交付，而不是先开发一个平台。反馈表明问题不重要时可以停止。
+
+先挑当前最关键且最便宜可检验的假设。例如不确定交付是否有用，先人工完成一个样例；不确定是否愿付费，在清楚说明尚未完成、交付条件与退款安排后测试购买决定，不伪装已有产品或伪造订单。任何收款或外联都另按用户授权执行。
+
+验证卡只保留“假设／动作／要看的行为证据／投入上限／复核时间／何时继续、调整或停止”。阈值按个人承受能力与购买周期设定；若钱或时间到限仍无关键证据，先停投入并复盘，不自动扩大试点。
 
 复盘决定继续、调整还是退出，并说明证据支持到哪一步。不要用虚假限量或原价制造紧迫感，不替用户联系客户、收款或公开案例。上游赛道排名、自动化比例与转化阈值本页不采信为当前事实。
 
@@ -32,3 +42,11 @@
 - 固定版本方法入口：[上游 SKILL.md](https://raw.githubusercontent.com/jiangye1314/opc-skill/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89/opc-strategy/SKILL.md)。
 - 上游提交：`74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89`。许可：`Apache-2.0`；见 [LICENSE](../LICENSE) 与 [provenance.json](../provenance.json)。上游作者署名保留于本技能的 LICENSE 与 provenance.json。
 - 改写范围：保留适用的分析框架，重写步骤和示例，移除私人接入、固定效果承诺、长引用及未随包研究依赖。文中其他阅读入口是核对线索，本页不声称已逐条重新验证全部原典或研究。
+
+## 2026-10-18 方法增补与权利边界
+
+新增部分由 Growth Desk contributors 按个人业务场景重新编写；借鉴以下固定版本的方法组织，不复制嘉宾长引、采访逐字稿或 Newsletter 正文，也不采用固定访谈人数、美元价档或成功率承诺。
+
+- [Lenny Skills：客户访谈](https://github.com/RefoundAI/lenny-skills/blob/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/customer-interviews/SKILL.md)、[想法验证](https://github.com/RefoundAI/lenny-skills/blob/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/idea-validation/SKILL.md)。MIT 只覆盖技能文件结构与组织，底层内容权利仍归作者与嘉宾；许可声明见 [LICENSE.lenny-skills](../LICENSE.lenny-skills)。此处不声称重新核验了全部节目或历史案例。
+- [Marketing Skills：客户定位](https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/product-marketing/SKILL.md)、[定价](https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/pricing/SKILL.md)。保留 [MIT 声明](../LICENSE.marketingskills)；不导入赞助推广、外部账号连接、自动发信或广告执行。
+- 原 Apache-2.0 来源与资料保留不变；本页新增和旧版文件的核验范围、来源哈希见 [provenance.json](../provenance.json)。

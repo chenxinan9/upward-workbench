@@ -8,6 +8,12 @@
 
 分别估算交付时间、沟通、销售、修改、维护与不可计费工作。工具费之外还要看获客成本、平台手续费、退款与外包。业主自己的工时不是免费资源。
 
+## 分开判断范围、收费单位和价格
+
+先明确客户买到什么、按什么单位收费，再比较具体价格。相同单价但修改次数、响应时限、授权或维护范围不同，不能直接比贵便宜。价值、替代成本和客户支付条件用于提出价格假设，不从赞美、竞品标价或问卷交点推出最优价。
+
+区分本人希望获得的收入与客户愿意支付的金额。早期可用透明的小范围报价学习；不能直接套上游美元档位、涨价比例、转化率或流失率作为本地服务的及格线。
+
 ## 一个合成产能算例
 
 假设每月可用于某项服务40小时，每单交付及沟通合计5小时，理论上限为8单；若还需销售与维护时间，实际可承接更少。不能把40小时全部计成交付后，再假设获客和售后不占时间。
@@ -18,6 +24,8 @@
 
 说明交付物、数量或范围、验收方式、排除项、修改安排、材料责任、时间与付款节点。多档报价必须有真实差异，不为衬托某档而捏造无意义高价。
 
+报价同时给保守、基准或压力情景，至少查清“可用总工时－销售和维护等非交付时间”与“每单完整工时”能支持的单量，以及这些单量的现金贡献。不能为了满足收入目标先倒算出超产能销量，再称定价可行。已有合同、变更通知和退款约定单独核对，不静默给存量客户改价。
+
 结果使用区间和情景：交付时间翻倍、客户延迟提供材料、出现返工时，现金与产能会怎样？试点中记录实际值后再调价。可持续不等于收益保证，本资料不提供市场实时价格或代替合同审查。
 
 ## 来源与版本
@@ -27,3 +35,11 @@
 - 固定版本方法入口：[上游 SKILL.md](https://raw.githubusercontent.com/jiangye1314/opc-skill/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89/opc-strategy/SKILL.md)。
 - 上游提交：`74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89`。许可：`Apache-2.0`；见 [LICENSE](../LICENSE) 与 [provenance.json](../provenance.json)。上游作者署名保留于本技能的 LICENSE 与 provenance.json。
 - 改写范围：保留适用的分析框架，重写步骤和示例，移除私人接入、固定效果承诺、长引用及未随包研究依赖。文中其他阅读入口是核对线索，本页不声称已逐条重新验证全部原典或研究。
+
+## 2026-10-18 方法增补与权利边界
+
+新增部分由 Growth Desk contributors 按个人业务场景重新编写；借鉴以下固定版本的方法组织，不复制嘉宾长引、采访逐字稿或 Newsletter 正文，也不采用固定访谈人数、美元价档或成功率承诺。
+
+- [Lenny Skills：客户访谈](https://github.com/RefoundAI/lenny-skills/blob/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/customer-interviews/SKILL.md)、[想法验证](https://github.com/RefoundAI/lenny-skills/blob/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/idea-validation/SKILL.md)。MIT 只覆盖技能文件结构与组织，底层内容权利仍归作者与嘉宾；许可声明见 [LICENSE.lenny-skills](../LICENSE.lenny-skills)。此处不声称重新核验了全部节目或历史案例。
+- [Marketing Skills：客户定位](https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/product-marketing/SKILL.md)、[定价](https://github.com/coreyhaines31/marketingskills/blob/365b412152b9542499ca1439426f7fc3cc92bb65/skills/pricing/SKILL.md)。保留 [MIT 声明](../LICENSE.marketingskills)；不导入赞助推广、外部账号连接、自动发信或广告执行。
+- 原 Apache-2.0 来源与资料保留不变；本页新增和旧版文件的核验范围、来源哈希见 [provenance.json](../provenance.json)。

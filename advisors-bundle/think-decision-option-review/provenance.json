@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-methods-with-reference-materials",
+  "name": "think-decision-option-review",
+  "title": "选项比较顾问",
+  "upstream": {
+    "repo": "product-on-purpose/thinking-framework-skills",
+    "url": "https://github.com/product-on-purpose/thinking-framework-skills",
+    "commit": "d1e3264b41f1d912a204faedfc8ecca0827d080d",
+    "skill_source_url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-decision-option-review/SKILL.md",
+    "skill_sha256": "f52477985ea5443894c93a1fb03e84370768cc2af27da49dc821e445e5f1e632",
+    "license_source_url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/LICENSE",
+    "license_sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85",
+    "selected_sources": [
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/LICENSE",
+        "bytes": 10712,
+        "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+      },
+      {
+        "path": "skills/think-decision-option-review/SKILL.md",
+        "url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-decision-option-review/SKILL.md",
+        "bytes": 3787,
+        "sha256": "f52477985ea5443894c93a1fb03e84370768cc2af27da49dc821e445e5f1e632"
+      },
+      {
+        "path": "skills/think-decision-option-review/evidence/dossier.md",
+        "url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-decision-option-review/evidence/dossier.md",
+        "bytes": 3882,
+        "sha256": "2c493c68393766494f9786895aa2799ec11ec11cbb38247f61ab742de5427a5d"
+      }
+    ],
+    "notice_review": "Fixed-commit repository tree inspected: no upstream NOTICE file was present. Existing license and copyright notices retained verbatim."
+  },
+  "license": "Apache-2.0",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Chinese workflow and synthetic references adapted by Growth Desk contributors, 2026-10-18. No endorsement by upstream authors.",
+  "changes": [
+    "Rewrote the selected upstream entry into a standalone Chinese advisor workflow.",
+    "Retained exact upstream license bytes and notices; omitted upstream executable tools, installation instructions and unrelated materials.",
+    "Added an original Chinese synthetic practice case and an optional task-specific reference; examples contain no private-user data.",
+    "Added hard-constraint filtering before weighted comparison, explicit unknowns and sensitivity checks.",
+    "Did not copy upstream worked examples or claim that scores establish a correct choice."
+  ],
+  "review_scope": "Selected upstream text and license fetched at the fixed commit and read on 2026-10-18. Distributed adaptation checked for self-contained use, privacy and unsafe instructions. Upstream cited empirical studies were not independently revalidated; no effectiveness claims or numerical effect sizes reproduced. No upstream code executed.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 10712,
+      "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 2587,
+      "sha256": "69fbfab01a8ae5ecfca45ef8ab0e916572c0489f87353671aa4cb9c7e5b592d3"
+    },
+    {
+      "path": "references/option-comparison-card.md",
+      "bytes": 3118,
+      "sha256": "a43388b83ee255fe846d9cd54568f83b6a3016a02a41ded27766c51464ce01dd"
+    }
+  ],
+  "updated_at": "2026-10-18",
+  "reference_sources": [
+    {
+      "file": "references/option-comparison-card.md",
+      "source_url": "https://github.com/product-on-purpose/thinking-framework-skills/blob/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-decision-option-review/SKILL.md",
+      "additional_source_urls": [
+        "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-decision-option-review/evidence/dossier.md"
+      ],
+      "license": "Apache-2.0",
+      "changes": "Chinese operational study note, card and original synthetic example; source limits stated inside the reference."
+    }
+  ]
+}

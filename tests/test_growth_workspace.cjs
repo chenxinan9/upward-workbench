@@ -46,3 +46,9 @@ test('long source descriptions show only the explicit purpose sentence and keep 
  assert.match(html,/>先核查现金流。<\/p>/);assert.match(html,/没有用途标签的原始简介，保留完整。/);assert.match(html,/>用途：<\/p>/);assert.match(html,/>分析学习计划！<\/p>/);assert.match(html,/&lt;img src=x onerror=bad&gt;检查风险。/);assert.doesNotMatch(html,/<img/);
  assert.match(searchAdvisors(h,'风险评估'),/有用途/);assert.match(searchAdvisors(h,'30+来源'),/有用途/);
 });
+
+
+test('freshness labels keep source dates separate from file mtime, escape text and leave chat untouched',async()=>{
+ const data={...fixture,freshness:{checked_at:'2026-10-16T12:00:00+08:00',plan:{status:'connected',formed_at:'2020-01-01',revised_at:'2026-10-16',version:2},notice:'版本未变不代表现状有效',sources:[{title:'<script>unsafe</script>',status:'changed',source_date:'2020-01-01',file_modified_at:'2026-10-16',registered_version:'a'.repeat(64),current_version:'b'.repeat(64)}]}};
+ const h=harness(data);h.node('message').value='保留原草稿';await h.ui.load();const html=h.node('growth-view').innerHTML;assert.match(html,/资料日期与版本/);assert.match(html,/来源原始日期：2020-01-01/);assert.match(html,/上次核对：未登记/);assert.match(html,/本人事实确认：未登记/);assert.match(html,/不是事实发生日期/);assert.match(html,/版本已变/);assert.doesNotMatch(html,/<script>/);assert.match(html,/&lt;script&gt;/);assert.equal(h.node('message').value,'保留原草稿');h.ui.setView('panorama');assert.match(h.node('growth-view').innerHTML,/资料日期与版本/);
+});

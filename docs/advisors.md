@@ -1,4 +1,4 @@
-# 人生顾问团 · 51 份方法技能
+# 人生顾问团 · 54 份方法技能
 
 按你眼前的问题选择顾问。点击名称可直接阅读缩编方法；点击原项目可查看来源。人物视角是社区整理的方法，不代表本人参与。
 
@@ -55,6 +55,10 @@
 | [大额消费与购买取舍](../advisors-bundle/big-purchase-decision/SKILL.md) | 消费与住房 | [来源](https://github.com/SkillMedev/skills) |
 | [就医准备与医学信息](../advisors-bundle/informed-patient/SKILL.md) | 健康与就医 | [来源](https://github.com/DrCatHicks/informed-patient) |
 | [保险条款解读](../advisors-bundle/insurance-agent-policy-explanation/SKILL.md) | 保险与风险 | [来源](https://github.com/aliyun/qwen-dianjin) |
+
+| [选项比较顾问](../advisors-bundle/think-decision-option-review/SKILL.md) | 决策与行动 | [来源](https://github.com/product-on-purpose/thinking-framework-skills) |
+| [事前风险顾问](../advisors-bundle/think-premortem/SKILL.md) | 决策与行动 | [来源](https://github.com/product-on-purpose/thinking-framework-skills) |
+| [阶段反思顾问](../advisors-bundle/stage-reflection/SKILL.md) | 复盘与成长 | [来源](https://github.com/jasonge27/guided-journaling-skill) |
 
 每份缩编保留各自 LICENSE 和 provenance.json。另有 4 条来源未分发正文，原因见[许可说明](../advisors-bundle/README.md)。
 

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-methods-with-reference-materials",
+  "name": "think-premortem",
+  "title": "事前风险顾问",
+  "upstream": {
+    "repo": "product-on-purpose/thinking-framework-skills",
+    "url": "https://github.com/product-on-purpose/thinking-framework-skills",
+    "commit": "d1e3264b41f1d912a204faedfc8ecca0827d080d",
+    "skill_source_url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-premortem/SKILL.md",
+    "skill_sha256": "d12e42bf8b7be84e9869d7027ea5e2245e1a4acd7f3e922fcf4f51c7e849a675",
+    "license_source_url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/LICENSE",
+    "license_sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85",
+    "selected_sources": [
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/LICENSE",
+        "bytes": 10712,
+        "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+      },
+      {
+        "path": "skills/think-premortem/SKILL.md",
+        "url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-premortem/SKILL.md",
+        "bytes": 5447,
+        "sha256": "d12e42bf8b7be84e9869d7027ea5e2245e1a4acd7f3e922fcf4f51c7e849a675"
+      },
+      {
+        "path": "skills/think-premortem/evidence/dossier.md",
+        "url": "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-premortem/evidence/dossier.md",
+        "bytes": 9453,
+        "sha256": "9f353b59ef9571d65a4b84fda675f6e11ab5f960571c0667d527f405594e5b0f"
+      }
+    ],
+    "notice_review": "Fixed-commit repository tree inspected: no upstream NOTICE file was present. Existing license and copyright notices retained verbatim."
+  },
+  "license": "Apache-2.0",
+  "attribution": "Original authors and copyright notices retained in LICENSE. Chinese workflow and synthetic references adapted by Growth Desk contributors, 2026-10-18. No endorsement by upstream authors.",
+  "changes": [
+    "Rewrote the selected upstream entry into a standalone Chinese advisor workflow.",
+    "Retained exact upstream license bytes and notices; omitted upstream executable tools, installation instructions and unrelated materials.",
+    "Added an original Chinese synthetic practice case and an optional task-specific reference; examples contain no private-user data.",
+    "Added a mandatory hypothetical-scenario label and personal-resource constraints.",
+    "Retained cause-to-tripwire, mitigation, responsible-role and stop-condition conversion without claiming a measured outcome improvement."
+  ],
+  "review_scope": "Selected upstream text and license fetched at the fixed commit and read on 2026-10-18. Distributed adaptation checked for self-contained use, privacy and unsafe instructions. Upstream cited empirical studies were not independently revalidated; no effectiveness claims or numerical effect sizes reproduced. No upstream code executed.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 10712,
+      "sha256": "e5fe46f4634972731b752114e9992023e95e89e37c11713fdbee92dbc5141e85"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 2681,
+      "sha256": "c88ac91dd8c475b493a638eff448c02b941636b38100aa753f8a76ff1fa8766d"
+    },
+    {
+      "path": "references/risk-card-and-example.md",
+      "bytes": 3206,
+      "sha256": "c5ec0b3f3e448e42b9ad10b6126ea874ca0e064a8b78dc2759476c226cde31f9"
+    }
+  ],
+  "updated_at": "2026-10-18",
+  "reference_sources": [
+    {
+      "file": "references/risk-card-and-example.md",
+      "source_url": "https://github.com/product-on-purpose/thinking-framework-skills/blob/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-premortem/SKILL.md",
+      "additional_source_urls": [
+        "https://raw.githubusercontent.com/product-on-purpose/thinking-framework-skills/d1e3264b41f1d912a204faedfc8ecca0827d080d/skills/think-premortem/evidence/dossier.md"
+      ],
+      "license": "Apache-2.0",
+      "changes": "Chinese operational study note, card and original synthetic example; source limits stated inside the reference."
+    }
+  ]
+}

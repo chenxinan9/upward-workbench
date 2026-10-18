@@ -5,37 +5,83 @@ class MemoryStorage{constructor(){this.map=new Map();}get length(){return this.m
 function emitter(target){target.listeners={};target.addEventListener=(name,fn,options={})=>(target.listeners[name]??=[]).push({fn,once:options.once});target.removeEventListener=(name,fn)=>{target.listeners[name]=(target.listeners[name]||[]).filter(x=>x.fn!==fn);};target.fire=(name,event={})=>{const pending=[...(target.listeners[name]||[])];for(const item of pending){if(item.once)target.removeEventListener(name,item.fn);item.fn({target,preventDefault(){},...event});}};return target;}
 function element(id){return emitter({id,value:'',textContent:'',innerHTML:'',hidden:false,disabled:false,open:false,checked:false,dataset:{},style:{},children:[],scrollHeight:500,scrollTop:0,clientHeight:300,selectionStart:0,
 classList:{add(){},remove(){},toggle(){}},append(...items){this.children.push(...items);},replaceChildren(...items){this.children=items;},querySelectorAll(){return [];},querySelector(){return null;},setAttribute(){},getAttribute(){return null;},focus(){},click(){if(!this.disabled)this.fire('click');},scrollIntoView(){},contains(){return false;},setSelectionRange(a,b){this.selectionStart=a;this.selectionEnd=b;},showModal(){this.open=true;},close(value){this.returnValue=value||'';this.open=false;this.fire('close');}});}
-function harness(){const elements=new Map(),requests=[],timers=new Map(),storage=new MemoryStorage();let timerId=0;
+function harness({clock=Date}={}){const elements=new Map(),requests=[],timers=new Map(),storage=new MemoryStorage();let timerId=0;
 const get=id=>{if(!elements.has(id))elements.set(id,element(id));return elements.get(id);};
 const document=emitter({hidden:false,body:element('body'),documentElement:element('html'),getElementById:get,createTextNode:text=>({textContent:text}),createElement:()=>element('created'),querySelectorAll:()=>[]});
 const window=emitter({getSelection:()=>null,localStorage:storage});
-const context={FileReader:class{readAsDataURL(file){this.result='data:text/plain;base64,SGVsbG8=';this.onload();}},console,Date,Map,Set,Promise,AbortController,URLSearchParams,encodeURIComponent,decodeURIComponent,document,window,localStorage:storage,innerWidth:1400,setInterval:()=>1,setTimeout(fn,ms){const id=++timerId;timers.set(id,{fn,ms});return id;},clearTimeout(id){timers.delete(id);},getComputedStyle:()=>({getPropertyValue:()=> '240px'}),fetch(url,options){return new Promise((resolve,reject)=>requests.push({url,options,reject,respond(body,status=200){resolve({ok:status>=200&&status<300,status,json:async()=>body});}}));}};
+const context={FileReader:class{readAsDataURL(file){this.result='data:text/plain;base64,SGVsbG8=';this.onload();}},console,Date:clock,Map,Set,Promise,AbortController,URLSearchParams,encodeURIComponent,decodeURIComponent,document,window,localStorage:storage,innerWidth:1400,setInterval:()=>1,setTimeout(fn,ms){const id=++timerId;timers.set(id,{fn,ms});return id;},clearTimeout(id){timers.delete(id);},getComputedStyle:()=>({getPropertyValue:()=> '240px'}),fetch(url,options){return new Promise((resolve,reject)=>requests.push({url,options,reject,respond(body,status=200){resolve({ok:status>=200&&status<300,status,json:async()=>body});}}));}};
 context.globalThis=context;vm.createContext(context);
-const exposed="globalThis.ui={start,loadModels,shared,previewSharedSend,sharedPayload,invalidateSharedPreview,renderSharedChoices,state,openDefaultHome,openFile,saveNote,undoSave,undoReceipt,createNote,canLeave,persistDocumentDraft,persistChatDraft,selectSession,pollChat,loadSessions,loadEarlierMessages,sendMessage,addAttachments,currentAttachments,removeAttachment,renderAttachments,toggleSpeech,finishSpeech,cancelSpeech,loadCapabilities,renderCapabilities,respondToRequest,renderNativeRequests,nativeEventsHTML,renderConversation,compactEvidenceHTML,resizeComposer,updateLatestControl,jumpToLatest,renderChatScope,updateChatControls,referenceHTML,markdown,connectionLink,renderConnections,checkFileChange,useStorage(value=localStorage){recovery=createWorkspaceDraftStore(value,'test');},drafts(){return recovery;}};";
+const exposed="globalThis.ui={useGrowth(value){growth=value;},start,loadModels,shared,previewSharedSend,searchSharedLibrary,loadSharedSummary,sharedPayload,invalidateSharedPreview,renderSharedChoices,state,openDefaultHome,openFile,saveNote,undoSave,undoReceipt,createNote,canLeave,persistDocumentDraft,persistChatDraft,selectSession,pollChat,loadSessions,loadEarlierMessages,sendMessage,addAttachments,currentAttachments,removeAttachment,renderAttachments,toggleSpeech,finishSpeech,cancelSpeech,loadCapabilities,renderCapabilities,respondToRequest,renderNativeRequests,nativeEventsHTML,renderConversation,compactEvidenceHTML,resizeComposer,updateLatestControl,jumpToLatest,renderChatScope,updateChatControls,referenceHTML,markdown,connectionLink,renderConnections,checkFileChange,useStorage(value=localStorage){recovery=createWorkspaceDraftStore(value,'test');},drafts(){return recovery;}};";
 vm.runInContext(fs.readFileSync(path.join(__dirname,'../web/growth-workspace.js'),'utf8'),context);vm.runInContext(source.replace('  start();setInterval(checkFileChange,3000);',exposed),context);context.ui.useStorage();return {...context,ui:context.ui,get,requests,timers,storage};}
 const pure={};vm.createContext(pure);vm.runInContext(source.slice(0,source.indexOf('(() => {'))+';globalThis.helpers={createWorkspaceDraftStore,workspaceDraftRecovery,mergeWorkspaceMessages,workspacePollDelay};',pure);
 const {createWorkspaceDraftStore,workspaceDraftRecovery,mergeWorkspaceMessages,workspacePollDelay}=pure.helpers;
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
-test('message send requires explicit button or modifier shortcut and rejects implicit submit',async()=>{
+test('message Enter and modifier shortcuts send through the button and reject implicit submit',async()=>{
  const h=harness(),message='公开合成草稿，只用于无模型检查';h.ui.state.selectedModel='public-model';
  h.get('message').value=message;h.ui.updateChatControls();assert.equal(h.get('send').disabled,false);
  const html=fs.readFileSync(path.join(__dirname,'../web/workspace.html'),'utf8');
- assert.match(html,/<button type="button"[^>]*id="send"/);
- h.document.activeElement=h.get('model-select');h.document.fire('keydown',{key:'Enter'});
+ assert.match(html,/<button type="button"[^>]*id="send"/);assert.match(html,/Enter 发送，Shift \+ Enter 换行/);
  let prevented=0;h.get('chat-form').fire('submit',{preventDefault(){prevented++;}});
  assert.equal(prevented,1);assert.equal(h.requests.length,0);assert.equal(h.get('message').value,message);
  h.get('send').click();assert.equal(h.requests.length,1);assert.equal(h.requests[0].url,'/api/workspace/send');
- h.requests[0].respond({error:'公开合成拦截'},400);await settle();assert.equal(h.get('message').value,message);
+ h.requests[0].respond({error:'公开合成拦截'},400);await settle();
  h.document.activeElement=h.get('message');h.get('send').disabled=true;
- h.document.fire('keydown',{key:'Enter',ctrlKey:true});assert.equal(h.requests.length,1);
- h.ui.updateChatControls();h.document.fire('keydown',{key:'Enter',ctrlKey:true});
- assert.equal(h.requests.length,2);assert.equal(h.requests[1].url,'/api/workspace/send');
- h.requests[1].respond({error:'公开合成拦截'},400);await settle();assert.equal(h.get('message').value,message);
- h.document.fire('keydown',{key:'Enter',metaKey:true});assert.equal(h.requests.length,3);
- h.requests[2].respond({error:'公开合成拦截'},400);await settle();assert.equal(h.get('message').value,message);
- h.document.activeElement=h.get('model-select');h.document.fire('keydown',{key:'Enter',metaKey:true});
- h.get('chat-form').fire('submit',{preventDefault(){prevented++;}});assert.equal(h.requests.length,3);
- assert.equal(h.get('message').value,message);assert.equal(prevented,2);
+ h.document.fire('keydown',{key:'Enter'});assert.equal(h.requests.length,1);
+ h.ui.updateChatControls();
+ for(const modifiers of [{},{ctrlKey:true},{metaKey:true}]){
+  let prevented=0;const before=h.requests.length;
+  h.document.fire('keydown',{key:'Enter',...modifiers,preventDefault(){prevented++;}});
+  assert.equal(prevented,1);assert.equal(h.requests.length,before+1);assert.equal(h.requests.at(-1).url,'/api/workspace/send');
+  h.document.fire('keydown',{key:'Enter'});assert.equal(h.requests.length,before+1);
+  h.requests.at(-1).respond({error:'公开合成拦截'},400);await settle();assert.equal(h.get('message').value,message);
+ }
+});
+test('Shift Enter and Enter outside the chat input keep their default action',()=>{
+ const h=harness();h.ui.state.selectedModel='public-model';h.get('message').value='公开合成草稿';h.ui.updateChatControls();
+ for(const id of ['message','editor','model-select','consult-scope'])for(const modifiers of [{},{ctrlKey:true},{metaKey:true}]){
+  h.document.activeElement=h.get(id);let prevented=0;
+  h.document.fire('keydown',{key:'Enter',shiftKey:id==='message',...modifiers,preventDefault(){prevented++;}});
+  assert.equal(prevented,0);assert.equal(h.requests.length,0);
+ }
+});
+test('Chinese composition, legacy keyCode, and end-before-keydown never send the selection Enter',async()=>{
+ let now=1000;const h=harness({clock:class extends Date{static now(){return now;}}});
+ h.ui.state.selectedModel='public-model';h.get('message').value='中文选字';h.ui.updateChatControls();h.document.activeElement=h.get('message');
+ for(const event of [{isComposing:true},{keyCode:229}]){
+  let prevented=0;h.document.fire('keydown',{key:'Enter',...event,preventDefault(){prevented++;}});assert.equal(prevented,0);
+ }
+ h.get('message').fire('compositionstart');h.document.fire('keydown',{key:'Enter',isComposing:false});
+ assert.equal(h.requests.length,0);h.get('message').fire('compositionend');
+ for(const delay of [0,50,100]){now=1000+delay;h.document.fire('keydown',{key:'Enter'});assert.equal(h.requests.length,0);}
+ now=1101;h.document.fire('keydown',{key:'Enter'});assert.equal(h.requests.length,1);
+ h.requests[0].respond({error:'公开合成拦截'},400);await settle();assert.equal(h.get('message').value,'中文选字');
+});
+test('holding Enter does not resubmit even when a failed request re-enables the button',async()=>{
+ const h=harness();h.ui.state.selectedModel='public-model';h.get('message').value='保留草稿';h.ui.updateChatControls();h.document.activeElement=h.get('message');
+ let prevented=0;h.document.fire('keydown',{key:'Enter',repeat:true,preventDefault(){prevented++;}});assert.equal(prevented,1);assert.equal(h.requests.length,0);
+ h.document.fire('keydown',{key:'Enter',repeat:false});assert.equal(h.requests.length,1);
+ h.requests[0].respond({error:'公开合成拦截'},400);await settle();assert.equal(h.get('send').disabled,false);
+ h.document.fire('keydown',{key:'Enter',repeat:true});assert.equal(h.requests.length,1);assert.equal(h.get('message').value,'保留草稿');
+});
+test('Enter respects unavailable models, active rounds, attachments, and dirty document gates',()=>{
+ for(const gate of ['model','running','speech','uploading','failed','removing','dirty']){
+  const h=harness();h.ui.state.selectedModel='public-model';h.get('message').value='不会越过门禁';h.document.activeElement=h.get('message');
+  if(gate==='model')h.ui.state.modelUnavailable=true;
+  if(gate==='running')h.ui.state.jobs=[{id:'running',status:'running'}];
+  if(gate==='speech')h.ui.state.speech={id:'listening'};
+  if(['uploading','failed','removing'].includes(gate))h.ui.currentAttachments().push({id:'sample',name:'sample.txt',status:gate==='removing'?'ready':gate,removing:gate==='removing'});
+  if(gate==='dirty'){attach(h);h.ui.state.dirty=true;}
+  h.ui.updateChatControls();h.document.fire('keydown',{key:'Enter'});
+  assert.equal(h.requests.length,0,gate);assert.equal(h.get('message').value,'不会越过门禁',gate);
+ }
+});
+test('Enter with shared content opens the preview but cannot confirm it',async()=>{
+ const h=harness(),id='SHR-'+'1'.repeat(32);h.ui.state.selectedModel='public-model';h.get('message').value='共享公开样本';
+ h.ui.shared.scope={instance_id:'sample',generation:1,scope_fingerprint:'a'.repeat(64)};h.ui.shared.selected.set(id,1);
+ h.ui.updateChatControls();h.document.activeElement=h.get('message');h.document.fire('keydown',{key:'Enter'});
+ assert.equal(h.requests.length,1);assert.equal(h.requests[0].url,'/api/workspace/shared/preview');
+ assert.equal(h.get('shared-send-dialog').open,true);assert.equal(h.get('shared-send-ack').checked,false);assert.equal(h.get('confirm-shared-send').disabled,true);
+ h.requests[0].respond({error:'公开合成拦截'},400);await settle();assert.equal(h.requests.length,1);assert.equal(h.get('message').value,'共享公开样本');
 });
 test('native model directory keeps untried options and preserves choice through refresh failure',async()=>{
  const h=harness();h.get('message').value='公开合成未发送问题';
@@ -228,4 +274,31 @@ test('explicit model refresh bypasses directory cache without sending or replaci
  h.requests[0].respond({models:[{id:'existing',label:'原模型',selectable:true},{id:'gpt-6.1-sol',label:'GPT-6.1-Sol',selectable:true}],default_id:'gpt-6.1-sol'});await settle();
  assert.equal(h.ui.state.selectedModel,'existing');assert.equal(h.get('model-select').value,'existing');assert.equal(h.get('message').value,'未发送的原始问题');assert.equal(h.ui.drafts().chat(''),'未发送的原始问题');assert.equal(h.requests.length,1);assert.equal(h.get('refresh-models').disabled,false);
  const loading=h.ui.loadModels();assert.equal(h.requests[1].url,'/api/models');h.requests[1].respond({models:[{id:'existing',selectable:true}]});await loading;
+});
+
+
+test('verified JSON plan receipts refresh growth immediately without replacing navigation or chat draft',async()=>{
+ const h=harness();let loads=0;h.ui.useGrowth({load(){loads++;}});h.ui.state.session='synthetic-session';h.ui.state.workspaceView='panorama';h.get('message').value='用户继续输入的草稿';h.ui.state.jobs=[{id:'job',status:'running'}];
+ let pending=h.ui.pollChat();h.requests[0].respond({messages:[],jobs:[{id:'job',status:'running',write_receipts:[{id:'growth-plan',operation:'plan_update',format:'json',section:'daily',status:'verified',sha:'version-A'}]}]});await pending;
+ assert.equal(loads,1);assert.equal(h.ui.state.workspaceView,'panorama');assert.equal(h.get('message').value,'用户继续输入的草稿');assert.equal(h.ui.state.session,'synthetic-session');
+ pending=h.ui.pollChat();h.requests[1].respond({messages:[],jobs:[{id:'job',status:'running',write_receipts:[{id:'growth-plan',operation:'plan_update',format:'json',section:'daily',status:'verified',sha:'version-A'}]}]});await pending;assert.equal(loads,1);
+ const html=h.ui.referenceHTML({write_receipts:[{id:'growth-plan',format:'json',section:'panorama',status:'verified',sha:'sha',undo_id:'undo'}]});assert.match(html,/data-plan-view="panorama"/);assert.match(html,/data-plan-undo="1"/);assert.doesNotMatch(html,/data-open="growth-plan"/);
+});
+test('JSON plan undo uses the guarded plan endpoint and refreshes growth without opening Markdown',async()=>{
+ const h=harness();let loads=0;h.ui.useGrowth({load(){loads++;}});const button=element('plan-undo');button.dataset={undo:'id',sha:'current',planUndo:'1'};h.get('message').value='未发送草稿';const pending=h.ui.undoReceipt(button);assert.equal(h.requests[0].url,'/api/workspace/growth-plan/undo');h.requests[0].respond({verified:true,format:'json'});await pending;assert.equal(loads,1);assert.equal(h.get('message').value,'未发送草稿');assert.equal(h.requests.length,1);
+});
+
+test('shared empty search exposes metadata only and does not claim body authorization',async()=>{
+ const h=harness(),id='SHR-'+'2'.repeat(32);h.get('search').value='';h.get('message').value='保留的问题';
+ const pending=h.ui.searchSharedLibrary();assert.equal(h.requests.length,1);assert.equal(h.requests[0].url,'/api/workspace/shared');
+ h.requests[0].respond({instance_id:'sample',generation:1,scope_fingerprint:'a'.repeat(64),shares:[{share_id:id,version:1,state:'active'}]});await pending;
+ assert.match(h.get('search-status').textContent,/目录可用/);assert.match(h.get('search-status').textContent,/正文权限.*核验/);
+ const row=h.get('search-results').children[0],button=row.children.find(v=>v.textContent==='查看与选择共享片段');assert.ok(button);button.click();
+ assert.equal(h.get('chat-settings-dialog').open,true);assert.equal(h.ui.shared.selected.size,0);assert.equal(h.requests.length,1);assert.equal(h.get('message').value,'保留的问题');
+ assert.match(h.get('shared-status').textContent,/目录可用.*1 个登记片段/);assert.match(h.get('shared-status').textContent,/正文.*核验.*不代表可引用/);assert.doesNotMatch(h.get('shared-status').textContent,/尚未读取/);
+ h.ui.renderSharedChoices();const view=h.get('shared-choices').children.find(v=>v.textContent==='查看片段');const peek=view.listeners.click[0].fn();
+ h.requests.at(-1).respond({error:{message:'来源范围或隐私规则已变，请在知识工作台重新分享。',code:'share_source_changed',retryable:false}},409);await peek;
+ assert.match(h.get('shared-status').textContent,/重新分享/);assert.equal(h.ui.shared.preview,null);assert.equal(h.get('message').value,'保留的问题');assert.equal(h.requests.length,2);
+ h.ui.shared.selected.set(id,1);const failed=h.ui.searchSharedLibrary();assert.equal(h.requests.length,3);h.requests[2].respond({error:{message:'共享目录暂不可核验'}},503);await failed;
+ assert.equal(h.get('shared-status').textContent,h.get('search-status').textContent);assert.match(h.get('shared-status').textContent,/暂不可核验/);assert.equal(h.ui.shared.selected.get(id),1);assert.equal(h.get('message').value,'保留的问题');assert.equal(h.requests.length,3);
 });

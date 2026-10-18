@@ -13,43 +13,57 @@
     "license_sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
   },
   "license": "Apache-2.0",
-  "attribution": "Original authors and copyright notices retained in LICENSE. Operational text and references adapted by Growth Desk contributors, 2026-10-11. No endorsement by named individuals.",
+  "attribution": "Original Apache-2.0 source notices retained in LICENSE. Selected additional source notices retained in LICENSE.lenny-skills and LICENSE.marketingskills. Revised operational text by Growth Desk contributors, 2026-10-18. No endorsement by source authors or named individuals.",
   "changes": [
-    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
-    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
-    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
+    "2026-10-18: Retained original Apache-2.0 entry, license and references; selectively strengthened existing advisor responsibilities without adding a duplicate advisor.",
+    "Added independently worded neutral interview prompts, evidence-versus-inference separation, bounded experiments, pricing-unit and personal-capacity checks, and stop conditions as applicable to this advisor.",
+    "Preserved MIT notices for two additional sources. Lenny underlying quotations, transcripts and newsletter text are not redistributed; source-count and effectiveness claims are not adopted.",
+    "Excluded external integrations, sponsorship content, automatic account access, outreach, charging and publishing."
   ],
-  "review_scope": "Distributed entry and reference material reviewed for applicability, attribution, unsafe instructions and private-data exclusion. External primary sources not all re-opened in this release.",
-  "reviewed_local_input_sha256": "44d63c5dba84fe734ed4f893da6fd67ef8c22c979a7c9e397a9731145a0c2e05",
+  "review_scope": "Original Apache-2.0 materials retained under prior review; additional source LICENSE, README and four selected SKILL.md files reopened at pinned commits on 2026-10-18. Static text and applicability review only; no upstream code, account integrations or private data imported. Underlying podcasts, newsletters, market claims and customer outcomes not independently verified.",
+  "reviewed_local_input_sha256": "5230a5fbb9985d3460d74d21dcdb0b4dae33cc56693a2f1b5f815492ba9e4ddf",
   "files": [
-    {
-      "path": "SKILL.md",
-      "bytes": 2452,
-      "sha256": "5230a5fbb9985d3460d74d21dcdb0b4dae33cc56693a2f1b5f815492ba9e4ddf"
-    },
     {
       "path": "LICENSE",
       "bytes": 9072,
       "sha256": "9eb499fb062d45ed681284c8aa4d089726136382e8a3e5faa905835a2b0d822c"
     },
     {
+      "path": "LICENSE.lenny-skills",
+      "bytes": 1067,
+      "sha256": "e282fa0e40644e932d13e2d77e8c91e9599c516deea52f22563e3a9e8389a416"
+    },
+    {
+      "path": "LICENSE.marketingskills",
+      "bytes": 1069,
+      "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 3705,
+      "sha256": "5099aba17b73e7c9d1d3ea02a4c896c863bfb93f054350b57c2d2cf673cd8cbb"
+    },
+    {
       "path": "references/pipeline-and-delivery.md",
-      "bytes": 2727,
-      "sha256": "7c6e82242ef58775ea6d6b9d20c16fa151d9e6245075deb0d5442c83b398b06c"
+      "bytes": 4894,
+      "sha256": "fccf29c8042ea8d0d88dd40bd9c6341d50234640c8c2173b17a6a753eec22093"
     },
     {
       "path": "references/retention-with-consent.md",
-      "bytes": 2493,
-      "sha256": "56abe53686e7a0947a8831d90877759ec4bc572030f72b8826570ccdb0ac9b45"
+      "bytes": 4509,
+      "sha256": "a014c535c3879308519b69a17776950a5f8aceab2230654cf141e63cdab839e0"
     }
   ],
   "previous_edition_changes": [
     "Rewrote selected methodological ideas into standalone inputs, operational steps, observable outputs and boundaries.",
     "Removed long quotations, biography assertions, impersonation prompts, copied examples and full research references.",
     "Removed private integration assumptions, absolute user paths, automatic memory writes, external scripts and unbundled reference dependencies.",
-    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus."
+    "Did not reproduce the complete upstream package; short edition deliberately omits advanced examples and reference corpus.",
+    "Retained the previously reviewed skill entry and added task-based routes to bundled reference files.",
+    "Added attributed methodological study notes, synthetic practice cases and source maps. Long third-party quotations, impersonation and private adaptations are not copied.",
+    "The reference layer is a reviewed adaptation; it does not represent complete upstream research, complete works, or newly verified historical claims."
   ],
-  "updated_at": "2026-10-11",
+  "updated_at": "2026-10-18",
   "reference_sources": [
     {
       "file": "references/pipeline-and-delivery.md",
@@ -62,6 +76,105 @@
       "source_url": "https://github.com/jiangye1314/opc-skill/tree/74e30b1b4cc9751ea4d6b634ad5d2806d67e4a89",
       "license": "Apache-2.0",
       "changes": "Attributed adaptation and synthetic application; see source statements in the reference file."
+    },
+    {
+      "file": "references/pipeline-and-delivery.md",
+      "source_url": "https://github.com/RefoundAI/lenny-skills/tree/13598cc54e09399bc1bc1398b0fca284110efb2f",
+      "license": "MIT",
+      "license_scope": "MIT applies to skill-file structure and organization only; underlying podcast and newsletter content remains owned by Lenny Rachitsky and guests. No underlying quotations, transcripts or articles are redistributed.",
+      "changes": "Additional independently worded methodological adaptation; see the dated addition in the reference file. No source quotations or full source research redistributed."
+    },
+    {
+      "file": "references/pipeline-and-delivery.md",
+      "source_url": "https://github.com/coreyhaines31/marketingskills/tree/365b412152b9542499ca1439426f7fc3cc92bb65",
+      "license": "MIT",
+      "license_scope": "Selected methodological adaptation only. No external account tools, sponsorship content, integrations or execution scripts are imported.",
+      "changes": "Additional independently worded methodological adaptation; see the dated addition in the reference file. No source quotations or full source research redistributed."
+    },
+    {
+      "file": "references/retention-with-consent.md",
+      "source_url": "https://github.com/RefoundAI/lenny-skills/tree/13598cc54e09399bc1bc1398b0fca284110efb2f",
+      "license": "MIT",
+      "license_scope": "MIT applies to skill-file structure and organization only; underlying podcast and newsletter content remains owned by Lenny Rachitsky and guests. No underlying quotations, transcripts or articles are redistributed.",
+      "changes": "Additional independently worded methodological adaptation; see the dated addition in the reference file. No source quotations or full source research redistributed."
+    },
+    {
+      "file": "references/retention-with-consent.md",
+      "source_url": "https://github.com/coreyhaines31/marketingskills/tree/365b412152b9542499ca1439426f7fc3cc92bb65",
+      "license": "MIT",
+      "license_scope": "Selected methodological adaptation only. No external account tools, sponsorship content, integrations or execution scripts are imported.",
+      "changes": "Additional independently worded methodological adaptation; see the dated addition in the reference file. No source quotations or full source research redistributed."
+    }
+  ],
+  "previous_reviewed_local_input_sha256": "44d63c5dba84fe734ed4f893da6fd67ef8c22c979a7c9e397a9731145a0c2e05",
+  "additional_upstreams": [
+    {
+      "repo": "RefoundAI/lenny-skills",
+      "commit": "13598cc54e09399bc1bc1398b0fca284110efb2f",
+      "license": "MIT",
+      "license_scope": "MIT applies to skill-file structure and organization only; underlying podcast and newsletter content remains owned by Lenny Rachitsky and guests. No underlying quotations, transcripts or articles are redistributed.",
+      "url": "https://github.com/RefoundAI/lenny-skills",
+      "license_file": "LICENSE.lenny-skills",
+      "source_documents": [
+        {
+          "path": "README.md",
+          "source_url": "https://raw.githubusercontent.com/RefoundAI/lenny-skills/13598cc54e09399bc1bc1398b0fca284110efb2f/README.md",
+          "bytes": 16259,
+          "sha256": "0a2fa252194df3a09610bb06b61f5c6149e90a1cfc821c82ec209a3eb076416e"
+        },
+        {
+          "path": "LICENSE",
+          "source_url": "https://raw.githubusercontent.com/RefoundAI/lenny-skills/13598cc54e09399bc1bc1398b0fca284110efb2f/LICENSE",
+          "bytes": 1067,
+          "sha256": "e282fa0e40644e932d13e2d77e8c91e9599c516deea52f22563e3a9e8389a416"
+        },
+        {
+          "path": "skills/customer-interviews/SKILL.md",
+          "source_url": "https://raw.githubusercontent.com/RefoundAI/lenny-skills/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/customer-interviews/SKILL.md",
+          "bytes": 6802,
+          "sha256": "fc18a53c4051b9759bcb43d7c8b66db9152b524adf0f8001cf70f0dfd42f79e6"
+        },
+        {
+          "path": "skills/idea-validation/SKILL.md",
+          "source_url": "https://raw.githubusercontent.com/RefoundAI/lenny-skills/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/idea-validation/SKILL.md",
+          "bytes": 6123,
+          "sha256": "06c9dff0ad5c4f6a9998ce14597ca3acb85a5d89bc5b3e229aceff1e062cf058"
+        }
+      ]
+    },
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "commit": "365b412152b9542499ca1439426f7fc3cc92bb65",
+      "license": "MIT",
+      "license_scope": "Selected methodological adaptation only. No external account tools, sponsorship content, integrations or execution scripts are imported.",
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "license_file": "LICENSE.marketingskills",
+      "source_documents": [
+        {
+          "path": "README.md",
+          "source_url": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/365b412152b9542499ca1439426f7fc3cc92bb65/README.md",
+          "bytes": 24550,
+          "sha256": "3a5a8aae62fa83e5b1948f9d2855a57b7ecff9814f0c0e47c75ea7518e681f4d"
+        },
+        {
+          "path": "LICENSE",
+          "source_url": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/365b412152b9542499ca1439426f7fc3cc92bb65/LICENSE",
+          "bytes": 1069,
+          "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+        },
+        {
+          "path": "skills/product-marketing/SKILL.md",
+          "source_url": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/365b412152b9542499ca1439426f7fc3cc92bb65/skills/product-marketing/SKILL.md",
+          "bytes": 13847,
+          "sha256": "19ece0fa75c72a5a8b6e90db80f506586f54cc93bae6bffbb1bd2ef4ae7d603c"
+        },
+        {
+          "path": "skills/pricing/SKILL.md",
+          "source_url": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/365b412152b9542499ca1439426f7fc3cc92bb65/skills/pricing/SKILL.md",
+          "bytes": 13479,
+          "sha256": "b0318f64140e60a28d0cf71b1a6bf2aa214b96ef2bc3253c60d16ae480367d25"
+        }
+      ]
     }
   ]
 }

@@ -72,6 +72,17 @@ class ResourceBundleTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'checksum'): installer.plan(self.base / 'installed', [])
         self.assertFalse((self.base / 'installed').exists())
 
+    def test_additional_license_text_is_preserved_but_executables_still_refused(self):
+        license_file=self.skill/'LICENSE.additional-source'
+        license_file.write_text('MIT synthetic additional source notice')
+        self.provenance['files']+=inventory(self.skill,['LICENSE.additional-source'])
+        self.write_provenance()
+        self.assertEqual(advisor_resources(self.skill)['LICENSE.additional-source'],license_file.read_bytes())
+        script=self.skill/'run.sh';script.write_text('do not run')
+        self.provenance['files']+=inventory(self.skill,['run.sh']);self.write_provenance()
+        with self.assertRaisesRegex(ValueError,'Unreviewed advisor resource type'):
+            advisor_resources(self.skill)
+
     def test_source_changed_after_plan_is_revalidated_before_any_write(self):
         with patch.object(installer, 'ROOT', self.bundle):
             dst, pairs = installer.plan(self.base / 'installed', [])

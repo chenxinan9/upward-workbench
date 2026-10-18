@@ -65,7 +65,7 @@ class GrowthTests(unittest.TestCase):
   session=self.d.store.put('session',{'title':'合成会话'});p=self.d.preview({'session_id':session['id'],'message':'合成问题','refs':['source:fact']});j=self.d.store.put('job',{'session_id':session['id'],'preview_id':p['id']});self.d.store.put('message',{'session_id':session['id'],'job_id':j['id'],'role':'assistant','status':'completed','text':'合成回答'})
   (self.private/'fact.md').write_text('后来的版本');c=self.d.messages(session['id'])[0]['reply_context'];self.assertIn('合成资料',c['contexts'][0]['text']);self.assertNotIn('后来的版本',c['contexts'][0]['text']);self.assertEqual(c['context_hash'],p['hash'])
  def test_public_bundle_on_fresh_device(self):
-  self.d.settings={};self.assertEqual(len(self.d.catalog()),51);self.assertTrue(all(x['installed'] for x in self.d.catalog()))
+  self.d.settings={};self.assertEqual(len(self.d.catalog()),54);self.assertTrue(all(x['installed'] for x in self.d.catalog()))
   for a in self.d.catalog():self.assertTrue(self.d.advisor(a['name'])['text'])
-  self.assertEqual(len(self.d.method_registry()),33)
+  self.assertEqual(len(self.d.method_registry()),36)
 if __name__=='__main__':unittest.main()

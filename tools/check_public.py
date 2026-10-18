@@ -28,7 +28,7 @@ def check(root, paths, terms=()):
         if rel.name in PRIVATE_NAMES or rel.name.startswith('.env.') or PRIVATE_PARTS.intersection(rel.parts) or rel.suffix.lower() in PRIVATE_EXTENSIONS:
             findings.append({'file': rel.as_posix(), 'rule': 'private-artifact'})
         data = path.read_bytes()
-        if rel.as_posix() == 'desktop/assets/upward-icon.png':
+        if rel.as_posix() in ('desktop/assets/upward-icon.png', 'desktop/assets/study-scene.png'):
             if not data.startswith(b'\x89PNG\r\n\x1a\n'):
                 findings.append({'file': rel.as_posix(), 'rule': 'invalid-icon'})
             continue
