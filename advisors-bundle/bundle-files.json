@@ -5,7 +5,7 @@
     {
       "path": "README.md",
       "bytes": 3196,
-      "sha256": "b56a8dd77ce8330b115f7251fba317ff8b9ad91017fc04e2d808733338da3ad0"
+      "sha256": "8fe651e5ef0bd34e611af381df4dfb24159187bec5e87251ec7aebb0e6eeda62"
     },
     {
       "path": "adler-perspective/LICENSE",
@@ -659,8 +659,8 @@
     },
     {
       "path": "methods.json",
-      "bytes": 33144,
-      "sha256": "00751aa3a05aa5cc91174c12ebe0691cee87e20d4743d0cf3b803bf704a6dfa7"
+      "bytes": 32941,
+      "sha256": "74b131ab6ddc909e71c331774dcce68c5ddc4058776bb2b690ab9b814f979f2c"
     },
     {
       "path": "montaigne-perspective/LICENSE",

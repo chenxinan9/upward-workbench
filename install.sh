@@ -26,7 +26,7 @@ import zipfile
 
 VERSION = 'v0.4.7-rc1'
 ARCHIVE_URL = 'https://github.com/chenxinan9/upward-workbench/releases/download/v0.4.7-rc1/upward-workbench-v0.4.7-rc1.zip'
-ARCHIVE_SHA256 = '3986e25b0b06bb3dc10da6faf3bfa3ab1b362579eae410ad6ab715867bdb5a6d'
+ARCHIVE_SHA256 = '8449c25a290d791d5ffce955931687d418899d8556a00cb5ddb4d425e2c962c3'
 MAX_DOWNLOAD = 10 * 1024 * 1024
 
 

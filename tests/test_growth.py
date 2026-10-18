@@ -67,5 +67,5 @@ class GrowthTests(unittest.TestCase):
  def test_public_bundle_on_fresh_device(self):
   self.d.settings={};self.assertEqual(len(self.d.catalog()),54);self.assertTrue(all(x['installed'] for x in self.d.catalog()))
   for a in self.d.catalog():self.assertTrue(self.d.advisor(a['name'])['text'])
-  self.assertEqual(len(self.d.method_registry()),36)
+  self.assertEqual(len(self.d.method_registry()),35)
 if __name__=='__main__':unittest.main()

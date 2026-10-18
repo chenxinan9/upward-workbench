@@ -14,7 +14,7 @@
     "registered_workflows": 8,
     "sourced_reminders": 7,
     "bundled_adapted_skills": 54,
-    "registered_deduplicated_methods": 36,
+    "registered_deduplicated_methods": 35,
     "methods_scope": "reviewed retained subset; not all methods in all original texts",
     "bundled_third_party_full_skills": 0,
     "bundle_license_distribution": {
@@ -40,7 +40,7 @@
     {
       "path": "CONTRIBUTING.md",
       "bytes": 3062,
-      "sha256": "1300a376636b4f2006c7b0b597acc8015968e6612dc276845a0ce55128bcf46b"
+      "sha256": "5d863882616d9cc5e6659740cc2b536ae76c9a9f9b1149e6b9a4f40d783a9383"
     },
     {
       "path": "LICENSE",
@@ -55,7 +55,7 @@
     {
       "path": "README.md",
       "bytes": 5184,
-      "sha256": "b5708aec0c9e96e2ade2285c287732c39af2354bf68b8255a838357d08c0f189"
+      "sha256": "a016d9bf0dbd328d18f1aaec026eca570339878aefce7cbe7c56ebf4b6363d23"
     },
     {
       "path": "ROADMAP.md",
@@ -75,7 +75,7 @@
     {
       "path": "advisors-bundle/README.md",
       "bytes": 3196,
-      "sha256": "b56a8dd77ce8330b115f7251fba317ff8b9ad91017fc04e2d808733338da3ad0"
+      "sha256": "8fe651e5ef0bd34e611af381df4dfb24159187bec5e87251ec7aebb0e6eeda62"
     },
     {
       "path": "advisors-bundle/adler-perspective/LICENSE",
@@ -260,7 +260,7 @@
     {
       "path": "advisors-bundle/bundle-files.json",
       "bytes": 45578,
-      "sha256": "9c2560d6c3401df0d91e259d85adf5f2318b8e15e12a4d6e284e01893fe526fa"
+      "sha256": "8170be128fb9bc57df04ffce89b0afe7c3885cac5ff466d9b51a5ffe48cc8065"
     },
     {
       "path": "advisors-bundle/clear-perspective/LICENSE",
@@ -734,8 +734,8 @@
     },
     {
       "path": "advisors-bundle/methods.json",
-      "bytes": 33144,
-      "sha256": "00751aa3a05aa5cc91174c12ebe0691cee87e20d4743d0cf3b803bf704a6dfa7"
+      "bytes": 32941,
+      "sha256": "74b131ab6ddc909e71c331774dcce68c5ddc4058776bb2b690ab9b814f979f2c"
     },
     {
       "path": "advisors-bundle/montaigne-perspective/LICENSE",
@@ -1490,7 +1490,7 @@
     {
       "path": "docs/advisor-bundle-audit.md",
       "bytes": 14308,
-      "sha256": "20c8cef0f6ce22db809030eed2ac5358697bc54eff8d47e60caba51796981682"
+      "sha256": "d4db4523671b5d52eda87da4f94d1626a9eb42c484ecb7e5fa017a8f78b74f37"
     },
     {
       "path": "docs/advisor-council.md",
@@ -1604,8 +1604,8 @@
     },
     {
       "path": "docs/release-v0.4.7-rc1.md",
-      "bytes": 2605,
-      "sha256": "19561f957c0d70f4418653c1d813fcd8a4b0df8d2c44e48cc355dc558f5d612c"
+      "bytes": 2695,
+      "sha256": "63bfc60efd5c32b959caa3956ed421c082a5951b5bda059a569dbb35d5bd685f"
     },
     {
       "path": "docs/research.md",
@@ -2760,7 +2760,7 @@
     {
       "path": "tests/test_growth.py",
       "bytes": 7972,
-      "sha256": "08f91712e5f636d9d7df518b440491ebdd6214e6a276b88f48370e2fdbf0af21"
+      "sha256": "b0508f5e4b65a844f735e08b47b3cfd5d03d5194340ea5a6997d66b19c9e9e55"
     },
     {
       "path": "tests/test_growth_context_acceptance.py",

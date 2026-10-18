@@ -88,20 +88,24 @@
     "id": "inversion",
     "title": "倒推失败与寻找反证",
     "advisor_slugs": [
-      "munger-perspective"
+      "munger-perspective",
+      "think-premortem"
     ],
     "steps": [
       "先倒推最可能导致失败的条件，排除不可承受损失。",
       "从激励、机会成本和基础概率中选最相关的模型；不用堆术语代替解释。",
-      "找最强反证，区分不知道、可以核实与可承担的不确定性。"
+      "找最强反证，区分不知道、可以核实与可承担的不确定性。",
+      "用于尚可调整的重要计划时，显式标记未来失败假设，并把主要原因转为预警信号、缓解动作和建议暂停条件；不把风险推演记作已发生事实。"
     ],
     "outputs": [
-      "失败清单、利益结构、条件化选择"
+      "失败清单、利益结构、条件化选择",
+      "假设情景、风险清单与早期信号"
     ],
     "source_urls": [
-      "https://github.com/alchaincyf/munger-skill/tree/12d582ce4a97bcfff1cac032ecef436406feb1c2"
+      "https://github.com/alchaincyf/munger-skill/tree/12d582ce4a97bcfff1cac032ecef436406feb1c2",
+      "https://github.com/product-on-purpose/thinking-framework-skills/tree/d1e3264b41f1d912a204faedfc8ecca0827d080d"
     ],
-    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。"
+    "license_basis": "操作文本为注明改动的缩编；对应上游文案许可：MIT。具体版权及许可见各技能目录LICENSE与provenance.json；不含上游长引用。 新增事前风险推演适配来自Thinking Framework Skills的固定Apache-2.0版本，许可/归属见think-premortem/LICENSE及provenance.json；不将新增Apache来源统一改为MIT。"
   },
   {
     "id": "bounded-validation",
@@ -689,25 +693,6 @@
     ],
     "outputs": [
       "选项权衡表、关键代价、条件化建议"
-    ],
-    "source_urls": [
-      "https://github.com/product-on-purpose/thinking-framework-skills/tree/d1e3264b41f1d912a204faedfc8ecca0827d080d"
-    ],
-    "license_basis": "本项目注明改动的中文操作性改写与合成案例；保留 Apache-2.0 原许可和归属。来源及核验边界见对应 provenance.json。"
-  },
-  {
-    "id": "think-premortem",
-    "title": "事前风险顾问",
-    "advisor_slugs": [
-      "think-premortem"
-    ],
-    "steps": [
-      "明确计划、结果与投入，显式标记假设失败情景。",
-      "倒推具体原因并按影响和可能性排序，不编造百分比或责任。",
-      "为主要风险设早期信号、缓解动作和建议暂停条件。"
-    ],
-    "outputs": [
-      "假设情景、风险清单与早期信号"
     ],
     "source_urls": [
       "https://github.com/product-on-purpose/thinking-framework-skills/tree/d1e3264b41f1d912a204faedfc8ecca0827d080d"
