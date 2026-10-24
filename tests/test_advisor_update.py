@@ -17,7 +17,7 @@ class AdvisorUpdateTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             desk = Desk(Path(tmp) / 'data')
             entries = {a['name']: a for a in desk.workspace_get('/api/workspace/options', {})['advisors']}
-            for name in ('think-decision-option-review', 'think-premortem', 'stage-reflection'):
+            for name in ('think-decision-option-review', 'think-premortem', 'stage-reflection', 'life-design-compass', 'fact-check'):
                 with self.subTest(name=name):
                     entry = entries[name]
                     self.assertTrue(entry['description'])

@@ -8,7 +8,7 @@ from phase import TZ, local_date, moment_key
 
 PURPOSES = [
  {'id':'daily','label':'安排今天'}, {'id':'panorama','label':'人生方向'},
- {'id':'goals','label':'目标与计划'}, {'id':'ideas','label':'推敲想法'},
+ {'id':'goals','label':'近期规划'},
  {'id':'review','label':'阶段复盘'}, {'id':'learn','label':'顾问学习'},
  {'id':'general','label':'成长讨论'}, {'id':'local','label':'本机协作'}]
 
@@ -166,9 +166,12 @@ class GrowthWorkspaceMixin:
                 if step.get('done') or step.get('status')=='draft':continue
                 action=dict(step,goal_id=goal['id'],goal_title=goal.get('title',''),file_id=goal.get('file_id'))
                 due=step.get('due','')
+                if not due:unscheduled.append(action);continue
+                if not isinstance(due,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',due):continue
+                try:dt.date.fromisoformat(due)
+                except ValueError:continue
                 if due==today:actions.append(action)
-                elif due and re.fullmatch(r'\d{4}-\d{2}-\d{2}',due) and due<today:overdue.append(action)
-                elif not due:unscheduled.append(action)
+                elif due<today:overdue.append(action)
         qpath=Path(__file__).parent/'quotes.json'
         quotes=json.loads(qpath.read_text());quotes=quotes.get('quotes',[]) if isinstance(quotes,dict) else quotes
         daily=dict(quotes[clock.date().toordinal()%len(quotes)]) if quotes else {}
@@ -193,11 +196,11 @@ class GrowthWorkspaceMixin:
                 'scope_warnings':list(dict.fromkeys(warnings)),'scope_note':'共享 Markdown 为当前文档事实；本人原话、历史资料、候选计划与实际成果分别保留。'}
 
     def growth_context(self,purpose='general',days=7):
-        if purpose not in {p['id'] for p in PURPOSES}:raise ValueError('未知成长用途')
+        if purpose not in {p['id'] for p in PURPOSES}|{'ideas'}:raise ValueError('未知成长用途')
         snapshot=self.growth_snapshot(days)
         context={'purpose':purpose,'period':snapshot['period'],'generated_at':snapshot['generated_at'],
                  'scope_note':snapshot['scope_note'],'focus':snapshot['today']['focus'], 'freshness':snapshot['freshness']}
-        fields={'daily':['today','creator'],'panorama':['panorama'],'goals':['goals','goal_proposals'],
+        fields={'daily':['today','creator'],'panorama':['panorama'],'goals':['goals','goal_proposals','ideas'],
                 'ideas':['ideas'],'review':['goals','ideas','reviews','learning','events','creator','method'],
                 'learn':['method','learning'],'local':[],'general':[]}
         for field in fields[purpose]:context[field]=snapshot[field]

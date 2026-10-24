@@ -74,6 +74,31 @@ def _normalize(raw, source, provider):
 
 
 class ModelAccessMixin:
+    def _provider_root(self):
+        return self._verification_path().parent
+
+    def providers(self):
+        from provider_access import credential_state
+        return {'providers':[{'id':'codex','label':'Codex','configured':bool(getattr(self,'cli',None)),
+            'storage':'本机 Codex 登录','can_save':False,
+            'notice':'使用安装者本机的 Codex 登录；检测到 CLI 不等于已经登录或有可用额度。'},
+            credential_state(self._provider_root())],
+            'notice':'只使用本次所选服务；不会因失败而自动改用另一服务。DeepSeek API 单独计费。'}
+
+    def configure_deepseek(self, data):
+        from provider_access import save_deepseek_key, remove_deepseek_key
+        if not isinstance(data,dict) or set(data) not in ({'api_key'},{'remove'}):
+            raise ValueError('请只提交 DeepSeek API 密钥或删除连接指令')
+        with self.runlock:
+            if self._workspace_active_jobs() or getattr(self,'_model_check',{}).get('status')=='running':
+                raise ValueError('请等待当前对话或连接检查结束后再修改服务连接')
+            if 'api_key' in data:save_deepseek_key(self._provider_root(),data['api_key'])
+            elif data.get('remove') is True:remove_deepseek_key(self._provider_root())
+            else:raise ValueError('删除连接指令无效')
+            self._model_directory_cache=None
+            for model in ('deepseek:deepseek-flash','deepseek:deepseek-v4-pro'):self.invalidate_model(model)
+        return self.providers()
+
     def _directory_key(self):
         home, config, overlay = self._model_configuration()
         cli = shutil.which(str(getattr(self,'cli','') or '')) or str(getattr(self,'cli','') or '')
@@ -88,7 +113,8 @@ class ModelAccessMixin:
                 value = path.stat(); signature = [value.st_dev,value.st_ino,value.st_mtime_ns,value.st_size]
             except OSError: signature = None
             identity.append([str(path),signature])
-        return hashlib.sha256(json.dumps([cli,identity]).encode()).hexdigest()
+        from provider_access import provider_revision
+        return hashlib.sha256(json.dumps([cli,identity,provider_revision(self._provider_root())]).encode()).hexdigest()
 
     def _native_directory(self, *, refresh=False):
         from codex_workspace import read_model_directory
@@ -177,6 +203,10 @@ class ModelAccessMixin:
         return self._configured_catalog()['models']
 
     def _configuration_fingerprint(self, model):
+        if model.get('service_id')=='deepseek':
+            from provider_access import provider_revision
+            return hashlib.sha256(json.dumps({'id':model['id'],'service_id':'deepseek','endpoint':'https://api.deepseek.com',
+                'revision':provider_revision(self._provider_root())},sort_keys=True).encode()).hexdigest()
         _, config, overlay = self._model_configuration()
         bindings = []
         urls = [overlay.get('openai_base_url'), config.get('openai_base_url')]
@@ -206,7 +236,7 @@ class ModelAccessMixin:
     def verify_model(self, ident, actual_model):
         """Call only after a completed probe/answer; configuration alone never verifies."""
         model = self.resolve_model(ident, require_verified=False)
-        if not isinstance(actual_model, str) or actual_model != model['id']:
+        if not isinstance(actual_model, str) or actual_model != model.get('api_model',model['id']):
             raise ValueError('实际响应模型与验证目标不一致，未记录可用')
         receipt = {'id': model['id'], 'actual_model': actual_model,
                    'verified_at': dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -246,6 +276,13 @@ class ModelAccessMixin:
         configured = {row['id']:row for row in catalog['models']}
         offered = {row['id']:row for row in directory['models']} if directory else {}
         models = list(offered.values()) + [row for ident,row in configured.items() if ident not in offered]
+        for model in models:model.update(service_id='codex',service_label='Codex',api_model=model['id'])
+        from provider_access import MODELS, credential_state
+        deepseek=credential_state(self._provider_root())
+        for row in MODELS if deepseek['configured'] else []:
+            models.append(dict(row,provider='DeepSeek',service_id='deepseek',service_label='DeepSeek API',
+                source='内置支持接口；尚未查询当前账户目录',supported_reasoning_efforts=['low','high','max'],reasoning_efforts=['low','high','max'],
+                default_reasoning_effort='high',verified=False,is_default=False,configuration_ready=deepseek['configured'] and bool(getattr(self,'cli',None))))
         try: state = _read(self._verification_path(), 'json')
         except ValueError: state = {}
         receipts = state.get('models', {})
@@ -257,10 +294,15 @@ class ModelAccessMixin:
             valid = False
             try:
                 when = dt.datetime.fromisoformat(receipt['verified_at'])
-                valid = (when.tzinfo is not None and when<=current and receipt.get('actual_model')==model['id']
+                valid = (when.tzinfo is not None and when<=current and receipt.get('actual_model')==model.get('api_model',model['id'])
                          and receipt.get('configuration_fingerprint')==self._configuration_fingerprint(model))
             except (KeyError,ValueError,TypeError): pass
             if valid: model.update(verified=True,verified_at=receipt['verified_at'])
+            if model.get('service_id')=='deepseek':
+                ready=model.pop('configuration_ready')
+                model.update(selectable=ready,availability='configured' if ready else 'not_configured',
+                    verification='本机已回答核验' if valid else '已配置；尚无回答核验' if ready else '请接入 DeepSeek API 密钥和本机 Codex CLI')
+                continue
             other_route = not native or model['id'].startswith('gemini-web/')
             if model['id'] in offered:
                 model.update(selectable=True,availability='provided',verification='本机已回答核验' if valid else '当前账户目录提供；尚无独立连接检查回执，本轮回答状态以会话回执为准')
@@ -271,6 +313,7 @@ class ModelAccessMixin:
                 model.update(availability='directory_unavailable',verification='目录暂不可读，保留选择待重核')
         default = (next((m['id'] for m in models if m.get('is_default') and m['id'] in offered),'') if native else
                    next((m['id'] for m in models if m['id']==catalog['default_id'] and m['selectable']),''))
+        if not default:default=next((m['id'] for m in models if m.get('service_id')=='deepseek' and m['selectable']),'')
         changed = key != self._directory_key() or directory is not None and directory['key'] != key
         if changed:
             for model in models:
@@ -279,9 +322,9 @@ class ModelAccessMixin:
         scope_rows = [{key:model.get(key) for key in ('id','supported_reasoning_efforts','selectable','is_default','availability')} for model in models]
         scope = hashlib.sha256(json.dumps([self._directory_key(),scope_rows],sort_keys=True).encode()).hexdigest()
         catalog.update(models=models,default_id=default,default_model=default,scope_fingerprint=scope,
-            status='unavailable' if changed or directory and directory['error'] else 'ready' if any(m['selectable'] for m in models) else 'checking',
+            status='unavailable' if changed else 'ready' if any(m['selectable'] for m in models) else 'unavailable' if directory and directory['error'] else 'checking',
             directory_error='账户或配置已变化，请重新刷新目录' if changed else directory['error'] if directory else '',
-            notice='此目录来自本工作台连接的Codex CLI与当前账户，其他客户端或入口可能不同。目录提供项可直接选择，尚未试答不代表不可选；回答核验只说明历史成功，选择不改全局配置。')
+            notice='Codex 使用本机登录；DeepSeek 使用本台系统凭据和独立 API 计费。已配置不等于已试答成功；选择不改 Codex 全局设置，不自动切换服务。')
         return catalog
 
     def resolve_model(self, ident=None, require_verified=True):

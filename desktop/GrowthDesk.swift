@@ -143,6 +143,7 @@ final class GrowthApp: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNavi
     func applicationShouldHandleReopen(_ sender:NSApplication,hasVisibleWindows flag:Bool)->Bool {window.makeKeyAndOrderFront(nil);return true}
     func webView(_ webView:WKWebView,decidePolicyFor action:WKNavigationAction,decisionHandler:@escaping(WKNavigationActionPolicy)->Void) {
         guard let u=action.request.url else {decisionHandler(.cancel);return}
+        if u.absoluteString=="about:srcdoc" && action.targetFrame?.isMainFrame == false {decisionHandler(.allow);return}
         if u.absoluteString=="about:blank" || (u.scheme=="http" && u.host=="127.0.0.1" && u.port==60128) {if action.targetFrame?.isMainFrame == true {stopSpeech(cancel:true)};decisionHandler(.allow);return}
         if ["https","http"].contains(u.scheme ?? "") {NSWorkspace.shared.open(u)}
         decisionHandler(.cancel)

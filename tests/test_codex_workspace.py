@@ -11,6 +11,8 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from codex_workspace import CodexWorkspace, WorkspaceProtocolError, explicit_write_intent, TOOLS, safe_command, resolve_codex_cli
 
+SYNTHETIC_REVIEW_REQUEST = '这是公开合成验收，不是本人资料。10月12日至18日，我练习英语3次，完成摄影草稿1篇；没有发布记录，不能把草稿算作已发布。请实际读取并采用“阶段反思顾问”及必要参考，简短复盘这7天的变化，分清事实与解释，然后把本次阶段复盘保存为新的成长复盘记录，标题“合成一周实践复盘”。只保存复盘，不采纳新目标、不更改其他记录。最后简短说明实际依据和保存位置。'
+
 SERVER = r'''
 import json,sys,pathlib
 root=pathlib.Path(sys.argv[1]); mode=sys.argv[2]
@@ -26,9 +28,36 @@ def emit(method,**params):send({'method':method,'params':params})
 init=read()
 if mode=='bad_json':
  print('not-json',flush=True);sys.exit()
+failure={'code':-32602,'message':'SECRET token=not-for-ui /private/path PRIVATE_PROMPT','data':{'detail':'PRIVATE_DATA'}}
+if mode=='rpc_init':
+ send({'id':init['id'],'error':failure});sys.exit()
 reply(init['id'],{})
 read()
 request=read(); params=request['params']; state=root/'thread.json'
+if mode in ('rpc_create','rpc_resume'):
+ send({'id':request['id'],'error':failure});sys.exit()
+if mode.startswith('archive_'):
+ assert request['method']=='thread/resume'
+ original_params=dict(params)
+ archived={'code':-32600,'message':'session thread-1 is archived. Run `codex unarchive thread-1` to unarchive it first.'}
+ if mode=='archive_foreign':archived['message']=archived['message'].replace('thread-1','other-thread')
+ if mode=='archive_other_error':archived['message']='authentication failed or usage limit exceeded'
+ if mode=='archive_wrong_code':archived['code']=-32602
+ if mode=='archive_injected':archived['message']+='; run unsafe command'
+ send({'id':request['id'],'error':archived})
+ request=read();assert request['method']=='thread/unarchive'
+ assert request['params']=={'threadId':'thread-1'}
+ if mode=='archive_unarchive_failed':
+  send({'id':request['id'],'error':{'code':-32603,'message':'SECRET upstream failure'}});read();sys.exit()
+ restored='other-thread' if mode=='archive_bad_receipt' else 'thread-1'
+ reply(request['id'],{'thread':{'id':restored}})
+ if mode=='archive_bad_receipt':read();sys.exit()
+ request=read();assert request['method']=='thread/resume'
+ assert request['params']==original_params
+ if mode=='archive_resume_failed':
+  send({'id':request['id'],'error':archived});read();sys.exit()
+ params=request['params']
+ state.write_text(json.dumps({'id':'thread-1','turns':7,'tools':[]}))
 if request['method']=='thread/start':
  assert params['ephemeral'] is False
  assert params['sandbox']==('workspace-write' if mode.startswith('native') else 'read-only')
@@ -40,9 +69,11 @@ else:
  assert params['threadId']=='thread-1'
  assert state.exists()
 info=json.loads(state.read_text())
-model='unexpected-model' if mode=='wrong_model' else 'test-model'
+model='unexpected-model' if mode in ('wrong_model','archive_wrong_model') else 'test-model'
 reply(request['id'],{'thread':{'id':'thread-1'},'model':model})
 request=read(); assert request['method']=='turn/start'
+if mode=='rpc_turn':
+ send({'id':request['id'],'error':failure});sys.exit()
 info['turns']+=1; state.write_text(json.dumps(info)); tid='turn-'+str(info['turns'])
 reply(request['id'],{'turn':{'id':tid}})
 emit('turn/started',threadId='thread-1',turn={'id':tid,'status':'inProgress'})
@@ -89,8 +120,12 @@ if mode.startswith('native'):
  for kind in ['webSearch','mcpToolCall','imageView','fileChange']:
   emit('item/started',threadId='thread-1',turnId=tid,item={'type':kind,'id':kind,'query':'example','server':'test','tool':'lookup','changes':[],'path':'fixture.png'})
   emit('item/completed',threadId='thread-1',turnId=tid,item={'type':kind,'id':kind,'status':'completed'})
-if mode=='tool' or mode.startswith('write') or mode in ('duplicate','wrong_turn','bad_args','foreign_namespace'):
- if mode.startswith('write'):
+if mode=='tool' or mode.startswith('write') or mode in ('duplicate','wrong_turn','bad_args','foreign_namespace','growth_create','artifact_create'):
+ if mode=='artifact_create':
+  args={'title':'合成网页','format':'html','content':'<h1>合成正文</h1>'};name='create_workspace_artifact'
+ elif mode=='growth_create':
+  args={'kind':'review','title':'合成一周实践复盘','content':'事实：练习3次，草稿1篇。建议尚未采纳。'};name='create_growth_note'
+ elif mode.startswith('write'):
   args={'content':'model generated summary','expected_sha256':'a'*64}; name='write_current'
  elif mode=='bad_args':
   args={'query':'x','danger':'/etc/passwd'};name='knowledge_search'
@@ -203,6 +238,113 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(methods.count('thread/start'),1);self.assertEqual(methods.count('thread/resume'),1)
         self.assertEqual(methods.count('turn/start'),2)
         self.assertTrue(req[0]['params']['capabilities']['experimentalApi'])
+
+    def test_rpc_failure_names_the_request_phase_without_exposing_upstream_text_or_retrying(self):
+        for mode, phase, thread in [('rpc_init','建立连接',None), ('rpc_create','创建会话',None),
+                                    ('rpc_resume','恢复会话','thread-1'), ('rpc_turn','开始本轮',None)]:
+            with self.subTest(mode=mode):
+                requests_path = self.root / 'requests.jsonl'
+                requests_path.unlink(missing_ok=True)
+                with self.assertRaises(WorkspaceProtocolError) as raised:
+                    self.run_fake(mode, thread_id=thread)
+                message = str(raised.exception)
+                self.assertIn(phase, message)
+                self.assertIn('-32602', message)
+                self.assertIn('参数未被当前接口接受', message)
+                self.assertNotIn('拒绝', message)
+                for secret in ('SECRET', 'not-for-ui', '/private/path', 'PRIVATE_PROMPT', 'PRIVATE_DATA'):
+                    self.assertNotIn(secret, message)
+                methods = [request.get('method') for request in self.requests()]
+                self.assertLessEqual(methods.count('thread/start'), 1)
+                self.assertLessEqual(methods.count('thread/resume'), 1)
+                self.assertLessEqual(methods.count('turn/start'), 1)
+
+    def test_rpc_failure_only_exposes_a_bounded_integer_code(self):
+        from codex_workspace import _request_error
+        for error in ({'code':True}, {'code':['unsafe']}, {'code':'SECRET'}, {'code':2 ** 100},
+                      {'message':'SECRET'}, 'SECRET', None):
+            with self.subTest(error=error):
+                text = _request_error(error, '建立连接')
+                self.assertNotIn('SECRET', text)
+                self.assertNotIn('代码', text)
+
+    def test_archived_thread_is_unarchived_once_and_resumed_with_the_same_config_before_one_turn(self):
+        result = self.run_fake('archive_recover', thread_id='thread-1')
+        self.assertEqual(result['thread_id'], 'thread-1')
+        self.assertEqual(result['actual_model'], 'test-model')
+        self.assertEqual(result['text'], '回答第8轮')
+        requests = self.requests()
+        methods = [request.get('method') for request in requests]
+        self.assertEqual(methods, ['initialize','initialized','thread/resume','thread/unarchive','thread/resume','turn/start'])
+        resumes = [request for request in requests if request.get('method') == 'thread/resume']
+        self.assertEqual(resumes[0]['params'], resumes[1]['params'])
+        unarchive = next(request for request in requests if request.get('method') == 'thread/unarchive')
+        self.assertEqual(unarchive['params'], {'threadId':'thread-1'})
+        before_turn = json.dumps(requests[:-1], ensure_ascii=False)
+        self.assertNotIn('请核对资料', before_turn)
+        self.assertTrue(any('尚未发送本轮问题' in event.get('text','') for event in self.events))
+
+    def test_unarchive_failure_or_second_resume_error_stops_without_starting_a_turn(self):
+        for mode, phase, code in [('archive_unarchive_failed','恢复已归档会话','-32603'),
+                                  ('archive_resume_failed','再次连接原会话','-32600')]:
+            with self.subTest(mode=mode):
+                (self.root / 'requests.jsonl').unlink(missing_ok=True)
+                with self.assertRaises(WorkspaceProtocolError) as raised:
+                    self.run_fake(mode, thread_id='thread-1')
+                text = str(raised.exception)
+                self.assertIn(phase, text)
+                self.assertIn(code, text)
+                self.assertNotIn('SECRET', text)
+                methods = [request.get('method') for request in self.requests()]
+                self.assertEqual(methods.count('thread/unarchive'), 1)
+                self.assertEqual(methods.count('thread/resume'), 1 if mode=='archive_unarchive_failed' else 2)
+                self.assertNotIn('turn/start', methods)
+                self.assertNotIn('thread/start', methods)
+
+    def test_only_exact_matching_archived_resume_error_can_unarchive_current_thread(self):
+        for mode in ('archive_foreign','archive_other_error','archive_wrong_code','archive_injected'):
+            with self.subTest(mode=mode):
+                (self.root / 'requests.jsonl').unlink(missing_ok=True)
+                with self.assertRaises(WorkspaceProtocolError):
+                    self.run_fake(mode, thread_id='thread-1')
+                methods = [request.get('method') for request in self.requests()]
+                self.assertEqual(methods, ['initialize','initialized','thread/resume'])
+                self.assertFalse(self.calls)
+
+    def test_unarchive_receipt_and_resumed_model_are_verified_before_sending_user_content(self):
+        for mode in ('archive_bad_receipt','archive_wrong_model'):
+            with self.subTest(mode=mode):
+                (self.root / 'requests.jsonl').unlink(missing_ok=True)
+                with self.assertRaisesRegex(WorkspaceProtocolError, '不匹配|实际模型'):
+                    self.run_fake(mode, thread_id='thread-1')
+                methods = [request.get('method') for request in self.requests()]
+                self.assertNotIn('turn/start', methods)
+                self.assertEqual(methods.count('thread/unarchive'), 1)
+                self.assertNotIn('请核对资料', json.dumps(self.requests(), ensure_ascii=False))
+
+    def test_cancellation_before_archive_recovery_does_not_unarchive_or_start_a_turn(self):
+        cancel = threading.Event()
+        def progress(event):
+            self.events.append(event)
+            if '尚未发送本轮问题' in event.get('text',''):
+                cancel.set()
+        with self.assertRaisesRegex(WorkspaceProtocolError, '已停止'):
+            self.run_fake('archive_recover', thread_id='thread-1', cancel_event=cancel, on_event=progress)
+        methods = [request.get('method') for request in self.requests()]
+        self.assertNotIn('thread/unarchive', methods)
+        self.assertNotIn('turn/start', methods)
+
+    def test_archive_recovery_still_checks_pre_send_guard_before_any_model_turn(self):
+        def refuse():
+            raise ValueError('合成发送前核验停止')
+        with self.assertRaisesRegex(ValueError, '发送前核验停止'):
+            self.run_fake('archive_recover', thread_id='thread-1', before_send=refuse)
+        methods = [request.get('method') for request in self.requests()]
+        self.assertEqual(methods.count('thread/unarchive'), 1)
+        self.assertEqual(methods.count('thread/resume'), 2)
+        self.assertNotIn('turn/start', methods)
+        self.assertNotIn('请核对资料', json.dumps(self.requests(), ensure_ascii=False))
+
     def test_tools_are_multiple_dynamic_calls_with_real_receipts(self):
         result=self.run_fake('tool')
         self.assertEqual([n for n,_ in self.calls],['knowledge_read','knowledge_tree','knowledge_search'])
@@ -350,7 +492,7 @@ class WorkspaceTests(unittest.TestCase):
             self.assertEqual(config['features.'+name],'false')
         self.assertEqual(config['sandbox_mode'],'"read-only"')
     def test_tool_schema_is_fixed_and_does_not_offer_arbitrary_paths(self):
-        self.assertEqual([x['name'] for x in TOOLS],['knowledge_search','knowledge_tree','knowledge_read','write_current','select_advisor','create_growth_note','update_growth_goal','local_action','attachment_read','read_growth_plan','update_growth_plan'])
+        self.assertEqual([x['name'] for x in TOOLS],['knowledge_search','knowledge_tree','knowledge_read','write_current','select_advisor','create_growth_note','update_growth_goal','local_action','create_workspace_artifact','attachment_read','read_growth_plan','update_growth_plan'])
         write=next(x['inputSchema'] for x in TOOLS if x['name']=='write_current');self.assertEqual(set(write['properties']),{'content','expected_sha256'})
         self.assertFalse(write['additionalProperties'])
 
@@ -490,6 +632,94 @@ class WorkspaceTests(unittest.TestCase):
             self.assertFalse(explicit_goal_intent(message,'active'),message)
         with self.assertRaises(ValueError):_validated_args('local_action',{'action':'shell','user_quote':'运行shell'})
         with self.assertRaises(ValueError):_validated_args('create_growth_note',{'kind':'script','title':'x','content':'x'})
+
+    def test_scoped_current_save_request_is_not_negated_by_missing_publishing_records(self):
+        from codex_workspace import explicit_growth_intent
+        for message in [SYNTHETIC_REVIEW_REQUEST,
+                        '没有发布记录。请保存本阶段复盘，不更改其他记录。',
+                        '记录显示练习三次。请保存本次阶段复盘，不更改其他记录。',
+                        '只保存这次复盘，不采纳新目标、不更改其他记录。',
+                        '只记录这次想法，不更改其他文件。',
+                        '记下这个想法。', '记录一下这次复盘。', '记录这次想法。',
+                        '请把这次讨论记录到知识库。']:
+            with self.subTest(message=message):
+                self.assertTrue(explicit_growth_intent(message))
+        self.assertFalse(explicit_write_intent(SYNTHETIC_REVIEW_REQUEST))
+        denied = ['没有发布记录。', '记录显示我本周练习了三次。',
+                  '记录里说我已经完成了计划，这是错误的。', '记录中提到我想换方向。',
+                  '记录显示练习三次。请简短分析。',
+                  '记下的资料显示我本周练习了三次。', '记下的内容需要分析，不需要新增笔记。',
+                  '请保存这次复盘，但不要新增任何记录。', '保存复盘，不新建笔记。',
+                  '不要保存复盘，也不要更改其他记录。',
+                  '只保存复盘，但这轮先不要保存。', '只是讨论这次复盘，不更改其他记录。',
+                  '引用“只保存复盘，不更改其他记录”。', '他说“只保存复盘，不更改其他记录”。',
+                  '转述他的要求：只保存复盘，不更改其他记录。',
+                  '先把复盘整理清楚，后面可能保存。', '下次再记录这次想法。',
+                  '如果核对清楚，再保存复盘。', '昨天我说过只保存复盘。',
+                  '先分析这个复盘，之后考虑记录到知识库。',
+                  '请保存想法，不要记录复盘。', '请保存想法，先别帮我记录复盘。',
+                  '保存复盘，不再记录想法。']
+        for message in denied:
+            with self.subTest(message=message):
+                self.assertFalse(explicit_growth_intent(message))
+
+    def test_artifact_tool_protocol_requires_verified_host_result_and_valid_schema(self):
+        from codex_workspace import _validated_args
+        result=self.run_fake('artifact_create',message='请生成一份可展开的网页',execution_mode='knowledge')
+        self.assertEqual([name for name,args in self.calls],['create_workspace_artifact'])
+        self.assertEqual(result['tools'][0]['status'],'completed')
+        response=json.loads((self.root/'tool-response.json').read_text())['result']
+        self.assertTrue(response['success'])
+        result=self.run_fake('artifact_create',tool_call=lambda name,args:{'verified':False})
+        self.assertEqual(result['tools'][0]['status'],'failed')
+        response=json.loads((self.root/'tool-response.json').read_text())['result']
+        self.assertFalse(response['success'])
+        for args in [dict(title='x',format='exe',content='x'),
+                     dict(title='x',format='text',content='x',path='/tmp/outside'),
+                     dict(title='x',format='text',content='x'*262145)]:
+            with self.subTest(args={k:v[:20] for k,v in args.items()}),self.assertRaises(ValueError):
+                _validated_args('create_workspace_artifact',args)
+
+    def test_goal_breakdown_is_an_explicit_update_without_new_adoption_or_completion(self):
+        from codex_workspace import explicit_goal_intent
+        for text in ['把合成学习目标拆成三个行动','请拆分合成学习目标','请帮我拆分合成学习目标','把合成学习目标拆成行动并保存','请把合成学习目标分解成步骤',
+                     '请拆分合成学习目标，不修改其他文件。',
+                     '请帮我拆分合成学习目标，不更改其他目标。']:
+            self.assertTrue(explicit_goal_intent(text,'active','active'),text)
+            self.assertFalse(explicit_goal_intent(text,'active','draft'),text)
+            self.assertFalse(explicit_goal_intent(text,'done','active'),text)
+        for text in ['不要拆分合成学习目标','他说把合成学习目标拆成三个行动','能否拆分合成学习目标？',
+                     '拆分合成学习目标的结果还太粗糙，需要再讨论。','拆分后的合成学习目标只是一个草稿。',
+                     '拆分不是当前要做的事。','把合成学习目标拆成三个行动的结果还太粗糙，需要再讨论。',
+                     '请告诉我拆分合成学习目标后的结果','如果有时间，请拆分合成学习目标',
+                     '昨天我让你拆分合成学习目标。',
+                     '请拆分合成学习目标，不要修改这个目标。',
+                     '请拆分合成学习目标，不修改任何文件。',
+                     '请拆分合成学习目标，不做任何写入。',
+                     '他说请拆分合成学习目标，不修改其他文件。',
+                     '如果有空，请拆分合成学习目标，不修改其他文件。',
+                     '昨天我让你拆分合成学习目标，不修改其他文件。']:
+            self.assertFalse(explicit_goal_intent(text,'active','active'),text)
+
+    def test_scoped_review_save_passes_the_real_protocol_tool_guard(self):
+        result = self.run_fake('growth_create', message=SYNTHETIC_REVIEW_REQUEST)
+        self.assertEqual([name for name,args in self.calls], ['create_growth_note'])
+        response = json.loads((self.root/'tool-response.json').read_text())['result']
+        self.assertTrue(response['success'])
+        self.assertEqual(result['tools'][0]['status'], 'completed')
+
+    def test_record_facts_cannot_pass_protocol_create_note_guard(self):
+        for message in ['记录显示我本周练习了三次。', '记录里说我已经完成了计划，这是错误的。',
+                        '记录中提到我想换方向。', '记录显示练习三次。请简短分析。',
+                        '记下的资料显示我本周练习了三次。', '记下的内容需要分析，不需要新增笔记。',
+                        '请保存这次复盘，但不要新增任何记录。']:
+            with self.subTest(message=message):
+                self.calls.clear()
+                result = self.run_fake('growth_create', message=message)
+                self.assertEqual(self.calls, [])
+                response = json.loads((self.root/'tool-response.json').read_text())['result']
+                self.assertFalse(response['success'])
+                self.assertEqual(result['tools'][0]['status'], 'failed')
 
     def test_growth_create_with_other_file_protection_does_not_authorize_replacement(self):
         from codex_workspace import explicit_growth_intent

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-methods-with-reference-materials",
+  "name": "fact-check",
+  "title": "事实核验顾问",
+  "upstream": {
+    "repo": "petar-nauka/fact-check-skill",
+    "url": "https://github.com/petar-nauka/fact-check-skill",
+    "commit": "ebfde09a28b5547cbed29f5f66ddfd3595e64ade",
+    "skill_source_url": "https://raw.githubusercontent.com/petar-nauka/fact-check-skill/ebfde09a28b5547cbed29f5f66ddfd3595e64ade/SKILL.md",
+    "skill_sha256": "066f183f8c663968d0de28262b211bf235796df24f96f92666eeb18f10b96e02",
+    "license_source_url": "https://raw.githubusercontent.com/petar-nauka/fact-check-skill/ebfde09a28b5547cbed29f5f66ddfd3595e64ade/LICENSE",
+    "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+    "selected_sources": [
+      {
+        "path": "SKILL.md",
+        "url": "https://raw.githubusercontent.com/petar-nauka/fact-check-skill/ebfde09a28b5547cbed29f5f66ddfd3595e64ade/SKILL.md",
+        "bytes": 7612,
+        "sha256": "066f183f8c663968d0de28262b211bf235796df24f96f92666eeb18f10b96e02"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/petar-nauka/fact-check-skill/ebfde09a28b5547cbed29f5f66ddfd3595e64ade/LICENSE",
+        "bytes": 1056,
+        "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+      },
+      {
+        "path": "references/source-evaluation.md",
+        "url": "https://raw.githubusercontent.com/petar-nauka/fact-check-skill/ebfde09a28b5547cbed29f5f66ddfd3595e64ade/references/source-evaluation.md",
+        "bytes": 3140,
+        "sha256": "49968e0bcb7f8e014d1947466bc8613ba34e0bd0042885472a7f48afcc934bf6"
+      }
+    ],
+    "notice_review": "Fixed-commit tree reviewed; no upstream NOTICE in the selected repository root."
+  },
+  "license": "MIT",
+  "attribution": "Original copyright retained in LICENSE; original notices retained. Chinese adaptation and synthetic references by Growth Desk contributors, 2026-10-18. No upstream endorsement.",
+  "changes": [
+    "Rewrote the selected upstream workflow as a standalone Simplified Chinese advisor with original synthetic examples.",
+    "Retained exact upstream license and notice bytes. No upstream scripts, hooks, installers, account redirects or unrelated files included.",
+    "Kept explicit user adoption and host-controlled persistence separate from conversational advice.",
+    "Removed MFS scoring, automatic confidence from source counts, fixed source-tier ranking and regional source checklists.",
+    "Kept primary evidence linkage, evidence independence, uncertainty and transparent revision."
+  ],
+  "review_scope": "Selected fixed-commit text and license reviewed; adaptation is self-contained. No upstream code executed or complete repository malware audit claimed. No empirical effectiveness claims reproduced.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 3019,
+      "sha256": "eafc8cc33e97bef142805aae7dfa2c12c63b01fe80105fc650d2c9bb3ec800b7"
+    },
+    {
+      "path": "references/claim-evidence-card.md",
+      "bytes": 2405,
+      "sha256": "cf45adf6f012f94bbe6993a4fa2c9f86430f678cfe11ce78df99dd05b8b08c27"
+    }
+  ],
+  "updated_at": "2026-10-18",
+  "reference_sources": [
+    {
+      "file": "references/claim-evidence-card.md",
+      "source_url": "https://github.com/petar-nauka/fact-check-skill/blob/ebfde09a28b5547cbed29f5f66ddfd3595e64ade/SKILL.md",
+      "additional_source_urls": [
+        "https://raw.githubusercontent.com/petar-nauka/fact-check-skill/ebfde09a28b5547cbed29f5f66ddfd3595e64ade/references/source-evaluation.md"
+      ],
+      "license": "MIT",
+      "changes": "Original Chinese operational card and synthetic example; not an official course worksheet or validated scoring instrument."
+    }
+  ]
+}

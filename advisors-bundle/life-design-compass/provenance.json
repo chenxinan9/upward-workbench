@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "edition": "reviewed-methods-with-reference-materials",
+  "name": "life-design-compass",
+  "title": "人生设计顾问",
+  "upstream": {
+    "repo": "voidful/life-design-compass",
+    "url": "https://github.com/voidful/life-design-compass",
+    "commit": "abe2e761c91f75d592370036a91b6f23df793eea",
+    "skill_source_url": "https://raw.githubusercontent.com/voidful/life-design-compass/abe2e761c91f75d592370036a91b6f23df793eea/SKILL.md",
+    "skill_sha256": "d7e0be30fd5b2f0d2f63a6e20df4c1045c2466235181f46292471e7e64f81251",
+    "license_source_url": "https://raw.githubusercontent.com/voidful/life-design-compass/abe2e761c91f75d592370036a91b6f23df793eea/LICENSE",
+    "license_sha256": "6058f7b445fd2eb28410f066251bd72f18cf2d1a5afec30d5de9e343699c0e99",
+    "selected_sources": [
+      {
+        "path": "SKILL.md",
+        "url": "https://raw.githubusercontent.com/voidful/life-design-compass/abe2e761c91f75d592370036a91b6f23df793eea/SKILL.md",
+        "bytes": 20962,
+        "sha256": "d7e0be30fd5b2f0d2f63a6e20df4c1045c2466235181f46292471e7e64f81251"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/voidful/life-design-compass/abe2e761c91f75d592370036a91b6f23df793eea/LICENSE",
+        "bytes": 1089,
+        "sha256": "6058f7b445fd2eb28410f066251bd72f18cf2d1a5afec30d5de9e343699c0e99"
+      },
+      {
+        "path": "NOTICE.md",
+        "url": "https://raw.githubusercontent.com/voidful/life-design-compass/abe2e761c91f75d592370036a91b6f23df793eea/NOTICE.md",
+        "bytes": 1176,
+        "sha256": "c4c8d34bfcd81974fc500b6b127202acadb20f7a51e6cba0d3b7e5846931986b"
+      },
+      {
+        "path": "references/method.md",
+        "url": "https://raw.githubusercontent.com/voidful/life-design-compass/abe2e761c91f75d592370036a91b6f23df793eea/references/method.md",
+        "bytes": 9481,
+        "sha256": "311e9a91ccb63a540b52caa37a8f853fa4994804f061c96ecb63c6affae0382c"
+      }
+    ],
+    "notice_review": "Exact upstream NOTICE.md preserved."
+  },
+  "license": "MIT",
+  "attribution": "Original copyright retained in LICENSE; original notices retained. Chinese adaptation and synthetic references by Growth Desk contributors, 2026-10-18. No upstream endorsement.",
+  "changes": [
+    "Rewrote the selected upstream workflow as a standalone Simplified Chinese advisor with original synthetic examples.",
+    "Retained exact upstream license and notice bytes. No upstream scripts, hooks, installers, account redirects or unrelated files included.",
+    "Kept explicit user adoption and host-controlled persistence separate from conversational advice.",
+    "Removed mandatory Taiwan wording, long report length and fixed questionnaire; retained different equal-status futures and reversible prototypes.",
+    "Kept structural constraints, user agency and unofficial independent-educational status."
+  ],
+  "review_scope": "Selected fixed-commit text and license reviewed; adaptation is self-contained. No upstream code executed or complete repository malware audit claimed. No empirical effectiveness claims reproduced.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1089,
+      "sha256": "6058f7b445fd2eb28410f066251bd72f18cf2d1a5afec30d5de9e343699c0e99"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1176,
+      "sha256": "c4c8d34bfcd81974fc500b6b127202acadb20f7a51e6cba0d3b7e5846931986b"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 2993,
+      "sha256": "908d057fa59f2859ac5e3bf78d7f046fe48b710b8a01b048224fa3bc9ae7c7fe"
+    },
+    {
+      "path": "references/life-prototype-card.md",
+      "bytes": 2348,
+      "sha256": "9aacd48f9c8baae82ec8fc3dcc38040957b105cd952b79e7d944421f953f5a5a"
+    }
+  ],
+  "updated_at": "2026-10-18",
+  "reference_sources": [
+    {
+      "file": "references/life-prototype-card.md",
+      "source_url": "https://github.com/voidful/life-design-compass/blob/abe2e761c91f75d592370036a91b6f23df793eea/SKILL.md",
+      "additional_source_urls": [
+        "https://raw.githubusercontent.com/voidful/life-design-compass/abe2e761c91f75d592370036a91b6f23df793eea/references/method.md"
+      ],
+      "license": "MIT",
+      "changes": "Original Chinese operational card and synthetic example; not an official course worksheet or validated scoring instrument."
+    }
+  ]
+}

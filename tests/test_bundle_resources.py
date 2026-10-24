@@ -83,6 +83,17 @@ class ResourceBundleTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'Unreviewed advisor resource type'):
             advisor_resources(self.skill)
 
+    def test_notice_is_verified_and_copied_without_allowing_unregistered_executable_content(self):
+        notice=self.skill/'NOTICE.md';notice.write_text('Synthetic attribution; no affiliation')
+        self.provenance['files']+=inventory(self.skill,['NOTICE.md']);self.write_provenance()
+        self.assertEqual(advisor_resources(self.skill)['NOTICE.md'],notice.read_bytes())
+        with patch.object(installer,'ROOT',self.bundle):
+            dst,pairs=installer.plan(self.base/'with-notice',['sample-coach'])
+            installer.copy_selected(dst,pairs)
+            self.assertEqual((dst/'sample-coach/NOTICE.md').read_bytes(),notice.read_bytes())
+        notice.write_text('Changed notice')
+        with self.assertRaisesRegex(ValueError,'checksum'):advisor_resources(self.skill)
+
     def test_source_changed_after_plan_is_revalidated_before_any_write(self):
         with patch.object(installer, 'ROOT', self.bundle):
             dst, pairs = installer.plan(self.base / 'installed', [])

@@ -578,5 +578,25 @@
     "commit": "57d79d58b70e8d6c7bde602ce0783b106b0f619a",
     "license": "MIT",
     "distribution": "reviewed-adaptation-bundled; see per-file attribution and provenance"
+  },
+  {
+    "slug": "life-design-compass",
+    "title": "人生设计顾问",
+    "category": "决策与行动",
+    "repo": "voidful/life-design-compass",
+    "url": "https://github.com/voidful/life-design-compass",
+    "commit": "abe2e761c91f75d592370036a91b6f23df793eea",
+    "license": "MIT",
+    "distribution": "reviewed-adaptation-bundled; see per-file attribution and provenance"
+  },
+  {
+    "slug": "fact-check",
+    "title": "事实核验顾问",
+    "category": "学习与思考",
+    "repo": "petar-nauka/fact-check-skill",
+    "url": "https://github.com/petar-nauka/fact-check-skill",
+    "commit": "ebfde09a28b5547cbed29f5f66ddfd3595e64ade",
+    "license": "MIT",
+    "distribution": "reviewed-adaptation-bundled; see per-file attribution and provenance"
   }
 ]

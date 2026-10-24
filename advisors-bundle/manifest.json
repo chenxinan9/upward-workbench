@@ -488,6 +488,25 @@
       "url": "https://github.com/jasonge27/guided-journaling-skill",
       "commit": "57d79d58b70e8d6c7bde602ce0783b106b0f619a",
       "path": "stage-reflection"
+    },
+    {
+      "name": "life-design-compass",
+      "title": "人生设计顾问",
+      "category": "决策与行动",
+      "license": "MIT",
+      "url": "https://github.com/voidful/life-design-compass",
+      "commit": "abe2e761c91f75d592370036a91b6f23df793eea",
+      "path": "life-design-compass"
+    },
+    {
+      "name": "fact-check",
+      "title": "事实核验顾问",
+      "category": "学习与思考",
+      "license": "MIT",
+      "url": "https://github.com/petar-nauka/fact-check-skill",
+      "commit": "ebfde09a28b5547cbed29f5f66ddfd3595e64ade",
+      "path": "fact-check"
     }
-  ]
+  ],
+  "updated_at": "2026-10-18"
 }

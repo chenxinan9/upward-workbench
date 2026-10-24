@@ -322,6 +322,43 @@ class GrowthWorkspaceTests(unittest.TestCase):
         after = {p for p in self.vault.rglob('*') if p.is_file()}
         self.assertEqual(len(after-set(before)), 1)
 
+    def test_scoped_synthetic_review_request_creates_verified_record_without_other_changes(self):
+        self.fixture()
+        before = {p:p.read_bytes() for p in self.vault.rglob('*') if p.is_file()}
+        message = '这是公开合成验收，不是本人资料。10月12日至18日，我练习英语3次，完成摄影草稿1篇；没有发布记录，不能把草稿算作已发布。请实际读取并采用“阶段反思顾问”及必要参考，简短复盘这7天的变化，分清事实与解释，然后把本次阶段复盘保存为新的成长复盘记录，标题“合成一周实践复盘”。只保存复盘，不采纳新目标、不更改其他记录。最后简短说明实际依据和保存位置。'
+        def check(kw):
+            receipt = kw['tool_call']('create_growth_note', {'kind':'review', 'title':'合成一周实践复盘',
+                'content':'## 事实\n英语练习3次，摄影草稿1篇；没有核验发布记录。\n\n## 未采纳建议\n保留可比练习样本。'})
+            self.assertTrue(receipt['verified'])
+            self.assertTrue(self.desk.vault._split(receipt['document_id'])[1].startswith('阶段复盘/'))
+            text = self.desk.vault.read(receipt['document_id'])['text']
+            self.assertIn('adoption: "not-adopted"', text)
+            self.assertIn('status: "recorded"', text)
+            self.assertIn('review_period:', text)
+            with self.assertRaises(PermissionError):
+                kw['tool_call']('write_current', {'content':'不得覆盖', 'expected_sha256':'0'*64})
+        actual = self.run_growth(check, message=message)
+        self.assertEqual(len(actual['write_receipts']), 1)
+        self.assertEqual(actual['write_receipts'][0]['status'], 'verified')
+        for path,content in before.items():
+            self.assertEqual(path.read_bytes(), content)
+        self.assertEqual(len({p for p in self.vault.rglob('*') if p.is_file()} - set(before)), 1)
+
+    def test_record_fact_or_correction_cannot_create_growth_file(self):
+        self.fixture()
+        before = {p:p.read_bytes() for p in self.vault.rglob('*') if p.is_file()}
+        for message in ['记录显示我本周练习了三次。', '记录里说我已经完成了计划，这是错误的。',
+                        '记录中提到我想换方向。', '记录显示练习三次。请简短分析。',
+                        '记下的资料显示我本周练习了三次。', '记下的内容需要分析，不需要新增笔记。',
+                        '请保存这次复盘，但不要新增任何记录。']:
+            def denied(kw):
+                with self.assertRaises(PermissionError):
+                    kw['tool_call']('create_growth_note', {'kind':'review', 'title':'不应新建', 'content':'无保存命令'})
+            actual = self.run_growth(denied, message=message)
+            self.assertEqual(actual['write_receipts'], [])
+            self.assertEqual({p:p.read_bytes() for p in self.vault.rglob('*') if p.is_file()}, before)
+        self.assertEqual(self.desk.store.all('workspace-write'), [])
+
     def test_growth_create_keeps_one_exact_title_and_preserves_body(self):
         self.fixture()
         for content in ('阶段事实与未采纳建议', '# 单一标题\n\n阶段事实与未采纳建议', '# 不同的小节标题\n\n阶段事实与未采纳建议', '    # 单一标题\n\n保留代码块'):
@@ -401,6 +438,69 @@ class GrowthWorkspaceTests(unittest.TestCase):
             tool=kw['tool_call'];r=tool('knowledge_read',{'document_id':fid,'limit':1})
             with self.assertRaises(ValueError):tool('update_growth_goal',{'document_id':fid,'expected_sha256':r['sha256'],'status':'active','content':'x'})
         self.run_growth(partial,message='请采纳另一个目标')
+
+    def test_conversation_goal_breakdown_preserves_adoption_and_projects_dated_real_actions(self):
+        import datetime as dt
+        from phase import TZ
+        self.fixture();today=dt.datetime.now(TZ).date().isoformat()
+        path='目标与行动/breakdown.md'
+        original='---\nrecord_kind: "goal"\ntitle: "合成学习目标"\nstatus: "active"\nadoption: "adopted"\n---\n\n状态：进行中\n- [x] 保留已完成行动\n  - 实际结果：本人先前已确认\n'
+        value=self.desk.vault.create('upward',path,original);fid=value['file_id']
+        body=('## 行动\n- [x] 保留已完成行动\n  - 实际结果：本人先前已确认\n'
+              '- [x] 今天读一章\n  - 日期：'+today+'\n  - 完成标准：写出三个要点\n  - 实际结果：尚未执行\n'
+              '- [ ] 未来练习\n  - 日期：2099-01-01\n  - 完成标准：做一次演练\n'
+              '- [ ] 待确认的下一步\n  - 完成标准：先确认可用时间\n')
+        def split(kw):
+            tool=kw['tool_call'];read=tool('knowledge_read',{'document_id':fid,'limit':300})
+            result=tool('update_growth_goal',{'document_id':fid,'expected_sha256':read['sha256'],'status':'active','content':body})
+            self.assertTrue(result['verified'])
+        self.run_growth(split,message='把合成学习目标拆成三个行动')
+        snapshot=self.desk.growth_snapshot()
+        goal=next(g for g in snapshot['goals'] if g.get('file_id')==fid)
+        self.assertEqual(goal['status'],'active')
+        self.assertTrue(goal['steps'][0]['done'])
+        self.assertFalse(goal['steps'][1]['done'])
+        self.assertEqual(goal['steps'][1]['criterion'],'写出三个要点')
+        self.assertEqual(goal['steps'][1]['outcome'],'尚未执行')
+        self.assertEqual([s['text'] for s in snapshot['today']['actions']],['今天读一章'])
+        self.assertEqual([s['text'] for s in snapshot['today']['unscheduled']],['待确认的下一步'])
+        for message in ('不要拆分合成学习目标','他说把合成学习目标拆成三个行动','能否拆分合成学习目标？',
+                        '拆分合成学习目标的结果还太粗糙，需要再讨论。','拆分后的合成学习目标只是一个草稿。',
+                        '拆分不是当前要做的事。','把合成学习目标拆成三个行动的结果还太粗糙，需要再讨论。'):
+            before=self.desk.vault.read(fid)['sha'];journals=len(self.desk.store.all('workspace-write'))
+            def denied(kw):
+                read=kw['tool_call']('knowledge_read',{'document_id':fid,'limit':300})
+                with self.assertRaises(PermissionError):
+                    kw['tool_call']('update_growth_goal',{'document_id':fid,'expected_sha256':read['sha256'],'status':'active','content':body})
+            self.run_growth(denied,message=message)
+            self.assertEqual(self.desk.vault.read(fid)['sha'],before)
+            self.assertEqual(len(self.desk.store.all('workspace-write')),journals)
+
+    def test_explicit_goal_split_other_file_protection_preserves_other_files_and_current_target_ban(self):
+        self.fixture()
+        original='---\nrecord_kind: "goal"\ntitle: "合成学习目标"\nstatus: "active"\nadoption: "adopted"\n---\n\n状态：进行中\n- [ ] 原步骤\n'
+        target=self.desk.vault.create('upward','目标与行动/protected-split.md',original);fid=target['file_id']
+        before={p:p.read_bytes() for p in self.vault.rglob('*') if p.is_file()}
+        def split(kw):
+            read=kw['tool_call']('knowledge_read',{'document_id':fid,'limit':300})
+            result=kw['tool_call']('update_growth_goal',{'document_id':fid,'expected_sha256':read['sha256'],'status':'active','content':'- [ ] 拆分后行动\n  - 完成标准：合成验收'})
+            self.assertTrue(result['verified'])
+        self.run_growth(split,message='请拆分合成学习目标，不修改其他文件。')
+        self.assertNotEqual(self.desk.vault.read(fid)['sha'],target['sha'])
+        path=self.vault/'目标与行动/protected-split.md'
+        for other,content in before.items():
+            if other!=path:self.assertEqual(other.read_bytes(),content)
+        for message in ['请拆分合成学习目标，不要修改这个目标。','请拆分合成学习目标，不修改任何文件。',
+                        '请拆分合成学习目标，不做任何写入。','他说请拆分合成学习目标，不修改其他文件。',
+                        '如果有空，请拆分合成学习目标，不修改其他文件。','昨天我让你拆分合成学习目标，不修改其他文件。']:
+            all_before={p:p.read_bytes() for p in self.vault.rglob('*') if p.is_file()};journals=len(self.desk.store.all('workspace-write'))
+            def denied(kw):
+                read=kw['tool_call']('knowledge_read',{'document_id':fid,'limit':300})
+                with self.assertRaises(PermissionError):
+                    kw['tool_call']('update_growth_goal',{'document_id':fid,'expected_sha256':read['sha256'],'status':'active','content':'- [ ] 不应改动'})
+            self.run_growth(denied,message=message)
+            self.assertEqual({p:p.read_bytes() for p in self.vault.rglob('*') if p.is_file()},all_before)
+            self.assertEqual(len(self.desk.store.all('workspace-write')),journals)
 
     def test_growth_create_uses_existing_custom_writable_root(self):
         def check(kw):

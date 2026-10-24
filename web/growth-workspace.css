@@ -6,3 +6,16 @@
 .growth-freshness{margin:0 0 20px;padding:12px 16px;border:1px solid var(--line,#d5e4f6);border-radius:12px;background:rgba(228,240,255,.5);font-size:13px;line-height:1.6}
 .growth-freshness>summary{cursor:pointer;color:#31598b}
 .growth-freshness article{padding:12px 0;border-top:1px solid var(--line,#d5e4f6)}
+
+/* 页内目录只占中栏一行，窄屏横向滚动，不挤压右侧对话。 */
+.growth-quick-navigation{display:flex;flex:none;height:var(--growth-nav-height);gap:3px;align-items:center;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;padding:5px 14px;border-bottom:1px solid var(--line);background:linear-gradient(#f8fbff,#edf5ff);scrollbar-width:thin}
+.growth-quick-navigation button{flex:none;white-space:nowrap;min-height:28px;padding:3px 11px;font-size:12px;color:#526989;border-radius:7px}
+.growth-quick-navigation button.active{color:var(--blue);background:#dfeaff;font-weight:600}
+@media(max-width:1100px){.growth-quick-navigation{padding-right:9px;padding-left:9px;gap:1px}.growth-quick-navigation button{padding-right:9px;padding-left:9px}}
+
+/* 空目录与编辑模式不占一行，移动聊天同时回到原来的起点。 */
+.growth-view [data-page-label],.markdown :is(h1,h2,h3){scroll-margin-top:12px}
+.daily-summary article+article{border-top:1px solid #e3edfb;margin-top:10px;padding-top:8px}.daily-summary article h3{font-size:13px;margin:8px 0 4px}.daily-summary article p{font-size:12px;margin:4px 0}.daily-summary .growth-empty{padding:3px 0}
+@media(max-width:640px){body.page-contents-empty .chat-panel{top:62px}}
+
+.planning-section-heading{font-size:17px;color:var(--heading);margin:22px 0 12px}[data-page-label="目标计划"]>.planning-section-heading{margin-top:0}

@@ -68,7 +68,7 @@ def copy_selected(dst, pairs):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--destination', required=True, help='Your Codex skills directory or an isolated test directory')
-    p.add_argument('--name', action='append', default=[], help='Repeat to select skills; omitted means all 51')
+    p.add_argument('--name', action='append', default=[], help='Repeat to select skills; omitted means all registered skills')
     p.add_argument('--apply', action='store_true', help='Copy files; without this flag print the plan only')
     args = p.parse_args()
     try:

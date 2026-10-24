@@ -21,12 +21,12 @@ class WorkspaceInstallTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.base=Path(self.tmp.name).resolve()
     def tearDown(self):self.tmp.cleanup()
-    def test_fresh_setup_registers_writable_notes_and_54_bundled_advisors(self):
+    def test_fresh_setup_registers_writable_notes_and_56_bundled_advisors(self):
         data=self.base/'data';report=setup_module.setup(data,initialize_legacy=False)
-        self.assertEqual(report['bundled_skills_available'],54);self.assertIsNone(report['index'])
+        self.assertEqual(report['bundled_skills_available'],56);self.assertIsNone(report['index'])
         from app import Desk
         desk=Desk(data);roots=desk.workspace_get('/api/vault/roots',{})['roots']
-        self.assertEqual(len([r for r in roots if r['group']=='顾问团']),54)
+        self.assertEqual(len([r for r in roots if r['group']=='顾问团']),56)
         writable=[r for r in roots if r['writable']];self.assertEqual(len(writable),1)
         tree=desk.vault.tree(writable[0]['id']);self.assertTrue(tree['entries'])
         self.assertIn('右边',desk.vault.read(tree['entries'][0]['file_id'])['text'])
@@ -78,7 +78,7 @@ class WorkspaceInstallTests(unittest.TestCase):
               'print(json.dumps({"advisors":len(d._workspace_advisors),"writable":sum(r["writable"] for r in roots),'
               '"notes":len(d.vault.tree("upward")["entries"])}))')
         result=subprocess.run([sys.executable,'-c',code,str(data)],cwd=source,check=True,capture_output=True,text=True)
-        self.assertEqual(json.loads(result.stdout),{'advisors':54,'writable':1,'notes':1})
+        self.assertEqual(json.loads(result.stdout),{'advisors':56,'writable':1,'notes':1})
     def test_upgrade_replaces_stale_code_and_preserves_user_documents_and_settings(self):
         data=self.base/'data';support=self.base/'support';first=installer.deploy_runtime(ROOT,support,data);runtime=Path(first['runtime'])
         for path in ['vault.py','workspace_api.py','codex_workspace.py','tools/setup_knowledge.py','skills/upward-advisor/scripts/advisor.py','web/workspace.js']:

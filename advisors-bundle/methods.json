@@ -717,5 +717,43 @@
       "https://github.com/jasonge27/guided-journaling-skill/tree/57d79d58b70e8d6c7bde602ce0783b106b0f619a"
     ],
     "license_basis": "本项目注明改动的中文操作性改写与合成案例；保留 MIT 原许可和归属。来源及核验边界见对应 provenance.json。"
+  },
+  {
+    "id": "life-design-compass",
+    "title": "人生设计顾问",
+    "advisor_slugs": [
+      "life-design-compass"
+    ],
+    "steps": [
+      "盘点现况、价值和现实限制，区分事实与解释。",
+      "探索生活结构不同的方向，不把候选当作已采纳。",
+      "选一个低成本可逆原型，明确未知、日期、观察与回看条件。"
+    ],
+    "outputs": [
+      "方向选项与生活原型卡"
+    ],
+    "source_urls": [
+      "https://github.com/voidful/life-design-compass/tree/abe2e761c91f75d592370036a91b6f23df793eea"
+    ],
+    "license_basis": "本项目注明改动的中文操作性改写与合成案例；保留 MIT 原许可及原有 NOTICE。来源和取舍见对应 provenance.json。"
+  },
+  {
+    "id": "fact-check",
+    "title": "事实核验顾问",
+    "advisor_slugs": [
+      "fact-check"
+    ],
+    "steps": [
+      "拆分可核事实、数字、观点与预测，明确日期。",
+      "追溯原始证据并记录主张对应关系与来源独立性。",
+      "区分支持、反证与尚未核实，列结论范围及修订条件。"
+    ],
+    "outputs": [
+      "主张证据台账与有范围的核验结论"
+    ],
+    "source_urls": [
+      "https://github.com/petar-nauka/fact-check-skill/tree/ebfde09a28b5547cbed29f5f66ddfd3595e64ade"
+    ],
+    "license_basis": "本项目注明改动的中文操作性改写与合成案例；保留 MIT 原许可及原有 NOTICE。来源和取舍见对应 provenance.json。"
   }
 ]

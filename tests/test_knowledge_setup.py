@@ -21,7 +21,7 @@ class KnowledgeSetupTests(unittest.TestCase):
             before = (data/'settings.json').read_bytes()
             module.setup(data)
             self.assertEqual((data/'settings.json').read_bytes(), before)
-            self.assertEqual(len(Desk(data).catalog()), 54)
+            self.assertEqual(len(Desk(data).catalog()), 56)
 
     def test_existing_connection_and_symlink_are_preserved(self):
         with tempfile.TemporaryDirectory() as tmp:

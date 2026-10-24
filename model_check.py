@@ -11,19 +11,19 @@ class ModelCheckMixin:
         with self.runlock:
             return json.loads(json.dumps(getattr(self,'_model_check',{'status':'idle','results':[]})))
 
-    def check_models(self):
+    def check_models(self, ident=None):
         with self.runlock:
             state=getattr(self,'_model_check',{})
             if state.get('status')=='running' or (getattr(self,'_model_check_thread',None) and self._model_check_thread.is_alive()): return self.model_check_status()
-            if state.get('finished_at'):
-                elapsed=(dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(state['finished_at'])).total_seconds()
-                if elapsed<30: return self.model_check_status()
             catalog=self.model_catalog()
-            ids=[m['id'] for m in catalog['models'] if
+            ids=[self.resolve_model(ident,require_verified=False)['id']] if ident else [m['id'] for m in catalog['models'] if
                  (m.get('selectable') and m['id']==catalog['default_id']) or
                  (m.get('availability') in ('verified_route','unverified_route') and
                   (m['id'].startswith('gemini-web/') or m.get('is_default')))][:4]
-            if not ids: raise ValueError('本机尚未发现 Codex 或 Gemini 配置')
+            if not ids: raise ValueError('本机尚未发现可检查的模型连接')
+            if state.get('finished_at') and state.get('models')==ids:
+                elapsed=(dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(state['finished_at'])).total_seconds()
+                if elapsed<30:return self.model_check_status()
             self._model_check_stop=threading.Event()
             self._model_check={'status':'running','models':ids,'results':[],'started_at':dt.datetime.now(dt.timezone.utc).isoformat()}
             self._model_check_thread=threading.Thread(target=self._check_worker,args=(ids,),daemon=True)
@@ -32,6 +32,15 @@ class ModelCheckMixin:
 
     def _probe_model(self, ident):
         chosen=self.resolve_model(ident,require_verified=False)
+        if chosen.get('service_id')=='deepseek':
+            from codex_workspace import CodexWorkspace
+            with tempfile.TemporaryDirectory(prefix='ruigu-deepseek-check-') as tmp:
+                result=CodexWorkspace(self.cli,tmp,provider=chosen,data_root=self.store.path).run_turn(
+                    '请只回答 OK。这是公开连接检查，不读取文件，不执行工具。',chosen['api_model'],
+                    cancel_event=self._model_check_stop,context={'scope':'advisors'},timeout=100)
+            if result.get('status')!='completed' or result.get('actual_model')!=chosen['api_model']:
+                raise ValueError('未收到与目标模型一致的成功回复')
+            return result['actual_model']
         with tempfile.TemporaryDirectory(prefix='upward-model-check-') as tmp:
             probe=self.__class__(Path(tmp)/'data');probe.cli=self.cli
             job=probe.store.put('job',{'status':'queued','effective_model':ident,'organize':False})

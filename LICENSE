@@ -1,21 +1,61 @@
-MIT License
+睿顾台个人使用与商业授权许可（第 1 版，2026-10-25）
 
-Copyright (c) 2026 Growth Desk contributors
+本许可适用于自 0.4.8-rc1 候选版本起，本项目相应合法著作权人
+（下称“许可方”）有权另行授权的新增原创内容和原创修改。
+本许可不是 MIT、GPL 或经 OSI 认可的开源许可证。
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+一、适用范围与既有权利
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. 本许可不覆盖已经按 MIT 发布的旧版代码及其已授出的权利。
+   公开 v0.4.7-rc1（提交 3b8a5207cf934d7069b6cdbf7c07aa98a1ed4b8b）
+   及此前版本的相应 MIT 授权继续有效。原许可文本保留于
+   LICENSES/legacy-MIT.txt。不得将本许可解释为追回旧 MIT 授权。
+2. 第三方代码、顾问 Skill、参考资料、公共知识和历史导读，继续
+   适用其各自 LICENSE、NOTICE、来源和署名说明。本许可不能减少
+   第三方已经授予的权利；请同时阅读 NOTICE 和 docs/licensing.md。
+3. 对不属于许可方或未取得充分授权的内容，本许可不另授权利。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+二、个人使用
+
+在遵守本许可和取得版本时适用的销售约定的前提下，允许自然人
+在自己控制的设备上，为本人学习、创作、知识管理和个人规划
+安装、运行软件，调整公开的使用设置，并制作必要的个人备份。
+这不授予向他人提供软件或服务的权利；版本的获取方式、价格和
+配套服务由许可方另行确定。
+用户自己创建的笔记、目标、附件和个人数据不因使用本软件而
+归属于许可方。
+
+三、需要事先取得单独书面授权的事项
+
+除法律规定或第一条保留的既有许可另有允许外，下列行为不在
+本个人使用许可内：
+
+1. 对本许可覆盖的内容进行二次开发、修改程序源码、制作或发布
+   改版、移植版、换名版，或将其集成到其他产品。
+2. 向第三方分发、转售、出租、转授权，或提供源代码、安装包、
+   二进制程序、修改版及其镜像下载。
+3. 将其用于公司或组织的经营部署，或向第三方提供付费托管、
+   SaaS、白标、定制开发、系统集成或其他经营性软件服务。
+
+调整正常使用设置、编写自己的笔记，以及使用软件已有功能
+生成自己的内容，不属于此处限制的程序二次开发。
+商业及二次开发授权须与许可方单独书面约定，不能以保留署名
+代替授权，也不能从源码可见推定为允许销售。
+
+四、标识、凭据与第三方服务
+
+保留本许可适用内容的版权和许可说明，不得冒充官方版本或声称
+未经授予的背书。本许可不授予商标、肖像、第三方账户、API 密钥
+或订阅额度。使用者须使用自己的模型服务凭据，并自行遵守对应
+服务条款和计费规则。
+
+五、保证与责任
+
+软件按现状提供，不保证无错误、适合特定用途或产生特定结果。
+在适用法律允许的范围内，许可方不承担使用软件产生的间接损失。
+本条不排除适用法律不得排除的权利、义务或责任。
+违反本许可时，应停止未经授权的相关行为；已经存在的其他有效
+许可和法律允许的权利不因本条而被撤销。
+
+需要授权时，请通过项目公开主页联系维护者商定；不要在公开
+Issue 中提交个人信息、业务秘密或模型凭据。

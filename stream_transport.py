@@ -7,6 +7,7 @@ import selectors
 import signal
 import subprocess
 import time
+from provider_access import child_environment
 
 
 def answer_prefix(raw, structured):
@@ -127,7 +128,7 @@ class StreamTransportMixin:
         try:
             with self.runlock:
                 if cancelled(): return None
-                proc = subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True,bufsize=0)
+                proc = subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True,bufsize=0,env=child_environment())
                 self.processes[job['id']] = proc; self.store.change(job['id'],'job',status='running')
             for pipe in (proc.stdin,proc.stdout,proc.stderr): os.set_blocking(pipe.fileno(),False)
             selector.register(proc.stdout,selectors.EVENT_READ,'stdout'); selector.register(proc.stderr,selectors.EVENT_READ,'stderr')

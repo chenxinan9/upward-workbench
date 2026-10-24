@@ -3,11 +3,6 @@
   "scope": "Reviewed advisor entries, references and license notices; no private reports",
   "files": [
     {
-      "path": "README.md",
-      "bytes": 3196,
-      "sha256": "8fe651e5ef0bd34e611af381df4dfb24159187bec5e87251ec7aebb0e6eeda62"
-    },
-    {
       "path": "adler-perspective/LICENSE",
       "bytes": 1063,
       "sha256": "53af10dcfbdccc453792f0037a84746ebbb180b4b8f887e1620fc5c05b8a05ae"
@@ -373,9 +368,24 @@
       "sha256": "e93ce73756f5125a889073581f328a0c2fa56e7e4ddb5530f390b711bab1be8e"
     },
     {
-      "path": "excluded.json",
-      "bytes": 977,
-      "sha256": "776d5a8a763c47f78c3346f5034f5b96c6b8693fedf6439fdb03aa2c64747ea4"
+      "path": "fact-check/LICENSE",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "fact-check/SKILL.md",
+      "bytes": 3019,
+      "sha256": "eafc8cc33e97bef142805aae7dfa2c12c63b01fe80105fc650d2c9bb3ec800b7"
+    },
+    {
+      "path": "fact-check/provenance.json",
+      "bytes": 3941,
+      "sha256": "f848c20cb4f7cfec7481e9d7bf1846289db0bee12497871c489624d38f141443"
+    },
+    {
+      "path": "fact-check/references/claim-evidence-card.md",
+      "bytes": 2405,
+      "sha256": "cf45adf6f012f94bbe6993a4fa2c9f86430f678cfe11ce78df99dd05b8b08c27"
     },
     {
       "path": "fengtang-perspective/LICENSE",
@@ -543,11 +553,6 @@
       "sha256": "2293237b18e25d1b9520ede2a8683f35d7e447f750bf428fa17c0983130cf1e8"
     },
     {
-      "path": "install.py",
-      "bytes": 4144,
-      "sha256": "8b73e57a4b6660de3806393d4f1499fdf8f73fcd9ba8f01d21666120cc844233"
-    },
-    {
       "path": "insurance-agent-policy-explanation/LICENSE",
       "bytes": 1091,
       "sha256": "3da232504cfd60f6bdbc094f204ea3bcaeb754eafca22ef8805d0392171e89c2"
@@ -633,9 +638,29 @@
       "sha256": "bade079a47ecd8d66de8086832d26dd2aacdcdd391441aa2b4aff8b92f4c7c6e"
     },
     {
-      "path": "manifest.json",
-      "bytes": 16511,
-      "sha256": "c7787fd72ee1153ee17928f25f220575243d1aa8719fd732a89120b93a41fd61"
+      "path": "life-design-compass/LICENSE",
+      "bytes": 1089,
+      "sha256": "6058f7b445fd2eb28410f066251bd72f18cf2d1a5afec30d5de9e343699c0e99"
+    },
+    {
+      "path": "life-design-compass/NOTICE.md",
+      "bytes": 1176,
+      "sha256": "c4c8d34bfcd81974fc500b6b127202acadb20f7a51e6cba0d3b7e5846931986b"
+    },
+    {
+      "path": "life-design-compass/SKILL.md",
+      "bytes": 2993,
+      "sha256": "908d057fa59f2859ac5e3bf78d7f046fe48b710b8a01b048224fa3bc9ae7c7fe"
+    },
+    {
+      "path": "life-design-compass/provenance.json",
+      "bytes": 4315,
+      "sha256": "8ba2456c7e7617c4670eddf2deaf3d534c94ccb3c0befc6b7635b613bb3ea228"
+    },
+    {
+      "path": "life-design-compass/references/life-prototype-card.md",
+      "bytes": 2348,
+      "sha256": "9aacd48f9c8baae82ec8fc3dcc38040957b105cd952b79e7d944421f953f5a5a"
     },
     {
       "path": "mao-zedong-perspective/LICENSE",
@@ -656,11 +681,6 @@
       "path": "mao-zedong-perspective/references/investigation-and-test.md",
       "bytes": 2616,
       "sha256": "a65e21195aba51bd9130be34063a7da6d43e42dd5871dd5fd456f360098a36d1"
-    },
-    {
-      "path": "methods.json",
-      "bytes": 32941,
-      "sha256": "74b131ab6ddc909e71c331774dcce68c5ddc4058776bb2b690ab9b814f979f2c"
     },
     {
       "path": "montaigne-perspective/LICENSE",

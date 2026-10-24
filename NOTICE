@@ -1,9 +1,11 @@
-本项目 MIT 许可仅覆盖贡献者有权授权的原创代码、原创文档和流程。
+自0.4.8-rc1候选起，有权另行授权的原创新增和修改采用根LICENSE的个人使用与商业授权许可；该限制不覆盖历史已MIT发布的内容或第三方开放材料。旧MIT原文保留于LICENSES/legacy-MIT.txt，范围见docs/licensing.md。
 public-advisors.json 记录第三方来源及许可状态，不包含其完整 Skill 正文。
 quotes.json 含附出处的简短引用、自译或明确意译；原作者及作品权利不变。
 分发前按 docs/distribution-policy.md 核对，不得把未知、内部使用或非商业限制材料改标 MIT。
 不包含私人档案、真实对话、模型凭据、私人知识库或项目发起者的宣传视频素材。
 
-advisors-bundle 中54份缩编Skill按各目录LICENSE分别分发：48 MIT、5 Apache-2.0、1 CC-BY-4.0。保留原作者署名和修改记录，本项目根MIT不覆盖这些不同许可。见 docs/advisor-bundle-audit.md。
+advisors-bundle 中56份缩编Skill按各目录LICENSE分别分发：50 MIT、5 Apache-2.0、1 CC-BY-4.0。保留原作者署名和修改记录，新版根许可不改变这些原许可。见 docs/advisor-bundle-audit.md。
 
-自 v0.3.0-rc2 起，各顾问目录另含带来源与修改说明的参考改编，沿用各自 LICENSE。knowledge-bundle/life-guide 中来自 eternity4719/HowToLiveBetter 及其贡献者的书籍与 docs 正文依 CC BY 4.0 分发；该集合的 LICENSE.txt、README.md、provenance.json 给出署名、固定版本与修改记录。本项目 MIT 不覆盖这套 CC BY 内容。knowledge-bundle/advisor-reading 为原创导读和来源链接，不包含链接目标的完整原著。
+自 v0.3.0-rc2 起，各顾问目录另含带来源与修改说明的参考改编，沿用各自 LICENSE。knowledge-bundle/life-guide 中来自 eternity4719/HowToLiveBetter 及其贡献者的书籍与 docs 正文依 CC BY 4.0 分发；该集合的 LICENSE.txt、README.md、provenance.json 给出署名、固定版本与修改记录。新版根许可不覆盖这套 CC BY 内容。knowledge-bundle/advisor-reading 为原创导读和来源链接，不包含链接目标的完整原著。
+
+本轮新增 life-design-compass 与 fact-check 的简体操作性适配，各保留上游 MIT、固定来源和修改记录；life-design-compass 的原 NOTICE.md 随目录保留，不表示斯坦福或相关作者背书。未附上游脚本、hooks或账号引导。

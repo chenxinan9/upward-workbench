@@ -3,6 +3,7 @@ from contextlib import closing
 import datetime as dt
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -34,6 +35,13 @@ def _stamp(info):
     return (info.st_dev, info.st_ino, info.st_uid, info.st_mode, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 
 
+def _finite_number(value):
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError('绑定JSON包含非有限数字')
+    return number
+
+
 def _json_pin(path, checksum, maximum):
     before = _identity(path)
     if before.st_size > maximum:
@@ -42,9 +50,10 @@ def _json_pin(path, checksum, maximum):
         if _stamp(os.fstat(handle.fileno())) != _stamp(before):
             raise ValueError('绑定文件已变化')
         raw = handle.read(maximum + 1)
-    if len(raw) > maximum or hashlib.sha256(raw).hexdigest() != checksum or _stamp(_identity(path)) != _stamp(before):
+    if (len(raw) > maximum or (checksum is not None and hashlib.sha256(raw).hexdigest() != checksum)
+            or _stamp(_identity(path)) != _stamp(before)):
         raise ValueError('绑定文件已变化')
-    value = json.loads(raw)
+    value = json.loads(raw, parse_float=_finite_number, parse_constant=_finite_number)
     if not isinstance(value, dict):
         raise ValueError('绑定结构无效')
     return value, _stamp(before)
@@ -122,13 +131,26 @@ def read_creator_evidence(binding):
                 or not isinstance(binding.get('workspace_id'), str) or not 1 <= len(binding['workspace_id']) <= 100):
             raise ValueError('正式绑定参数无效')
         release_path = Path(binding['release_path'])
-        release, release_stamp = _json_pin(release_path, binding['release_sha256'], 4_000_000)
+        fixed_registration = None
+        if 'registration_path' in binding:
+            value = binding['registration_path']
+            if not isinstance(value, str) or not value:
+                raise ValueError('固定登记路径无效')
+            fixed_registration = Path(value)
+            if not fixed_registration.is_absolute() or str(fixed_registration) != value:
+                raise ValueError('固定登记路径无效')
+            _identity(fixed_registration)
+            if fixed_registration.resolve(strict=True) != fixed_registration:
+                raise ValueError('固定登记路径不规范')
+        release, release_stamp = _json_pin(release_path,
+            None if fixed_registration is not None else binding['release_sha256'], 4_000_000)
         workspace = release.get('workspace', {})
         if (release.get('app_id') != 'local.an.workbench' or release.get('purpose') != 'production'
                 or not isinstance(workspace, dict) or workspace.get('registration_sha256') != binding['registration_sha256']
-                or not isinstance(workspace.get('registration_path'), str)):
+                or not isinstance(workspace.get('registration_path'), str)
+                or (fixed_registration is not None and workspace['registration_path'] != str(fixed_registration))):
             raise ValueError('正式应用身份不符')
-        registration_path = Path(workspace['registration_path'])
+        registration_path = fixed_registration if fixed_registration is not None else Path(workspace['registration_path'])
         registration, registration_stamp = _json_pin(registration_path, binding['registration_sha256'], 128_000)
         if (registration.get('schema') != 2 or registration.get('purpose') != 'production'
                 or registration.get('workspace_id') != binding['workspace_id'] or type(registration.get('database_schema')) is not int):
@@ -231,7 +253,7 @@ def read_creator_evidence(binding):
                                 'note': '仅含已绑定正式库的作品与发布登记；未扫描素材、其他工作区或实时平台。'})
         if gaps:
             result['warnings'].append('部分登记记录过量或格式无效，未完整统计；缺失不表示没有创作。')
-    except (OSError, ValueError, TypeError, KeyError, AttributeError, sqlite3.Error):
+    except (OSError, ValueError, TypeError, KeyError, AttributeError, RecursionError, sqlite3.Error):
         result.update(works=[], publications=[])
         result['warnings'].append('创宇台正式来源暂未通过身份、版本或只读检查；未使用旧端口或推定发布数量，请重新核对本机绑定。')
     return result

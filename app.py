@@ -18,6 +18,7 @@ from model_check import ModelCheckMixin
 from workspace_api import WorkspaceMixin
 from growth_workspace import GrowthWorkspaceMixin
 from codex_workspace import resolve_codex_cli
+from provider_access import child_environment
 ROOT=Path(__file__).resolve().parent
 
 def now(): return dt.datetime.now(dt.timezone.utc).isoformat()
@@ -54,7 +55,7 @@ class Store:
             id=id or uid();old=c.execute('SELECT * FROM objects WHERE id=?',(id,)).fetchone()
             if old and (old['kind']!=kind or rev!=old['rev']):raise ValueError('记录已变化，请刷新后重试，未覆盖他人修改')
             data={k:v for k,v in data.items() if k not in ('id','rev')};data['updated_at']=now();data.setdefault('created_at',now());n=(old['rev']+1) if old else 1
-            c.execute('INSERT OR REPLACE INTO objects VALUES (?,?,?,?)',(id,kind,js(data),n))
+            c.execute('INSERT INTO objects VALUES (?,?,?,?) ON CONFLICT(id) DO UPDATE SET data=excluded.data,rev=excluded.rev',(id,kind,js(data),n))
             if record_version:c.execute('INSERT INTO versions VALUES (?,?,?)',(id,n,js(data)))
             c.execute('INSERT INTO audit(at,action,object_id,detail) VALUES (?,?,?,?)',(now(),action,id,js({'kind':kind,'rev':n})))
             return dict(data,id=id,rev=n)
@@ -240,7 +241,7 @@ class Desk(GrowthWorkspaceMixin, WorkspaceMixin, ModelCheckMixin, StreamTranspor
             script=self.settings.get('advisor_script');config=self.settings.get('advisor_config')
             if not script or not config:raise ValueError('尚未连接统一知识库；记录已在本地保存与可搜索')
             with self.indexlock:
-                p=subprocess.run([os.sys.executable,script,'--config',config,'build'],capture_output=True,text=True,timeout=180)
+                p=subprocess.run([os.sys.executable,script,'--config',config,'build'],capture_output=True,text=True,timeout=180,env=child_environment())
                 if p.returncode:raise ValueError('知识库索引脚本执行失败，请检查本机连接配置后重试；笔记已保留')
                 try:r=json.loads(p.stdout)
                 except json.JSONDecodeError:raise ValueError('知识库脚本未返回有效索引回执，请检查连接后重试；笔记已保留')
@@ -264,6 +265,7 @@ class Desk(GrowthWorkspaceMixin, WorkspaceMixin, ModelCheckMixin, StreamTranspor
     def preview(self,d):
         message=clean(d.get('message',''),6000)
         model_selection=self.resolve_model(d.get('model'))
+        if model_selection.get('service_id')=='deepseek':raise ValueError('DeepSeek 请在睿顾台主界面的知识与对话中使用；旧版会话接口不会代发到其他服务')
         if not message:raise ValueError('先输入要讨论的问题')
         sid=d.get('session_id')
         if sid:self.store.get(sid,'session')
@@ -452,6 +454,7 @@ class Handler(BaseHTTPRequestHandler):
             if u.path.startswith(('/api/vault/', '/api/workspace/')):return self.reply(self.app.workspace_get(u.path,q))
             if u.path=='/api/models/check':return self.reply(self.app.model_check_status())
             if u.path=='/api/models':return self.reply(self.app.model_catalog(refresh=q.get('refresh')=='1'))
+            if u.path=='/api/providers':return self.reply(self.app.providers())
             if u.path=='/api/capture':return self.reply(self.app.capture_status(q['request_id']) if q.get('request_id') else self.app.capture_recent(int(q.get('limit','20'))))
             if u.path=='/api/phase':return self.reply(self.app.phase_snapshot(q.get('days','7')))
             if u.path=='/api/local/capabilities':return self.reply(self.app.local_capabilities())
@@ -478,9 +481,9 @@ class Handler(BaseHTTPRequestHandler):
                 scene=self.app.settings.get('scene') or ROOT/'desktop/assets/study-scene.png'
                 if not scene or not Path(scene).is_file():return self.reply({'error':'未配置场景'},404)
                 p=Path(scene);raw=p.read_bytes();self.send_response(200);self.headers_common('image/png',len(raw));self.end_headers();self.wfile.write(raw);return
-            paths={'/':'web/workspace.html','/legacy':'web/index.html','/workspace.js':'web/workspace.js','/workspace.css':'web/workspace.css','/growth-workspace.js':'web/growth-workspace.js','/growth-workspace.css':'web/growth-workspace.css','/app.js':'web/app.js','/style.css':'web/style.css','/experience.js':'web/experience.js','/experience.css':'web/experience.css'}
+            paths={'/':'web/workspace.html','/legacy':'web/index.html','/workspace.js':'web/workspace.js','/workspace.css':'web/workspace.css','/growth-workspace.js':'web/growth-workspace.js','/growth-workspace.css':'web/growth-workspace.css','/app.js':'web/app.js','/style.css':'web/style.css','/experience.js':'web/experience.js','/experience.css':'web/experience.css','/docs/deepseek-and-codex.md':'docs/deepseek-and-codex.md'}
             if u.path not in paths:return self.reply({'error':'不存在'},404)
-            p=ROOT/paths[u.path];raw=p.read_bytes();self.send_response(200);self.headers_common(mimetypes.guess_type(p)[0]+'; charset=utf-8',len(raw));self.end_headers();self.wfile.write(raw)
+            p=ROOT/paths[u.path];raw=p.read_bytes();self.send_response(200);self.headers_common(('text/plain' if p.suffix=='.md' else mimetypes.guess_type(p)[0])+'; charset=utf-8',len(raw));self.end_headers();self.wfile.write(raw)
         except FileNotFoundError:self.reply({'error':'文件不存在，可能已被移动或删除，请刷新目录'},404)
         except PermissionError as e:self.reply({'error':str(e)},403)
         except (ValueError,KeyError) as e:self.reply({'error':str(e)},400)
@@ -497,7 +500,8 @@ class Handler(BaseHTTPRequestHandler):
             if not isinstance(d,dict):raise ValueError('需要对象')
             if path.startswith(('/api/vault/', '/api/workspace/')):return self.reply(self.app.workspace_post(path,d))
             if path=='/api/models/check/stop':return self.reply(self.app.stop_model_check())
-            if path=='/api/models/check':return self.reply(self.app.check_models())
+            if path=='/api/models/check':return self.reply(self.app.check_models(d.get('model')))
+            if path=='/api/providers/deepseek':return self.reply(self.app.configure_deepseek(d))
             if path=='/api/capture':return self.reply(self.app.capture(d))
             if path=='/api/chat/organize':return self.reply({k:v for k,v in self.app.organize_reply(d['id']).items() if k not in ('prompt','raw_response','capture_items')})
             if path=='/api/adopt':return self.reply(self.app.adopt(d))

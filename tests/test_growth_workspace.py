@@ -66,6 +66,29 @@ class GrowthWorkspaceTests(unittest.TestCase):
         self.assertNotIn('ideas',general);self.assertNotIn('panorama',general)
         with self.assertRaises(ValueError):self.desk.growth_context('invalid',7)
         with self.assertRaises(ValueError):self.desk.growth_snapshot(True)
+
+    def test_recent_planning_includes_ideas_and_goals_but_today_has_only_scheduled_actions(self):
+        self.desk.store.put('workspace-message',{'role':'user','text':'想学习新的技能'})
+        self.desk.store.put('goal',{'title':'已采用学习目标','status':'active','steps':[{'text':'真实日期行动','due':self.today,'done':False}]})
+        context=self.desk.growth_context('goals',7)
+        self.assertEqual(context['goals'][0]['title'],'已采用学习目标')
+        self.assertEqual(context['ideas'][0]['body'],'想学习新的技能')
+        self.assertNotIn('ideas',self.desk.growth_context('daily',7))
+        self.assertTrue(self.desk.growth_context('ideas',7)['ideas'])
+        options=self.desk.workspace_get('/api/workspace/options',{})['purposes']
+        self.assertEqual(next(p['label'] for p in options if p['id']=='goals'),'近期规划')
+        self.assertNotIn('ideas',[p['id'] for p in options])
+
+    def test_invalid_calendar_dates_do_not_become_real_overdue_or_today_reminders(self):
+        self.desk.store.put('goal',{'title':'已采用学习目标','status':'active','steps':[
+            {'text':'无效月份','due':'2020-99-02','done':False},
+            {'text':'无效日期','due':'2020-02-31','done':False},
+            {'text':'真实逾期','due':'2020-02-29','done':False},
+            {'text':'尚未排期','due':'','done':False}]})
+        snapshot=self.desk.growth_snapshot()
+        self.assertEqual([s['text'] for s in snapshot['today']['overdue']],['真实逾期'])
+        self.assertEqual([s['text'] for s in snapshot['today']['unscheduled']],['尚未排期'])
+        self.assertEqual(snapshot['goals'][0]['steps'][1]['due'],'2020-02-31')
     def test_excluded_or_symlink_docs_not_included(self):
         out=self.root/'outside.md';out.write_text('private')
         (self.vault/'link.md').symlink_to(out)
