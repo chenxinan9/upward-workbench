@@ -117,6 +117,41 @@ test('native model directory keeps untried options and preserves choice through 
  assert.equal(h.ui.state.selectedModel,'public-b');assert.equal(h.ui.state.modelUnavailable,false);
  assert.equal(h.get('message').value,'公开合成未发送问题');assert.equal(h.requests.length,5);
 });
+test('model-directory GET waits for its backend budget while other reads stay bounded',async()=>{
+ for(const refresh of [false,true]){
+  const h=harness(),pending=h.ui.loadModels(refresh);
+  assert.equal(h.requests[0].url,'/api/models'+(refresh?'?refresh=1':''));
+  assert.ok([...h.timers.values()].some(timer=>timer.ms===35000));
+  assert.ok(![...h.timers.values()].some(timer=>timer.ms===15000));
+  h.requests[0].respond({models:[],status:'unavailable'});await pending;
+  assert.equal([...h.timers.values()].some(timer=>timer.ms===35000),false);
+ }
+ const h=harness(),pending=h.ui.loadProviders();
+ assert.equal(h.requests[0].url,'/api/providers');
+ assert.ok([...h.timers.values()].some(timer=>timer.ms===15000));
+ h.requests[0].respond({providers:[]});await pending;
+ assert.equal([...h.timers.values()].some(timer=>timer.ms===15000),false);
+});
+test('directory rejection retains draft attachments and session without automatically resending',async()=>{
+ const h=harness();h.ui.state.session='A';h.ui.state.selectedModel='public-model';h.get('message').value='公开合成未发送问题';
+ h.ui.currentAttachments().push({id:'att',key:'att',name:'公开合成.txt',status:'ready'});
+ const pending=h.ui.sendMessage({preventDefault(){}});
+ h.requests[0].respond({error:'模型目录读取超时（30 秒），请保留选择后刷新'},400);await pending;
+ assert.match(h.get('chat-notice').textContent,/本条未发送/);assert.doesNotMatch(h.get('chat-notice').textContent,/是否已收到/);
+ assert.equal(h.get('message').value,'公开合成未发送问题');assert.equal(h.ui.drafts().chat('A'),'公开合成未发送问题');
+ assert.equal(h.ui.currentAttachments()[0].id,'att');assert.equal(h.ui.state.session,'A');assert.equal(h.ui.state.selectedModel,'public-model');
+ assert.equal(h.get('send').disabled,false);assert.equal(h.requests.length,1,'恢复选择与草稿不能自动重试生成');
+});
+test('uncertain transport and server errors never claim that a message was definitely unsent',async()=>{
+ for(const kind of ['network','server']){
+  const h=harness();h.ui.state.session='A';h.ui.state.selectedModel='public-model';h.get('message').value='仍须核对的合成问题';
+  const pending=h.ui.sendMessage({preventDefault(){}});
+  if(kind==='network')h.requests[0].reject(new Error('模型目录连接中断'));
+  else h.requests[0].respond({error:'模型目录读取失败'},500);
+  await pending;assert.match(h.get('chat-notice').textContent,/先核对会话是否已收到/);assert.doesNotMatch(h.get('chat-notice').textContent,/本条未发送/);
+  assert.equal(h.get('message').value,'仍须核对的合成问题');assert.equal(h.ui.state.session,'A');assert.equal(h.requests.length,1);
+ }
+});
 test('model option labels stay short while the full verification remains accessible',async()=>{
  const h=harness(),models=[{id:'verified',label:'模型 A',selectable:true,verified:true,verification:'历史试答已通过，当前请求仍可能受额度和网络影响',verified_at:'2026-10-16'},
  {id:'untried',label:'模型 B',selectable:true,verified:false,verification:'当前账户目录提供，尚未进行真实试答'},

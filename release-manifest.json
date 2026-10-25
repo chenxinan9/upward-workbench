@@ -1,5 +1,5 @@
 {
-  "version": "0.4.8-rc1",
+  "version": "0.4.9-rc1",
   "edition": "source-available-growth-workspace-preview",
   "scope": "personal-use licensed new original changes, retained legacy and third-party licenses; no private user data",
   "metrics": {
@@ -59,8 +59,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6543,
-      "sha256": "0e49bc8a8eccd2da5da2c3d9a99f4fe7e355477ca77e1fbb4681e75643e90c65"
+      "bytes": 6588,
+      "sha256": "88278ee6ee941feb2ecd8d5449cf5a3acf145d42063a43b664d9bd6d4a6558a9"
     },
     {
       "path": "ROADMAP.md",
@@ -1474,8 +1474,8 @@
     },
     {
       "path": "codex_workspace.py",
-      "bytes": 63890,
-      "sha256": "6bdfbb6f32ca9e9a94f1b7b549e3a2c789c06dac2b1517c213352baf41b02337"
+      "bytes": 72112,
+      "sha256": "a4ab12b3c5fbc00b0684f5d01e3c540b3b229692b4ca2831e3895b510d720f29"
     },
     {
       "path": "conversation.py",
@@ -1574,8 +1574,8 @@
     },
     {
       "path": "docs/current-workspace.md",
-      "bytes": 13650,
-      "sha256": "ea4b520c39c2ce7d630797539ccfbd3ed10175d06b042bba1e961001886d99d8"
+      "bytes": 14390,
+      "sha256": "5dbedf0216344f391b7846efafcf1384e3b2cc70391e043ab028e7b59e9d7634"
     },
     {
       "path": "docs/daily-experience.md",
@@ -1671,6 +1671,11 @@
       "path": "docs/release-v0.4.8-rc1.md",
       "bytes": 3185,
       "sha256": "5dc88de70a8cd295df8a16e9974d8948137ac584857ed339d9d2c58d5c0f1d7e"
+    },
+    {
+      "path": "docs/release-v0.4.9-rc1.md",
+      "bytes": 2426,
+      "sha256": "6ca3449845ba6cc373b767e510a40b42b42df5f16b788c4779019a2cd59c1533"
     },
     {
       "path": "docs/research.md",
@@ -2679,8 +2684,8 @@
     },
     {
       "path": "model_access.py",
-      "bytes": 20530,
-      "sha256": "9eb401280852712a723df733cdfaecaf10694eae17e9c7800f290c3214f04be9"
+      "bytes": 20693,
+      "sha256": "76a06fc0eb48eb81a8f802b7b152b5a56debacae3f6f89be597c228a7ecf5d80"
     },
     {
       "path": "model_check.py",
@@ -2784,8 +2789,8 @@
     },
     {
       "path": "tests/test_codex_workspace.py",
-      "bytes": 52198,
-      "sha256": "9415d83a93ff52d13e8feb05ee9f3e957aa0544e7b0e746d063065027e88e830"
+      "bytes": 63558,
+      "sha256": "77bddd4984a703b1d1aab04272e7da5dc5f75f6edda3a88886471716e0c09f47"
     },
     {
       "path": "tests/test_conversation.py",
@@ -2869,8 +2874,8 @@
     },
     {
       "path": "tests/test_model_access.py",
-      "bytes": 12728,
-      "sha256": "548238ebd8d1980bf91e8138587f55fb3721a75f4f849bcc234fb939576ba881"
+      "bytes": 18648,
+      "sha256": "e45ec6125cbe6d04e2dd4c6ddb21727c063ef2c6e2d11dc95807b3244f71f26d"
     },
     {
       "path": "tests/test_model_check.py",
@@ -2919,8 +2924,8 @@
     },
     {
       "path": "tests/test_workspace_api.py",
-      "bytes": 43210,
-      "sha256": "20e65c69d34891d7dca44ab05545a6b2bb5f6b208016d2fdbe865c073713b5b7"
+      "bytes": 45977,
+      "sha256": "be470421806f40bfc0c2094d07202b452f440a850811067828f1087af98ddba2"
     },
     {
       "path": "tests/test_workspace_artifacts.py",
@@ -2929,8 +2934,8 @@
     },
     {
       "path": "tests/test_workspace_frontend.cjs",
-      "bytes": 124880,
-      "sha256": "9a3b0073bb06ff1292147a0a6e59b6a865ccdbaedc417ef3988b31d6ff1b6a12"
+      "bytes": 127602,
+      "sha256": "2fb57394354b7f66722e391a37ac7721526a72c375ffa09d75be484eed6de141"
     },
     {
       "path": "tests/test_workspace_install.py",
@@ -2959,8 +2964,8 @@
     },
     {
       "path": "tools/build_release.py",
-      "bytes": 8998,
-      "sha256": "bddbeddb923959691dd3138f3c3dd5c313b78bda4400d767f331b7ae2b5e389b"
+      "bytes": 9038,
+      "sha256": "f9a2f192bde83d950de10121d4356dcf7d0bb65dbc07293d9c0fc8376f667691"
     },
     {
       "path": "tools/capture_conversation.py",
@@ -3049,13 +3054,13 @@
     },
     {
       "path": "web/workspace.js",
-      "bytes": 137271,
-      "sha256": "def4c391b153d28396b89fafef76a7973f6ff5d035df543c0a8118b03c57b099"
+      "bytes": 137538,
+      "sha256": "6ebe8b5a152ad66338ddbebbbe480f4b6d8030f9f8aac16b83a4a6a8a725d3be"
     },
     {
       "path": "workspace_api.py",
-      "bytes": 86124,
-      "sha256": "eadb15045cb2364e9dcb8cbfbace9167cce75f985e93decfcb616ab0d0a773f9"
+      "bytes": 86740,
+      "sha256": "c5f0e37242f8dbd20ca40fc13bc372c3a420743582fc1f4e21f87c7419c20dbe"
     },
     {
       "path": "workspace_artifacts.py",

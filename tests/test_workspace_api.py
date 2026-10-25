@@ -39,6 +39,7 @@ class WorkspaceAPITest(unittest.TestCase):
         doc = self.desk.vault.read('notes:note.md')
         def run_turn(client, **kw):
             self.assertEqual(kw['thread_id'], 'existing-thread')
+            self.assertEqual(kw['thread_name'], '睿顾台 · 测试')
             kw['on_event']({'type':'thread','thread_id':'existing-thread'})
             r = kw['tool_call']('knowledge_read', {'document_id':'notes:note.md'})
             self.assertEqual(r['text'], '# 测试\n原文')
@@ -53,6 +54,39 @@ class WorkspaceAPITest(unittest.TestCase):
         self.assertEqual(saved['jobs'][0]['status'], 'completed')
         self.assertEqual(saved['messages'][0]['references'][0]['id'], 'notes:note.md')
         self.assertIn('已写回', self.doc.read_text())
+
+    def test_background_thread_maintenance_failure_keeps_the_answer_and_binding(self):
+        session = self.desk.store.put('workspace-session', {'title':'日常顾问','thread_id':None})
+        job = self.desk.store.put('workspace-job', {'session_id':session['id'],'status':'queued'})
+        def run_turn(client, **kw):
+            self.assertEqual(kw['thread_name'], '睿顾台 · 日常顾问')
+            kw['on_event']({'type':'thread','thread_id':'owned-thread','actual_model':'gpt-test'})
+            self.assertEqual(self.desk.store.get(session['id'])['thread_id'], 'owned-thread')
+            kw['on_event']({'type':'thread_maintenance','status':'failed','name_updated':True,'archived':False,
+                            'message':'后台会话暂未收起','unexpected_secret':'MUST_NOT_PERSIST'})
+            self.assertEqual(self.desk.store.get(job['id'])['status'], 'running')
+            return {'thread_id':'owned-thread','actual_model':'gpt-test','text':'有效答复','status':'completed'}
+        with patch('codex_workspace.CodexWorkspace.run_turn', run_turn):
+            self.desk.workspace_run(job,session,{'id':'gpt-test'},'公开合成问题',None,'',False,threading.Event())
+        saved = self.desk.store.get(job['id'])
+        self.assertEqual(saved['status'], 'completed')
+        self.assertFalse(saved['thread_maintenance']['archived'])
+        self.assertNotIn('MUST_NOT_PERSIST', json.dumps(saved))
+        self.assertEqual(self.desk.store.all('workspace-message')[0]['text'], '有效答复')
+
+    def test_engine_name_accepts_existing_long_or_multiline_workspace_titles(self):
+        for title in ('长标题' * 26 + '结束', '第一行\n第二行\u202e内容'):
+            with self.subTest(title_length=len(title)):
+                session = self.desk.store.put('workspace-session', {'title':title,'thread_id':None})
+                job = self.desk.store.put('workspace-job', {'session_id':session['id'],'status':'queued'})
+                def run_turn(client, **kw):
+                    self.assertTrue(kw['thread_name'].startswith('睿顾台 · '))
+                    self.assertLessEqual(len(kw['thread_name']), 80)
+                    self.assertNotRegex(kw['thread_name'], r'[\x00-\x1f\x7f-\x9f\u2028-\u202e\u2066-\u2069]')
+                    return {'thread_id':'owned-thread','actual_model':'gpt-test','text':'有效答复','status':'completed'}
+                with patch('codex_workspace.CodexWorkspace.run_turn', run_turn):
+                    self.desk.workspace_run(job,session,{'id':'gpt-test'},'公开合成问题',None,'',False,threading.Event())
+                self.assertEqual(self.desk.store.get(job['id'])['status'], 'completed')
 
     def test_tool_cannot_write_without_current_turn_authority(self):
         session = self.desk.store.put('workspace-session', {'title':'测试','thread_id':'existing'})

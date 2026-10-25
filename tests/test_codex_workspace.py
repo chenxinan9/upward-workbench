@@ -9,7 +9,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from codex_workspace import CodexWorkspace, WorkspaceProtocolError, explicit_write_intent, TOOLS, safe_command, resolve_codex_cli
+from codex_workspace import CodexWorkspace, WorkspaceProtocolError, explicit_write_intent, TOOLS, safe_command, resolve_codex_cli, manage_workspace_thread
 
 SYNTHETIC_REVIEW_REQUEST = '这是公开合成验收，不是本人资料。10月12日至18日，我练习英语3次，完成摄影草稿1篇；没有发布记录，不能把草稿算作已发布。请实际读取并采用“阶段反思顾问”及必要参考，简短复盘这7天的变化，分清事实与解释，然后把本次阶段复盘保存为新的成长复盘记录，标题“合成一周实践复盘”。只保存复盘，不采纳新目标、不更改其他记录。最后简短说明实际依据和保存位置。'
 
@@ -71,7 +71,15 @@ else:
 info=json.loads(state.read_text())
 model='unexpected-model' if mode in ('wrong_model','archive_wrong_model') else 'test-model'
 reply(request['id'],{'thread':{'id':'thread-1'},'model':model})
-request=read(); assert request['method']=='turn/start'
+request=read()
+if request['method']=='thread/name/set':
+ assert request['params']=={'threadId':'thread-1','name':'睿顾台 · 合成主题'}
+ name_id=request['id']
+ if mode=='managed_name_error':send({'id':name_id,'error':failure})
+ elif mode!='managed_name_timeout':reply(name_id,{})
+ request=read()
+ if mode=='managed_name_timeout':reply(name_id,{})
+assert request['method']=='turn/start'
 if mode=='rpc_turn':
  send({'id':request['id'],'error':failure});sys.exit()
 info['turns']+=1; state.write_text(json.dumps(info)); tid='turn-'+str(info['turns'])
@@ -152,6 +160,78 @@ emit('item/completed',threadId='thread-1',turnId=tid,item={'type':'agentMessage'
 if mode=='early_exit':sys.exit()
 emit('turn/completed',threadId='thread-1',turn={'id':tid,'status':'completed'})
 '''
+
+
+METADATA_SERVER = r'''
+import json,sys,pathlib,time,os
+root=pathlib.Path(sys.argv[1]);mode=sys.argv[2]
+def read():
+ line=sys.stdin.readline()
+ if not line:raise SystemExit
+ obj=json.loads(line)
+ with (root/'maintenance-requests.jsonl').open('a') as f:f.write(json.dumps(obj)+'\n')
+ return obj
+def reply(i,result):print(json.dumps({'id':i,'result':result}),flush=True)
+req=read();assert req['method']=='initialize';reply(req['id'],{})
+assert read()['method']=='initialized'
+req=read();assert req['method']=='thread/read' and req['params']=={'threadId':'thread-1','includeTurns':False}
+if mode=='slow':time.sleep(2)
+if mode=='error':
+ print(json.dumps({'id':req['id'],'error':{'code':-32603,'message':'PRIVATE_SECRET token=PRIVATE_KEY /private/user'}}),flush=True);read();sys.exit()
+reply(req['id'],{'thread':{'id':'foreign-thread' if mode=='foreign_id' else 'thread-1','cwd':str(root/'foreign') if mode=='foreign_cwd' else str(root),'status':{'type':'active' if mode=='active' else 'notLoaded'}}})
+req=read()
+if req['method']=='thread/name/set':
+ assert req['params']=={'threadId':'thread-1','name':'睿顾台 · 合成主题'};reply(req['id'],{});req=read()
+assert req['method']=='thread/archive' and req['params']=={'threadId':'thread-1'}
+reply(req['id'],{})
+assert not sys.stdin.readline()
+'''
+
+
+class ThreadMaintenanceTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
+        self.script=self.root/'maintenance.py';self.script.write_text(METADATA_SERVER)
+    def tearDown(self):self.tmp.cleanup()
+    def manage(self,mode='normal',**kwargs):
+        return manage_workspace_thread('fixture-cli','thread-1',self.root,
+            command=[sys.executable,str(self.script),str(self.root),mode],**kwargs)
+    def requests(self):
+        return [json.loads(line) for line in (self.root/'maintenance-requests.jsonl').read_text().splitlines()]
+    def test_metadata_only_name_and_archive_require_exact_id_and_cwd(self):
+        result=self.manage(name='睿顾台 · 合成主题')
+        self.assertEqual(result['status'],'completed');self.assertTrue(result['name_updated']);self.assertTrue(result['archived'])
+        self.assertEqual([row['method'] for row in self.requests()],
+            ['initialize','initialized','thread/read','thread/name/set','thread/archive'])
+    def test_foreign_metadata_cannot_rename_or_archive(self):
+        for mode in ['foreign_id','foreign_cwd','active']:
+            with self.subTest(mode=mode):
+                (self.root/'maintenance-requests.jsonl').unlink(missing_ok=True)
+                result=self.manage(mode,name='睿顾台 · 合成主题')
+                self.assertEqual(result['status'],'failed');self.assertFalse(result['archived']);self.assertFalse(result['name_updated'])
+                self.assertEqual([row['method'] for row in self.requests()],['initialize','initialized','thread/read'])
+    def test_timeout_reaps_process_and_never_starts_a_thread_or_turn(self):
+        processes=[];popen=subprocess.Popen
+        def spawn(*args,**kwargs):
+            process=popen(*args,**kwargs);processes.append(process);return process
+        with patch('codex_workspace.subprocess.Popen',side_effect=spawn):result=self.manage('slow',timeout=.1)
+        self.assertEqual(result['status'],'failed');self.assertFalse(result['archived'])
+        self.assertTrue(processes);self.assertTrue(all(process.poll() is not None for process in processes))
+        self.assertFalse(any(row['method'] in ['thread/start','turn/start','thread/archive'] for row in self.requests()))
+    def test_upstream_error_and_provider_secrets_are_not_exposed(self):
+        with patch.dict(os.environ,{'RUIGU_DEEPSEEK_API_KEY':'PRIVATE_KEY','RUIGU_PROVIDER_RELAY_TOKEN':'PRIVATE_RELAY'}):
+            popen=subprocess.Popen;environments=[]
+            def spawn(*args,**kwargs):environments.append(kwargs['env']);return popen(*args,**kwargs)
+            with patch('codex_workspace.subprocess.Popen',side_effect=spawn):result=self.manage('error')
+        self.assertEqual(result['status'],'failed')
+        for name in ['RUIGU_DEEPSEEK_API_KEY','RUIGU_PROVIDER_RELAY_TOKEN']:self.assertNotIn(name,environments[0])
+        for private in ['PRIVATE_SECRET','PRIVATE_KEY','/private/user']:self.assertNotIn(private,json.dumps(result))
+    def test_invalid_metadata_request_is_rejected_before_spawn(self):
+        with patch('codex_workspace.subprocess.Popen') as spawn:
+            for kwargs in [{'thread_id':'unsafe\nthread'},{'name':'unsafe\nname'},{'timeout':True},{'timeout':31},{'archive':'yes'}]:
+                args={'thread_id':'thread-1','cwd':self.root};args.update(kwargs)
+                with self.subTest(kwargs=kwargs),self.assertRaises(ValueError):manage_workspace_thread('fixture',**args)
+            spawn.assert_not_called()
 
 
 class CliResolutionTests(unittest.TestCase):
@@ -238,6 +318,81 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(methods.count('thread/start'),1);self.assertEqual(methods.count('thread/resume'),1)
         self.assertEqual(methods.count('turn/start'),2)
         self.assertTrue(req[0]['params']['capabilities']['experimentalApi'])
+
+    def test_managed_turns_name_before_input_and_resume_same_thread(self):
+        receipt={'status':'completed','name_updated':False,'archived':True,'message':'后台会话整理已确认'}
+        with patch('codex_workspace.manage_workspace_thread',return_value=receipt) as manage:
+            first=self.run_fake(thread_name='睿顾台 · 合成主题')
+            second=self.run_fake(thread_name='睿顾台 · 合成主题',thread_id=first['thread_id'])
+        methods=[row['method'] for row in self.requests()]
+        self.assertEqual(methods.count('thread/start'),1);self.assertEqual(methods.count('thread/resume'),1)
+        self.assertEqual(methods.count('thread/name/set'),2);self.assertEqual(methods.count('turn/start'),2)
+        self.assertLess(methods.index('thread/name/set'),methods.index('turn/start'))
+        self.assertEqual(manage.call_count,2);manage.assert_called_with('unused','thread-1',str(self.root.resolve()))
+        self.assertEqual(second['thread_id'],first['thread_id']);self.assertEqual(second['text'],'回答第2轮')
+        self.assertEqual(second['thread_maintenance']['status'],'completed')
+        self.assertTrue(second['thread_maintenance']['archived'])
+        self.assertTrue(second['thread_maintenance']['name_updated'])
+    def test_managed_binding_precedes_send_guard_failure_and_is_still_collected(self):
+        def refuse():raise ValueError('合成发送前核验停止')
+        with patch('codex_workspace.manage_workspace_thread',return_value={'status':'completed','archived':True,'message':'已收起'}) as manage:
+            with self.assertRaisesRegex(ValueError,'发送前核验停止'):
+                self.run_fake(thread_name='睿顾台 · 合成主题',before_send=refuse)
+        self.assertTrue(any(event['type']=='thread' and event['thread_id']=='thread-1' for event in self.events))
+        self.assertFalse(any(row['method']=='turn/start' for row in self.requests()))
+        self.assertFalse(any(event['type']=='progress' and event.get('turn_id') for event in self.events))
+        manage.assert_called_once()
+    def test_name_error_and_late_timeout_receipt_each_send_only_one_turn(self):
+        for mode in ['managed_name_error','managed_name_timeout']:
+            with self.subTest(mode=mode):
+                (self.root/'requests.jsonl').unlink(missing_ok=True)
+                with patch('codex_workspace.manage_workspace_thread',return_value={'archived':True,'message':'已收起'}):
+                    result=self.run_fake(mode,thread_name='睿顾台 · 合成主题')
+                self.assertEqual(result['status'],'completed')
+                self.assertEqual([row['method'] for row in self.requests()].count('turn/start'),1)
+                self.assertEqual(result['thread_maintenance']['status'],'partial')
+                self.assertFalse(result['thread_maintenance']['name_updated'])
+    def test_name_failure_and_send_guard_failure_do_not_bind_an_unconfirmed_empty_thread(self):
+        def refuse():raise ValueError('合成发送前核验停止')
+        with patch('codex_workspace.manage_workspace_thread',return_value={'archived':False,'message':'后台会话整理未确认'}):
+            with self.assertRaisesRegex(ValueError,'发送前核验停止'):
+                self.run_fake('managed_name_error',thread_name='睿顾台 · 合成主题',before_send=refuse)
+        self.assertFalse(any(event['type']=='thread' for event in self.events))
+        self.assertFalse(any(row['method']=='turn/start' for row in self.requests()))
+        self.assertNotIn('请核对资料',json.dumps(self.requests(),ensure_ascii=False))
+    def test_archive_failure_never_changes_answer_or_repeats_generation(self):
+        with patch('codex_workspace.manage_workspace_thread',side_effect=RuntimeError('PRIVATE_KEY')):
+            result=self.run_fake(thread_name='睿顾台 · 合成主题')
+        self.assertEqual(result['status'],'completed');self.assertEqual(result['text'],'回答第1轮')
+        self.assertFalse(result['thread_maintenance']['archived'])
+        self.assertEqual(result['thread_maintenance']['status'],'failed')
+        self.assertNotIn('PRIVATE_KEY',json.dumps(result))
+        self.assertTrue(any(event['type']=='thread_maintenance' and event['status']=='failed' for event in self.events))
+        self.assertEqual([row['method'] for row in self.requests()].count('turn/start'),1)
+    def test_managed_model_mismatch_and_cancellation_only_collect_the_owned_thread(self):
+        receipt={'archived':True,'message':'后台会话已收起'}
+        for mode in ['wrong_model','cancel']:
+            with self.subTest(mode=mode):
+                (self.root/'requests.jsonl').unlink(missing_ok=True);self.events.clear()
+                cancel=threading.Event()
+                def event(value):
+                    self.events.append(value)
+                    if mode=='cancel' and value['type']=='progress' and value.get('turn_id'):cancel.set()
+                with patch('codex_workspace.manage_workspace_thread',return_value=receipt) as manage:
+                    if mode=='wrong_model':
+                        with self.assertRaisesRegex(WorkspaceProtocolError,'实际模型'):
+                            self.run_fake(mode,thread_name='睿顾台 · 合成主题',on_event=event)
+                    else:
+                        result=self.run_fake(mode,thread_name='睿顾台 · 合成主题',cancel_event=cancel,on_event=event)
+                        self.assertEqual(result['status'],'cancelled')
+                        self.assertTrue(result['thread_maintenance']['archived'])
+                manage.assert_called_once_with('unused','thread-1',str(self.root.resolve()))
+                methods=[row['method'] for row in self.requests()]
+                self.assertEqual(methods.count('turn/start'),0 if mode=='wrong_model' else 1)
+                self.assertLessEqual(methods.count('turn/interrupt'),1)
+                if mode=='wrong_model':
+                    self.assertFalse(any(value['type']=='thread' for value in self.events))
+                    self.assertNotIn('请核对资料',json.dumps(self.requests(),ensure_ascii=False))
 
     def test_rpc_failure_names_the_request_phase_without_exposing_upstream_text_or_retrying(self):
         for mode, phase, thread in [('rpc_init','建立连接',None), ('rpc_create','创建会话',None),

@@ -2,7 +2,7 @@
 
 原名「向上工作台」，仍是同一个顾问团工作台；现有数据、会话和知识库连接保持兼容。
 
-`0.4.8-rc1` 允许个人按许可使用，二次开发和销售需要另行授权；不是无条件商用的 MIT 新版。此前公开的 MIT 版本及第三方内容保留原权利。[查看许可范围](docs/licensing.md)。
+`0.4.9-rc1` 允许个人按许可使用，二次开发和销售需要另行授权；不是无条件商用的 MIT 新版。此前公开的 MIT 版本及第三方内容保留原权利。[查看许可范围](docs/licensing.md)。
 
 **56 份顾问 Skill、配套方法与案例、人生指南正文，加上你的成长工作台和本地知识库。**
 
@@ -18,7 +18,7 @@ macOS / Linux，需要 **Python 3.11+**：
 curl -fsSL https://raw.githubusercontent.com/chenxinan9/upward-workbench/main/install.sh | bash
 ```
 
-安装器固定下载 `0.4.8-rc1`，包含56份顾问、近期规划、成果区和Codex/DeepSeek双服务。安装器校验 SHA-256，建立独立的合成演示并打开浏览器。示例是虚构的摄影与英语练习，**不会复制原作者或你电脑里的私人资料**，也不会自动登录 AI、调用模型或安装全局技能。已有目录不会被覆盖。可先[查看安装脚本](https://github.com/chenxinan9/upward-workbench/blob/main/install.sh)；其他启动方式见[上手说明](docs/getting-started.md)。
+安装器固定下载 `0.4.9-rc1`，包含56份顾问、近期规划、成果区和Codex/DeepSeek双服务。安装器校验 SHA-256，建立独立的合成演示并打开浏览器。示例是虚构的摄影与英语练习，**不会复制原作者或你电脑里的私人资料**，也不会自动登录 AI、调用模型或安装全局技能。已有目录不会被覆盖。可先[查看安装脚本](https://github.com/chenxinan9/upward-workbench/blob/main/install.sh)；其他启动方式见[上手说明](docs/getting-started.md)。
 
 ## 顾问团怎么陪你做事
 
@@ -56,6 +56,6 @@ curl -fsSL https://raw.githubusercontent.com/chenxinan9/upward-workbench/main/in
 - [运行与备份](docs/reference.md) · [当前源码变化与验收范围](docs/current-workspace.md)
 - [贡献说明](CONTRIBUTING.md) · [安全说明](SECURITY.md) · [路线图](ROADMAP.md)
 
-当前版本为 **0.4.8-rc1 源码可见预发布版**，加入 DeepSeek V4.1 Flash / V4 Pro，支持同一聊天切换服务并承接当前范围内的问答。顾问、知识、读写和成果使用原有管线；本机认证与开源旧版的权利分开处理。[本版变化与验收范围](docs/release-v0.4.8-rc1.md)。一条命令的版本和 SHA-256 固定在安装脚本中。
+当前版本为 **0.4.9-rc1 源码可见预发布版**，修复发送前模型目录读取超时，并整理 Codex 后台会话：清楚命名、同范围续聊、完成后从最近列表收起。Codex / DeepSeek、顾问、知识、读写和成果沿用原有管线；本机认证与旧版许可分别保留。[本版变化与验收范围](docs/release-v0.4.9-rc1.md)。一条命令的版本和 SHA-256 固定在安装脚本中。
 
 本版有权另行授权的原创新增和修改采用[个人使用与商业授权许可](LICENSE)，二次开发、改版分发与销售需单独授权。此前 `v0.4.7-rc1` 及已按 MIT 发布的内容保留[旧 MIT 权利](LICENSES/legacy-MIT.txt)；第三方顾问和公共知识仍遵循各自许可。[许可范围](docs/licensing.md) · [NOTICE](NOTICE)。

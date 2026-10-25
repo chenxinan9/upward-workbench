@@ -28,6 +28,97 @@ class ModelAccessTests(unittest.TestCase):
     def receipt_file(self): return self.root/'data/model-verification.json'
     def selectable(self): return [model for model in self.desk.model_catalog()['models'] if model['selectable']]
 
+    def test_slow_metadata_startup_can_finish_after_the_old_ten_second_limit(self):
+        import codex_workspace
+        fixture = self.root/'slow_metadata.py'
+        fixture.write_text('''import sys,json,time
+def read(): return json.loads(sys.stdin.readline())
+def reply(i,r): print(json.dumps({'id':i,'result':r}),flush=True)
+assert read()['method']=='initialize';time.sleep(11);reply(1,{})
+assert read()['method']=='initialized'
+assert read()['method']=='account/read';reply(2,{'account':{'type':'chatgpt'}})
+assert read()['method']=='model/list';reply(3,{'data':[{'id':'gpt-public'}],'nextCursor':None})
+assert not sys.stdin.readline()
+''')
+        command=[sys.executable,'-B',str(fixture)]
+        with self.assertRaisesRegex(ValueError,'模型目录读取超时'):
+            codex_workspace.read_model_directory('fixture',home=self.root,command=command,timeout=.1)
+        self.assertIsNone(codex_workspace._DIRECTORY_PROCESS,'超时必须回收子进程，后续重试才能继续')
+        self.assertFalse(codex_workspace._DIRECTORY_PROCESS_LOCK.locked())
+        result=codex_workspace.read_model_directory('fixture',home=self.root,command=command)
+        self.assertEqual(result['models'],[{'id':'gpt-public'}])
+        self.assertIsNone(codex_workspace._DIRECTORY_PROCESS)
+
+    def test_native_success_cache_lifetime_starts_when_metadata_finishes(self):
+        self.write_config('model_provider="openai"\n')
+        self.desk.cli='fixture-codex'
+        clock=[100.0]
+        def metadata(*args,**kwargs):
+            clock[0]+=25
+            return {'models':[self.row('gpt-public')],'account_type':'chatgpt'}
+        with patch('model_access.time.monotonic',side_effect=lambda:clock[0]), patch('codex_workspace.read_model_directory',side_effect=metadata) as read:
+            selected=self.desk.resolve_model('gpt-public')
+            self.assertEqual(self.desk._model_directory_cache['at'],125)
+            clock[0]=154.9
+            self.desk.require_model_selection(selected)
+            self.assertEqual(read.call_count,1,'完成后的发送检查应复用目录，不能按启动时刻提前失效')
+            clock[0]=155
+            self.desk.require_model_selection(selected)
+            self.assertEqual(read.call_count,2,'目录仍有明确的30秒有效期，不能无限沿用')
+
+    def test_failed_directory_is_blocked_briefly_then_recovers_without_explicit_refresh(self):
+        self.write_config('model_provider="openai"\n')
+        self.desk.cli='fixture-codex'
+        clock=[100.0]
+        result={'models':[self.row('gpt-public')],'account_type':'chatgpt'}
+        with patch('model_access.time.monotonic',side_effect=lambda:clock[0]), patch('codex_workspace.read_model_directory',side_effect=[ValueError('模型目录读取超时'),result]) as read:
+            with self.assertRaisesRegex(ValueError,'模型目录读取超时'):self.desk.resolve_model('gpt-public')
+            clock[0]=101.9
+            self.assertFalse(any(m['selectable'] for m in self.desk.model_catalog()['models']))
+            self.assertEqual(read.call_count,1,'短失败缓存抑制并发重复派生，不放行旧目录')
+            clock[0]=102
+            selected=self.desk.resolve_model('gpt-public')
+            self.assertEqual(read.call_count,2,'失败后两秒即可重核，不应继续锁住用户30秒')
+            self.assertTrue(selected['selectable'])
+
+    def test_overlapping_refreshes_share_the_read_but_a_later_refresh_reads_again(self):
+        import threading
+        for failed in (False,True):
+            with self.subTest(failed=failed):
+                self.desk._model_directory_cache=None
+                reading=threading.Event();waiting=threading.Event();release=threading.Event()
+                lock=threading.RLock();results=[];errors=[]
+                class ObservedLock:
+                    def __enter__(self):
+                        if threading.current_thread().name=='directory-waiter':waiting.set()
+                        return lock.__enter__()
+                    def __exit__(self,*args):return lock.__exit__(*args)
+                def metadata(*args,**kwargs):
+                    reading.set()
+                    if not release.wait(2):raise AssertionError('测试未释放目录读取屏障')
+                    if failed:raise ValueError('模型目录读取超时')
+                    return {'models':[self.row('gpt-public')],'account_type':'chatgpt'}
+                def refresh():
+                    try:results.append(self.desk._native_directory(refresh=True))
+                    except Exception as error:errors.append(error)
+                with patch('model_access._DIRECTORY_LOCK',ObservedLock()), patch('codex_workspace.read_model_directory',side_effect=metadata) as read:
+                    first=threading.Thread(target=refresh,name='directory-reader')
+                    second=threading.Thread(target=refresh,name='directory-waiter')
+                    first.start()
+                    try:
+                        self.assertTrue(reading.wait(2))
+                        second.start();self.assertTrue(waiting.wait(2))
+                    finally:
+                        release.set();first.join(2)
+                        if second.ident is not None:second.join(2)
+                    self.assertFalse(first.is_alive());self.assertFalse(second.is_alive())
+                    self.assertEqual(errors,[]);self.assertEqual(len(results),2)
+                    self.assertEqual(read.call_count,1,'等待同一次目录读取的刷新不能再串行启动一个进程')
+                    self.assertEqual(results[0],results[1]);self.assertIsNot(results[0],results[1])
+                    self.assertEqual(bool(results[0]['error']),failed)
+                    self.desk._native_directory(refresh=True)
+                    self.assertEqual(read.call_count,2,'上一轮完成后才发起的新刷新仍必须真正重读')
+
     def test_native_metadata_multiple_untried_models_selection_and_current_scope(self):
         from codex_workspace import read_model_directory
         self.write_config('model_provider="openai"\n')

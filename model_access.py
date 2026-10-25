@@ -118,10 +118,12 @@ class ModelAccessMixin:
 
     def _native_directory(self, *, refresh=False):
         from codex_workspace import read_model_directory
+        requested_at = time.monotonic()
         with _DIRECTORY_LOCK:
             key = self._directory_key()
             cached = getattr(self,'_model_directory_cache',None)
-            if not refresh and cached and cached['key']==key and time.monotonic()-cached['at']<30:
+            if cached and cached['key']==key and (cached['at']>=requested_at or
+                    not refresh and time.monotonic()-cached['at']<(2 if cached['error'] else 30)):
                 return copy.deepcopy(cached)
             entry = {'key':key,'at':time.monotonic(),'models':[],'error':''}
             try:
@@ -133,6 +135,7 @@ class ModelAccessMixin:
                 if key != self._directory_key(): raise ValueError('读取期间账户或配置发生变化，请重新刷新模型目录')
             except (ValueError,OSError) as exc:
                 entry.update(models=[],error=str(exc))
+            entry['at'] = time.monotonic()
             self._model_directory_cache = entry
             return copy.deepcopy(entry)
 

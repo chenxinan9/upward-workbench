@@ -23,6 +23,7 @@ FILES += ['docs/current-workspace.md','docs/knowledge-library.md','docs/release-
 FILES += ['creator_evidence.py','tests/test_creator_evidence.py','tests/test_cross_workbench_acceptance.py','tests/test_advisor_update.py','tests/test_workspace_sessions.py']
 FILES += ['workspace_artifacts.py','tests/test_workspace_artifacts.py','tests/test_workspace_output.py','tests/test_desktop_navigation.py']
 FILES += ['provider_access.py','tests/test_provider_access.py','docs/deepseek-and-codex.md','docs/release-v0.4.8-rc1.md','docs/licensing.md','LICENSES/legacy-MIT.txt']
+FILES += ['docs/release-v0.4.9-rc1.md']
 FILES += ['shared_knowledge.py','tests/test_shared_knowledge.py','tests/test_backend_retention.py','tests/test_attachments.py']
 FILES += ['growth_plan.py','growth_workspace.py','web/growth-workspace.js','web/growth-workspace.css','tests/test_growth_plan.py','tests/test_growth_context_acceptance.py','tests/test_growth_workspace.py','tests/test_growth_workspace.cjs',
           'workspace_api.py','vault.py','codex_workspace.py','web/workspace.html','web/workspace.js','web/workspace.css',
@@ -89,7 +90,7 @@ def build(output):
   if re.search(r'/(?:Users|home)/[A-Za-z0-9_.-]+/',text):raise ValueError('疑似真实用户绝对路径：'+rel)
   if re.search(r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----|sk-[A-Za-z0-9]{30,}',text):raise ValueError('疑似凭据：'+rel)
   content[rel]=data
- manifest={'version':'0.4.8-rc1','edition':'source-available-growth-workspace-preview','scope':'personal-use licensed new original changes, retained legacy and third-party licenses; no private user data','metrics':metrics(),'files':[{'path':p,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for p,b in sorted(content.items())]}
+ manifest={'version':'0.4.9-rc1','edition':'source-available-growth-workspace-preview','scope':'personal-use licensed new original changes, retained legacy and third-party licenses; no private user data','metrics':metrics(),'files':[{'path':p,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for p,b in sorted(content.items())]}
  content['release-manifest.json']=(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode()
  out.parent.mkdir(parents=True,exist_ok=True)
  with zipfile.ZipFile(out,'x',zipfile.ZIP_DEFLATED) as z:

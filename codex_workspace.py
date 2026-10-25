@@ -324,10 +324,10 @@ _DIRECTORY_PROCESS_LOCK = threading.Lock()
 _DIRECTORY_PROCESS = None
 
 
-def read_model_directory(cli, *, home=None, timeout=10, command=None):
+def read_model_directory(cli, *, home=None, timeout=30, command=None):
     """Metadata only: no thread, turn, question, tools or knowledge input."""
     if not cli: raise ValueError('本机Codex CLI未连接，模型选择已保留')
-    if type(timeout) not in (int, float) or not 0 < timeout <= 10:
+    if type(timeout) not in (int, float) or not 0 < timeout <= 30:
         raise ValueError('模型目录读取参数无效')
     until = time.monotonic() + timeout
     global _DIRECTORY_PROCESS
@@ -340,7 +340,7 @@ def read_model_directory(cli, *, home=None, timeout=10, command=None):
                 raise ValueError('模型目录进程尚未回收，未派生替代进程')
             _DIRECTORY_PROCESS = None
         with tempfile.TemporaryDirectory(prefix='upward-model-directory-') as directory:
-            cmd = command or safe_command(cli) + ['-c', 'features.remote_models=true']
+            cmd = command or safe_command(cli, config_home=home) + ['-c', 'features.remote_models=true']
             env = child_environment()
             if home is not None: env['CODEX_HOME'] = str(home)
             process = subprocess.Popen(cmd, cwd=directory, env=env, stdin=subprocess.PIPE,
@@ -370,7 +370,7 @@ def read_model_directory(cli, *, home=None, timeout=10, command=None):
                         received += len(chunk)
                         if received > 12*1024*1024: raise ValueError('模型目录回执超过限制')
                         pending.extend(chunk)
-                    raise ValueError('模型目录读取超过十秒，请保留选择后刷新')
+                    raise ValueError('模型目录读取超时（' + format(timeout, 'g') + ' 秒），请保留选择后刷新')
                 rpc(1,'initialize',{'clientInfo':{'name':'upward_model_directory','version':'1'},'capabilities':{'experimentalApi':True}})
                 process.stdin.write(b'{"method":"initialized"}\n'); process.stdin.flush()
                 account = rpc(2,'account/read',{'refreshToken':False}).get('account')
@@ -411,6 +411,86 @@ def read_model_directory(cli, *, home=None, timeout=10, command=None):
             _DIRECTORY_PROCESS_LOCK.release()
 
 
+def manage_workspace_thread(cli, thread_id, cwd, *, name=None, archive=True, timeout=8, command=None):
+    """Manage one proven workspace thread. Never start a thread or model turn."""
+    if not isinstance(thread_id, str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._:-]{0,199}', thread_id):
+        raise ValueError('后台线程标识无效')
+    if name is not None and (not isinstance(name, str) or not name.strip() or len(name) > 80 or
+            re.search(r'[\x00-\x1f\x7f-\x9f\u2028-\u202e\u2066-\u2069]', name)):
+        raise ValueError('后台会话名称无效')
+    if type(timeout) not in (int, float) or not 0 < timeout <= 30 or type(archive) is not bool:
+        raise ValueError('后台会话整理参数无效')
+    expected_cwd = Path(cwd).resolve(strict=True)
+    if not expected_cwd.is_dir(): raise ValueError('后台会话工作目录无效')
+    receipt = {'status':'failed', 'name_updated':False, 'archived':False,
+               'message':'后台会话整理未确认；原回答与记录保留'}
+    process = None
+    try:
+        if not cli: return receipt
+        until = time.monotonic() + timeout
+        process = subprocess.Popen(command or safe_command(cli), cwd=expected_cwd, env=child_environment(),
+            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, start_new_session=True)
+        os.set_blocking(process.stdout.fileno(), False)
+        pending = bytearray(); received = 0
+        with selectors.DefaultSelector() as selector:
+            selector.register(process.stdout, selectors.EVENT_READ)
+            def rpc(ident, method, params):
+                nonlocal received
+                process.stdin.write((json.dumps({'id':ident,'method':method,'params':params})+'\n').encode())
+                process.stdin.flush()
+                while time.monotonic() < until:
+                    while b'\n' in pending:
+                        line, _, tail = pending.partition(b'\n'); pending[:] = tail
+                        event = json.loads(line)
+                        if not isinstance(event, dict) or event.get('method') and 'id' in event:
+                            raise ValueError('非元数据请求')
+                        if event.get('id') != ident: continue
+                        if event.get('error') or not isinstance(event.get('result'), dict):
+                            raise ValueError('整理回执未确认')
+                        return event['result']
+                    if not selector.select(min(.1, max(0, until-time.monotonic()))): continue
+                    chunk = os.read(process.stdout.fileno(), 65536)
+                    if not chunk: raise ValueError('整理连接提前结束')
+                    received += len(chunk)
+                    if received > 2_000_000: raise ValueError('整理回执过大')
+                    pending.extend(chunk)
+                raise ValueError('后台会话整理超时')
+            rpc(1,'initialize',{'clientInfo':{'name':'ruigu_thread_maintenance','version':'1'},
+                'capabilities':{'experimentalApi':True}})
+            process.stdin.write(b'{"method":"initialized"}\n'); process.stdin.flush()
+            thread = rpc(2,'thread/read',{'threadId':thread_id,'includeTurns':False}).get('thread')
+            if (not isinstance(thread, dict) or thread.get('id') != thread_id or
+                    not isinstance(thread.get('cwd'), str) or Path(thread['cwd']).resolve() != expected_cwd):
+                receipt['message'] = '后台线程归属未通过核对，未改名或归档'
+                return receipt
+            thread_status = thread.get('status')
+            if not isinstance(thread_status, dict) or thread_status.get('type') not in ('idle','notLoaded','systemError'):
+                receipt['message'] = '后台线程仍在处理或状态未确认，未改名或归档'
+                return receipt
+            if name is not None:
+                rpc(3,'thread/name/set',{'threadId':thread_id,'name':name.strip()})
+                receipt['name_updated'] = True
+            if archive:
+                rpc(4,'thread/archive',{'threadId':thread_id})
+                receipt['archived'] = True
+            receipt.update(status='completed', message='后台会话整理已确认')
+    except (OSError, ValueError, TypeError):
+        # Upstream errors may contain credentials or user text; return only local wording.
+        pass
+    finally:
+        if process is not None:
+            if process.stdin:
+                try: process.stdin.close()
+                except OSError: pass
+            if process.poll() is None:
+                try: os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError: pass
+            try: process.wait(timeout=1)
+            except subprocess.TimeoutExpired: pass
+            if process.stdout: process.stdout.close()
+    return receipt
+
+
 class CodexWorkspace:
     def __init__(self, cli, cwd, *, command=None, provider=None, data_root=None):
         self.cli, self.cwd = str(cli), str(Path(cwd).resolve())
@@ -421,7 +501,7 @@ class CodexWorkspace:
     def run_turn(self, message, model, *, thread_id=None, tool_call=None, on_event=None,
                  cancel_event=None, current_document_id=None, write_authorized=False,
                  context=None, effort=None, timeout=1800, idle_timeout=300, startup_timeout=90, execution_mode='knowledge',
-                 input_items=None, approval_callback=None, before_send=None):
+                 input_items=None, approval_callback=None, before_send=None, thread_name=None):
         if not isinstance(message, str) or not message.strip() or len(message) > 30000:
             raise ValueError('请提供不超过 30000 字符的问题')
         if not isinstance(model, str) or not model:
@@ -429,6 +509,10 @@ class CodexWorkspace:
         if thread_id is not None and (not isinstance(thread_id, str) or not thread_id.strip()):
             raise ValueError('线程标识无效')
         if execution_mode not in ('knowledge', 'assistant'): raise ValueError('执行模式无效')
+        if thread_name is not None and (not isinstance(thread_name, str) or not thread_name.strip() or len(thread_name)>80 or
+                re.search(r'[\x00-\x1f\x7f-\x9f\u2028-\u202e\u2066-\u2069]', thread_name)):
+            raise ValueError('后台会话名称无效')
+        managed_thread = thread_name is not None and self.provider.get('service_id') != 'deepseek'
         context = context or {}
         if execution_mode == 'assistant' and context.get('scope') != 'personal':
             execution_mode = 'knowledge'
@@ -450,6 +534,12 @@ class CodexWorkspace:
         resume_config = None
         unarchive_attempted = False
         resume_retried = False
+        owned_thread = False
+        thread_bound = False
+        name_pending = False
+        name_requested = False
+        name_deadline = None
+        maintenance = {'name_updated':False,'archived':False,'status':'pending','message':''}
         approval_results = queue_module.Queue()
         pending_approvals = {}
         seen_requests = set()
@@ -540,9 +630,39 @@ class CodexWorkspace:
                 approval_results.put((request_id, result))
             threading.Thread(target=ask, daemon=True, name='upward-approval').start()
 
+        def bind_thread():
+            nonlocal thread_bound
+            if not thread_bound:
+                emit('thread', thread_id=thread, actual_model=actual_model)
+                thread_bound = True
+
+        def start_turn():
+            nonlocal turn_requested
+            if turn_requested: return
+            if cancel_event.is_set(): raise WorkspaceProtocolError('本轮已停止，未发送问题')
+            # A successful name receipt makes an otherwise empty thread durable.
+            if managed_thread and maintenance['name_updated']: bind_thread()
+            if before_send is not None: before_send()
+            bind_thread()
+            turn_context = {'current_document_id':current_document_id, 'write_authorized':write_allowed,
+                            'context':context or {}, 'user_message':message}
+            turn_params = {'threadId':thread, 'input':[{'type':'text','text':json.dumps(turn_context,ensure_ascii=False)}],
+                           'summary':'concise', 'model':model, 'environments':[]}
+            turn_params['input'].extend(image_inputs)
+            if native:
+                # An explicit empty list disables the local executor.
+                turn_params.pop('environments')
+                turn_params['approvalPolicy'] = 'on-request'
+                turn_params['sandboxPolicy'] = {'type':'workspaceWrite', 'writableRoots':[self.cwd],
+                    'networkAccess':True, 'excludeSlashTmp':True, 'excludeTmpdirEnvVar':True}
+            if effort: turn_params['effort'] = effort
+            turn_requested = True
+            queue({'id':3, 'method':'turn/start', 'params':turn_params})
+
         def handle(event):
             nonlocal thread, turn, actual_model, finished, status, initialized, turn_started, last_activity
             nonlocal turn_requested, resume_config, unarchive_attempted, resume_retried
+            nonlocal owned_thread, name_pending, name_requested, name_deadline
             if not isinstance(event, dict): raise WorkspaceProtocolError('接口事件不是对象')
             method = event.get('method'); params = event.get('params', {})
             if method and not isinstance(params, dict): raise WorkspaceProtocolError('接口参数异常')
@@ -554,6 +674,14 @@ class CodexWorkspace:
                     raise WorkspaceProtocolError('模型请求了未开放的能力，已停止')
                 invoke_tool(event, params); return
             if 'id' in event:
+                if event['id'] == 7 and name_requested:
+                    if name_pending:
+                        name_pending = False
+                        maintenance['name_updated'] = not event.get('error') and isinstance(event.get('result'), dict)
+                        if not maintenance['name_updated']:
+                            maintenance['message'] = '后台名称未确认；继续处理原问题'
+                        start_turn()
+                    return
                 if event.get('error'):
                     if (event['id'] == 2 and resume_config is not None and not unarchive_attempted and
                             not turn_requested and not turn_started and not cancel_event.is_set() and
@@ -603,24 +731,15 @@ class CodexWorkspace:
                     thread = result.get('thread', {}).get('id')
                     actual_model = result.get('model')
                     if not thread or (thread_id and thread != thread_id): raise WorkspaceProtocolError('线程回执不匹配')
+                    owned_thread = managed_thread
                     if actual_model != model: raise WorkspaceProtocolError('实际模型与所选模型不一致，未发送资料')
                     if cancel_event.is_set(): raise WorkspaceProtocolError('本轮已停止，未发送问题')
-                    if before_send is not None: before_send()
-                    emit('thread', thread_id=thread, actual_model=actual_model)
-                    turn_context = {'current_document_id':current_document_id, 'write_authorized':write_allowed,
-                                    'context':context or {}, 'user_message':message}
-                    turn_params = {'threadId':thread, 'input':[{'type':'text','text':json.dumps(turn_context,ensure_ascii=False)}],
-                                   'summary':'concise', 'model':model, 'environments':[]}
-                    turn_params['input'].extend(image_inputs)
-                    if native:
-                        # An explicit empty list disables the local executor.
-                        turn_params.pop('environments')
-                        turn_params['approvalPolicy'] = 'on-request'
-                        turn_params['sandboxPolicy'] = {'type':'workspaceWrite', 'writableRoots':[self.cwd],
-                            'networkAccess':True, 'excludeSlashTmp':True, 'excludeTmpdirEnvVar':True}
-                    if effort: turn_params['effort'] = effort
-                    turn_requested = True
-                    queue({'id':3, 'method':'turn/start', 'params':turn_params})
+                    if managed_thread:
+                        name_requested = name_pending = True
+                        name_deadline = time.monotonic() + 2
+                        queue({'id':7,'method':'thread/name/set','params':{'threadId':thread,'name':thread_name.strip()}})
+                    else:
+                        start_turn()
                 elif event['id'] == 3:
                     returned = result.get('turn', {}).get('id')
                     if not returned or (turn and returned != turn): raise WorkspaceProtocolError('轮次回执不匹配')
@@ -727,6 +846,10 @@ class CodexWorkspace:
             selector.register(proc.stdout,selectors.EVENT_READ,'stdout')
             queue({'id':1, 'method':'initialize', 'params':{'clientInfo':{'name':'upward_knowledge_workspace','version':'0.3.0'},'capabilities':{'experimentalApi':True}}})
             while not finished:
+                if name_pending and time.monotonic() >= name_deadline:
+                    name_pending = False
+                    maintenance['message'] = '后台名称回执超时；继续处理原问题'
+                    start_turn()
                 elapsed = time.monotonic()-start
                 if not cancel_event.is_set():
                     if elapsed > timeout:
@@ -772,7 +895,7 @@ class CodexWorkspace:
                 if proc.poll() is not None and not finished and not ready: raise WorkspaceProtocolError('Codex 进程提前退出')
             text=''.join(item['text'] for item in answer_items.values() if item['phase'] != 'commentary')
             if status=='completed' and not text.strip(): raise WorkspaceProtocolError('本轮没有有效回答')
-            return {'thread_id':thread, 'turn_id':turn, 'actual_model':actual_model, 'text':text, 'status':status, 'tools':tool_receipts, 'native_tools':list(native_items.values()), 'execution_mode':execution_mode}
+            return {'thread_id':thread, 'turn_id':turn, 'actual_model':actual_model, 'text':text, 'status':status, 'tools':tool_receipts, 'native_tools':list(native_items.values()), 'execution_mode':execution_mode, **({'thread_maintenance':maintenance} if managed_thread else {})}
         finally:
             try:
                 for request_id, request in pending_approvals.items():
@@ -791,4 +914,17 @@ class CodexWorkspace:
                             except ProcessLookupError: pass
                             proc.wait(timeout=1)
                     if proc.stdout: proc.stdout.close()
-            finally:runtime.close()
+            finally:
+                runtime.close()
+                if managed_thread and owned_thread:
+                    try:
+                        receipt = manage_workspace_thread(self.cli, thread, self.cwd)
+                        maintenance['archived'] = receipt['archived']
+                        if receipt['archived'] and actual_model == model: bind_thread()
+                        maintenance['status'] = 'completed' if receipt['archived'] and maintenance['name_updated'] else 'partial'
+                        maintenance['message'] = (receipt['message'] if not receipt['archived'] else
+                            '后台会话已收起' if maintenance['name_updated'] else '后台会话已收起，名称未确认；原回答保留')
+                    except Exception:
+                        maintenance.update(status='failed', message='后台会话收起未确认；原回答与记录保留')
+                    try: emit('thread_maintenance', **maintenance)
+                    except Exception: pass

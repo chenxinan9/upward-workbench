@@ -625,6 +625,10 @@ class WorkspaceMixin:
             if kind == 'thread' and value.get('thread_id') and not live.get('shared_invalidated'):
                 self.store.change(session['id'], 'workspace-session', thread_id=value['thread_id'])
                 live['actual_model'] = value.get('actual_model')
+            elif kind == 'thread_maintenance':
+                live['thread_maintenance'] = {key:value[key] for key in ('status','name_updated','archived','message') if key in value}
+                if value.get('archived') is False:
+                    live['progress_events'].append({'text':'后台会话暂未收起；回答和历史仍保留，不会重新生成。','at':stamp()})
             elif kind == 'message':
                 live['response_preview'] = value.get('text', '')
             elif kind == 'delta':
@@ -663,7 +667,7 @@ class WorkspaceMixin:
                     live['progress_events'].append({'text': value.get('text', '')[-12000:], 'at': stamp(), 'item_id':item_id})
             live['progress_events'] = live['progress_events'][-120:]
             moment = time.monotonic()
-            force = kind in ('thread', 'tool', 'native_tool','approval') or value.get('evidence') is True or context_delivered
+            force = kind in ('thread', 'thread_maintenance', 'tool', 'native_tool','approval') or value.get('evidence') is True or context_delivered
             if force or moment - last_publish >= .15:
                 with self.runlock:
                     self._workspace_live[job['id']] = json.loads(json.dumps(live))
@@ -1081,7 +1085,9 @@ class WorkspaceMixin:
             def before_send():
                 self.require_model_selection(model)
                 if shared_id: shared_before_send()
+            thread_name = ('睿顾台 · ' + re.sub(r'[\x00-\x1f\x7f-\x9f\u2028-\u202e\u2066-\u2069]', ' ', str(session.get('title') or '顾问对话'))).strip()[:80]
             result = client.run_turn(message=message, model=model.get('api_model',model['id']), thread_id=session.get('thread_id'),
+                thread_name=thread_name,
                 tool_call=tool, on_event=event, cancel_event=stop, context=context,
                 current_document_id=current['file_id'] if current else None,
                 write_authorized=write, effort=model.get('reasoning_effort'),
